@@ -50,6 +50,7 @@ from matplotlib.patches import Polygon
 from matplotlib.collections import PatchCollection
 from matplotlib.patches import PathPatch
 from matplotlib import cm
+from matplotlib import colors
 import matplotlib.patches as mpatches
 import os
 import csv
@@ -367,11 +368,19 @@ def multiple_wedding(line):
         n, d, t = ndt
         names_result = " ".join(re.findall(ur"((?:(?:d'|de|des|la|DE|VAN|LE) )?[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð,.'-\(\)/]+\b)",unicode(n.decode('iso8859-15')),re.UNICODE))
         date_result = "".join(re.findall(r"[0-9]{4}",d))
-        town_result = "".join(re.findall(ur"(?!\s)[\w\s-]+(?<!\s)",unicode(t.decode('iso8859-15')),re.UNICODE))
+        if t:
+            if t[-1].isspace():
+                town_result = t[1:len(t)-1]
+            elif t[0].isspace():
+                town_result = t[1:]
+        else:
+            town_result = ''
+        #town_result = "".join(re.findall(ur"(?!\s)[\w\s-]+(?<!\s)",unicode(t.decode('iso8859-15')),re.UNICODE)).encode('utf8')
         if names_result == '' and date_result == '' and town_result == '':
             continue
         else:
-            list_of_result += [(names_result.encode('utf8'),date_result.decode('iso8859_15').encode('utf8'),town_result.encode('utf8'))]
+            #list_of_result += [(names_result.encode('utf8'),date_result.decode('iso8859_15').encode('utf8'),town_result.encode('utf8'))] #avant       
+            list_of_result += [(names_result.encode('utf8'),date_result.decode('iso8859_15').encode('utf8'),town_result)] #test town_result with no encode
     return list_of_result
         
 def create_annotation_text(dico_file,dico_town,options,typ):
@@ -395,7 +404,7 @@ def create_annotation_text(dico_file,dico_town,options,typ):
     output :
         dico_annotation (dictionnary) :
             key (string) : city name
-            value (string) : text to add for the specified annotation
+            value (3th-element tuple) : text to add for the specified annotation, latitude and longitude
     """
     #Note : "texte en string".decode('utf8')+string_du_fichier.decode('iso8859_15')
     #dict to store the annotation
@@ -433,8 +442,9 @@ def create_annotation_text(dico_file,dico_town,options,typ):
     dico_departure = dict()
     dico_arrivals = dict()
     dico_familly_name = dict()
-    
-    ### ASCENDANCE ###
+
+    ####### BEGIN #######
+    ##### ASCENDANCE #####
     
     if typ == 1:
         for sosa in dico_file.keys():
@@ -471,38 +481,24 @@ def create_annotation_text(dico_file,dico_town,options,typ):
                                 dico_date_extreme[t] = d+hyphen_end
                             if d_int > b:
                                 dico_date_extreme[t] = hyphen_begin + d
-                #get sosa familly name
-                result = re.findall(r"[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-\(\)/]+$",dico_file[sosa][1].decode('iso8859_15').encode('utf8'))
-                if result:
-                    familly_name = result[0]
-                #iterate over (3) birth and (8) death town and store into a set
-                for index in 3,8:
-                    if dico_file[sosa][index] not in dico_familly_name.keys():
-                            
-                        name = set()
-                        name.add(familly_name)
-                        dico_familly_name[dico_file[sosa][index]] = name
-                    else:
-                        name = dico_familly_name[dico_file[sosa][index]]
-                        name.add(familly_name)
-                        dico_familly_name[dico_file[sosa][index]] = name
 
-            else:
-                #get familly name
-                result = re.findall(r"[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-\(\)/]+$",dico_file[sosa][1].decode('iso8859_15').encode('utf8'))
-                if result:
-                    familly_name = result[0]
-                #iterate over (3) birth, (6) wedding and (8) death town and store into a set
-                for index in 3,6,8:
-                    if dico_file[sosa][index] not in dico_familly_name.keys():
-                            
-                        name = set()
-                        name.add(familly_name)
-                        dico_familly_name[dico_file[sosa][index]] = name
-                    else:
-                        name = dico_familly_name[dico_file[sosa][index]]
-                        name.add(familly_name)
-                        dico_familly_name[dico_file[sosa][index]] = name
+            #get familly name
+            result = re.findall(r"[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-\(\)/]+$",dico_file[sosa][1].decode('iso8859_15').encode('utf8'))
+            if result:
+                familly_name = result[0]
+            #iterate over (3) birth, (6) wedding and (8) death town and store into a set
+            for index in 3,6,8:
+                if "\x95" in dico_file[sosa][index]:
+                    continue
+                if dico_file[sosa][index] not in dico_familly_name.keys():
+                        
+                    name = set()
+                    name.add(familly_name)
+                    dico_familly_name[dico_file[sosa][index]] = name
+                else:
+                    name = dico_familly_name[dico_file[sosa][index]]
+                    name.add(familly_name)
+                    dico_familly_name[dico_file[sosa][index]] = name
                     
                     
             #compute parents sosa
@@ -528,12 +524,47 @@ def create_annotation_text(dico_file,dico_town,options,typ):
                                 else:
                                     a = "Sosa n°".decode('utf8')+str(prts)+" "+dico_file[prts][1].decode('iso8859_15')+"\n"
                                     dico_arrivals[cityB] = dico_arrivals[cityB] + a
+
+    ##### DESCENDANCE #####
+    
     if typ ==2:
         # set to avoid the repetion of the same father in all childrens
         set_dep = set()
         set_arr = set()
         for sosa in dico_file.keys():
-            #get familly name
+            if "\x95" in dico_file[sosa][4]:
+                weddings = multiple_wedding(dico_file[sosa])
+                for wed in weddings:
+                    n,d,t = wed
+                    #for the name list
+                    if n != '' and t != '':
+                        if t not in dico_familly_name.keys():
+                            name = set()
+                            name.add(n)
+                            dico_familly_name[t] = name
+                        else:
+                            name = dico_familly_name[t]
+                            name.add(n)
+                            dico_familly_name[t] = name
+                    if t:
+                        #add to the wedding and total event
+                        wedding_counter = collections.Counter([t])
+                        number_of_wedding_by_town += wedding_counter
+                        number_total += wedding_counter
+                    if d:
+                        if d not in dico_date_extreme.keys():
+                            dico_date_extreme[t] = d+' - '+d
+                        else:
+                            #verify extrem date
+                            d_int = int(d)
+                            a = int(dico_date_extreme[t][:4])
+                            b = int(dico_date_extreme[t][7:])
+                            hyphen_begin = dico_date_extreme[t][:7]
+                            hyphen_end = dico_date_extreme[t][4:]
+                            if d_int < a:
+                                dico_date_extreme[t] = d+hyphen_end
+                            if d_int > b:
+                                dico_date_extreme[t] = hyphen_begin + d
             if sosa == '':
                 #because the first line of the descendance in PELISSIER contain nothing, we according about the familly name for the order X & Y
                 sexe = False
@@ -551,6 +582,8 @@ def create_annotation_text(dico_file,dico_town,options,typ):
                 familly_name = ' & '.encode('utf8').join(fn)
             #iterate over birth, wedding and death town and store into set
             for index in 3,6,8:
+                if "\x95" in dico_file[sosa][index]:
+                    continue
                 if dico_file[sosa][index] not in dico_familly_name.keys():
                     name = set()
                     name.add(familly_name)
@@ -588,7 +621,10 @@ def create_annotation_text(dico_file,dico_town,options,typ):
                                     a = "n°".decode('utf8')+str(prts)+" "+dico_file[prts][1].decode('iso8859_15')+"\n"
                                     dico_arrivals[cityB] = dico_arrivals[cityB] + a
                                     set_arr.add(str(prts))
-    
+                                    
+    ##### END #####
+                                    
+    #transfert all town key (from multiple wedding (utf8) and ascdt / descdt (iso8859_15) file)
     for town in number_total.keys():
         if town != '' and "\x95" not in town:
             dico_annotation[town] = ''
@@ -627,9 +663,14 @@ def create_annotation_text(dico_file,dico_town,options,typ):
             if dico_date_extreme[town]:
                 date = '\nDate : '.decode('utf8')+dico_date_extreme[town]
                 text += date
-        lat = dico_town[town.decode('iso8859_15').encode('utf8')][0]
-        lon = dico_town[town.decode('iso8859_15').encode('utf8')][1]
-        dico_annotation[town] = (text,lat,lon)
+        try:
+            lat = dico_town[town][0]
+            lon = dico_town[town][1]
+            dico_annotation[town] = (text,lat,lon)
+        except KeyError:
+            lat = dico_town[town.decode('iso8859_15').encode('utf8')][0]
+            lon = dico_town[town.decode('iso8859_15').encode('utf8')][1]
+            dico_annotation[town] = (text,lat,lon)
     return dico_annotation
 
 def mapping_trajectory(list_traj,m,ax,g_max,typ,dico_annotation):
@@ -859,6 +900,46 @@ fig = None
 m = None
 ax = None
 points_with_annotation = None
+    
+
+def generate_map(typ,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation):
+    """
+    Generate Open Street Map HTML page
+    """
+    import folium
+    xmean = np.mean([x_min,x_max])
+    ymean = np.mean([y_min,y_max])
+    if typ == 1:
+        list_traj = sorted(list_traj, key=itemgetter(6), reverse=True)
+    elif typ == 2:
+        list_traj = sorted(list_traj, key=itemgetter(6), reverse=True)
+    my_map = folium.Map(location=[ymean,xmean],tiles='Stamen Terrain',zoom_start=6)
+    town_set = set()
+    dico_traj_size = dict()
+    for data in list_traj:
+        #data
+        y1,x1,y2,x2,m1,m2,g= data
+        #get color
+        cm_object = cm.Paired(1.*g/g_max)
+        rgb = cm_object[:3]
+        hexa = colors.rgb2hex(rgb)
+        #trajectory
+        folium.PolyLine([(y1,x1),(y2,x2)], color=hexa, weight=g, opacity=1).add_to(my_map)
+        
+        #marker
+        if m1 not in town_set:
+            folium.Marker([y1, x1], popup=m1+"\n"+dico_annotation[m1.encode('iso8859_15')][0]).add_to(my_map)
+            town_set.add(m1)
+        if m2 not in town_set:
+            folium.Marker([y2, x2], popup=m2+"\n"+dico_annotation[m2.encode('iso8859_15')][0]).add_to(my_map)
+            town_set.add(m2)
+    for key in dico_annotation.keys():
+        if key.decode('iso885_15') not in town_set:
+            pass
+            #folium.Marker([dico_annotation[m2.encode('iso8859_15')][1], dico_annotation[m2.encode('iso8859_15')][2]], popup=key+"\n"+dico_annotation[m2.encode('iso8859_15')][0]; color="black").add_to(my_map)
+    my_map.save('map.html')
+    
+    
 
 def Demo_ascdt():
     """
@@ -1011,13 +1092,3 @@ def Demo_descdt():
     
     on_move_id = fig.canvas.mpl_connect('motion_notify_event', on_move)
     plt.show()
-    
-
-
-
-
-
-
-
-
-
