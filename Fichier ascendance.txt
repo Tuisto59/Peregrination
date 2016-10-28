@@ -39,8 +39,8 @@
 39	Marie Léontine Frasie TIREL	26.5.1837	Bretteville-sur-Ay	Jean Denis PERRIÉ	18.7.1857	Paris	11.1.1914	Roubaix	76
 40	Pierre KOENIG	21.3.1816	Gundershoffen	Marguerite FLECKINGER	17.11.1850	Gundershoffen	20.3.1868	Gundershoffen	51
 41	Marguerite FLECKINGER	7.7.1825	Gundershoffen	Pierre KOENIG	17.11.1850	Gundershoffen	19.1.1891	Gundershoffen	65
-42	Pierre Joseph HEUX	26.5.1822	Campagne-lès-Guines	Louise Françoise Henriette Charlotte GRATIEN	7.2.1844	Guînes	18.3.1894	Tourcoing	71
-43	Louise Françoise Henriette Charlotte GRATIEN	28.3.1825	Guînes	Pierre Joseph HEUX	7.2.1844	Guînes	15.9.1897	Tourcoing	72
+42	Pierre Joseph HEUX	26.5.1822	Campagne-lès-Guines	"Louise Françoise Henriette" Charlotte GRATIEN	7.2.1844	Guînes	18.3.1894	Tourcoing	71
+43	"Louise Françoise Henriette" Charlotte GRATIEN	28.3.1825	Guînes	Pierre Joseph HEUX	7.2.1844	Guînes	15.9.1897	Tourcoing	72
 44	Charles GOTELAERE	31.5.1805	Ardooie	Natalia PICAVET	13.10.1840	Izegem	28.1.1895	Zwevezele	89
 45	Natalia PICAVET	24.1.1797	Izegem	Charles GOTELAERE	13.10.1840	Izegem	16.5.1880	Zwevezele	83
 46	Félix VERMOORTELE	23.10.1830	Zwevezele	Monica REYNAERT	29.4.1865	Ruddervoorde	26.10.1915	Ruddervoorde	85
@@ -59,12 +59,12 @@
 61	Marie Sidonie Coralie MAGINOT	15.5.1849	Bilques (Helfaut)	Henri François BAILLION (NÉ BERNARD)	28.4.1869	Heuringhem	> 1906		>= 56
 62	Henri Désiré MALBRANQUE	18.4.1843	Nieuwkerke	Mathilde Sidonie Joseph DESPRINGRE	21.2.1870	Nieppe	22.5.1915	Houplines	72
 63	Mathilde Sidonie Joseph DESPRINGRE	28.6.1845	Nieppe	Henri Désiré MALBRANQUE	21.2.1870	Nieppe	10.3.1915	Houplines	69
-64	Jean Batiste Joseph BOUZIN	13.8.1805	Rumes	• Amélie Joseph BEAUCAMPS • Marie Clarisse Louison BEAUCAMPS	• 18.2.1829 • 15.3.1836	• Rumes • Rumes	31.1.1886	Roubaix	80
-65	Marie Clarisse Louison BEAUCAMPS	26.1.1809	Rumes	Jean Batiste Joseph BOUZIN	15.3.1836	Rumes	11.3.1883	Roubaix	74
+64	Jean Batiste Joseph BOUZIN	13.8.1805	Rumes	• Amélie Joseph BEAUCAMPS • Marie Clarisse "Louison" BEAUCAMPS	• 18.2.1829 • 15.3.1836	• Rumes • Rumes	31.1.1886	Roubaix	80
+65	Marie Clarisse "Louison" BEAUCAMPS	26.1.1809	Rumes	Jean Batiste Joseph BOUZIN	15.3.1836	Rumes	11.3.1883	Roubaix	74
 66	Louis Joseph MARISSAL	15.8.1815	Roubaix	Marie Louise Joseph DESCHAMP	14.6.1842	Roubaix	6.9.1871	Roubaix	56
 67	Marie Louise Joseph DESCHAMP	7.5.1815	Tourcoing	Louis Joseph MARISSAL	14.6.1842	Roubaix	30.12.1886	Roubaix	71
-68	Jean François Joseph LECLERCQ	30.1.1810	Roubaix	Ursule Séraphine Joséphine Joseph ROUSSEL	20.8.1838	Roubaix	5.9.1885	Roubaix	75
-69	Ursule Séraphine Joséphine Joseph ROUSSEL	7.12.1806	Roubaix	Jean François Joseph LECLERCQ	20.8.1838	Roubaix	16.12.1861	Roubaix	55
+68	Jean François Joseph LECLERCQ	30.1.1810	Roubaix	Ursule Séraphine "Joséphine" Joseph ROUSSEL	20.8.1838	Roubaix	5.9.1885	Roubaix	75
+69	Ursule Séraphine "Joséphine" Joseph ROUSSEL	7.12.1806	Roubaix	Jean François Joseph LECLERCQ	20.8.1838	Roubaix	16.12.1861	Roubaix	55
 70	Frédéric Joseph FLORIN	21.1.1816	Roubaix	Marcelline Rosine Joseph CORNILLE	23.9.1844	Roubaix	7.9.1867	Roubaix	51
 71	Marcelline Rosine Joseph CORNILLE	17.1.1824	Croix	Frédéric Joseph FLORIN	23.9.1844	Roubaix	2.12.1902	Roubaix	78
 72	Pierre NYS	23.6.1797	Herseaux	Isabelle MOLLARD	11.7.1826	Wattrelos	8.10.1866	Roubaix	69
@@ -137,14 +137,14 @@
 143	Marie Adélaïde Joseph DURIEZ	16.10.1782	Wasquehal	Liévin Joseph CORNILLE	27.4.1803	Roubaix	10.3.1843	Roubaix	60
 144	Antoine Joseph NYS	~ 1739	Herseaux	Séraphine Joseph STEUT	< 1797		21.2.1810	Herseaux	~ 71
 145	Séraphine Joseph STEUT	1.5.1755	Herseaux	Antoine Joseph NYS	< 1797		27.5.1822	Wattrelos	67
-146	Adrien Francois MOLLARD	27.8.1774	Bellegem	• Marie Catherine Bénonie = Mélanie PROUVOST • Apolline Joseph STEUX	• 30.germ .an VIII • 27.11.1821	• Roubaix • Herseaux	17.8.1847	Wattrelos	72
-147	Marie Catherine Bénonie = Mélanie PROUVOST	27.11.1774	Roubaix	Adrien Francois MOLLARD	30.germ .an VIII	Roubaix	24.8.1819	Dottignies	44
+146	Adrien Francois MOLLARD	27.8.1774	Bellegem	• Marie Catherine Bénonie = "Mélanie" PROUVOST • Apolline Joseph STEUX	• 30.germ .an VIII • 27.11.1821	• Roubaix • Herseaux	17.8.1847	Wattrelos	72
+147	Marie Catherine Bénonie = "Mélanie" PROUVOST	27.11.1774	Roubaix	Adrien Francois MOLLARD	30.germ .an VIII	Roubaix	24.8.1819	Dottignies	44
 148	Jean François Joseph CABY	21.8.1766	Hem	Henriette BAYART	17.6.1788	Lys-Lez-Lannoy	27.3.1843	Roubaix	76
 149	Henriette BAYART	29.5.1763	Lys-Lez-Lannoy	Jean François Joseph CABY	17.6.1788	Lys-Lez-Lannoy	9.12.1807	Lys-Lez-Lannoy	44
 150	Paul François Joseph BEGHIN	23.5.1770	Lannoy	Amélie CASTELAIN	8.3.1791	Lannoy	9.4.1822	Lannoy	51
 151	Amélie CASTELAIN	4.9.1766	Leers	Paul François Joseph BEGHIN	8.3.1791	Lannoy	30.8.1831	Lannoy	64
 152	Denis Louis PERRIÉ	~ 1768	Paris	• Marie Jeanne AVIN • Marie Thérèse NEL	• > 30.8.1793 • 22.1.1807	•  • Paris	10.3.1844	Paris	~ 76
-153	Marie Jeanne AVIN	(c) 1770		Denis Louis PERRIÉ	> 30.8.1793		3.12.1806	Paris	36
+153	Marie Jeanne AVIN	(c) 1770		Denis Louis PERRIÉ	> 30.8.1793		3.12.1806	Paris	
 154	Pierre François MARIE			Jeanne Marguerite PIOT	25.3.1806	Paris			
 155	Jeanne Marguerite PIOT			Pierre François MARIE	25.3.1806	Paris	> 1834		
 156	Jacques TIREL	7.7.1765	Bretteville-sur-Ay	Geneviève Françoise Madeleine LECATELINOIS	31.5.1798	Bretteville-sur-Ay	18.5.1839	Bretteville-sur-Ay	73
@@ -204,11 +204,11 @@
 220	Petrus Franciscus Xaverius LEFEVERE	20.12.1751	Kortrijk	Marie Agnes LOMMENS	10.5.1772	Kortrijk	14.6.1811	Kortrijk	59
 221	Marie Agnes LOMMENS	14.11.1747	Lendelede	Petrus Franciscus Xaverius LEFEVERE	10.5.1772	Kortrijk			
 222	Martinus HOUTTEKINTS	14.7.1757	Bellegem	Maria Josepha, Theresa MAERTENS	< 1792		12.3.1840	Bellegem	82
-223	Maria Josepha, Theresa MAERTENS	(c) 1759		Martinus HOUTTEKINTS	< 1792		5.1.1800	Bellegem	41
+223	Maria Josepha, Theresa MAERTENS	(c) 1759		Martinus HOUTTEKINTS	< 1792		5.1.1800	Bellegem	
 224	Bernard (Jean) LESPIACE	23.3.1773	Monein	Jeanne DE CONDERINE	15.9.1798	Monein	25.6.1831	Monein	58
 225	Jeanne DE CONDERINE	17.10.1773	Monein	Bernard (Jean) LESPIACE	15.9.1798	Monein	7.11.1854	Monein	81
-226	Jean François POURRERE	19.1.1761	Monein	Marie POURAILLY-CARRERE	29.1.1788	Herrère	29.9.1846	Monein	85
-227	Marie POURAILLY-CARRERE	14.8.1765	Herrère	Jean François POURRERE	29.1.1788	Herrère	< 1846		< 80
+226	Jean "François" POURRERE	19.1.1761	Monein	Marie POURAILLY-CARRERE	29.1.1788	Herrère	29.9.1846	Monein	85
+227	Marie POURAILLY-CARRERE	14.8.1765	Herrère	Jean "François" POURRERE	29.1.1788	Herrère	< 1846		< 80
 228	Jean (Ainé) GIRARD	5.3.1775	Oloron-Sainte-Marie	Catherine TAUSI	31.1.1807	Lasseube	< 1831	Oloron-Sainte-Marie	< 55
 229	Catherine TAUSI	17.1.1788	Lasseube	Jean (Ainé) GIRARD	31.1.1807	Lasseube	> 1831		>= 42
 230	Louis CHASTRE	6.12.1777	Oloron-Sainte-Marie - Paroisse Sainte-Croix	Françoise DAJAS	13.7.1805	Oloron-Sainte-Marie	15.9.1849	Oloron-Sainte-Marie	71
@@ -229,8 +229,8 @@
 245	Marie Constantine CEUGNET	22.10.1790	Racquinghem	Liévin Joseph MAGINOT	10.9.1821	Saint-Omer	10.2.1857	Heuringhem	66
 246	X X			Hyacinthe Louise Josephe MERLIER					
 247	Hyacinthe Louise Josephe MERLIER	15.11.1795	Bilques (Helfaut)	X X			24.12.1870	Bilques (Helfaut)	75
-248	Pierre Antoine Joseph MALBRANQUE	~ 1766	Steenwerck	Marie Augustine Albertine Joseph BECQUART	2.7.1788	Steenwerck	11.10.1836	Steenwerck	~ 70
-249	Marie Augustine Albertine Joseph BECQUART	5.3.1767	Sailly-sur-la-Lys	Pierre Antoine Joseph MALBRANQUE	2.7.1788	Steenwerck	5.1.1822	Steenwerck	54
+248	Pierre Antoine Joseph MALBRANQUE	~ 1766	Steenwerck	Marie "Augustine Albertine Joseph" BECQUART	2.7.1788	Steenwerck	11.10.1836	Steenwerck	~ 70
+249	Marie "Augustine Albertine Joseph" BECQUART	5.3.1767	Sailly-sur-la-Lys	Pierre Antoine Joseph MALBRANQUE	2.7.1788	Steenwerck	5.1.1822	Steenwerck	54
 250	Pierre Jacques DESACY	1768	Nieuwkerke	Barbe Thérèse DUHAYON	< 1795		6.12.1846	Nieuwkerke	78
 251	Barbe Thérèse DUHAYON	~ 1774	Nieuwkerke	Pierre Jacques DESACY	< 1795		24.5.1831	Bailleul	~ 57
 252	Aimé François Joseph DESPRINGRE	26.5.1776	Nieppe	• Jeanne Catherine DESREMEAUX • Amélie LALAU	• 12.5.1813 • 	• Nieppe • 	20.10.1842	Nieppe	66
@@ -273,7 +273,7 @@
 289	Catherine Joseph DESREUX	1708	Estaimbourg	Simon NYS	30.7.1737	Estaimbourg	15.3.1784	Estaimbourg	76
 290	Augustin STEUT	2.5.1724	Luingne	Elisabeth DUSOLLIER	15.4.1749	Mouscron	7.9.1794	Herseaux	70
 291	Elisabeth DUSOLLIER			Augustin STEUT	15.4.1749	Mouscron	> 1794		
-292	Jean Baptiste MOLLARD	10.3.1730	Colombey-lès-Choiseull - Breuvannes-en-Bassigny	Marie Catherine HAGE, HAZE	27.6.1769	Bellegem	14.pluv .an XII	Dottignies	73
+292	Jean Baptiste MOLLARD	10.3.1730	Colombey-lès-Choiseul - Breuvannes-en-Bassigny	Marie Catherine HAGE, HAZE	27.6.1769	Bellegem	14.pluv .an XII	Dottignies	73
 293	Marie Catherine HAGE, HAZE	11.4.1742	Maroilles	Jean Baptiste MOLLARD	27.6.1769	Bellegem	14.12.1813	Dottignies	71
 294	Jean Baptiste PROUVOST	29.5.1743	Tourcoing	Isabelle Joseph CAUCHETEUX	17.7.1770	Roubaix	13.2.1816	Tourcoing	72
 295	Isabelle Joseph CAUCHETEUX	1.10.1749	Roubaix	Jean Baptiste PROUVOST	17.7.1770	Roubaix	24.11.1780	Roubaix	31
@@ -302,7 +302,7 @@
 320	François KÖNIG			Marie Salomé KOCH					
 321	Marie Salomé KOCH			François KÖNIG					
 322	Jacques RITTER	~ 1717		Catherine SIBILLE			< 1769		< 52
-323	Catherine SIBILLE	(c) 1717		Jacques RITTER			28.3.1777	Reichshoffen	60
+323	Catherine SIBILLE	(c) 1717		Jacques RITTER			28.3.1777	Reichshoffen	
 324++	Mathias WARTHER			Suzanne, (Barbe) KOENIG	30.6.1750	Gundershoffen	30.12.1786	Gundershoffen	
 325++	Suzanne, (Barbe) KOENIG			Mathias WARTHER	30.6.1750	Gundershoffen	> 1779		
 326	Pierre STEINER			Odile LASCHENE	< 1755		< 1777		
@@ -361,10 +361,10 @@
 386	Nicolas HENERY			Laurence PITOISET					
 387	Laurence PITOISET			Nicolas HENERY					
 388	Etienne CHARBONNET	(c) 1705	Bar-sur-Seine	Charlotte GUYOT	7.1.1732	Bourguignons	5.2.1770	Bar-sur-Seine	65
-389	Charlotte GUYOT	(c) 1708	Bourguignons	Etienne CHARBONNET	7.1.1732	Bourguignons	14.1.1768	Bar-sur-Seine	60
+389	Charlotte GUYOT	(c) 1708	Bourguignons	Etienne CHARBONNET	7.1.1732	Bourguignons	14.1.1768	Bar-sur-Seine	
 390	Pierre BAZIN	~ 1711	Briel-sur-Barse	• Anne REBOUX • Gilette HENRIOT	• < 1739 • 23.9.1739	•  • Bar-sur-Seine	17.9.1760	Bar-sur-Seine	~ 49
 391	Gilette HENRIOT	~ 1716	Bar-sur-Seine	Pierre BAZIN	23.9.1739	Bar-sur-Seine	> 1768		>= 52
-392	Jean BAILLY	(c) 1722		Denise GARNIER			24.10.1782	Laignes	60
+392	Jean BAILLY	(c) 1722		Denise GARNIER			24.10.1782	Laignes	
 393	Denise GARNIER	(c) 1713		Jean BAILLY			24.10.1781	Laignes	68
 394	Robert DUVAL	~ 1721	Villedieu	Edmée MOROT	28.1.1754	Vertault	< 1784		< 63
 395	Edmée MOROT	~ 1727		Robert DUVAL	28.1.1754	Vertault	14.9.1781	Villedieu	~ 54
@@ -376,14 +376,14 @@
 401	Marie Antoinette CAUET	29.4.1706	Huclier	Jean Philippe THERET	7.11.1731	Huclier	14.7.1783	Huclier	77
 402	Pierre François TOURSEL	30.3.1728	Huclier	Marie Catherine BOUCRY	< 1750		21.2.1751	Huclier	22
 403	Marie Catherine BOUCRY	~ 1716		Pierre François TOURSEL	< 1750		22.7.1783	Huclier	~ 67
-404	Joseph DESAULTY, SOTTY			• Marie Jeanne BEAUCOURT • Marie Philippe MAYEUX	• 7.7.1731 • 4.7.1746	•  • Belval (Troisvaux)			
-405	Marie Philippe MAYEUX			Joseph DESAULTY, SOTTY	4.7.1746	Belval (Troisvaux)			
+404	Joseph DESAULTY, SOTTY			• Marie Jeanne BEAUCOURT • Marie Philippe MAYEUX	• 7.7.1731 • 4.7.1746	•  • Abbaye de Belval - Troisvaux			
+405	Marie Philippe MAYEUX			Joseph DESAULTY, SOTTY	4.7.1746	Abbaye de Belval - Troisvaux			
 406	Jacques Théodore PUCHOIS	~ 1716		Marie Anne BOUCHENDHOMME	3.11.1742	Villers-Brûlin	24.7.1783	Huclier	~ 67
 407	Marie Anne BOUCHENDHOMME	9.5.1718	Villers-Brûlin	Jacques Théodore PUCHOIS	3.11.1742	Villers-Brûlin	14.5.1775	Huclier	57
 408	Philippe Jacques BERROYER	20.10.1719	Labeuvrière	Marie Jeanne RENARD	21.1.1745	Auchel	20.1.1787	Marles-les-Mines	67
 409	Marie Jeanne RENARD	30.11.1722	Auchel	Philippe Jacques BERROYER	21.1.1745	Auchel	6.3.1765	Marles-les-Mines	42
 410	Philippe Albert DÉTRÉ	< 1724		Marie Joseph DEWIMILLE	17.2.1740	Ligny-lès-Aire			
-411	Marie Joseph DEWIMILLE	(c) 1715		Philippe Albert DÉTRÉ	17.2.1740	Ligny-lès-Aire	15.6.1783	Floringhem	68
+411	Marie Joseph DEWIMILLE	(c) 1715		Philippe Albert DÉTRÉ	17.2.1740	Ligny-lès-Aire	15.6.1783	Floringhem	
 412	Antoine Maximillien DAUTREMEPUIS	~ 1695	Conteville-en-Ternois	Marie Françoise ANSELIN			23.10.1782	Conteville-en-Ternois	~ 87
 413	Marie Françoise ANSELIN	24.3.1699	Conteville-en-Ternois	Antoine Maximillien DAUTREMEPUIS			8.7.1786	Conteville-en-Ternois	87
 414	François FERON	13.6.1714	Valhuon	Marie Anne Joseph Théodore BONEL	30.6.1739	Valhuon	6.6.1772	Valhuon	57
@@ -397,11 +397,11 @@
 438	Martinus CARTON			Agnes PONSEELE	16.5.1741	Kortrijk			
 439	Agnes PONSEELE			Martinus CARTON	16.5.1741	Kortrijk			
 440	Nicolas LEFEVERE, LEFEBRE	13.5.1704	Rollegem	• Maria Catharina ROUSSELAERE • Maria Martina CHRISTIAENS • Maria Josepha LOOF • Maria Joanna CALLEWAERT	• 13.10.1744 • 18.6.1748 • 6.6.1752 • 	• Kortrijk • Kortrijk • Kortrijk • 	10.5.1755	Kortrijk	50
-441	Maria Martina CHRISTIAENS	(c) 1716	Kortrijk	Nicolas LEFEVERE, LEFEBRE	18.6.1748	Kortrijk	24.12.1751	Kortrijk	35
+441	Maria Martina CHRISTIAENS	(c) 1716	Kortrijk	Nicolas LEFEVERE, LEFEBRE	18.6.1748	Kortrijk	24.12.1751	Kortrijk	
 442	Joannes Baptista LOMMENS	16.2.1721	Lendelede	Maria Anna WALLAEYS	1.3.1745	Lendelede	26.12.1777	Lendelede	56
 443	Maria Anna WALLAEYS	20.7.1720	Lendelede	Joannes Baptista LOMMENS	1.3.1745	Lendelede	14.6.1783	Lendelede	62
-444	Antonius HOUTTEKINTS	(c) 1714		Maria Ludovica VERFAILLIE	<> 1742 & 1747		17.11.1783	Bellegem	69
-445	Maria Ludovica VERFAILLIE	(c) 1716		Antonius HOUTTEKINTS	<> 1742 & 1747		21.2.1785	Bellegem	69
+444	Antonius HOUTTEKINTS	(c) 1714		Maria Ludovica VERFAILLIE	<> 1742 & 1747		17.11.1783	Bellegem	
+445	Maria Ludovica VERFAILLIE	(c) 1716		Antonius HOUTTEKINTS	<> 1742 & 1747		21.2.1785	Bellegem	
 446	Pierre MAERTENS	9.5.1719	Bellegem	Marie Elisabeth VANDECAVEYE	25.6.1747	Bellegem	4.10.1783	Bellegem	64
 447	Marie Elisabeth VANDECAVEYE	1726	Bellegem	Pierre MAERTENS	25.6.1747	Bellegem	1769	Bellegem	43
 448	Jean ESPIAU, de LESPIACE DIT CABEAU	5.6.1734	Monein	Anne DE LAUGA	29.10.1765	Monein	20.6.1811	Monein	77
@@ -422,8 +422,8 @@
 463	Cécile Becile PERÉ	(c) 1752	Saint-Pé-de-Bigorre	François D'AJAS	1.2.1780	Oloron-Sainte-Marie - Paroisse Sainte-Croix	31.8.1812	Oloron-Sainte-Marie	60
 464	Jean LACOSTE		Vielleségure	Jeanne Marie NINOU			< 1815		
 465	Jeanne Marie NINOU			Jean LACOSTE			< 1815		
-466	Pierre ETCHEVERRY	(c) 1765	Féas	Marie BEDECARRATS	<> 1789 & 1794		> 1824		>= 58
-467	Marie BEDECARRATS	(c) 1764	Lasseubetat	Pierre ETCHEVERRY	<> 1789 & 1794		18.12.1824	Lasseubetat	60
+466	Pierre ETCHEVERRY	(c) 1765	Féas	Marie BEDECARRATS	<> 1789 & 1794		> 1824		
+467	Marie BEDECARRATS	(c) 1764	Lasseubetat	Pierre ETCHEVERRY	<> 1789 & 1794		18.12.1824	Lasseubetat	
 468	Jean AYRINE	19.2.1745	Lasseube	Marie Louise, Catherine ? de LARRARD	23.11.1773	Oloron-Sainte-Marie - Paroisse Sainte-Croix	19.ther .an XIII		60
 469	Marie Louise, Catherine ? de LARRARD	25.8.1742	Oloron-Sainte-Marie - Paroisse Sainte-Croix	Jean AYRINE	23.11.1773	Oloron-Sainte-Marie - Paroisse Sainte-Croix	12.vend .an XIII	Lasseube	62
 470	Jean LABASTARDE		Lasseube	Marie Anne CASTERES	25.10.1776	Lasseube	> 1810		
@@ -454,8 +454,8 @@
 497	Marie Jeanne DASSONVILLE	~ 1733		Jean Philippe MALBRANQUE	4.11.1756	Steenwerck	< an XI	Steenwerck	< 69
 498	Guillaume François Joseph BECQUART	25.5.1737	Sailly-sur-la-Lys	Marie Anne Joseph BLANQUART	5.5.1761	Sailly-sur-la-Lys	2.11.1806	Sailly-sur-la-Lys	69
 499	Marie Anne Joseph BLANQUART	25.1.1728	La Gorgue	Guillaume François Joseph BECQUART	5.5.1761	Sailly-sur-la-Lys	19.vent .an VI	Sailly-sur-la-Lys	70
-500	Louis Joseph DESACY, DESAEY	(c) 1739	Estaires	Jeanne Thérèse PENIN	1766	Nieuwkerke	21.10.1781	Nieuwkerke	42
-501	Jeanne Thérèse PENIN	(c) 1742	Nieuwkerke	• Louis Joseph DESACY, DESAEY • Jean François BARON	• 1766 • 	• Nieuwkerke • 	25.6.1816	Nieuwkerke	74
+500	Louis Joseph DESACY, DESAEY	(c) 1739	Estaires	Jeanne Thérèse PENIN	1766	Nieuwkerke	21.10.1781	Nieuwkerke	
+501	Jeanne Thérèse PENIN	(c) 1742	Nieuwkerke	• Louis Joseph DESACY, DESAEY • Jean François BARON	• 1766 • 	• Nieuwkerke • 	25.6.1816	Nieuwkerke	
 502	Philippe André DUHAYON	1743	Nieuwkerke	Catherine Josephine DERWEY, DRUETZ, DRUCK	1767	Nieuwkerke	18.10.1798	Nieuwkerke	55
 503	Catherine Josephine DERWEY, DRUETZ, DRUCK			Philippe André DUHAYON	1767	Nieuwkerke	7.2.1793	Nieuwkerke	
 504	Lamoral Joseph DESPRINGRE	~ 1733	Nieppe	Catherine Jeanne BARTIER	8.11.1758	Nieppe	21.vent .an X	Nieppe	~ 69
@@ -463,9 +463,9 @@
 506	François Joseph DESREMEAUX	9.1.1737	Erquinghem-Lys	• Angelique SIX • Jeanne Françoise Joseph BURIE	• < 1779 • 19.10.1779	•  • Erquinghem-Lys	16.10.1797	Erquinghem-Lys	60
 507	Jeanne Françoise Joseph BURIE	20.9.1758	Erquinghem-Lys	François Joseph DESREMEAUX	19.10.1779	Erquinghem-Lys	> 1813		>= 54
 508	Thomas Dominique CARDON	~ 1738	Nieppe	Marie Jeanne Marguerite LELONG	17.11.1767	Nieppe	6.2.1814	Nieppe	~ 76
-509	Marie Jeanne Marguerite LELONG	8.9.1744	Warneton	Thomas Dominique CARDON	17.11.1767	Nieppe	6.7.1832	Nieppe	87
+509	Marie Jeanne Marguerite LELONG	8.9.1744	Warneton (B)	Thomas Dominique CARDON	17.11.1767	Nieppe	6.7.1832	Nieppe	87
 510	François Louis MARQUILLY	13.2.1756	Erquinghem-Lys	Marie Thérèse DEGAVE	13.2.1776	Erquinghem-Lys	11.7.1824	Erquinghem-Lys	68
-511	Marie Thérèse DEGAVE	27.1.1755	Warneton	François Louis MARQUILLY	13.2.1776	Erquinghem-Lys	1.7.1826	Erquinghem-Lys	71
+511	Marie Thérèse DEGAVE	27.1.1755	Warneton (B)	François Louis MARQUILLY	13.2.1776	Erquinghem-Lys	1.7.1826	Erquinghem-Lys	71
 512	Thomas Henri BOUZIN	2.3.1702	Beclers	Marie Eulalie Joseph MACAN	7.5.1737	Wez-Velvain	12.4.1784	Wez-Velvain	82
 513	Marie Eulalie Joseph MACAN	20.1.1704	Wez-Velvain	Thomas Henri BOUZIN	7.5.1737	Wez-Velvain	2.1.1776	Wez-Velvain	71
 514	Alexis WAUQUIER	17.7.1714	Rumes	Marie Elisabeth LAMBERT	7.5.1748	Esplechin			
@@ -486,8 +486,8 @@
 529	Pélagie RENAUX	23.5.1728	Roubaix	Jean François Joseph MARISSAL	24.11.1750	Roubaix	16.4.1792	Roubaix	63
 530	Hyppolyte Jacques MEURISSE	12.12.1698	Roubaix	Marie Joseph GRIMONPONT	18.2.1727	Roubaix	14.2.1774	Roubaix	75
 531	Marie Joseph GRIMONPONT	~ 1708		Hyppolyte Jacques MEURISSE	18.2.1727	Roubaix	2.5.1772	Roubaix	~ 64
-532	Pierre François Joseph PONTIER	7.11.1728	Wattrelos	Marie Jeanne Marguerite DUJARDIN	18.6.1754	Roubaix	27.5.1800	Roubaix	71
-533	Marie Jeanne Marguerite DUJARDIN	12.9.1732	Roubaix	Pierre François Joseph PONTIER	18.6.1754	Roubaix	25.11.1780	Roubaix	48
+532	Pierre "François" Joseph PONTIER	7.11.1728	Wattrelos	Marie Jeanne Marguerite DUJARDIN	18.6.1754	Roubaix	27.5.1800	Roubaix	71
+533	Marie Jeanne Marguerite DUJARDIN	12.9.1732	Roubaix	Pierre "François" Joseph PONTIER	18.6.1754	Roubaix	25.11.1780	Roubaix	48
 534	Pierre Charles Joseph WESPIN	27.9.1740	Lille - Paroisse Saint Etienne	Éléonore BAYART	20.9.1764	Roubaix			
 535	Éléonore BAYART	16.7.1741	Roubaix	Pierre Charles Joseph WESPIN	20.9.1764	Roubaix	27.2.1785	Roubaix	43
 536	Jean Robert DESCHAMP	30.11.1699	Tourcoing	Marie Gabrielle LEFEBVRE			9.1.1756	Tourcoing	56
@@ -516,14 +516,14 @@
 559	Marie Jeanne Catherine BONTE	27.12.1720	Roubaix	Pierre Joseph POPPE	20.8.1743	Roubaix	> 1778	Roubaix	>= 57
 560	Pierre FLORIN			Marie Catherine POULAIN	1.2.1713	Estaimbourg			
 561	Marie Catherine POULAIN			Pierre FLORIN	1.2.1713	Estaimbourg			
-562	Charles Louis BOSSUT	31.3.1712	Pecq	Marie Anne Joseph SPRIET	4.8.1739	Templeuve			
-563	Marie Anne Joseph SPRIET	~ 1716		Charles Louis BOSSUT	4.8.1739	Templeuve	3.2.1744	Templeuve	~ 28
+562	Charles Louis BOSSUT	31.3.1712	Pecq	Marie Anne Joseph SPRIET	4.8.1739	Templeuve (B)			
+563	Marie Anne Joseph SPRIET	~ 1716		Charles Louis BOSSUT	4.8.1739	Templeuve (B)	3.2.1744	Templeuve	~ 28
 564	Joseph KINT			Angélique CATELLE					
 565	Angélique CATELLE			Joseph KINT					
-566	Pierre François HOROY	(c) 1704		Maria VERCAEMS			31.10.1782	Heestert	78
-567	Maria VERCAEMS	(c) 1710		Pierre François HOROY			17.1.1760	Heestert	50
-568	Etienne Vital CORNILLE	14.6.1711	Roubaix	Marie Elisabeth Joseph DESTOMBES	22.4.1738	Flers (Villeneuve d'Ascq)	17.6.1754	Flers (Villeneuve d'Ascq)	43
-569	Marie Elisabeth Joseph DESTOMBES	10.1.1716	Flers (Villeneuve d'Ascq)	Etienne Vital CORNILLE	22.4.1738	Flers (Villeneuve d'Ascq)	27.9.1744	Flers (Villeneuve d'Ascq)	28
+566	Pierre François HOROY	(c) 1704		Maria VERCAEMS			31.10.1782	Heestert	
+567	Maria VERCAEMS	(c) 1710		Pierre François HOROY			17.1.1760	Heestert	
+568	Etienne Vital CORNILLE	14.6.1711	Roubaix	Marie "Elisabeth" Joseph DESTOMBES	22.4.1738	Flers (Villeneuve d'Ascq)	17.6.1754	Flers (Villeneuve d'Ascq)	43
+569	Marie "Elisabeth" Joseph DESTOMBES	10.1.1716	Flers (Villeneuve d'Ascq)	Etienne Vital CORNILLE	22.4.1738	Flers (Villeneuve d'Ascq)	27.9.1744	Flers (Villeneuve d'Ascq)	28
 570	Pierre François, Joseph BERNARD	~ 1718		Marie Louise BOUSSEMART	7.4.1739	Wasquehal	1.9.1770	Wasquehal	~ 52
 571	Marie Louise BOUSSEMART	~ 1701		Pierre François, Joseph BERNARD	7.4.1739	Wasquehal			
 572	Antoine François Joseph DURIEZ	10.6.1727	Houplines	Reine Victoire Joseph LEVEUGLE	19.9.1752	Flers (Villeneuve d'Ascq)	18.fruc .an III	Marcq-en-Baroeul	68
@@ -536,10 +536,10 @@
 581	Béatrice MERLIN		Luingne	Arnould STEUT	3.2.1720	Luingne	25.10.1745	Luingne	
 582	Jacques François DUSOLLIER			Marie Magdeleine DESPERSIN					
 583	Marie Magdeleine DESPERSIN			Jacques François DUSOLLIER					
-584	Jean François MOLARD		Romain-aux-Bois	Marie GONÉ	10.2.1722	Colombey-lès-Choiseull - Breuvannes-en-Bassigny			
-585	Marie GONÉ	31.10.1701	Colombey-lès-Choiseull - Breuvannes-en-Bassigny	Jean François MOLARD	10.2.1722	Colombey-lès-Choiseull - Breuvannes-en-Bassigny			
-586	Jean Baptiste HAGE, HASSE, HAZE	(c) 1710		Marie Joseph BRISSY	31.5.1734	Lille - Paroisse Saint Etienne	> 1750		>= 40
-587	Marie Joseph BRISSY	(c) 1711		Jean Baptiste HAGE, HASSE, HAZE	31.5.1734	Lille - Paroisse Saint Etienne	14.6.1747	Maroilles	36
+584	Jean François MOLARD		Romain-aux-Bois	Marie GONÉ	10.2.1722	Colombey-lès-Choiseul - Breuvannes-en-Bassigny			
+585	Marie GONÉ	31.10.1701	Colombey-lès-Choiseul - Breuvannes-en-Bassigny	Jean François MOLARD	10.2.1722	Colombey-lès-Choiseul - Breuvannes-en-Bassigny			
+586	Jean Baptiste HAGE, HASSE, HAZE	(c) 1710		Marie Joseph BRISSY	31.5.1734	Lille - Paroisse Saint Etienne	> 1750		
+587	Marie Joseph BRISSY	(c) 1711		Jean Baptiste HAGE, HASSE, HAZE	31.5.1734	Lille - Paroisse Saint Etienne	14.6.1747	Maroilles	
 588	Pierre François PROUVOST	~ 1712		Marie Antoinette POLLET	17.7.1741	Wasquehal	8.9.1764	Roubaix	~ 52
 589	Marie Antoinette POLLET	22.9.1716	Wasquehal	Pierre François PROUVOST	17.7.1741	Wasquehal			
 590	Jean Baptiste CAUCHETEUX	11.8.1717	Roubaix	Angélique GRIMONPONT	26.11.1748	Roubaix	10.8.1787	Roubaix	69
@@ -663,8 +663,8 @@
 803	Marie Catherine PATTE			François CAUET					
 804	Pierre TOURSEL	~ 1687	Valhuon	Marie Charlotte CRESPIN	21.6.1715	Valhuon	7.10.1751	Valhuon	~ 64
 805	Marie Charlotte CRESPIN	31.5.1693	Valhuon	Pierre TOURSEL	21.6.1715	Valhuon	18.11.1758	Huclier	65
-808	Antoine DESAULTY	(c) 1665		Marie Gertrude PANNEQUIN			9.12.1737	Frévin-Capelle	72
-809	Marie Gertrude PANNEQUIN	(c) 1679		Antoine DESAULTY			3.10.1739	Frévin-Capelle	60
+808	Antoine DESAULTY	(c) 1665		Marie Gertrude PANNEQUIN			9.12.1737	Frévin-Capelle	
+809	Marie Gertrude PANNEQUIN	(c) 1679		Antoine DESAULTY			3.10.1739	Frévin-Capelle	
 810	Pierre MAYEUR			Marie Jeanne DECOURTRY					
 811	Marie Jeanne DECOURTRY			Pierre MAYEUR					
 812	Philippe PUCHOIS	~ 1674		Marie LUCAS			19.10.1750	Huclier	~ 76
@@ -687,8 +687,8 @@
 829	Madeleine CAPRON	~ 1684	Valhuon	Joseph FERON	3.6.1704	Valhuon	12.2.1744	Valhuon	~ 60
 830	Nicolas BONEL			Adrienne DUBUCHE	1.9.1713	Brias	27.3.1735	Valhuon	
 831	Adrienne DUBUCHE			Nicolas BONEL	1.9.1713	Brias			
-864	Antonius COUSEMENT	(c) 1658		Martina PLADYS			13.3.1734	Heule	76
-865	Martina PLADYS	(c) 1666		Antonius COUSEMENT			23.10.1745	Heule	79
+864	Antonius COUSEMENT	(c) 1658		Martina PLADYS			13.3.1734	Heule	
+865	Martina PLADYS	(c) 1666		Antonius COUSEMENT			23.10.1745	Heule	
 866	Nicolaus STROBBE	9.9.1652	Heule	Elisabeth BUYSE	21.9.1702	Heule	29.12.1738	Heule	86
 867	Elisabeth BUYSE			Nicolaus STROBBE	21.9.1702	Heule	26.5.1739	Heule	
 868	Ludovicus VERHAMME			Maria MICHIELS	15.4.1715	Kuurne			
@@ -706,8 +706,8 @@
 885	Catharina LEPIERE			Petrus LOMMENS	1713	Kuurne			
 886	Michaelis WALLAEYS			Joanna NEERINCK					
 887	Joanna NEERINCK			Michaelis WALLAEYS					
-892	Jacques MAERTENS	(c) 1660		Maria Catharina MESTDAGH	22.9.1717	Bellegem	18.11.1738	Bellegem	78
-893	Maria Catharina MESTDAGH	(c) 1677		Jacques MAERTENS	22.9.1717	Bellegem	25.3.1754	Bellegem	77
+892	Jacques MAERTENS	(c) 1660		Maria Catharina MESTDAGH	22.9.1717	Bellegem	18.11.1738	Bellegem	
+893	Maria Catharina MESTDAGH	(c) 1677		Jacques MAERTENS	22.9.1717	Bellegem	25.3.1754	Bellegem	
 894	Martinus VANDECAVEYE	11.10.1693	Kortrijk	Maria Catharina DENDIEVEL	22.9.1714	Bellegem	8.5.1727	Bellegem	33
 895	Maria Catharina DENDIEVEL	8.7.1686		Martinus VANDECAVEYE	22.9.1714	Bellegem	8.2.1769	Bellegem	82
 896	Pierre (Cadet) ESPIASSE		Monein	Anne LABETAA-LACOSTE	31.1.1728	Monein	> 1765		
@@ -797,11 +797,1337 @@
 1 013	Anne Elisabeth SINGIER			Pierre Joseph DESREMEAUX					
 1 014	Pierre Alexandre BURIE	19.2.1726	Lille	Jeanne Martine DELHAYT/DELHAY/DESHAYT	4.5.1750	Erquinghem-Lys	30.9.1807	Fleurbaix	81
 1 015	Jeanne Martine DELHAYT/DELHAY/DESHAYT	~ 1727	Erquinghem-Lys	Pierre Alexandre BURIE	4.5.1750	Erquinghem-Lys	6.5.1802	Erquinghem-Lys	~ 75
-1 016	Jean François CARDON	(c) 1702	Fleurbaix	Marie Brigitte LEURIDAN	27.6.1733		20.2.1780	Nieppe	78
+1 016	Jean François CARDON	(c) 1702	Fleurbaix	Marie Brigitte LEURIDAN	27.6.1733		20.2.1780	Nieppe	
 1 017	Marie Brigitte LEURIDAN	16.8.1711	Nieppe	Jean François CARDON	27.6.1733		1.3.1764	Nieppe	52
-1 018	Albert LELONG	20.8.1716	Warneton	Marie Françoise DUROT, DEROO, DEROUX	21.7.1739	Warneton	10.12.1747	Warneton	31
-1 019	Marie Françoise DUROT, DEROO, DEROUX	21.4.1715	Warneton	Albert LELONG	21.7.1739	Warneton	8.2.1795	Warneton	79
+1 018	Albert LELONG	20.8.1716	Warneton (B)	Marie Françoise DUROT, DEROO, DEROUX	21.7.1739	Warneton (B)	10.12.1747	Warneton (B)	31
+1 019	Marie Françoise DUROT, DEROO, DEROUX	21.4.1715	Warneton (B)	Albert LELONG	21.7.1739	Warneton (B)	8.2.1795	Warneton	79
 1 020	Jean François MARQUILLY	~ 1719	Fromelles	Marie Anne Joseph DELAVAL	31.8.1751	Erquinghem-Lys	> 1776		>= 57
 1 021	Marie Anne Joseph DELAVAL	~ 1720		Jean François MARQUILLY	31.8.1751	Erquinghem-Lys	<> 1756 & 1776		<> 36 & 55
-1 022	Jean Baptiste DEGAVE	(c) 1697	Warneton	Marie Catherine DUFOUR	12.8.1739	Warneton	23.8.1757	Warneton	60
-1 023	Marie Catherine DUFOUR	25.3.1719	Warneton	Jean Baptiste DEGAVE	12.8.1739	Warneton	7.11.1764	Warneton	45
+1 022	Jean Baptiste DEGAVE	(c) 1697	Warneton	Marie Catherine DUFOUR	12.8.1739	Warneton (B)	23.8.1757	Warneton (B)	
+1 023	Marie Catherine DUFOUR	25.3.1719	Warneton (B)	Jean Baptiste DEGAVE	12.8.1739	Warneton (B)	7.11.1764	Warneton	45
+1 024	Thomas BOUZIN	~ 1643		Marie Jacqueline DUMONT	7.7.1692	Tournai	10.8.1712	Beclers	~ 69
+1 025	Marie Jacqueline DUMONT	< 1670		Thomas BOUZIN	7.7.1692	Tournai			
+1 026	Antoine MACAN (OU MACAU)	20.2.1667		Marie Madeleine MACAN					
+1 027	Marie Madeleine MACAN			Antoine MACAN (OU MACAU)					
+1 028	Pierre WAUQUIER			Marie Anne MINET			< 1748		
+1 029	Marie Anne MINET			Pierre WAUQUIER					
+1 030	Jean Jacques LAMBERT	~ 1683		Marguerite DELSART			22.5.1783	Esplechin	~ 100
+1 031	Marguerite DELSART			Jean Jacques LAMBERT					
+1 032	Jean HENNIN, HANNIN, WAININ	2.2.1672	Annappes (Villeneuve-d'Ascq)	Marie Jeanne Marguerite TIERCE	26.2.1702	Lille - Fives	2.10.1744	Annappes (Villeneuve-d'Ascq)	72
+1 033	Marie Jeanne Marguerite TIERCE	~ 1676		Jean HENNIN, HANNIN, WAININ	26.2.1702	Lille - Fives	9.10.1744	Annappes (Villeneuve-d'Ascq)	~ 68
+1 034	François Joseph BARREZ	26.3.1697	Ascq (Villeneuve-d'Ascq)	Marie Agnès CUINGNY	3.6.1721	Ascq (Villeneuve-d'Ascq)	> 1745		>= 47
+1 035	Marie Agnès CUINGNY	19.1.1701	Ascq (Villeneuve-d'Ascq)	François Joseph BARREZ	3.6.1721	Ascq (Villeneuve-d'Ascq)			
+1 036	Toussaint LEPOUTRE	27.6.1694	Esplechin	Marie Anne Thérèse DUMORTIER	11.5.1723	Esplechin	8.6.1771	Esplechin	76
+1 037	Marie Anne Thérèse DUMORTIER	20.11.1698	Esplechin	Toussaint LEPOUTRE	11.5.1723	Esplechin	17.1.1762	Esplechin	63
+1 038	Joseph DUVIVIER			Marie Anne Joseph VREGIN					
+1 039	Marie Anne Joseph VREGIN	~ 1715		Joseph DUVIVIER			4.5.1759	Rumes	~ 44
+1 040	Toussaint BEAUCAMP	12.10.1656	Bouvignies	• Martine FALEMPE • Marie Marguerite DUCANCHET	• 19.7.1687 • 	• Bouvignies • 	18.6.1731	Bouvignies	74
+1 041	Martine FALEMPE		Beuvry-la-Forêt	Toussaint BEAUCAMP	19.7.1687	Bouvignies			
+1 044	Adrien BRESOUX								
+1 046	Pierre DELCROIX			Marie Louise DELANNAY					
+1 047	Marie Louise DELANNAY			Pierre DELCROIX					
+1 056	Jacques MARISSAL			Marie Jeanne RENARD	10.11.1719	Roubaix	< 1750		
+1 057	Marie Jeanne RENARD	16.7.1695	Roubaix	Jacques MARISSAL	10.11.1719	Roubaix	27.1.1759	Roubaix	63
+1 058	Adelin RENAUX	14.3.1688	Roubaix	Marie Jeanne DELESPAUL	5.4.1712	Roubaix	1.4.1773	Roubaix	85
+1 059	Marie Jeanne DELESPAUL	1686	Roubaix	Adelin RENAUX	5.4.1712	Roubaix	8.11.1755	Roubaix	69
+1 060	Etienne MEURISSE			Marie Jeanne FRANCHOMME					
+1 061	Marie Jeanne FRANCHOMME			Etienne MEURISSE					
+1 064	Dominique PONTIER	19.12.1695		Michelle MARESCAUX					
+1 065	Michelle MARESCAUX	~ 1705		Dominique PONTIER			11.9.1772	Wattrelos	~ 67
+1 066	Léopold Cornil DUJARDIN			Anne Joseph LEBRUN			< 1736		
+1 067	Anne Joseph LEBRUN			• Ferdinand SILENNE • Léopold Cornil DUJARDIN	• 4.1.1736 • 	• Roubaix • 			
+1 068	Charles Guillaumme WESPIN (HESPIN)	1701	Lille - Paroisse Saint Etienne	Marie Thérèse Joseph MASSEMER	24.11.1722	La Madeleine			
+1 069	Marie Thérèse Joseph MASSEMER	20.8.1698	La Madeleine	Charles Guillaumme WESPIN (HESPIN)	24.11.1722	La Madeleine	< 1764	La Madeleine	< 65
+1 070	Pierre Joseph BAYART	16.11.1711	Roubaix	Marie Catherine FARVACQUE	6.9.1740	Roubaix	28.7.1784	Roubaix	72
+1 071	Marie Catherine FARVACQUE	19.5.1718	Roubaix	Pierre Joseph BAYART	6.9.1740	Roubaix	23.10.1769	Roubaix	51
+1 072	Robert DESCHAMP			Marguerite LEFEBVRE					
+1 073	Marguerite LEFEBVRE			Robert DESCHAMP					
+1 074	Jacques LEFEBVRE			Marie Catherine FLAMENT					
+1 075	Marie Catherine FLAMENT			Jacques LEFEBVRE					
+1 076	Jean Baptiste WUILLE			Marie Jeanne Joseph LIAGRE					
+1 077	Marie Jeanne Joseph LIAGRE			Jean Baptiste WUILLE					
+1 078	Roger DELNATTE			Marie Catherine LECOUSTRE					
+1 079	Marie Catherine LECOUSTRE			Roger DELNATTE					
+1 080	Pierre François DELETOMBES			Marie Françoise CONQUE			< 1758		
+1 081	Marie Françoise CONQUE			Pierre François DELETOMBES					
+1 082	Jean François MATHON	9.3.1704	Roubaix	Marie Catherine PARENT	2.5.1731	Roubaix	28.11.1767	Roubaix	63
+1 083	Marie Catherine PARENT			Jean François MATHON	2.5.1731	Roubaix	< 1758		
+1 084	Joseph BATAILLE			Marie Joseph SIX					
+1 085	Marie Joseph SIX			Joseph BATAILLE					
+1 086	Jacques DELESCLUSE			Marie Françoise BONVIN			< 1761		
+1 087	Marie Françoise BONVIN			Jacques DELESCLUSE			< 1761		
+1 088	Adrien François LECLERCQ	22.2.1691	Roubaix	Michelle FARVACQUE	21.1.1713	Roubaix	> 1719		>= 27
+1 089	Michelle FARVACQUE			Adrien François LECLERCQ	21.1.1713	Roubaix			
+1 090	Jean Baptiste BEAUCARNE (BOCAGE)	4.6.1689	Roubaix	Marie Philippine Thérèse GREGOIRE	31.10.1722	Roubaix	6.3.1749	Roubaix	59
+1 091	Marie Philippine Thérèse GREGOIRE		Roubaix	Jean Baptiste BEAUCARNE (BOCAGE)	31.10.1722	Roubaix			
+1 092	Jean Baptiste Joseph DELESCLUSE	27.1.1707	Roubaix	Marie Catherine LEHIER	5.9.1730	Roubaix	< 1770		< 62
+1 093	Marie Catherine LEHIER	26.4.1710	Roubaix	Jean Baptiste Joseph DELESCLUSE	5.9.1730	Roubaix			
+1 094	Jean François MALFAIT			Marie Barbe DUPIRE	18.4.1719	Roubaix			
+1 095	Marie Barbe DUPIRE			Jean François MALFAIT	18.4.1719	Roubaix			
+1 096	Jean Baptiste CORNILLE	3.1.1708	Roubaix	Anne Marie LEVEUGLE	7.1.1730	Roubaix	16.11.1772	Roubaix	64
+1 097	Anne Marie LEVEUGLE	~ 1708		Jean Baptiste CORNILLE	7.1.1730	Roubaix	10.1.1775	Roubaix	~ 67
+1 098	Théophile DE WEPPE (DEWERPE)	30.11.1700	Roubaix	Jeanne Françoise BONSENS	22.10.1726	Sailly-Lez-Lannoy	26.7.1769	Roubaix	68
+1 099	Jeanne Françoise BONSENS	~ 1705	Sailly-Lez-Lannoy	Théophile DE WEPPE (DEWERPE)	22.10.1726	Sailly-Lez-Lannoy			
+1 104	Albert ROUSSEL			Michelle HAUWEL	12.6.1692	Wattrelos			
+1 105	Michelle HAUWEL			• Albert ROUSSEL • Adrien DESRUMAUX	• 12.6.1692 • 16.5.1711	• Wattrelos • Wattrelos			
+1 106	Michel LEBLAN			Marie Jeanne de HEUTTE, de HEULE, HEUDDES, EUDES	1706		> 1730		
+1 107	Marie Jeanne de HEUTTE, de HEULE, HEUDDES, EUDES			Michel LEBLAN	1706		< 1730		
+1 116	Judocus POPPE	16.5.1676	Poeke	Ursula DEMEYERE	28.4.1703	Poeke	19.10.1748	Kanegem	72
+1 117	Ursula DEMEYERE			Judocus POPPE	28.4.1703	Poeke			
+1 144	Pierre Antoine DURIEZ			Marie Anne HERRENG					
+1 145	Marie Anne HERRENG			Pierre Antoine DURIEZ			26.6.1807	Houplines	
+1 146	Blaise Joseph LEVEUGLE			Heleine Joseph BOURGEOIS	8.9.1733	Roubaix			
+1 147	Heleine Joseph BOURGEOIS			Blaise Joseph LEVEUGLE	8.9.1733	Roubaix			
+1 148	Jean Baptiste LEPEZ	~ 1705		Marie Anne Joseph DELEDALLE	6.2.1731	Wasquehal	4.4.1742	Wasquehal	~ 37
+1 149	Marie Anne Joseph DELEDALLE	17.9.1703	Wasquehal	Jean Baptiste LEPEZ	6.2.1731	Wasquehal	12.12.1780	Wasquehal	77
+1 150	Pierre MESPLON			Marie Catherine , Marie Christine MAS					
+1 151	Marie Catherine , Marie Christine MAS			Pierre MESPLON					
+1 168	Pierre MOLLARD			Barbe FROTIN			< 1722	Romain-aux-Bois	
+1 169	Barbe FROTIN			Pierre MOLLARD			< 1722		
+1 170	Jean GONÉ	~ 1672	Colombey-lès-Choiseul - Breuvannes-en-Bassigny	Marie COLIN			16.12.1739	Colombey-lès-Choiseul - Breuvannes-en-Bassigny	~ 67
+1 171	Marie COLIN	~ 1670	Colombey-lès-Choiseul - Breuvannes-en-Bassigny	Jean GONÉ			4.1.1740	Colombey-lès-Choiseul - Breuvannes-en-Bassigny	~ 70
+1 176	Pierre PROUVOST			Marie Jeanne FACON					
+1 177	Marie Jeanne FACON			Pierre PROUVOST					
+1 178	Philippe POLLET	21.12.1689	Marcq-en-Baroeul	Marie DELATTRE	25.9.1715	Roubaix			
+1 179	Marie DELATTRE			Philippe POLLET	25.9.1715	Roubaix			
+1 180	Nicolas CAUCHETEUX	~ 1686		Marie Barbe DEWAL	8.1.1711	Roubaix	27.6.1758	Roubaix	~ 72
+1 181	Marie Barbe DEWAL	~ 1688		Nicolas CAUCHETEUX	8.1.1711	Roubaix	4.4.1744	Roubaix	~ 56
+1 182	Jean François GRIMONPONT			Jeanne Rose (Marie Rose) LEPLAT	20.1.1723	Bondues			
+1 183	Jeanne Rose (Marie Rose) LEPLAT			Jean François GRIMONPONT	20.1.1723	Bondues	20.11.1741	Mouscron	
+1 186	Pierre Jean DELANNOY			Antoinette LESAGE					
+1 187	Antoinette LESAGE			Pierre Jean DELANNOY					
+1 190	Jean Baptiste CATRICE			Antoinette BONVIN	5.4.1701	Marcq-en-Baroeul			
+1 191	Antoinette BONVIN			Jean Baptiste CATRICE	5.4.1701	Marcq-en-Baroeul			
+1 192	Mathieu BAYART	23.10.1631	Roubaix	Adrienne PROUVOST	26.11.1684	Croix	< 14.7.1713		< 81
+1 193	Adrienne PROUVOST			Mathieu BAYART	26.11.1684	Croix			
+1 194	Mathieu DECOURCELLE	1644	Leers	Anne LIENARD			19.1.1699	Leers	55
+1 195	Anne LIENARD			Mathieu DECOURCELLE					
+1 196	Jean DELATTRE			Anroinette DEDALLE					
+1 197	Anroinette DEDALLE			Jean DELATTRE					
+1 198	Pierre LEBRUN			Jeanne DUJARDIN					
+1 199	Jeanne DUJARDIN			Pierre LEBRUN					
+1 200	Antoine Ferdinand BEGHIN	13.6.1677	Annappes (Villeneuve-d'Ascq)	Marie CATEL	11.1.1701	Annappes (Villeneuve-d'Ascq)			
+1 201	Marie CATEL			Antoine Ferdinand BEGHIN	11.1.1701	Annappes (Villeneuve-d'Ascq)			
+1 204	Jérôme DUBARD			Marie Anne MULLIER					
+1 205	Marie Anne MULLIER			Jérôme DUBARD					
+1 208	Jacques CASTELAIN			Sainte DELATTRE			14.2.1735	Nomain	
+1 209	Sainte DELATTRE			Jacques CASTELAIN			24.9.1729	Nomain	
+1 210	Pierre WATTEAUX			Marie Anne PIPART					
+1 211	Marie Anne PIPART			Pierre WATTEAUX					
+1 212	Antoine LEPERS	23.1.1661	Croix	Marguerite FLORIN	20.5.1690	Roubaix			
+1 213	Marguerite FLORIN	11.3.1666	Roubaix	Antoine LEPERS	20.5.1690	Roubaix			
+1 214	Antoine AGACHE	~ 1650	Hem	Marie BAYART	25.8.1674	Lys-Lez-Lannoy	17.2.1709	Sailly-Lez-Lannoy	~ 59
+1 215	Marie BAYART			Antoine AGACHE	25.8.1674	Lys-Lez-Lannoy	< 1709		
+1 220	Jean TESTARD			Geneviève HEBERT	22.11.1694	Saint-Denis - Paroisse Saint Rémy	> 1702		
+1 221	Geneviève HEBERT			Jean TESTARD	22.11.1694	Saint-Denis - Paroisse Saint Rémy	> 1702		
+1 222	Pierre VILLEGREUX			Marguerite YARD			< 1729		
+1 223	Marguerite YARD			Pierre VILLEGREUX					
+1 272	X X			Barbe LEGUERRIER					
+1 273	Barbe LEGUERRIER			X X			> 1739		
+1 274	Jacques GIFFARD	~ 1675	Bretteville-sur-Ay	Charlotte NICOLLE		Agon-Coutainville	23.4.1755	Bretteville-sur-Ay	~ 80
+1 275	Charlotte NICOLLE	~ 1677	Agon-Coutainville	Jacques GIFFARD		Agon-Coutainville	13.12.1762	Bretteville-sur-Ay	~ 85
+1 276	Raoul HOUELLEBEQUE			Catherine TIREL					
+1 277	Catherine TIREL			Raoul HOUELLEBEQUE					
+1 340	Antoine BAUR			Anne Marie SCHNEIDER					
+1 341	Anne Marie SCHNEIDER			Antoine BAUR			1789	Gundershoffen	
+1 344	Antoine HEUX	~ 1602	Campagne-lès-Guines	Jeanne HENNEQUIN			9.1675	Campagne-lès-Guines	~ 73
+1 345	Jeanne HENNEQUIN			Antoine HEUX			6.10.1702	Campagne-lès-Guines	
+1 348	François DUHAMEL			Marguerite GAVOIS	23.11.1665	Guînes	> 21.9.1679		
+1 349	Marguerite GAVOIS			François DUHAMEL	23.11.1665	Guînes	16.5.1682	Guînes	
+1 352	Jean FASQUEL			Marie HAMEREL	28.11.1682	Bouquehault			
+1 353	Marie HAMEREL	1650		Jean FASQUEL	28.11.1682	Bouquehault	23.3.1750	Bouquehault	100
+1 354	Antoine HIBON	1665		Marie Catherine BEAUSSART			3.4.1705	Campagne-lès-Guines	40
+1 355	Marie Catherine BEAUSSART			Antoine HIBON					
+1 356	Pierre BELLET	1660		Françoise BOULET					
+1 357	Françoise BOULET	1660		Pierre BELLET					
+1 358	Antoine BLONDEL	1635		Catherine PERON	28.5.1673	Balinghem	22.7.1690	Balinghem	55
+1 359	Catherine PERON	1642		Antoine BLONDEL	28.5.1673	Balinghem	13.11.1710	Balinghem	68
+1 362	Jacques NOEL	~ 1650		Marie COUVELART					
+1 363	Marie COUVELART	31.5.1660	Le Wast	Jacques NOEL			19.4.1700	Colembert	39
+1 368	Robert THOMAS	20.10.1666	Longfossé	Jacqueline QUESTU	21.10.1697	Longfossé	3.12.1737	Longfossé	71
+1 369	Jacqueline QUESTU	~ 1662		Robert THOMAS	21.10.1697	Longfossé	23.11.1727	Longfossé	~ 65
+1 392	Jean Philippe GRASSIEN			Jeanne ROUILLARD					
+1 393	Jeanne ROUILLARD			Jean Philippe GRASSIEN			7.8.1728	Guînes	
+1 394	Antoine HOCHART	~ 1663		Péronne DAUCY/DAUSSY	24.7.1679	Guînes	22.4.1723	Guînes	~ 60
+1 395	Péronne DAUCY/DAUSSY	9.3.1656	Guînes	Antoine HOCHART	24.7.1679	Guînes	26.11.1718	Guînes	62
+1 396	Antoine LENEZ	~ 1667		Jacqueline CHAVIGNOIS	2.10.1679	Pihen-lès-Guînes	20.1.1740	Pihen-lès-Guînes	~ 73
+1 397	Jacqueline CHAVIGNOIS	6.6.1655	Pihen-lès-Guînes	Antoine LENEZ	2.10.1679	Pihen-lès-Guînes	24.1.1728	Pihen-lès-Guînes	72
+1 398	Alexandre BEUTIN	5.10.1672	Tardinghen	Marie DAUVERGNE			2.11.1711	Wierre-Effroy	39
+1 399	Marie DAUVERGNE	~ 1666		Alexandre BEUTIN			1.3.1752	Pihen-lès-Guînes	~ 86
+1 402	François CAUX			Marie TETU	16.11.1673	Pihen-lès-Guînes	21.9.1692	Pihen-lès-Guînes	
+1 403	Marie TETU			François CAUX	16.11.1673	Pihen-lès-Guînes			
+1 404	Antoine FOURCROY	8.2.1663	Guînes	Marie DELATTRE	25.9.1684	Guînes	9.7.1721	Guînes	58
+1 405	Marie DELATTRE	~ 1658	Selles	Antoine FOURCROY	25.9.1684	Guînes	25.5.1716	Guînes	~ 58
+1 406	Charles COUSIN	4.3.1659	Guînes	Louise DELATTRE	26.7.1695	Guînes			
+1 407	Louise DELATTRE			Charles COUSIN	26.7.1695	Guînes			
+1 410	Marinus DEVOS	4.2.1635	Ardooie	Anna POLLIS			9.12.1694	Aalbeke	59
+1 411	Anna POLLIS	2.2.1637	Ardooie	Marinus DEVOS			29.9.1721	Ardooie	84
+1 472	Martin VERMOORTELE	~ 1647	Zwevezele	Marie WYBO	12.10.1676	Zwevezele	20.1.1695	Zwevezele	~ 48
+1 473	Marie WYBO	6.8.1651	Zwevezele	Martin VERMOORTELE	12.10.1676	Zwevezele			
+1 474	Pierre DE BUSSCHERE	11.11.1654	Zwevezele	Joanna VAN HAELEMEESCH	1.5.1682	Zwevezele	15.2.1714	Zwevezele	59
+1 475	Joanna VAN HAELEMEESCH	2.4.1660	Zwevezele	Pierre DE BUSSCHERE	1.5.1682	Zwevezele	21.5.1737	Zwevezele	77
+1 476	Joannes DE RIEMAECKERE	6.4.1664	Zwevezele	Maria VANDEN BUSSCHE	1.11.1695	Zwevezele	22.2.1740	Zwevezele	75
+1 477	Maria VANDEN BUSSCHE	28.3.1671	Zwevezele	Joannes DE RIEMAECKERE	1.11.1695	Zwevezele	25.4.1730	Zwevezele	59
+1 492	Jan MARLY			Joanna VONDIEREDONCK					
+1 493	Joanna VONDIEREDONCK			Jan MARLY					
+1 496	Laurentius VAN BRUAENE	~ 1665		Maria VERMEES	12.4.1695	Wingene	16.11.1735	Wingene	~ 70
+1 497	Maria VERMEES	~ 1662		Laurentius VAN BRUAENE	12.4.1695	Wingene	1.3.1742	Wingene	~ 80
+1 498	Joannes GELDHOF	~ 1662		Livina DE BOUVERE			23.10.1732	Wingene	~ 70
+1 499	Livina DE BOUVERE	21.9.1672	Wingene	Joannes GELDHOF			5.1.1730	Wingene	57
+1 500	Joannes VROMAN	~ 1684		Judoca GHUYS	10.4.1714	Wingene	22.11.1764	Wingene	~ 80
+1 501	Judoca GHUYS	~ 1693		Joannes VROMAN	10.4.1714	Wingene	20.8.1723	Wingene	~ 30
+1 502	Joannes VAN POUCKE	26.3.1684	Wingene	Jacoba VERMEULEN	21.7.1716	Wingene	6.11.1732	Wingene	48
+1 503	Jacoba VERMEULEN	~ 1684		Joannes VAN POUCKE	21.7.1716	Wingene	1.6.1759	Wingene	~ 75
+1 504	Antonius REYNAERT	19.4.1617	Ruddervoorde	Martina LOGGHE	9.2.1653	Ruddervoorde			
+1 505	Martina LOGGHE	29.1.1632	Torhout	Antonius REYNAERT	9.2.1653	Ruddervoorde			
+1 506	Joannes LATRUWE			Jacoba LABULCKE	3.8.1670	Ruddervoorde	9.6.1722	Ruddervoorde	
+1 507	Jacoba LABULCKE	12.10.1645	Ruddervoorde	Joannes LATRUWE	3.8.1670	Ruddervoorde	13.6.1718	Ruddervoorde	72
+1 524	Judocus (Joos) WARNIER(S)			Anna VANDYKE					
+1 525	Anna VANDYKE			Judocus (Joos) WARNIER(S)					
+1 526	Joannes HUBRECHT(S)			Cornelia VANDENBUSSCHE	10.5.1693	Aartrijke			
+1 527	Cornelia VANDENBUSSCHE	14.12.1672	Aartrijke	Joannes HUBRECHT(S)	10.5.1693	Aartrijke			
+1 538	Jean BOUVIER						> 1727		
+1 564	Antoine HENRIOT, HANRIOT			Françoise LECLERE					
+1 565	Françoise LECLERE			Antoine HENRIOT, HANRIOT					
+1 566	Nicolas CHAPPELAIN, CHAPLAIN, CAPELAIN			Françoise FLAMENT					
+1 567	Françoise FLAMENT			Nicolas CHAPPELAIN, CHAPLAIN, CAPELAIN					
+1 576	Nicolas (L'Ainé) DUVAL	~ 1640	Bragelogne-Beauvoir	Jeanne BERGER			> 1720		>= 79
+1 577	Jeanne BERGER			Nicolas (L'Ainé) DUVAL			13.9.1692	Villedieu	
+1 578	François SASOTTE			Claudine JUDEY			> 1720		
+1 579	Claudine JUDEY			François SASOTTE			> 1720		
+1 580	Robert MOROT	6.1642		Nicole BOULLEY	30.6.1669	Vertault	< 1719		< 76
+1 581	Nicole BOULLEY			Robert MOROT	30.6.1669	Vertault	> 1719		
+1 582	Estienne JACQUINET	<> 1640 & 1642	Bragelogne-Beauvoir	Jeanne RICARD	6.7.1688	Vertault	13.3.1732	Vertault	>= 90
+1 583	Jeanne RICARD	2.11.1664	Vertault	Estienne JACQUINET	6.7.1688	Vertault	> 1719		>= 54
+1 584	François MAITRE			Pierette GUYOT					
+1 585	Pierette GUYOT			François MAITRE					
+1 586	Claude REGNAULT	~ 1645	Arrelles	Marie PETIT	20.1.1671	Arrelles	< 1717		< 71
+1 587	Marie PETIT	~ 1645	Arrelles	Claude REGNAULT	20.1.1671	Arrelles			
+1 588	François REGNAULT	28.7.1647	Arrelles	Magdeleine ARCHAMBAULT			< 1702		< 54
+1 589	Magdeleine ARCHAMBAULT	~ 1651		François REGNAULT			9.9.1741	Arrelles	~ 90
+1 590	François MATELOT			Anne PIDANSAT			< 1718		
+1 591	Anne PIDANSAT			François MATELOT			< 1718		
+1 596	Jean GEOFFROY			Gilette JACQUO					
+1 597	Gilette JACQUO			Jean GEOFFROY					
+1 598	Valentin CHAMOIN			Magdeleine GIO					
+1 599	Magdeleine GIO			Valentin CHAMOIN					
+1 600	Eustache THERET	~ 1650	Valhuon	Marie Jeanne DASSONVAL	~ 1670			Brias	
+1 601	Marie Jeanne DASSONVAL	1.1652	Brias	Eustache THERET	~ 1670		> 1725		>= 73
+1 602	François CARAU			Jeanne DEFASQUES					
+1 603	Jeanne DEFASQUES			François CARAU					
+1 608	Philippe Martin TOURSEL	~ 1660		Emerantienne GOTTRAND			3.12.1736		~ 76
+1 609	Emerantienne GOTTRAND	~ 1660	Brias	Philippe Martin TOURSEL			> 1720	La Thieuloye	>= 59
+1 610	Charles CRESPIN	~ 1647		Marie Marguerite NOREL			30.5.1735	Valhuon	~ 88
+1 611	Marie Marguerite NOREL	~ 1665		Charles CRESPIN			> 1739		>= 73
+1 628	Nicolas BOUCHENDHOMME			Marie Françoise BELVAL			> 1707		
+1 629	Marie Françoise BELVAL	~ 1640		Nicolas BOUCHENDHOMME			<> 1700 & 1707		<> 60 & 66
+1 632	Pierre BERROYER	~ 1670		Marie PEIGNE			< 1750		< 79
+1 633	Marie PEIGNE	3.3.1669	Marles-les-Mines	Pierre BERROYER			< 1750		< 80
+1 634	Noël, Noé ATTAIGNANT (ATTALIANT)			Catherine BEHIN	30.7.1697	Lapugnoy			
+1 635	Catherine BEHIN			Noël, Noé ATTAIGNANT (ATTALIANT)	30.7.1697	Lapugnoy			
+1 636	Antoine RENARD			Marguerite BRUNEL	31.1.1686	Auchel			
+1 637	Marguerite BRUNEL			Antoine RENARD	31.1.1686	Auchel			
+1 640	Philippe DÉTRÉ			Nicole DESCHAMPS					
+1 641	Nicole DESCHAMPS			Philippe DÉTRÉ					
+1 642	Philippe CARON			Marie PAYELLE					
+1 643	Marie PAYELLE			Philippe CARON					
+1 656	Ghislain FERON	~ 1650	Valhuon				> 1704	Valhuon	>= 53
+1 732	Franciscus STROBBE	21.8.1619	Heule	Jossina GELLINCK					
+1 733	Jossina GELLINCK			Franciscus STROBBE					
+1 738	Bartholomeus MICHIELS			Maria LIPPENS					
+1 739	Maria LIPPENS			Bartholomeus MICHIELS					
+1 740	Amplonius MORTIER			Martina VERHELST	5.1689	Heule	1.11.1731	Heule	
+1 741	Martina VERHELST			Amplonius MORTIER	5.1689	Heule	12.5.1732	Heule	
+1 784	Richardus MAERTENS	(c) 1624		Christina VANMEENEN	30.4.1653	Bellegem	4.2.1707	Bellegem	
+1 785	Christina VANMEENEN			Richardus MAERTENS	30.4.1653	Bellegem			
+1 788	Jan VANDECAVEYE	16.1.1663	Bellegem	Joanna BRECKPOT					
+1 789	Joanna BRECKPOT	~ 1658		Jan VANDECAVEYE					
+1 802	Abraham CAMY			Marie SEIGNOR			5.11.1731	Monein	
+1 803	Marie SEIGNOR			Abraham CAMY					
+1 804	Jean DE MAULOU		Monein	Jeanne LABRANDIT					
+1 805	Jeanne LABRANDIT			Jean DE MAULOU					
+1 806	Jacques DE LAHARGUE			Jeanne NOGUÉ, NOUGU, NOUQUE	15.2.1689	Abos			
+1 807	Jeanne NOGUÉ, NOUGU, NOUQUE		Parbayse	Jacques DE LAHARGUE	15.2.1689	Abos			
+1 808	Bertrand POURRERE		Monein	Jeanne BARRERE	12.2.1667	Monein			
+1 809	Jeanne BARRERE			Bertrand POURRERE	12.2.1667	Monein			
+1 810	Pierre SALABERT			Catherine CABANIUS					
+1 811	Catherine CABANIUS			Pierre SALABERT					
+1 824	Georges GIRARD	~ 1673	Castelnau-Barbarens	Jeanne CASALET	< 1706		4.8.1748	Monein	~ 75
+1 825	Jeanne CASALET	11.7.1672	Monein	Georges GIRARD	< 1706		2.12.1748	Monein	76
+1 826	Jean BARTOT	~ 1693	Oloron-Sainte-Marie - Paroisse Sainte-Croix	Marie POURRAILLET	20.2.1721	Oloron-Sainte-Marie - Paroisse Sainte-Croix	< 1777		< 83
+1 827	Marie POURRAILLET	~ 1695	Oloron-Sainte-Marie - le Faget	Jean BARTOT	20.2.1721	Oloron-Sainte-Marie - Paroisse Sainte-Croix	27.1.1777	Oloron-Sainte-Marie	~ 82
+1 828	Jean LACOSTE	~ 1669	Oloron-Sainte-Marie - le Faget	Marie PUYOU	31.1.1701	Oloron-Sainte-Marie			
+1 829	Marie PUYOU			Jean LACOSTE	31.1.1701	Oloron-Sainte-Marie			
+1 830	Jean CASTEIG			Gracie CARRERE					
+1 831	Gracie CARRERE		Verdets	Jean CASTEIG					
+1 832	Pierre TAUSI	12.12.1675	Lasseube	Marie LABORDE de COUGEU	~ 1702	Estialescq		Lasseube	
+1 833	Marie LABORDE de COUGEU	7.9.1673	Lasseube	Pierre TAUSI	~ 1702	Estialescq		Lasseube	
+1 834	Jean PAILHÉ	~ 1698	Estialescq	Jeanne BARTHE	6.2.1725	Estialescq	27.12.1776	Estialescq	~ 78
+1 835	Jeanne BARTHE	2.5.1694	Monein	Jean PAILHÉ	6.2.1725	Estialescq	18.7.1768	Lasseube	74
+1 836	Jean CASSIÈRE	22.2.1698	Monein	Marie Magdeleine LAHAIRE	26.4.1717	Monein			
+1 837	Marie Magdeleine LAHAIRE	14.6.1698	Monein	Jean CASSIÈRE	26.4.1717	Monein			
+1 838	Jean BEIG	~ 1681		Magdeleine LACOURREYE	28.11.1720	Cardesse	28.6.1731	Cardesse	~ 50
+1 839	Magdeleine LACOURREYE	< 1705	Lées-Athas	Jean BEIG	28.11.1720	Cardesse	> 1756		>= 51
+1 846	Bertran HUSTET			Marie CAZE					
+1 847	Marie CAZE			Bertran HUSTET					
+1 872	Jean AYRINE		Lasseube	Marie MOUHOUS	26.6.1714	Lasseube			
+1 873	Marie MOUHOUS		Jurançon	Jean AYRINE	26.6.1714	Lasseube			
+1 874	Bernard MANOTTE DIT BERNADOU	~ 1673	Oloron-Sainte-Marie	Catherine de CAMOU	1.9.1697	Oloron-Sainte-Marie	1.1.1755	Oloron-Sainte-Marie	~ 81
+1 875	Catherine de CAMOU	20.10.1674	Oloron-Sainte-Marie	Bernard MANOTTE DIT BERNADOU	1.9.1697	Oloron-Sainte-Marie	> 1738		>= 63
+1 876	Salomon de LARRARD			Marie DU PRÉ			< 2.4.1706		
+1 877	Marie DU PRÉ			Salomon de LARRARD			> 5.12.1733		
+1 878	Bernard de TOUYA de CLAVERIE	27.1.1666	Oloron-Sainte-Marie - Paroisse Sainte-Croix	Madeleine LAPLACE	27.11.1706	Oloron-Sainte-Marie - Paroisse Sainte-Croix			
+1 879	Madeleine LAPLACE			Bernard de TOUYA de CLAVERIE	27.11.1706	Oloron-Sainte-Marie - Paroisse Sainte-Croix			
+1 912	Jean RANCES		Lasseube	Jeanne LASSALLE LORDAA	21.7.1701	Lasseube	> 1740		
+1 913	Jeanne LASSALLE LORDAA			Jean RANCES	21.7.1701	Lasseube	> 1740		
+1 914	Jean MONICOT			Catherine CAPMAISTE	18.2.1721	Lasseube	> 1740		
+1 915	Catherine CAPMAISTE			Jean MONICOT	18.2.1721	Lasseube	< 1740		
+1 920	Charles BAILLION		Mencas	Marguerite CARON	11.2.1676	Laires	< 9.7.1717		
+1 921	Marguerite CARON			Charles BAILLION	11.2.1676	Laires			
+1 922	Guillaume BARROIS	6.2.1656	Cléty	Marie ANSEL	4.2.1682		15.11.1710	Cléty	54
+1 923	Marie ANSEL			Guillaume BARROIS	4.2.1682				
+1 924	Antoine LEROY	~ 1642	Dohem	Antoinette ANSEL	29.7.1665	Dohem	20.11.1686	Dohem	~ 44
+1 925	Antoinette ANSEL	~ 1636	Dohem	Antoine LEROY	29.7.1665	Dohem	21.8.1711	Dohem	~ 75
+1 926	Jacques DELEPOUVE	~ 1644		Françoise HULIN	8.7.1671	Cléty	30.10.1707	Cléty	~ 63
+1 927	Françoise HULIN	~ 1646		Jacques DELEPOUVE	8.7.1671	Cléty	10.12.1740	Cléty	~ 94
+1 928	Marc GROU			Marie Magdeleine COCQUEMPOT					
+1 929	Marie Magdeleine COCQUEMPOT			Marc GROU					
+1 930	Jan GOU	2.2.1683	Pihem	Anne MARTEL			17.8.1763		80
+1 931	Anne MARTEL	17.8.1674		Jan GOU			28.11.1739	Pihem	65
+1 932	François BOUDART	~ 1669	Wavrans-sur-L'Aa	Marie Anne PARISIS	18.6.1698	Cléty	26.7.1756		~ 87
+1 933	Marie Anne PARISIS	22.7.1675		François BOUDART	18.6.1698	Cléty	1713	Cléty	37
+1 934	Pierre BACHELET	~ 1660		Marie DELEPOUVE	26.2.1699	Dohem	24.10.1716	Cléty	~ 56
+1 935	Marie DELEPOUVE	8.9.1669	Cléty	Pierre BACHELET	26.2.1699	Dohem	16.12.1759	Cléty	90
+1 936	Gabriel BERNARD	1667		Marie Anne LARIDAN	5.6.1714	Merck-Saint-Liévin	31.10.1747	Merck-Saint-Liévin	80
+1 937	Marie Anne LARIDAN	~ 1686	Merck-Saint-Liévin	Gabriel BERNARD	5.6.1714	Merck-Saint-Liévin	22.4.1743	Merck-Saint-Liévin	~ 57
+1 938	Omer ANSEL	~ 1668		Marie Jacquline ELART	4.2.1700	Dohem	9.11.1734	Dohem	~ 66
+1 939	Marie Jacquline ELART	14.11.1676	Dohem	Omer ANSEL	4.2.1700	Dohem	3.10.1726	Dohem	49
+1 940	Claude ROYEZ			Marie Madeleine DUFRESNE	16.10.1715	Fauquembergues			
+1 941	Marie Madeleine DUFRESNE			Claude ROYEZ	16.10.1715	Fauquembergues			
+1 942	Etienne FLAMENT			Marie Florence HAMBRE					
+1 943	Marie Florence HAMBRE			Etienne FLAMENT					
+1 950	Etienne DELORME	~ 1692	Bapaume	Marie Thérèse WALLIN			10.5.1792	Cléty	~ 100
+1 951	Marie Thérèse WALLIN	18.7.1692		Etienne DELORME			5.4.1756		63
+1 956	Alexandre Joseph MAGINOT	~ 1707	Quelmes	Marie Jacqueline SAILLY	17.2.1734	Tatinghem	23.5.1767	Tatinghem	~ 60
+1 957	Marie Jacqueline SAILLY		Tatinghem	Alexandre Joseph MAGINOT	17.2.1734	Tatinghem	18.10.1766	Tatinghem	
+1 958	Georges WINTREBERT	15.1.1693	Esquerdes	Marie Antoinette CHEVALIER	14.2.1726	Wizernes	19.12.1772	Wizernes	79
+1 959	Marie Antoinette CHEVALIER	13.6.1697	Verchocq	Georges WINTREBERT	14.2.1726	Wizernes	17.8.1763		66
+1 964	Pierre Joseph TRO(U)ART	2.5.1696	Racquinghem	Catherine BART	6.8.1721	Wittes	30.12.1776	Renescure	80
+1 965	Catherine BART	1699	Wittes	Pierre Joseph TRO(U)ART	6.8.1721	Wittes	20.3.1729	Renescure	30
+1 966	Philippe BEUGIN	~ 1683		Marie Jeanne VERHAEGE	17.2.1711	Renescure	16.11.1739	Renescure	~ 56
+1 967	Marie Jeanne VERHAEGE	~ 1691		Philippe BEUGIN	17.2.1711	Renescure	12.12.1751		~ 60
+1 976	André MERLIER			Marie Barbe MOREL	5.7.1712	Leulinghem			
+1 977	Marie Barbe MOREL			André MERLIER	5.7.1712	Leulinghem			
+1 978	François BOYA	~ 1703		Marie Isabelle GRUEZ	3.2.1722		6.8.1780	Bilques (Helfaut)	~ 77
+1 979	Marie Isabelle GRUEZ	1700	Bilques (Helfaut)	François BOYA	3.2.1722		2.4.1772	Bilques (Helfaut)	72
+1 980	Pierre OVAL			Marguerite DHESECQUES	1711				
+1 981	Marguerite DHESECQUES			Pierre OVAL	1711				
+1 982	Antoine FORTIER			Marie Thérèse GAY	1713	Esquerdes			
+1 983	Marie Thérèse GAY			Antoine FORTIER	1713	Esquerdes	< 1753		
+1 984	Jean Baptiste MALBRANQUE	~ 1667	Fleurbaix	Marie Jeanne DELACOEUILLERIE			21.2.1712	Steenwerck	~ 45
+1 985	Marie Jeanne DELACOEUILLERIE	~ 1670	Laventie	Jean Baptiste MALBRANQUE			> 1712		>= 41
+1 986	François COUSIN			Anne CAPON	14.9.1689	Steenwerck	2.11.1730	Steenwerck	
+1 987	Anne CAPON			François COUSIN	14.9.1689	Steenwerck	28.1.1741	Steenwerck	
+1 998	Vincent CAPPON	1667	La Gorgue	Marie Madeleine GOMBERT	< 1694		<> 1731 & 1741		>= 63
+1 999	Marie Madeleine GOMBERT	(c) 1676		Vincent CAPPON	< 1694		30.7.1741	La Gorgue	
+2 000	Eusèbe DE SACY	~ 1660		Charlotte Thérèse Catherine de MARIVOORDE	3.2.1692	Bergues	<> 12.3.1706 & 6.8.1709		<> 46 & 49
+2 001	Charlotte Thérèse Catherine de MARIVOORDE	~ 1660	Bergues	• Louis d'ASPERUZ • Eusèbe DE SACY • Philippe MEGRODE de LIEDERMAN	• 1.6.1689 • 3.2.1692 • 6.8.1709	• Bergues • Bergues • 	20.7.1717	Steenkerke (W.-Vl.)	~ 57
+2 002	Nicolas BASTIEN								
+2 016	Antoine DESPRINGRE			Claires VAN MEIRES					
+2 017	Claires VAN MEIRES			Antoine DESPRINGRE					
+2 018	Denis HEYTE	1645		Françoise DUMEZ			<> 1697 & 1714		>= 52
+2 019	Françoise DUMEZ	1650	Nieppe	Denis HEYTE					
+2 028	Jean Baptiste (Antoine Philippe) BURIE			Alexandra Françosie (Marie Françoise) MONIER			< 1751		
+2 029	Alexandra Françosie (Marie Françoise) MONIER			Jean Baptiste (Antoine Philippe) BURIE			< 1751		
+2 030	Jean Baptiste DELHAYT/DELHAY/DESHAYT			• Catherine Joseph BAUDE • Françoise DELAVAL	• 22.9.1750 • 	• Erquinghem-Lys • 	> 1751		
+2 031	Françoise DELAVAL	(c) 1682		Jean Baptiste DELHAYT/DELHAY/DESHAYT			26.5.1749	Erquinghem-Lys	
+2 032	Jean François CARDON			Marie Jeanne CORDONNIER					
+2 033	Marie Jeanne CORDONNIER			Jean François CARDON					
+2 034	Louis LORIDAN			Marie Jeanne LEURIDAN	1692	Armentières			
+2 035	Marie Jeanne LEURIDAN	27.12.1665	Armentières	Louis LORIDAN	1692	Armentières			
+2 038	Martin DUROT, DEROO			Maria Barbara VERCOIX, WARQOIN			9.4.1742	Warneton	
+2 039	Maria Barbara VERCOIX, WARQOIN			Martin DUROT, DEROO			9.4.1742	Warneton	
+2 040	Pierre Joseph MARQUILLIE	~ 1691		Marie Anne Elisabeth BLONDEAU	15.7.1716	Fromelles	9.9.1763	Fromelles	~ 72
+2 041	Marie Anne Elisabeth BLONDEAU	~ 1692	Fromelles	Pierre Joseph MARQUILLIE	15.7.1716	Fromelles	23.10.1755	Fromelles	~ 63
+2 042	Jacques DELAVAL	~ 1683		Marie Florence DEFIVES	30.6.1718	Erquinghem-Lys	22.9.1758	Erquinghem-Lys	~ 75
+2 043	Marie Florence DEFIVES			Jacques DELAVAL	30.6.1718	Erquinghem-Lys			
+2 044	Phillipe DEGAVE	25.3.1652	Warneton (B)	Françoise WERQUIN	11.9.1678	Warneton	11.6.1711	Warneton (B)	59
+2 045	Françoise WERQUIN			Phillipe DEGAVE	11.9.1678	Warneton	1.10.1719	Warneton (B)	
+2 046	Théodore, Antoine DUFOUR	14.1.1688	Warneton (B)	Marie Catherine DENOLLET	12.4.1716	Warneton (B)	17.2.1761	Warneton (B)	73
+2 047	Marie Catherine DENOLLET	26.3.1690	Warneton (B)	Théodore, Antoine DUFOUR	12.4.1716	Warneton (B)	26.6.1773	Warneton (B)	83
+2 048	X BOUZIN	~ 1600		? ?					
+2 049	? ?			X BOUZIN					
+2 052	Henri MACAU (OU MACAN)								
+2 056	Théodore WAUQUIER			Marie Jeanne WILLOQUET	10.11.1687	Rumes			
+2 057	Marie Jeanne WILLOQUET			Théodore WAUQUIER	10.11.1687	Rumes			
+2 064	Michel WAININ, HENNIN			Marie DELEPORTE	4.11.1669	Annappes (Villeneuve-d'Ascq)	29.4.1700	Annappes (Villeneuve-d'Ascq)	
+2 065	Marie DELEPORTE			Michel WAININ, HENNIN	4.11.1669	Annappes (Villeneuve-d'Ascq)			
+2 066	Jean TIERS	~ 1650		Marie DESQUIEN	28.7.1672	Flers (Villeneuve d'Ascq)	> 1718		>= 67
+2 067	Marie DESQUIEN	26.3.1645	Ascq (Villeneuve-d'Ascq)	Jean TIERS	28.7.1672	Flers (Villeneuve d'Ascq)	> 1704		>= 58
+2 068	Jean Jacques BARREZ	31.1.1662	Chemy	Dorothée DE THIEFFRY	8.6.1688	Ennevelin	2.2.1723	Ascq (Villeneuve-d'Ascq)	61
+2 069	Dorothée DE THIEFFRY	2.9.1663	Ennevelin	Jean Jacques BARREZ	8.6.1688	Ennevelin	31.12.1722	Ascq (Villeneuve-d'Ascq)	59
+2 070	Pierre CUINGNY	2.11.1667	Ascq (Villeneuve-d'Ascq)	Marie Agnès RIQUIEZ					
+2 071	Marie Agnès RIQUIEZ			Pierre CUINGNY					
+2 072	André LEPOUTRE			Marie Agnès CHEVALIER			22.12.1708	Esplechin	
+2 073	Marie Agnès CHEVALIER	~ 1658		André LEPOUTRE			18.2.1728	Esplechin	~ 70
+2 074	Pierre DUMORTIER	~ 1670		Marie Noëlle Natalie DELEVAL					
+2 075	Marie Noëlle Natalie DELEVAL	~ 1665		Pierre DUMORTIER			18.6.1758	Esplechin	~ 93
+2 080	Arnould BEAUCAMP			Marie COUVREUR			< 1687		
+2 081	Marie COUVREUR			Arnould BEAUCAMP					
+2 082	Josse FALEMPE			Catherine VERDIERE					
+2 083	Catherine VERDIERE			Josse FALEMPE					
+2 112	Guillaume MARISSAL						> 9.9.1720		
+2 114	Charles Antoine RENARD	1650	Croix	Marie Barbe CASTEL	23.7.1691	Roubaix	> 1720		>= 69
+2 115	Marie Barbe CASTEL	1650		Charles Antoine RENARD	23.7.1691	Roubaix	1720		69
+2 116	Gilles RENAUT	29.2.1656	Roubaix	Marie Anne DELECROIX					
+2 117	Marie Anne DELECROIX	1654		Gilles RENAUT			14.1.1702	Roubaix	48
+2 120	Jean MEURISSE			Jeanne DUPRET					
+2 121	Jeanne DUPRET			Jean MEURISSE					
+2 132	Philippe Arnould DUJARDIN	19.10.1682	Tourcoing	• Marie Catherine ROUSSEL • Anne Jeanne WAIMEL	• 27.7.1704 • 	• Bondues • 	1753	Lannoy	70
+2 133	Marie Catherine ROUSSEL			Philippe Arnould DUJARDIN	27.7.1704	Bondues			
+2 136	Jean WESPIN (HESPIN)			Jeanne Françoise GYS, GHYS	5.8.1686	Lille - Paroisse Saint Etienne	21.9.1705	Lille - Paroisse Saint Etienne	
+2 137	Jeanne Françoise GYS, GHYS	5.8.1668	Lille - Paroisse Saint Etienne	Jean WESPIN (HESPIN)	5.8.1686	Lille - Paroisse Saint Etienne			
+2 138	Pierre Arnould MASSEMER, MESSENAIRE			Michelle PARENT	29.7.1691	La Madeleine			
+2 139	Michelle PARENT	18.1.1670	Lannoy	Pierre Arnould MASSEMER, MESSENAIRE	29.7.1691	La Madeleine	11.6.1734	Lille - Paroisse Saint Etienne	64
+2 164	Louis MATHON			Marie Anne BEGHIN					
+2 165	Marie Anne BEGHIN			Louis MATHON					
+2 176	Adrien LECLERCQ	<> 1638 & 1657	Roubaix	Isabeau DELEBARRE			25.3.1719	Roubaix	>= 62
+2 177	Isabeau DELEBARRE	12.7.1653	Roncq	Adrien LECLERCQ			~ 1712		~ 58
+2 178	Louis FARVACQUE	19.12.1653	Sailly-Lez-Lannoy	Pétronille (Péronne) DUTHOIT	13.10.1685	Lannoy	< 1712		< 58
+2 179	Pétronille (Péronne) DUTHOIT			Louis FARVACQUE	13.10.1685	Lannoy	< 1712		
+2 180	Abraham BEAUCARNE	9.11.1664	Roubaix	Marguerite DESBARBIEUX	30.7.1688	Roubaix	17.3.1694	Roubaix	29
+2 181	Marguerite DESBARBIEUX			Abraham BEAUCARNE	30.7.1688	Roubaix			
+2 182	Joseph GREGOIRE			Claire BODOUX					
+2 183	Claire BODOUX	<> 1648 & 1655		Joseph GREGOIRE			> 1722		>= 67
+2 184	Robert Joseph DELESCLUSE	20.1.1685	Roubaix	Marie Joseph DEHERINNES	24.10.1703	Roubaix			
+2 185	Marie Joseph DEHERINNES			Robert Joseph DELESCLUSE	24.10.1703	Roubaix			
+2 186	Hugues Adrien LEHIER	21.9.1679	Roubaix	Catherine DE HALLUIN (DE HALLEWIN)	28.1.1706	Roubaix			
+2 187	Catherine DE HALLUIN (DE HALLEWIN)			Hugues Adrien LEHIER	28.1.1706	Roubaix			
+2 188	Jean MALFAIT								
+2 190	Jean DUPIRE								
+2 212	Michel LEBLAN			Catherine BEUSCART			< 1706		
+2 213	Catherine BEUSCART			Michel LEBLAN					
+2 214	Pierre HEUDDE								
+2 232	Petrus POPPE	26.8.1651	Poeke	Anna HUYS					
+2 233	Anna HUYS			Petrus POPPE					
+2 298	Jean DELEDALLE	~ 1674		Marie Jeanne LEMAIRE	10.7.1696	Wasquehal	14.6.1744	Wasquehal	~ 70
+2 299	Marie Jeanne LEMAIRE	~ 1676		Jean DELEDALLE	10.7.1696	Wasquehal	31.7.1740	Wasquehal	~ 64
+2 340	Henry GONÉ			Jeanne RICHARD					
+2 341	Jeanne RICHARD			Henry GONÉ					
+2 342	Didier COLIN			Jacqueline LATARTE					
+2 343	Jacqueline LATARTE			Didier COLIN					
+2 356	Gilles POLLET			Marie Catherine COUVREUR	26.3.1688	Mouvaux	< 1715		
+2 357	Marie Catherine COUVREUR			Gilles POLLET	26.3.1688	Mouvaux	> 1718		
+2 364	Allard GRIMONPONT	16.2.1637	Bondues	Marguerite MONTAIGNE			26.9.1719	Bondues	82
+2 365	Marguerite MONTAIGNE	29.8.1633		Allard GRIMONPONT					
+2 366	Philippe (Ignace) LEPLAT	~ 1670		Véronique TRACHET	24.11.1695	Marcq-en-Baroeul	< 1723		< 52
+2 367	Véronique TRACHET			Philippe (Ignace) LEPLAT	24.11.1695	Marcq-en-Baroeul			
+2 384	Jacques BAYART	~ 1600		Philipine BONTE	22.7.1630	Roubaix			
+2 385	Philipine BONTE			Jacques BAYART	22.7.1630	Roubaix			
+2 386	Jean PROUVOST			Jeanne DELAOUTRE	1629	Croix			
+2 387	Jeanne DELAOUTRE			Jean PROUVOST	1629	Croix			
+2 388	Jacques DECOURCELLE			Anne BATAILLE					
+2 389	Anne BATAILLE			Jacques DECOURCELLE					
+2 390	Jacques LIENARD			Marie Françoise DESPINOY					
+2 391	Marie Françoise DESPINOY			Jacques LIENARD					
+2 400	Jean Baptiste BEGHIN			Marie Catherine DUPRETZ					
+2 401	Marie Catherine DUPRETZ			Jean Baptiste BEGHIN					
+2 424	Jean LEPERS	17.1.1628	Croix	Marie Jeanne DELECROIX					
+2 425	Marie Jeanne DELECROIX			Jean LEPERS					
+2 426	Charles FLORIN			Catherine MAQUET	13.1.1640	Roubaix			
+2 427	Catherine MAQUET	12.9.1619	Roubaix	Charles FLORIN	13.1.1640	Roubaix			
+2 428	Antoine AGACHE			? SALEMBIER			< 1674		
+2 429	? SALEMBIER			Antoine AGACHE					
+2 430	Simon BAYART			Jeanne AGACHE					
+2 431	Jeanne AGACHE			Simon BAYART					
+2 440	Jean TESTARD	10.8.1639	Aubervilliers	Susanne VANTE	6.2.1670	Saint-Denis - Paroisse Saint Rémy	> 1694		>= 54
+2 441	Susanne VANTE			Jean TESTARD	6.2.1670	Saint-Denis - Paroisse Saint Rémy	> 1694		
+2 442	Claude HEBERT			Magdeleine FOY			< 1694		
+2 443	Magdeleine FOY			Claude HEBERT			> 1694		
+2 550	Guillaumme NICOLLE			Perette LE ROND					
+2 551	Perette LE ROND			Guillaumme NICOLLE					
+2 704	Jacques FASQUEL								
+2 706	François HAMEREL	1631		Antoinette DUFLOS			19.10.1706	Bouquehault	75
+2 707	Antoinette DUFLOS	10.6.1634	Saint-Tricat	François HAMEREL					
+2 712	Pierre BELLET								
+2 714	Gabriel BOULET	1635		Marie QUEVA			< 1684		< 49
+2 715	Marie QUEVA			Gabriel BOULET					
+2 716	Antoine BLONDEL			Marguerite MACHE					
+2 717	Marguerite MACHE			Antoine BLONDEL					
+2 718	François PERON	1600		Marie BAUDE	10.7.1634	Guînes			
+2 719	Marie BAUDE			François PERON	10.7.1634	Guînes			
+2 724	Jean NOEL			Jeanne BELANGER					
+2 725	Jeanne BELANGER			Jean NOEL					
+2 726	Antoine COUVELART	~ 1624		Louise LEGRAND	30.4.1656	Le Wast	10.6.1683	Belle-et-Houllefort	~ 59
+2 727	Louise LEGRAND			Antoine COUVELART	30.4.1656	Le Wast			
+2 736	Antoine THOMAS	1616		Françoise LEGRAND	9.10.1651	Longfossé	14.12.1691		75
+2 737	Françoise LEGRAND	~ 1627		Antoine THOMAS	9.10.1651	Longfossé	15.6.1677	Longfossé	~ 50
+2 738	Charles QUESTU								
+2 788	Liévin HOCHART	~ 1619		Françoise TESTART			18.10.1679	Guînes	~ 60
+2 789	Françoise TESTART			Liévin HOCHART			> 21.7.1680		
+2 790	Antoine DAUCY/DAUSSY	~ 1621		Marie LABOUE	17.10.1650	Guînes	3.1.1658	Guînes	~ 37
+2 791	Marie LABOUE	~ 1624		Antoine DAUCY/DAUSSY	17.10.1650	Guînes			
+2 794	Jacques CHAVIGNOIS	<> 1616 & 1618		Jacqueline DUQUESNOIS	26.7.1650	Pihen-lès-Guînes			
+2 795	Jacqueline DUQUESNOIS	~ 1614		Jacques CHAVIGNOIS	26.7.1650	Pihen-lès-Guînes			
+2 796	Alexandre BEUTIN			Catherine BUTEL	26.10.1671	Rety			
+2 797	Catherine BUTEL	~ 1646		Alexandre BEUTIN	26.10.1671	Rety	20.11.1698	Wierre-Effroy	~ 52
+2 798	Claude DAUVERGNE	~ 1629		Marguerite LEFAURE	14.1.1664	Boursin	10.4.1721	Boursin	~ 92
+2 799	Marguerite LEFAURE	~ 1640		Claude DAUVERGNE	14.1.1664	Boursin			
+2 808	Jean FOURCROY	~ 1608		Gabrielle HAVET			14.2.1672	Guînes	~ 64
+2 809	Gabrielle HAVET	~ 1614		Jean FOURCROY			3.7.1686	Guînes	~ 72
+2 810	Oudart DELATTRE	~ 1605		Marguerite LOUVET			9.5.1675	Selles	~ 70
+2 811	Marguerite LOUVET			Oudart DELATTRE			> 1684		
+2 812	Antoine COUSIN			Margerite DUHAMEL	29.6.1655	Guînes			
+2 813	Margerite DUHAMEL	~ 1625		Antoine COUSIN	29.6.1655	Guînes	16.9.1670	Guînes	~ 45
+2 820	Passcharius DEVOS	~ 1600		Judoca SCHOTTE					
+2 821	Judoca SCHOTTE	~ 1600		Passcharius DEVOS					
+2 822	Franciscus POLLIS	10.7.1607	Ardooie	Maria WERBROUCK					
+2 823	Maria WERBROUCK	~ 1600		Franciscus POLLIS					
+2 946	Marinus WYBO	~ 1620		Anna INGELBEEN	~ 1649		4.10.1665	Zwevezele	~ 45
+2 947	Anna INGELBEEN	~ 1623		Marinus WYBO	~ 1649				
+2 948	Egidius DE BUSSCHERE	~ 1630		Petronella VAN RYCKEGHEM	11.1.1654	Zwevezele			
+2 949	Petronella VAN RYCKEGHEM	~ 1630		Egidius DE BUSSCHERE	11.1.1654	Zwevezele	3.5.1701	Zwevezele	~ 71
+2 950	Guillielmus VAN HAELEMEESCH	~ 1630		Egidia DHONDT	12.2.1654	Koolskamp			
+2 951	Egidia DHONDT	~ 1630		Guillielmus VAN HAELEMEESCH	12.2.1654	Koolskamp	16.7.1681	Zwevezele	~ 51
+2 952	Adrianus DE RIEMAECKERE	~ 1633		Judoca POTTIE	19.3.1661	Zwevezele	23.4.1698	Zwevezele	~ 65
+2 953	Judoca POTTIE	~ 1635		Adrianus DE RIEMAECKERE	19.3.1661	Zwevezele			
+2 998	Livinus BOUVENS	~ 1650		Joanna VERWATERMUELEN	1.3.1672	Wingene	2.12.1715	Wingene	~ 65
+2 999	Joanna VERWATERMUELEN	~ 1646		Livinus BOUVENS	1.3.1672	Wingene	30.10.1689	Wingene	~ 43
+3 004	Adrianus (=Guilielmus) VAN POUCKE	30.10.1639	Wingene	Francisca VAN DAELE	23.4.1679	Wingene	31.1.1694	Wingene	54
+3 005	Francisca VAN DAELE	<> 1629 & 1661		Adrianus (=Guilielmus) VAN POUCKE	23.4.1679	Wingene	> 1694		>= 33
+3 008	Jacobus REYNAERT			Joanna DUMON					
+3 009	Joanna DUMON			Jacobus REYNAERT					
+3 010	Jacobus LOGGHE			Maria BELTENS					
+3 011	Maria BELTENS			Jacobus LOGGHE					
+3 014	Andreas DELABULQUES	30.11.1617	Ruddervoorde	Joanna DEGROOTE					
+3 015	Joanna DEGROOTE			Andreas DELABULQUES					
+3 054	Joannes VANDENBUSSCHE			Catharina DANNEELS					
+3 055	Catharina DANNEELS			Joannes VANDENBUSSCHE					
+3 152	François DUVAL			Elisabeth FAVIER			9.8.1693	Bragelogne-Beauvoir	
+3 153	Elisabeth FAVIER			François DUVAL			4.10.1693	Bragelogne-Beauvoir	
+3 160	Pierre MOROT								
+3 162	Charles BOULLEY			Aubine SONNOIS, SAUNOIS			< 1687		
+3 163	Aubine SONNOIS, SAUNOIS	<> 1606 & 1608		Charles BOULLEY			21.3.1687	Vertault	>= 79
+3 164	Robert JACQUINET			Roberte JORRY			25.2.1672	Vertault	
+3 165	Roberte JORRY			Robert JACQUINET			15.4.1681	Bragelogne-Beauvoir	
+3 166	Edme RICARD		Les Riceys	Roquette DÉON	29.1.1664	Vertault	<> 1688 & 1694		
+3 167	Roquette DÉON	<> 1633 & 1641		Edme RICARD	29.1.1664	Vertault	28.2.1710	Vertault	>= 69
+3 172	François REGNAULT			Anne PETIT					
+3 173	Anne PETIT			François REGNAULT			< 1681	Arrelles	
+3 174	Edme PETIT			Anne BAZIN					
+3 175	Anne BAZIN	~ 1615		Edme PETIT			10.10.1678	Arrelles	~ 63
+3 176	Innocent REGNAULT	~ 1616		LEAU(X)	21.11.1645	Arrelles	7.11.1676	Arrelles	~ 60
+3 177	LEAU(X)			Innocent REGNAULT	21.11.1645	Arrelles	2.10.1680	Arrelles	
+3 178	Jean ARCHAMBAULT			Edmée PICARDAT LARCHER					
+3 179	Edmée PICARDAT LARCHER			Jean ARCHAMBAULT					
+3 202	François DASSONVAL			Marie REGNIER	~ 1650	Brias	< 3.7.1661		
+3 203	Marie REGNIER			François DASSONVAL	~ 1650	Brias	3.7.1661	Brias	
+3 216	Maximilien TOURSEL			Marie THERET					
+3 217	Marie THERET	~ 1625		Maximilien TOURSEL			> 1670		>= 45
+3 218	Gilles GOTTRAND	~ 1635	Brias	Lamberte DESQUINCOURT	~ 1660		> 1680	Brias	>= 45
+3 219	Lamberte DESQUINCOURT	~ 1635	Haillicourt	Gilles GOTTRAND	~ 1660		> 1709	Valhuon	>= 74
+3 220	Antoine CRESPIN	~ 1625	Valhuon				> 1680	Valhuon	>= 55
+3 222	Pierre NOREL	~ 1620	Bours				> 1660	Bours	>= 40
+3 264	François BERROYER	~ 1640		Marie Anne FACON			31.3.1690	Lapugnoy	~ 50
+3 265	Marie Anne FACON	~ 1640		François BERROYER			16.5.1694	Lapugnoy	~ 54
+3 266	Marc PEIGNE			Catherine DEBOUT					
+3 267	Catherine DEBOUT			Marc PEIGNE					
+3 464	Rougaert (Rogerius) STROBBE			Béatrice DRUWELLE					
+3 465	Béatrice DRUWELLE			Rougaert (Rogerius) STROBBE					
+3 612	Jean DE LAHARGUE								
+3 614	Arnaud NOGUÉ								
+3 650	Gabriel CASALET			Jeanne COIGDAREMS	10.5.1660	Monein	16.1.1702	Monein	
+3 651	Jeanne COIGDAREMS			Gabriel CASALET	10.5.1660	Monein			
+3 654	Jean PENE			Marie POURRAILLET					
+3 655	Marie POURRAILLET			Jean PENE					
+3 656	Jean LACOSTE								
+3 664	Jean-Pierre TAUSI	7.4.1638	Lasseube	Catherine JAGOU			26.11.1730	Lasseube	92
+3 665	Catherine JAGOU			Jean-Pierre TAUSI			<> 1680 & 1690	Lasseube	
+3 666	Pierre LABORDE de COUGEU	1.11.1643	Lasseube	Catherine LAS LÉAS					
+3 667	Catherine LAS LÉAS	7.3.1638	Lasseube	Pierre LABORDE de COUGEU					
+3 668	Pierre PUYOU	30.3.1658	Monein	Marie PAILHÉ			5.9.1731	Estialescq	73
+3 669	Marie PAILHÉ	17.5.1668	Monein	Pierre PUYOU			22.3.1733	Estialescq	64
+3 670	Gratian BARTHE	22.11.1649	Monein	Marie MAYESTE					
+3 671	Marie MAYESTE	10.5.1656	Lucq-de-Béarn	Gratian BARTHE					
+3 672	Jean CASSIÈRE	19.3.1667	Monein	Jeanne COMPAING	12.11.1695	Monein			
+3 673	Jeanne COMPAING	< 1675		Jean CASSIÈRE	12.11.1695	Monein			
+3 674	Jean LAHAIRE	< 1678		Jeanne THOMAS					
+3 675	Jeanne THOMAS	< 1678		Jean LAHAIRE					
+3 678	Jean LACOURREYE	< 1685	Lées-Athas	Marguerite ARRIGAS			> 1720		>= 34
+3 679	Marguerite ARRIGAS	< 1690	Lées-Athas	Jean LACOURREYE					
+3 748	Pierre BERNADOU			Marie JAYMOT			> 1698		
+3 749	Marie JAYMOT			Pierre BERNADOU					
+3 750	Jean de CAMOU			Jeanne LASSALLE			> 1707		
+3 751	Jeanne LASSALLE			Jean de CAMOU			> 1707		
+3 752	Alexandre de LARRALDE DIT de LARRARD			Anne GAILLARD	22.6.1636	Villeton	6.12.1663	Villeton	
+3 753	Anne GAILLARD			Alexandre de LARRALDE DIT de LARRARD	22.6.1636	Villeton			
+3 756	Jean Pierre de TOUYA			Jeanne de CLAVERIE					
+3 757	Jeanne de CLAVERIE			Jean Pierre de TOUYA					
+3 844	Jacques BARROIS	~ 1631		Catherine CAROULLE	1.11.1654	Cléty	15.12.1681		~ 50
+3 845	Catherine CAROULLE			Jacques BARROIS	1.11.1654	Cléty	29.7.1674		
+3 860	Jan GOU			Gabrielle TARTARE	28.1.1680	Pihem			
+3 861	Gabrielle TARTARE	20.11.1655	Pihem	Jan GOU	28.1.1680	Pihem			
+3 862	Jan MARTEL			Marguerite ZUNNEQUIN					
+3 863	Marguerite ZUNNEQUIN	17.8.1641	Pihem	Jan MARTEL					
+3 864	François BOUDART			Anne BEAURAIN					
+3 865	Anne BEAURAIN			François BOUDART			< 31.5.1698		
+3 866	Mathias PARISIS	~ 1644		Marie ALLOY	6.7.1669		1687	Cléty	~ 43
+3 867	Marie ALLOY			Mathias PARISIS	6.7.1669				
+3 868	Hubert BACHELET			Catherine MAJEU			< 14.2.1699		
+3 869	Catherine MAJEU			Hubert BACHELET					
+3 870	Gérard DELEPOUVE	~ 1645		Jenne DELECROIX	28.7.1666	Dohem	12.10.1710	Dohem	~ 65
+3 871	Jenne DELECROIX			Gérard DELEPOUVE	28.7.1666	Dohem			
+3 872	Adrien BERNARD						< 5.6.1714		
+3 878	Pierre ELART	23.3.1653		Elisabeth LEFEBVRE	2.1.1677	Dohem			
+3 879	Elisabeth LEFEBVRE	~ 1650		Pierre ELART	2.1.1677	Dohem	9.10.1703	Dohem	~ 53
+3 902	Morand WALLIN	~ 1643		Jeanne ALEXANDRE	3.6.1683	Cléty	13.7.1727	Cléty	~ 84
+3 903	Jeanne ALEXANDRE	~ 1650		Morand WALLIN	3.6.1683	Cléty	6.2.1742	Cléty	~ 92
+3 912	Louis MAGINOT	~ 1674		Marie Françoise BECQUET	23.11.1700	Quelmes	26.5.1730	Saint-Omer - Paroisse Saint Jean Baptiste	~ 56
+3 913	Marie Françoise BECQUET	~ 1680		Louis MAGINOT	23.11.1700	Quelmes	> 1758		>= 78
+3 914	Guillaumes SAILLY			Marie Anne LAGUAISSE	11.2.1706	Tatinghem	7.10.1760	Tatinghem	
+3 915	Marie Anne LAGUAISSE			Guillaumes SAILLY	11.2.1706	Tatinghem	< 1734		
+3 916	Jacques WINTREBERT	~ 1661	Esquerdes	Marie Marguerite BINET	1685		5.9.1726	Esquerdes	~ 65
+3 917	Marie Marguerite BINET	~ 1665		Jacques WINTREBERT	1685		24.5.1700	Esquerdes	~ 35
+3 918	Jean CHEVALIER			Marie Antoinette THULLIER					
+3 919	Marie Antoinette THULLIER			Jean CHEVALIER			5.6.1736	Witternesse	
+3 928	Guilbert TRO(U)ART	~ 1660	Aire-sur-la-Lys - Paroise Saint Pierre	Catherine LEROY	24.11.1688	Wardrecques	28.7.1710	Racquinghem	~ 50
+3 929	Catherine LEROY	15.11.1664	Wardrecques	Guilbert TRO(U)ART	24.11.1688	Wardrecques	4.12.1727	Renescure	63
+3 952	Nicolas MERLIER			Jeanne DUCROCQ					
+3 953	Jeanne DUCROCQ			Nicolas MERLIER					
+3 954	Louis MOREL			Catherine CAPELLE	1.2.1679	Leulinghem			
+3 955	Catherine CAPELLE			Louis MOREL	1.2.1679	Leulinghem			
+3 956	Jacques BOYA			Nicole FRERET					
+3 957	Nicole FRERET			Jacques BOYA					
+3 958	Pierre GRUEZ	29.1.1668	Capelle-sur-la-Lys	Marie Jeanne Louise MOREL	~ 1689	Bilques (Helfaut)	< 1720		< 51
+3 959	Marie Jeanne Louise MOREL	1669		Pierre GRUEZ	~ 1689	Bilques (Helfaut)	6.11.1745	Bilques (Helfaut)	76
+3 962	Antoine DHESECQUES			Marguerite DIETTE			< 1711		
+3 963	Marguerite DIETTE			Antoine DHESECQUES			< 1711		
+3 964	Jean FORTIER			Françoise WAGON			> 1713		
+3 965	Françoise WAGON			Jean FORTIER			< 1713		
+3 966	Christophe LEGAY			Marie BAILLY	20.6.1676		< 1713		
+3 967	Marie BAILLY			Christophe LEGAY	20.6.1676		> 1713		
+3 996	Jacques CAPPON			Marie LEJEUNE	< 1666				
+3 997	Marie LEJEUNE			Jacques CAPPON	< 1666				
+4 000	Antoine DE SACY			Margriete (Marguerite) POINTEZ			< 1686		
+4 001	Margriete (Marguerite) POINTEZ			Antoine DE SACY					
+4 002	Guillaume, Guillain de MARIVOORDE	~ 1610	Estaires	Philippotte LOTTIN			< 1685		< 75
+4 003	Philippotte LOTTIN	~ 1620		Guillaume, Guillain de MARIVOORDE					
+4 068	André LORIDAN			Jeanne COUROUBLE					
+4 069	Jeanne COUROUBLE			André LORIDAN					
+4 070	Antoine LEURIDAN	30.1.1628	Armentières	Marie Anne CHARLET	29.6.1660	Armentières			
+4 071	Marie Anne CHARLET	27.9.1639	Armentières	Antoine LEURIDAN	29.6.1660	Armentières			
+4 080	Gilles MARQUILLIE			Catherine DESPRETZ	1.1689				
+4 081	Catherine DESPRETZ		Fleurbaix	Gilles MARQUILLIE	1.1689				
+4 082	Philippe BLONDEL		Fromelles	Catherine RUYANT	24.3.1674	Le Maisnil		Fromelles	
+4 083	Catherine RUYANT		Le Maisnil	Philippe BLONDEL	24.3.1674	Le Maisnil		Fromelles	
+4 084	Pierre DELAVAL								
+4 086	Pierre DEFIVES			Marguerite DESRAMAUX			> 1718		
+4 087	Marguerite DESRAMAUX			Pierre DEFIVES					
+4 092	Paschasy DUFOUR			Jacoba CHARLET			20.9.1725	Warneton (B)	
+4 093	Jacoba CHARLET			Paschasy DUFOUR			28.6.1723	Warneton (B)	
+4 094	Jean DENOLLET			Marguerite CALONNE	25.6.1687	Warneton (B)			
+4 095	Marguerite CALONNE			Jean DENOLLET	25.6.1687	Warneton (B)	20.12.1701	Warneton (B)	
+4 104	Nicolas MACAU (OU MACAN)								
+4 128	Siméon WAIGNIN			Marie MULLIER			~ 1679		
+4 129	Marie MULLIER			Siméon WAIGNIN					
+4 132	Antoine TIERS						< 1702		
+4 134	Jérosme DESQUIEN	~ 1609		Jeanne WAYMEL		Fournes-en-Weppes	2.4.1656	Ascq (Villeneuve-d'Ascq)	~ 47
+4 135	Jeanne WAYMEL		Fournes-en-Weppes	Jérosme DESQUIEN		Fournes-en-Weppes	6.7.1696	Ascq (Villeneuve-d'Ascq)	
+4 136	Jérosme BARREZ	~ 1629		Jeanne HACHE			23.9.1707	Chemy	~ 78
+4 137	Jeanne HACHE			Jérosme BARREZ					
+4 138	Pierre DE THIEFFRY	~ 1630		Caroline DE BOULONGNE	< 1653		26.7.1715	Ennevelin	~ 85
+4 139	Caroline DE BOULONGNE	~ 1630		Pierre DE THIEFFRY	< 1653		17.6.1682	Ennevelin	~ 52
+4 140	Ambroise CUINGNY			Marguerite POLLET					
+4 141	Marguerite POLLET			Ambroise CUINGNY			7.10.1669	Ascq (Villeneuve-d'Ascq)	
+4 150	Mathieu DELEVAL			Antoinette BERNARD			7.12.1709	Esplechin	
+4 151	Antoinette BERNARD			Mathieu DELEVAL			10.12.1715	Esplechin	
+4 228	Antoine RENARD	21.11.1622	Ascq (Villeneuve-d'Ascq)	Marie Barbe DU FOREST			10.2.1702	Roubaix	79
+4 229	Marie Barbe DU FOREST	1625	Croix	Antoine RENARD			1691	Saméon	66
+4 230	Antoine CASTEL	17.4.1623	Roubaix	Isabelle BAUDOU	4.6.1648	Roubaix	5.3.1699	Roubaix	75
+4 231	Isabelle BAUDOU	5.12.1625	Roubaix	Antoine CASTEL	4.6.1648	Roubaix	21.1.1699	Roubaix	73
+4 232	Robert RENAUT			Peronne SORIS	29.1.1638	Roubaix			
+4 233	Peronne SORIS	22.8.1612	Roubaix	Robert RENAUT	29.1.1638	Roubaix			
+4 240	Gilles MEURISSE			Catherine DESPLANQUES	27.6.1615	Roubaix			
+4 241	Catherine DESPLANQUES			Gilles MEURISSE	27.6.1615	Roubaix			
+4 242	Pierre DUPRET								
+4 264	Gilles DUJARDIN			Catherine HELLIN					
+4 265	Catherine HELLIN			Gilles DUJARDIN					
+4 274	Antoine GHYS			Marie Jeanne BOYELLE	29.11.1664	Lille - Paroisse Saint Etienne			
+4 275	Marie Jeanne BOYELLE			Antoine GHYS	29.11.1664	Lille - Paroisse Saint Etienne			
+4 278	Hugues PARENT	1.6.1645	Wattrelos	Claire BACLAN	7.12.1667	Lannoy	22.12.1693	La Madeleine	48
+4 279	Claire BACLAN	12.8.1646	Lannoy	Hugues PARENT	7.12.1667	Lannoy	11.1.1695	La Madeleine	48
+4 352	Jean LECLERCQ			Marie PICAVET			<> 1678 & 1685		
+4 353	Marie PICAVET			Jean LECLERCQ			<> 1674 & 1685		
+4 354	Jacques DELEBARRE			Marie DE HENNION					
+4 355	Marie DE HENNION			Jacques DELEBARRE					
+4 356	Guillaume FARVACQUE	~ 1620		Jolente DEFENAIN	28.7.1647	Sailly-Lez-Lannoy	26.10.1693	Sailly-Lez-Lannoy	~ 73
+4 357	Jolente DEFENAIN			Guillaume FARVACQUE	28.7.1647	Sailly-Lez-Lannoy			
+4 358	Jacques DUTHOIT								
+4 360	Jean BEAUCARNE	27.3.1629	Wattrelos	Marie CRUCQUE	3.8.1663	Roubaix			
+4 361	Marie CRUCQUE			Jean BEAUCARNE	3.8.1663	Roubaix			
+4 366	Félix BAUDOUX	4.12.1629	Roubaix	Louise FAUVARCQUE	19.11.1648	Roubaix			
+4 367	Louise FAUVARCQUE			Félix BAUDOUX	19.11.1648	Roubaix	> 1689		
+4 368	Jean DELESCLUSE	16.4.1657	Roubaix	Marguerite PRUS	22.10.1681	Roubaix			
+4 369	Marguerite PRUS	9.2.1659	Roubaix	Jean DELESCLUSE	22.10.1681	Roubaix			
+4 370	Antoine DEHERINNES			Marguerite MASUREL					
+4 371	Marguerite MASUREL			Antoine DEHERINNES					
+4 372	Hugues LEHIER			Marie Anne DURIEZ					
+4 373	Marie Anne DURIEZ			Hugues LEHIER					
+4 374	Jean François DE HALLUIN			Catherine LECLERCQ	25.5.1668	Roubaix			
+4 375	Catherine LECLERCQ			Jean François DE HALLUIN	25.5.1668	Roubaix			
+4 464	Judocus POPPE			Marie DEBRUYNE					
+4 465	Marie DEBRUYNE			Judocus POPPE					
+4 712	Jean POLLET			Marie SELOSSE			< 1688		
+4 713	Marie SELOSSE			Jean POLLET			> 1688		
+4 714	Philippes COUVREUR			N ? AGACHE			> 1688		
+4 715	N ? AGACHE			Philippes COUVREUR					
+4 728	Allard GRIMONPONT	~ 1625		Marie BREUS			~ 1672		~ 47
+4 729	Marie BREUS			Allard GRIMONPONT					
+4 732	Philippe LEPLAT	~ 1630		Barbe LEROY			> 1698		>= 68
+4 733	Barbe LEROY	1628		Philippe LEPLAT			23.10.1697	Bondues	69
+4 734	Andrieu TRACHET	~ 1640		Véronique TESSE	25.4.1672	Tourcoing	> 1695		>= 55
+4 735	Véronique TESSE			Andrieu TRACHET	25.4.1672	Tourcoing			
+4 768	Michel BAYART	1579		Madeleine SELOSSE			> 1650		>= 70
+4 769	Madeleine SELOSSE			Michel BAYART					
+4 770	Mathieu BONTE			Marie LOCQUIFIER					
+4 771	Marie LOCQUIFIER			Mathieu BONTE					
+4 774	Roland DELAOUTRE	1605		Philipotte FLAMENG			23.2.1662	Croix	57
+4 775	Philipotte FLAMENG	6.7.1607	Roubaix	Roland DELAOUTRE			3.6.1648	Croix	40
+4 776	Roland DECOURCELLE						1641		
+4 782	Baudoin DESPINOY			Marie DELINSELLES					
+4 783	Marie DELINSELLES			Baudoin DESPINOY					
+4 848	Noël LEPERS			Antoinette DESTAILLEUR			3.6.1639	Croix	
+4 849	Antoinette DESTAILLEUR			Noël LEPERS					
+4 854	Jean MAQUET			Péronne ROUSSEL					
+4 855	Péronne ROUSSEL			Jean MAQUET					
+4 880	Jean TESTARD	9.8.1610	Aubervilliers	Claude TILLIERS	10.7.1634	Aubervilliers			
+4 881	Claude TILLIERS			Jean TESTARD	10.7.1634	Aubervilliers			
+4 882	Nicolas VANTE, VESTE ?			Catherine SAUVAGE	4.5.1643	Saint-Denis - Paroisse Saint Rémy	< 1670		
+4 883	Catherine SAUVAGE			Nicolas VANTE, VESTE ?	4.5.1643	Saint-Denis - Paroisse Saint Rémy	> 1670		
+5 412	Jean HAMEREL	1580		Jacqueline HYART	1616				
+5 413	Jacqueline HYART	1590	Hervelinghen	Jean HAMEREL	1616		> 1634		>= 44
+5 414	Arthus DUFLOS	1595		Jeanne MARTIN	3.7.1619	Guînes	26.1.1641	Saint-Tricat	46
+5 415	Jeanne MARTIN			Arthus DUFLOS	3.7.1619	Guînes	10.6.1671	Saint-Tricat	
+5 432	Antoine BLONDEL			Antoinette CARBONNIER					
+5 433	Antoinette CARBONNIER			Antoine BLONDEL					
+5 434	Jean MACHE			Isabeau WARDRINGHEN					
+5 435	Isabeau WARDRINGHEN			Jean MACHE					
+5 436	Bernard PERON			Anne NE					
+5 437	Anne NE			Bernard PERON					
+5 438	Nicolas BAUDE			Marie LANNEL					
+5 439	Marie LANNEL			Nicolas BAUDE					
+5 472	Guillaume THOMAS			Liévine LESURQUE			27.11.1672	Longfossé	
+5 473	Liévine LESURQUE	~ 1594		Guillaume THOMAS			24.1.1674	Longfossé	~ 80
+5 474	Jean LEGRAND								
+5 578	Pierre TESTART			Joachine MARMIN			< 11.5.1662	Tournehem-sur-la-Hem	
+5 579	Joachine MARMIN			Pierre TESTART			> 11.5.1662		
+5 580	Ferry DAUSSY			Péronne LOEUILLIER			< 31.7.1650		
+5 581	Péronne LOEUILLIER	~ 1607		Ferry DAUSSY			5.5.1671	Guînes	~ 64
+5 582	Robert LABOUE			Jeanne LEPAGE					
+5 583	Jeanne LEPAGE			Robert LABOUE					
+5 588	Julien CHAVIGNOIS			Françoise LAMBERT			1.4.1656	Pihen-lès-Guînes	
+5 589	Françoise LAMBERT			Julien CHAVIGNOIS					
+5 592	Antoine BEUTIN			Adrienne DURIEZ ?					
+5 593	Adrienne DURIEZ ?			Antoine BEUTIN			24.10.1673	Wierre-Effroy	
+5 596	N. DAUVERGNE			Isabeau DUVAL					
+5 597	Isabeau DUVAL			N. DAUVERGNE					
+5 598	N. LEFAURE			Marguerite PORÉE					
+5 599	Marguerite PORÉE			N. LEFAURE					
+5 616	Nicolas FOURCROY								
+5 627	Marie GARBE								
+5 644	Joannes POLLIS			Jacoba DANCKAERT					
+5 645	Jacoba DANCKAERT			Joannes POLLIS					
+5 894	Joannes INGELBEEN	~ 1580		Maria CHRISTIAENS			1629	Zwevezele	~ 48
+5 895	Maria CHRISTIAENS	~ 1585		Joannes INGELBEEN			< 1634		< 49
+5 896	Petrus DE BUSSCHERE	~ 1600							
+5 900	Guilliaume VAN HAELEMEESCH	~ 1595		Florence BELAEN			~ 1648		~ 53
+5 901	Florence BELAEN	~ 1595		Guilliaume VAN HAELEMEESCH			~ 1648		~ 53
+5 902	Guillielmus DHONDT	~ 1600		Jacoba CROP			27.5.1653	Zwevezele	~ 53
+5 903	Jacoba CROP	~ 1600		Guillielmus DHONDT			10.10.1669	Zwevezele	~ 69
+5 904	Laurentius DE RIEMAECKERE	~ 1610		Adriana WIBO			3.9.1675	Zwevezele	~ 65
+5 905	Adriana WIBO	~ 1612		Laurentius DE RIEMAECKERE			28.10.1652	Zwevezele	~ 40
+6 008	Joannes VAN POUCKE	<> 1574 & 1606		Elizabetha TEMMERMANS	22.9.1624	Wingene			
+6 009	Elizabetha TEMMERMANS	<> 1574 & 1606		Joannes VAN POUCKE	22.9.1624	Wingene			
+6 028	Bernardus DELABULQUES			Jacoba CLARISSE					
+6 029	Jacoba CLARISSE			Bernardus DELABULQUES					
+6 332	N RICARD						> 1664		
+6 334	Lazare DÉON			Roberte ELARDIN			> 1661		
+6 335	Roberte ELARDIN			Lazare DÉON			1.11.1661	Vertault	
+6 352	Jean REGNAULT						< 1645		
+6 354	Pierre LEAU(X)								
+6 434	Jean THERET	~ 1590	Valhuon				< 1658	Valhuon	< 68
+6 436	Charles GOTTRAND	~ 1596	Brias	Catherine DUHAUTOIS	~ 1620	Brias	15.3.1657	Brias	~ 61
+6 437	Catherine DUHAUTOIS	~ 1600	Brias	Charles GOTTRAND	~ 1620	Brias	> 1657	Brias	>= 57
+6 438	Jean DESQUINCOURT	~ 1600	Haillicourt	Marguerite HOUBART			> 1669	Houdain	>= 69
+6 439	Marguerite HOUBART	~ 1600	Haillicourt	Jean DESQUINCOURT			> 1669	Houdain	>= 69
+6 440	Allard CRESPIN	~ 1600	Valhuon				> 1650	Valhuon	>= 50
+7 328	Henry TAUSI			Marie CASSET					
+7 329	Marie CASSET			Henry TAUSI					
+7 332	Jeandiron LABORDE de COUGEU	< 1623		Bernade ARRODIGON					
+7 333	Bernade ARRODIGON	< 1625		Jeandiron LABORDE de COUGEU					
+7 334	Jean-Pierre LAS LÉAS	< 1609		Guiraudine BERDUC					
+7 335	Guiraudine BERDUC	< 1614		Jean-Pierre LAS LÉAS					
+7 336	Bernard LALANNE	< 1638		Jeanne CAUHAPSÉ					
+7 337	Jeanne CAUHAPSÉ	< 1640		Bernard LALANNE					
+7 338	Arnaud PAILHÉ	1.6.1639	Monein	Marie CAPDEVIELLE	13.6.1665	Monein	26.4.1715	Estialescq	75
+7 339	Marie CAPDEVIELLE	< 1650	Cardesse	Arnaud PAILHÉ	13.6.1665	Monein	29.9.1711	Estialescq	>= 61
+7 340	Jean BARTHE	< 1629		Bertranne BEGUÉ	11.2.1648	Monein			
+7 341	Bertranne BEGUÉ	< 1630		Jean BARTHE	11.2.1648	Monein			
+7 342	Jean MAYESTE	< 1636		Marie LACOSTE					
+7 343	Marie LACOSTE	< 1640		Jean MAYESTE					
+7 344	Jean CASSIÈRE	26.8.1634	Monein	Jeanne BOUHEMENT	12.2.1665	Monein	> 1696		>= 61
+7 345	Jeanne BOUHEMENT	< 1650	Cardesse	Jean CASSIÈRE	12.2.1665	Monein			
+7 346	Jean COMPAING	< 1655							
+7 504	Charles de LARRALDE			Marie de BEAUPUY					
+7 505	Marie de BEAUPUY			Charles de LARRALDE			< 30.5.1633		
+7 722	Pierre TARTARE			Georgine LABBE					
+7 723	Georgine LABBE			Pierre TARTARE					
+7 726	Pierre ZUNNEQUIN			Jacqueline FOREST	28.11.1639	Pihem			
+7 727	Jacqueline FOREST			Pierre ZUNNEQUIN	28.11.1639	Pihem			
+7 732	Robert PARISIS			Jeanne DEHOU			4.2.1658	Cléty	
+7 733	Jeanne DEHOU			Robert PARISIS			< 6.7.1669		
+7 734	Julien ALLOY	~ 1620		Louise BROUART			3.1.1688	Cléty	~ 68
+7 735	Louise BROUART			Julien ALLOY			29.5.1661	Cléty	
+7 756	Pierre ELART	3.10.1628		Jacqueline LECOINTE	24.7.1652	Dohem	15.10.1698	Dohem	70
+7 757	Jacqueline LECOINTE	6.3.1620	Dohem	Pierre ELART	24.7.1652	Dohem	5.9.1690	Dohem	70
+7 824	Gilles MAGINOT			Jeanne DUBOIS					
+7 825	Jeanne DUBOIS			Gilles MAGINOT					
+7 826	Pierre BECQUET	~ 1642		Isabelle REMOND			22.1.1714	Quelmes	~ 72
+7 827	Isabelle REMOND	~ 1644		Pierre BECQUET			6.7.1722	Quelmes	~ 78
+7 828	François Guillaume SAILLY			Péronne VO(L)SPET	1663		< 1702		
+7 829	Péronne VO(L)SPET			François Guillaume SAILLY	1663		~ 1714		
+7 830	Robert LAGUAISSE	~ 1654	Tatinghem	Catherine LONGUET			2.12.1712		~ 58
+7 831	Catherine LONGUET	~ 1680		Robert LAGUAISSE					
+7 832	Philippe WINTREBERT	~ 1608	Esquerdes	Antoinette CARDÉ	~ 1645	Merck-Saint-Liévin	4.7.1675	Esquerdes	~ 67
+7 833	Antoinette CARDÉ	<> 1624 & 1626	Merck-Saint-Liévin	Philippe WINTREBERT	~ 1645	Merck-Saint-Liévin	14.1.1685	Esquerdes	>= 59
+7 834	Mathieu BINET			Françoise SANSON			~ 1666	Zudausques	
+7 835	Françoise SANSON			Mathieu BINET			~ 1684	Zudausques	
+7 836	Philippe CHEVALIER			Françoise PETREL					
+7 837	Françoise PETREL			Philippe CHEVALIER					
+7 856	Jean TRO(U)ART	18.11.1635	Aire-sur-la-Lys - Paroise Saint Martin	Jeanne Françoise PAYELLE ; NOYELLE	19.8.1661	Aire-sur-la-Lys - Paroise Saint Martin			
+7 857	Jeanne Françoise PAYELLE ; NOYELLE		Blaringhem	Jean TRO(U)ART	19.8.1661	Aire-sur-la-Lys - Paroise Saint Martin	14.10.1710	Saint-Omer - Paroisse Saint Sépulcre	
+7 858	Adrien LEROY		Cohem	Catherine HENNOI(R)E	5.6.1656	Wittes	5.12.1705	Wardrecques	
+7 859	Catherine HENNOI(R)E	~ 1637		Adrien LEROY	5.6.1656	Wittes	8.2.1707	Wardrecques	~ 70
+7 916	Claude GRUEZ	~ 1626		Marie TRUSSIER			30.10.1706	Coyecques	~ 80
+7 917	Marie TRUSSIER	12.5.1631	Ecques	Claude GRUEZ			1.3.1681	Capelle-sur-la-Lys	49
+7 932	Lucien LEGAY			Jeanne LAMOUSSE					
+7 933	Jeanne LAMOUSSE			Lucien LEGAY					
+7 934	Pierre BAILLY			Jeanne QUENTIN					
+7 935	Jeanne QUENTIN			Pierre BAILLY					
+8 004	Charles "le Vieux" de MARIVOORDE	~ 1570		Isabeau de GRIBOVAL					
+8 005	Isabeau de GRIBOVAL	~ 1570		Charles "le Vieux" de MARIVOORDE			1630		~ 59
+8 006	Guilain LOTTIN, LOTTYN	~ 1580		Louise van HEYLWEGHEN, HEILEWYGHE, HEYLWEGHE	26.7.1617	Gent			
+8 007	Louise van HEYLWEGHEN, HEILEWYGHE, HEYLWEGHE	~ 1580		Guilain LOTTIN, LOTTYN	26.7.1617	Gent	1623		~ 42
+8 136	Louis LEURIDAN	~ 1605	Frelinghien	Péronne COISNE	~ 1635	Deûlémont	> 1647	Nieppe	>= 42
+8 137	Péronne COISNE	~ 1615	Deûlémont	Louis LEURIDAN	~ 1635	Deûlémont	> 1652	Nieppe	>= 37
+8 140	Pierre LEURIDAN	14.9.1603	Armentières	Catherine LE WILLE	< 1628	Deûlémont			
+8 141	Catherine LE WILLE		Deûlémont	Pierre LEURIDAN	< 1628	Deûlémont			
+8 160	Jan MARQUILLIE								
+8 162	Jan DESPRETZ			Jeanne SALOMÉ					
+8 163	Jeanne SALOMÉ			Jan DESPRETZ					
+8 164	Antoine BLONDEL			Catherine LAIGNEL	< 1649				
+8 165	Catherine LAIGNEL			Antoine BLONDEL	< 1649		~ 1692		
+8 166	Martin RUYANT	< 1633	Fromelles	Marie CHERISIER	1653				
+8 167	Marie CHERISIER			Martin RUYANT	1653				
+8 256	Pierre WAIGNIN								
+8 268	Jacques DESQUIEN			Jeanne SELOSSE					
+8 269	Jeanne SELOSSE			Jacques DESQUIEN					
+8 272	Nicolas BARREZ						< 1671		
+8 276	Martin DE THIEFFRY			Catherine BONTE			< 1677		
+8 277	Catherine BONTE			Martin DE THIEFFRY					
+8 456	Antoine RENARD	1596		Martine DESLESPIERRE			1683		87
+8 457	Martine DESLESPIERRE	1596		Antoine RENARD					
+8 458	Mathieu DU FOREST	27.2.1595	Roubaix	N N			1667	Lannoy	71
+8 459	N N			Mathieu DU FOREST			1667	Lannoy	
+8 460	Mathieu CASTEL	1580		Barbe DELEBECQUE					
+8 461	Barbe DELEBECQUE	1580		Mathieu CASTEL					
+8 462++	Pierre BODOUX			Catherine WILLOCQ	27.2.1615	Roubaix	< 1647		
+8 463++	Catherine WILLOCQ			Pierre BODOUX	27.2.1615	Roubaix			
+8 466	Martin SORIS	1570		Catherine DE LA DESOUS					
+8 467	Catherine DE LA DESOUS	1570		Martin SORIS					
+8 480	Bettremieux MEURISSE	< 1596		Chrétienne (Christine) LECLERCQ			<> 1624 & 1625		>= 28
+8 481	Chrétienne (Christine) LECLERCQ			Bettremieux MEURISSE			> 1633		
+8 482	Jaspart DESPLANQUES								
+8 528	Jacques DUJARDIN								
+8 530	Philippes HELLIN			Péronne HOUPLINE					
+8 531	Péronne HOUPLINE			Philippes HELLIN					
+8 556	Guilbert PARENT	~ 1615		Françoise LAMERAND			> 1648		>= 33
+8 557	Françoise LAMERAND	~ 1619		Guilbert PARENT			<> 1645 & 1648		<> 26 & 28
+8 558	Anthoine BACLAN	~ 1605	Wattrelos	Michelle DELECROIX			> 1665	Lannoy	>= 60
+8 559	Michelle DELECROIX	~ 1609		Anthoine BACLAN			> 1653		>= 44
+8 704	Jean LECLERCQ			? ?			< 1671		
+8 705	? ?			Jean LECLERCQ					
+8 720	Thomas BEAUCARNE			Jossine (Joséphine) FERRET					
+8 721	Jossine (Joséphine) FERRET			Thomas BEAUCARNE					
+8 722	Mathieu CRUCQUE								
+8 732 (8 462)	Pierre BODOUX			Catherine WILLOCQ	27.2.1615	Roubaix	< 1647		
+8 733 (8 463)	Catherine WILLOCQ			Pierre BODOUX	27.2.1615	Roubaix			
+8 736	Jean DELESCLUSE			• Claire LOCUFIER • Marie DUBURQUE	• 15.6.1656 • 26.8.1695	• Roubaix • Roubaix			
+8 737	Claire LOCUFIER			Jean DELESCLUSE	15.6.1656	Roubaix			
+8 738	Robert PRUS			• Marguerite GLORIEUX • Agnès TIBERGHIEN	• 20.4.1644 • 	• Wattrelos • 	~ 1689		
+8 739	Agnès TIBERGHIEN			Robert PRUS					
+8 744	Jacques LEHIER			Marie PARENT			< 1684		
+8 745	Marie PARENT			Jacques LEHIER					
+9 456	Mathieu GRIMONPONT								
+9 464	Martin LEPLAT	~ 1600					> 1676		>= 76
+9 466	Jean LEROY	~ 1606		Marie MARTIN					
+9 467	Marie MARTIN			Jean LEROY					
+9 468	Guillaume TRACHET			Jeanne DUBOIS					
+9 469	Jeanne DUBOIS			Guillaume TRACHET					
+9 470	François TESSE			Isabeau DESTAILLEUR					
+9 471	Isabeau DESTAILLEUR			François TESSE					
+9 536	Simon BAYART	1550		Jeanne DESBOURIES			1613		62
+9 537	Jeanne DESBOURIES			Simon BAYART					
+9 548	Jean DELAOUTRE	1580		Marie DELEDICQUE			1631		50
+9 549	Marie DELEDICQUE			Jean DELAOUTRE			23.11.1660	Croix	
+9 550	Pierre FLAMENG	26.10.1574	Tourcoing	Catherine LEFEBVRE	17.4.1596	Lille			
+9 551	Catherine LEFEBVRE	1580		Pierre FLAMENG	17.4.1596	Lille	1628		47
+9 552	Bernard DECOURCELLE			Barbe DELEMOTTE			1571	Leers	
+9 553	Barbe DELEMOTTE			Bernard DECOURCELLE			1564		
+9 564	Jacques Philippe DESPINOY	20.9.1701	Wasquehal						
+9 760	Guillaume TESTARD			Marie CLAU					
+9 761	Marie CLAU			Guillaume TESTARD					
+10 824	Pierre HAMEREL	1550		Marguerite TRICQUET					
+10 825	Marguerite TRICQUET			Pierre HAMEREL					
+10 826	Nicolas HYART	1560	Hervelinghen	Jeanne FLEURY			< 1628		< 67
+10 827	Jeanne FLEURY			Nicolas HYART			> 1628		
+10 828	Robert DUFLOS	1555		Anne SAGOT					
+10 829	Anne SAGOT			Robert DUFLOS					
+10 830	Simon MARTIN			Jeanne DE COURBOT					
+10 831	Jeanne DE COURBOT			Simon MARTIN					
+10 864	Antoine BLONDEL								
+10 876	Jean BAUDE			Peronne RAVIN					
+10 877	Peronne RAVIN			Jean BAUDE					
+11 232	Jacques FOURCROY								
+11 788	Joannes INGELBEEN	~ 1555					> 1634		>= 78
+11 790	Livinus CHRISTIAENS	~ 1560		Joanna de LANGHE					
+11 791	Joanna de LANGHE	~ 1560		Livinus CHRISTIAENS					
+11 800	Joannes VAN HAELEMEESCH	~ 1565							
+11 808	Laurentius DE RIEMAECKERE	~ 1580		Maria de VRIESE			~ 1646		~ 65
+11 809	Maria de VRIESE	~ 1580		Laurentius DE RIEMAECKERE					
+11 810	Adrianus WIBO	~ 1580		Maria van DIERENDONCK	~ 1612				
+11 811	Maria van DIERENDONCK	~ 1585		Adrianus WIBO	~ 1612				
+12 874	Guillebert DUHAUTOIS	~ 1575		Florence MINCHE	~ 1600	Brias	< 1627		< 51
+12 875	Florence MINCHE	~ 1575	Brias	Guillebert DUHAUTOIS	~ 1600	Brias	> 1627	Brias	>= 51
+12 876	Antoine DESQUINCOURT	~ 1570	Hersin-Coupigny	Jeanne BURBURE			> 1625	Hersin-Coupigny	>= 54
+12 877	Jeanne BURBURE			Antoine DESQUINCOURT					
+12 878	Martin HOUBART	~ 1585	Haillicourt				> 1640	Haillicourt	>= 55
+14 676	Pierre GOUYST	< 1618		Jeanne PAILHÉ	21.6.1638	Monein			
+14 677	Jeanne PAILHÉ	< 1620		Pierre GOUYST	21.6.1638	Monein			
+14 682	Bertrand BEGUÉ			Marie LAPUYADE					
+14 683	Marie LAPUYADE			Bertrand BEGUÉ					
+14 684	Martin MAÏESTE			Suzanne PASSAMA					
+14 685	Suzanne PASSAMA			Martin MAÏESTE					
+14 688	Abraham CASSIÈRE			Jeanne LARIEU	< 1633				
+14 689	Jeanne LARIEU	< 1615		Abraham CASSIÈRE	< 1633				
+15 008	Adam de LARRALDE			Marie de DIBILDOTZ	16.7.1579	Villefranque	< 23.4.1632		
+15 009	Marie de DIBILDOTZ			Adam de LARRALDE	16.7.1579	Villefranque			
+15 454	Charles FOREST			Marie de MAMETZ					
+15 455	Marie de MAMETZ			Charles FOREST					
+15 464	Thomas PARISIS			Catherine DALLONGEVILLE	10.8.1596				
+15 465	Catherine DALLONGEVILLE			Thomas PARISIS	10.8.1596				
+15 468	Eustache (Erasme) ALLOY			Anne TOUZART	21.5.1605		9.2.1653		
+15 469	Anne TOUZART			Eustache (Erasme) ALLOY	21.5.1605				
+15 514	Nicolas LECOINTE						11.9.1620	Dohem	
+15 654	Ambroise REMOND		Fléchin	Adrienne DUPONT	18.7.1637	Saint-Omer	> 1668		
+15 655	Adrienne DUPONT			Ambroise REMOND	18.7.1637	Saint-Omer			
+15 656	Pierre SAILLY		Lisbourg	Marguerite (DU)SAULTOIR	2.3.1647		~ 1663		
+15 657	Marguerite (DU)SAULTOIR			Pierre SAILLY	2.3.1647				
+15 658	Jan VO(L)SPET			Guillemette DAUSQUE	1.7.1637		< 1663		
+15 659	Guillemette DAUSQUE	~ 1617		Jan VO(L)SPET	1.7.1637		> 1663		>= 46
+15 664	Philippe WINTREBERT	<> 1575 & 1580	Esquerdes	Jacqueline BOIDART	<> 1600 & 1610	Esquerdes			
+15 665	Jacqueline BOIDART	<> 1575 & 1580		Philippe WINTREBERT	<> 1600 & 1610	Esquerdes			
+15 666	Gabriel CADET			Marguerite PATIN					
+15 667	Marguerite PATIN			Gabriel CADET					
+15 670	Robert SANSON			Marie LECLERCQ					
+15 671	Marie LECLERCQ			Robert SANSON					
+15 712	Martin TROART  ; TRAUWART	~ 1590		Françoise WAMIN	~ 1627	Aire-sur-la-Lys - Paroise Saint Martin	> 1645		>= 55
+15 713	Françoise WAMIN	~ 1605		Martin TROART  ; TRAUWART	~ 1627	Aire-sur-la-Lys - Paroise Saint Martin	> 1635		>= 30
+15 717	Françoise LAMOURY								
+15 834	Bauduin TRUSSIER			Isabelle Thérèse FORGEZ					
+15 835	Isabelle Thérèse FORGEZ			Bauduin TRUSSIER					
+16 008	Charles de MARIVOORDE			Catherine de CARRON			24.9.1601		
+16 009	Catherine de CARRON			Charles de MARIVOORDE					
+16 010	Pierre de GRIBOVAL	~ 1540		Jacqueline Anne JACQUELOOT			~ 1591		~ 50
+16 011	Jacqueline Anne JACQUELOOT	~ 1540		Pierre de GRIBOVAL					
+16 012	Pierre LOTTIN	~ 1540		Marguerite de GRIBOVAL					
+16 013	Marguerite de GRIBOVAL	~ 1540		Pierre LOTTIN					
+16 014	Charles van HEYLWEGHEN								
+16 272	Louis LEURIDAN	~ 1580	La Chapelle-d'Armentières	• Catherine LAMERANT • Jeanne SIX	• 8.1.1605 • ~ 1625	• Frelinghien • 	> 1630	Frelinghien	>= 49
+16 273	Catherine LAMERANT	< 1585	Frelinghien	Louis LEURIDAN	8.1.1605	Frelinghien	~ 1625	Frelinghien	>= 40
+16 274	Antoine COISNE	~ 1590		• Jacqueline LE WILLE (DE WILDE) • Marie DUBOIS	• ~ 1615 • 1618	• Deûlémont • Deûlémont	9.1641		~ 51
+16 275	Jacqueline LE WILLE (DE WILDE)	~ 1590	Deûlémont	Antoine COISNE	~ 1615	Deûlémont	< 1618	Deûlémont	< 28
+16 280	Antoine LEURIDAN	~ 1560	Armentières	Antoinette BACQUART	~ 1590	Radinghem-en-Weppes	< 1648	Armentières	< 87
+16 281	Antoinette BACQUART	~ 1560	Radinghem-en-Weppes	Antoine LEURIDAN	~ 1590	Radinghem-en-Weppes	~ 1635	Armentières	~ 74
+16 328	Antoine BLONDEL			Françoise MESSEANT					
+16 329	Françoise MESSEANT			Antoine BLONDEL					
+16 330	Henry LAIGNEL			Marie DELAVAL					
+16 331	Marie DELAVAL			Henry LAIGNEL					
+16 332	Jehan RUYANT	~ 1600	Salomé	Marie HENNART	24.2.1628	Fromelles	> 1675	Fromelles	>= 75
+16 333	Marie HENNART	~ 1605	Fromelles	Jehan RUYANT	24.2.1628	Fromelles	~ 1653	Fromelles	~ 48
+16 912	Antoine RENARD			Antoinete ROUZE					
+16 913	Antoinete ROUZE			Antoine RENARD					
+16 914	Jean DESLESPIERRE								
+16 916	Pierre DU FOREST	1559	Tourcoing	Catherine DELEBECQUE			< 1621	Roubaix	< 61
+16 917	Catherine DELEBECQUE	2.1.1559	Halluin	Pierre DU FOREST			> 2.1.1602	Halluin	>= 42
+16 922	François DELEBECQUE	1557		Jeanne Françoise PREVOST			1625	Roubaix	67
+16 923	Jeanne Françoise PREVOST	1563		François DELEBECQUE			1625	Roubaix	61
+16 960	Bettremieux MEURISSE	< 1569					< 1609		
+16 962	? LECLERCQ			Philipotte LECLERCQ					
+16 963	Philipotte LECLERCQ			? LECLERCQ			> 1590		
+17 060	Philippes HELLIN								
+17 062	Jacques HOUPLINE						< 1671		
+17 112	Jehan PARENT	~ 1583		Jeanne PLANCKE			> 1645		>= 62
+17 113	Jeanne PLANCKE	~ 1587		Jehan PARENT			> 1645	Wattrelos	>= 58
+17 114	Hugues LAMERAND	~ 1572		Anthoinette DUTHOIT			> 1643		>= 70
+17 115	Anthoinette DUTHOIT	~ 1576		Hugues LAMERAND			> 1643		>= 66
+17 476	Antoine PRUS			Péronne MIROUX			< 1672		
+17 477	Péronne MIROUX			Antoine PRUS					
+19 072	Christoffle BAYART	1510					<> 1566 & 1596		>= 56
+19 096	Jehan DELAOUTRE	1540					1580		40
+19 100	Christoffe FLAMENG	1549		• Jeanne DELEBECQUE • Jeanne DELEBECQUE	• 28.5.1596 • 	• Roubaix • 	1630		80
+19 101	Jeanne DELEBECQUE	1555		Christoffe FLAMENG	28.5.1596	Roubaix	1629		73
+19 102	Jean LEFEBVRE	1550		Philipotte ROUSSEL			1596		45
+19 103	Philipotte ROUSSEL	~ 1550		Jean LEFEBVRE					
+19 104	Mathieu DECOURCELLE								
+19 128	Joachim DESPINOY	16.3.1665	Wasquehal						
+21 648	Jean HAMEREL	1520							
+21 650	Jean TRICQUET			Antoinette DE HUMIERE					
+21 651	Antoinette DE HUMIERE			Jean TRICQUET					
+21 656	Jean DUFLOS	1520		Isabeau FOUACHE			< 1.1573		< 53
+21 657	Isabeau FOUACHE			Jean DUFLOS					
+21 660	Simon MARTIN								
+23 576	Eloy INGELBEEN	~ 1530							
+23 582	Petrus de LANGHE	~ 1530							
+23 600	Joannes VAN HAELEMEESCH	~ 1535							
+23 616	Joannes DE RIEMAECKERE	~ 1550		Linken CRAEYE	~ 1580				
+23 617	Linken CRAEYE	~ 1550	Zwevezele	Joannes DE RIEMAECKERE	~ 1580				
+23 618	Franciscus de VRIESE	~ 1550							
+23 622	Passchier van DIERDONCK	~ 1560		Petronella BEYS			~ 1609	Zwevezele	~ 48
+23 623	Petronella BEYS	~ 1560		Passchier van DIERDONCK					
+25 752	Pasquier DESQUINCOURT	~ 1540	Hersin-Coupigny				> 1575	Hersin-Coupigny	>= 35
+25 756	Nicolas HOUBART	~ 1550		Jacqueline GLORIAN			> 1610		>= 59
+25 757	Jacqueline GLORIAN	~ 1550	Haillicourt	Nicolas HOUBART			~ 1597	Haillicourt	~ 46
+29 376	Jean CASSIERA			Arnaudine BROCAS					
+29 377	Arnaudine BROCAS			Jean CASSIERA					
+30 016	N... de LARRALDE								
+30 018	Etienne de DIBILDOTZ			Suzanne DIESSE					
+30 019	Suzanne DIESSE			Etienne de DIBILDOTZ					
+30 928	Jehan PARISIS			Flourette BAUWIN			< 10.8.1596		
+30 929	Flourette BAUWIN			Jehan PARISIS					
+30 930	Jehan DALLONGEVILLE			Isabeau MARCOTTE					
+30 931	Isabeau MARCOTTE			Jehan DALLONGEVILLE					
+30 938	Balthazar TOUZART			Madeleine de MAMETZ					
+30 939	Madeleine de MAMETZ			Balthazar TOUZART					
+31 308	Jean REMOND			Jeanne LUCQUE			< 1668		
+31 309	Jeanne LUCQUE			Jean REMOND			< 1668		
+31 312	Anthoine SAILLY			Jenne GREBAUT					
+31 313	Jenne GREBAUT			Anthoine SAILLY					
+31 316	Gilles WOLSPET			Philipotte COLMAN					
+31 317	Philipotte COLMAN	~ 1583		Gilles WOLSPET					
+31 318	Jehan DAUSQUE			Marie DE LE NORT	19.5.1615				
+31 319	Marie DE LE NORT	~ 1595		Jehan DAUSQUE	19.5.1615				
+31 328	Bauduin WINTREBERT	<> 1540 & 1550	Esquerdes	Jeanne BECQUET			<> 1568 & 1599		<> 18 & 58
+31 329	Jeanne BECQUET			Bauduin WINTREBERT			<> 1599 & 1605		
+31 434	Nicolas LAMOURY								
+32 016	Charles de MARIVOORDE			Marie BRICX, BUUCX					
+32 017	Marie BRICX, BUUCX			Charles de MARIVOORDE					
+32 018	Noël de CARRON	~ 1550		N.. BONCQUET			11.12.1624	Londres	~ 74
+32 019	N.. BONCQUET			Noël de CARRON					
+32 020++	Jean de GRIBOVAL	~ 1510		• Marie de HAUDION • Marie PEUSSIN, PEUCIN	•  • 	•  • 	> 1584		>= 73
+32 021	Marie de HAUDION	~ 1510		Jean de GRIBOVAL					
+32 022	Josse JACQUELOOT			Susanne IMMELOOT					
+32 023	Susanne IMMELOOT			Josse JACQUELOOT					
+32 024	Pierre LOTTIN			Maria DONCHE					
+32 025	Maria DONCHE			Pierre LOTTIN					
+32 026 (32 020)	Jean de GRIBOVAL	~ 1510		• Marie de HAUDION • Marie PEUSSIN, PEUCIN	•  • 	•  • 	> 1584		>= 73
+32 027	Marie PEUSSIN, PEUCIN	~ 1510		Jean de GRIBOVAL					
+32 544	Arnould LEURIDAN	~ 1550	Armentières	Françoise LUTUN	~ 1578		> 1621	Armentières	>= 70
+32 545	Françoise LUTUN			Arnould LEURIDAN	~ 1578		> 1622	Armentières	
+32 546	Antoine LAMERANT	~ 1550		Marie LE PETIT	< 1585		~ 1613	Frelinghien	~ 62
+32 547	Marie LE PETIT	~ 1560		Antoine LAMERANT	< 1585		~ 1605	Frelinghien	~ 44
+32 548	Antoine COISNE	~ 1560		Marguerite DE LE BECQUE	~ 1590		> 1591		>= 30
+32 549	Marguerite DE LE BECQUE			Antoine COISNE	~ 1590				
+32 550	Jean LE WILLE (DE WILDE)							Deûlémont	
+32 560	Jean LEURIDAN	~ 1530	Armentières	Marie LE BLANCQ ?			< 1593		< 62
+32 561	Marie LE BLANCQ ?	~ 1530	Radinghem-en-Weppes	Jean LEURIDAN			> 1593	Deûlémont	>= 62
+32 562	Gilles BACQUART	~ 1530	Radinghem-en-Weppes	Jeanne FRETIN	~ 1560		< 1611	Armentières	< 80
+32 563	Jeanne FRETIN	~ 1530	Radinghem-en-Weppes	Gilles BACQUART	~ 1560		> 1611		>= 80
+32 656	Antoine BLONDEL								
+32 658	Jean MESSEANT	~ 1560		Marguerite DEGRUSON			> 1608		>= 47
+32 659	Marguerite DEGRUSON	~ 1560	Fromelles	Jean MESSEANT			<> 1608 & 1621	Fromelles	<> 47 & 60
+32 660	Gilles LAIGNEL								
+32 664	François RUYANT	~ 1585		Jehanne POISSONNIER	~ 1600		< 1653	Fleurbaix	< 68
+32 665	Jehanne POISSONNIER			François RUYANT	~ 1600		< 1632	Fromelles	
+33 844++	Pierre DELEBECQUE	~ 1535		Jeanne FREMAULT			<> 11.1.1582 & 1583	Roubaix	<> 47 & 47
+33 845++	Jeanne FREMAULT	~ 1540		Pierre DELEBECQUE			> 1582		>= 42
+33 920	Thomas MEURISSE						< 1569		
+38 200	Mathieu ou Mathias ou Mahieu FLAMENG	1520		Légère PLOUCQUET			1585		64
+38 201	Légère PLOUCQUET	1525		Mathieu ou Mathias ou Mahieu FLAMENG			1599		73
+38 202 (33 844)	Pierre DELEBECQUE	~ 1535		Jeanne FREMAULT			<> 11.1.1582 & 1583	Roubaix	<> 47 & 47
+38 203 (33 845)	Jeanne FREMAULT	~ 1540		Pierre DELEBECQUE			> 1582		>= 42
+38 204	Pierre LEFEBVRE	1525							
+38 206	Liénart ROUSSEL	~ 1525		Marguerite TIBERGHIEN			< 1596		< 70
+38 207	Marguerite TIBERGHIEN	~ 1525		Liénart ROUSSEL					
+38 208	Louis DECOURCELLE			Marguerite DECOURCELLE					
+38 209	Marguerite DECOURCELLE			Louis DECOURCELLE					
+38 256	Jean DESPINOY	26.4.1626	Wasquehal	Marguerite DELEDICQUE	4.5.1648	Wasquehal			
+38 257	Marguerite DELEDICQUE	8.9.1625	Wasquehal	Jean DESPINOY	4.5.1648	Wasquehal			
+43 296	Loys HAMEREL	1490							
+43 302	Jean DE HUMIERE			Antoinette PASSELEU					
+43 303	Antoinette PASSELEU			Jean DE HUMIERE					
+43 312	Jean DUFLOS								
+43 314	Guillaume FOUACHE			Mariette DU WAST					
+43 315	Mariette DU WAST			Guillaume FOUACHE					
+47 234	Daneel CRAEYE	~ 1520		Catharina LAUWERS	~ 1544				
+47 235	Catharina LAUWERS	~ 1520		Daneel CRAEYE	~ 1544				
+47 244	Christinus van DIERDONCK	~ 1510		Martina BOUTS			~ 1571	Zwevezele	~ 61
+47 245	Martina BOUTS			Christinus van DIERDONCK					
+60 032	Bertrand de LARRALDE	< 7.3.1518		• N... ? • Marie de BEAUJON	•  • 	•  • 			
+60 033	Marie de BEAUJON			Bertrand de LARRALDE					
+61 862	Louys MARCOTTE			Péronne LEVERD					
+61 863	Péronne LEVERD			Louys MARCOTTE					
+62 626	Jean GREBAUT						<> 1625 & 1626		
+62 634	Jehan (Dit L'Ainé) COLMAN	~ 1545	Tatinghem	Jehanne ERNOULT	~ 1575		< 1607		< 61
+62 635	Jehanne ERNOULT	~ 1550		Jehan (Dit L'Ainé) COLMAN	~ 1575		~ 1612		~ 61
+62 636	Antoine DAUSQUE			Guillemette BAILIET					
+62 637	Guillemette BAILIET			Antoine DAUSQUE					
+62 638	Jacques DE LE NORT	~ 1565		Marie DUFUMIER	~ 1590		< 1615		< 49
+62 639	Marie DUFUMIER			Jacques DE LE NORT	~ 1590		> 1615		
+64 032	Jean van MARIVOORDE	16.3.1486		Catherine de VLIEGERE					
+64 033	Catherine de VLIEGERE			Jean van MARIVOORDE					
+64 036	Noël de CARRON						1561		
+64 040++	Antoine de GRIBOVAL	~ 1480	Vieux-Berquin	Pauline ALAERTS, ALLAERT	~ 1514		1525	Veurne	~ 45
+64 041++	Pauline ALAERTS, ALLAERT	~ 1480		Antoine de GRIBOVAL	~ 1514				
+64 042	Raes, Rasse de HAUDION	~ 1460		Isabeau FREMAULT					
+64 043	Isabeau FREMAULT			Raes, Rasse de HAUDION					
+64 046	Pierre IMMELOOT			Ghelyne, Ghislaine de SCHILDERE			29.11.1553	Ieper	
+64 047	Ghelyne, Ghislaine de SCHILDERE			Pierre IMMELOOT			16.12.1565	Ieper	
+64 048	N... LOTTIN			N... de GHISTELLE					
+64 049	N... de GHISTELLE			N... LOTTIN					
+64 050	Jacob DOCE, DONCHE			Joséphine DAVELINE, DAVELIN			26.12.1516	Alveringem	
+64 051	Joséphine DAVELINE, DAVELIN			Jacob DOCE, DONCHE			26.12.1516	Alveringem	
+64 054	Antoine PEUSSIN			Marguerite van ZUUTPEENE			1531		
+64 055	Marguerite van ZUUTPEENE			Antoine PEUSSIN			1558		
+65 088	Louis LEURIDAN	~ 1519	Lomme	Marguerite BOUCHERY	~ 1545	Armentières	> 1577	Armentières	>= 58
+65 089	Marguerite BOUCHERY	< 1525	Armentières	Louis LEURIDAN	~ 1545	Armentières		Armentières	
+65 092	Josse LAMERAND	~ 1520		Catherine DIEUSSART	~ 1550		> 1565		>= 45
+65 093	Catherine DIEUSSART	~ 1520		Josse LAMERAND	~ 1550				
+65 094	Denis LE PETIT			Jacquemine DE LE BECQUE			< 1603		
+65 095	Jacquemine DE LE BECQUE			Denis LE PETIT					
+65 096	Michel COISNE			• Marie DE WILDE • Nicole LERNOULD	•  • 	•  • 	> 1585	Deûlémont	
+65 097	Marie DE WILDE			Michel COISNE					
+65 122	Pierre LE BLANCQ			Martine DE LE FORTRIE					
+65 123	Martine DE LE FORTRIE			Pierre LE BLANCQ					
+65 124	Andrieu BACQUART						> 1593		
+65 316	Otte MESSEANT	~ 1540		Catherine CAULLET			> 1615	Fromelles	>= 74
+65 317	Catherine CAULLET	~ 1540		Otte MESSEANT			> 1616	Fromelles	>= 75
+65 318	Otte DE GRUISON	~ 1535		Agnès JOIRE					
+65 319	Agnès JOIRE	~ 1535		Otte DE GRUISON					
+65 328	Antoine RUYANT	~ 1550		Hélène QUESNEL	~ 1575		< 1599	Fromelles	< 48
+65 329	Hélène QUESNEL	~ 1550		Antoine RUYANT	~ 1575		> 1599		>= 48
+67 688++	Collart DELEBECQUE	<> 1505 & 1510		Marie VAN REUST	1525		1554		>= 44
+67 689++	Marie VAN REUST	1510		Collart DELEBECQUE	1525		1554		44
+67 690++	Guillaume FREMAULT			Catherine POISSONIER					
+67 691++	Catherine POISSONIER			Guillaume FREMAULT					
+67 840	Jehan MEURISSE						< 1560		
+76 400	Antoine FLAMENG	1495							
+76 402	Quentin PLOUCQUET	1500		Willemine FARVACQUE					
+76 403	Willemine FARVACQUE	1500		Quentin PLOUCQUET			1545	Roubaix	45
+76 416	Walter DECOURCELLE	1491							
+86 592	Michel HAMEREL	1440							
+86 606	Guillaume PASSELEU			Peronne DELAPLACE					
+86 607	Peronne DELAPLACE			Guillaume PASSELEU					
+86 630	Jean DU WAST								
+94 468	Quinten CRAEYE	~ 1490					17.9.1566	Zwevezele	~ 76
+94 470	Simoen LAUWERS	~ 1490							
+94 488	Joannes van DIERDONCK	~ 1480		Catharina VANDER MEERSCH	~ 1508		~ 1547		~ 67
+94 489	Catharina VANDER MEERSCH	~ 1480		Joannes van DIERDONCK	~ 1508		~ 1536		~ 56
+125 252	Guillaume GREBAUT								
+125 270	Quentin ERNOULT	~ 1525	Longuenesse	Jehnne HURTAULT	~ 1550				
+125 271	Jehnne HURTAULT			Quentin ERNOULT	~ 1550				
+125 272	Pierre DAUSQUE	~ 1540	Acquin						
+125 276	Pierre DE LE NORT	~ 1528		Marie DE FOSSE	~ 1555				
+125 277	Marie DE FOSSE			Pierre DE LE NORT	~ 1555				
+125 278	Noël DUFUMIER			Marguerite STATECAUSE					
+125 279	Marguerite STATECAUSE			Noël DUFUMIER					
+128 064	Guillaume van MARIVOORDE			Apolline LAUWERS					
+128 065	Apolline LAUWERS			Guillaume van MARIVOORDE					
+128 066	Liévin de VLIEGERE								
+128 080++	Louis de GRIBOVAL	~ 1450		Adrienne de BERQUIN	1483				
+128 081++	Adrienne de BERQUIN	1450		Louis de GRIBOVAL	1483				
+128 082++	Gauthier ALLAERT			Cornélie van DER BANCK					
+128 083++	Cornélie van DER BANCK			Gauthier ALLAERT					
+128 084	Rasse, Raes de HAUDION			Agnès de HURTEBISSE					
+128 085	Agnès de HURTEBISSE			Rasse, Raes de HAUDION					
+128 092	Nicolas IMMELOOT			Marie de GRAVE ALIAS LE COMTE			5.4.1507		
+128 093	Marie de GRAVE ALIAS LE COMTE			Nicolas IMMELOOT			8.7.1511		
+128 094	Robert de SCHILDERE			Marie van BORLEKE					
+128 095	Marie van BORLEKE			Robert de SCHILDERE					
+128 100	Roland DONCHE			Christine GHYSELIN	1490				
+128 101	Christine GHYSELIN			Roland DONCHE	1490				
+128 102	Jean DAVELINE			Guillemette van BAMPOELE					
+128 103	Guillemette van BAMPOELE			Jean DAVELINE					
+128 108	Lancelot PEUSSIN			Jacqueline van DEN BERGHE			1498		
+128 109	Jacqueline van DEN BERGHE			Lancelot PEUSSIN					
+128 110	Valentin van ZUUTPEENE			Jossine de WERVERE			1489		
+128 111	Jossine de WERVERE			Valentin van ZUUTPEENE					
+130 176	Pierre LEURIDAN	< 1490	Quesnoy-sur-Deûle	• N... X... • Jeanne DESPRETS	• ~ 1510 • 	•  • Lomme		Lomme	
+130 177	N... X...			Pierre LEURIDAN	~ 1510				
+130 178	Robert BOUCHERY	~ 1500	Armentières	Marie (Marguerite) LELEU			~ 1567	Armentières	~ 67
+130 179	Marie (Marguerite) LELEU	~ 1500	Armentières	Robert BOUCHERY				Armentières	
+130 184	Baudouin LAMERAND								
+130 636	Pierre DE GRUISON	~ 1500							
+135 376++	Jehan DELEBECQUE	~ 1475		Peronne DELESCLUSE	1491	Roubaix		Roubaix	
+135 377++	Peronne DELESCLUSE	1480		Jehan DELEBECQUE	1491	Roubaix			
+135 378++	Vincent ou Jehan dit Bourlut VAN REUST	1490		Catherine DESREUX			1584		93
+135 379++	Catherine DESREUX	1490		Vincent ou Jehan dit Bourlut VAN REUST					
+135 380++	Pierre FREMAULT	~ 1465	Tourcoing	Marie DE LANDAS			1523	Lille	~ 58
+135 381++	Marie DE LANDAS	~ 1466		Pierre FREMAULT			1544		~ 78
+135 680	Jehan MEURISSE						< 1547		
+152 806	Baudouin FARVACQUE								
+173 212	Flour PASSELEU								
+173 214	Jean DELAPLACE	1550		Roze DELAPORTE			< 1601	Brêmes	< 50
+173 215	Roze DELAPORTE			Jean DELAPLACE					
+188 936	Joannes CRAEYE	~ 1460							
+188 976	Joannes van DIERDONCK	~ 1450							
+256 128	Nicolas van MARIVOORDE			Marie van HANDTSAEME					
+256 129	Marie van HANDTSAEME			Nicolas van MARIVOORDE					
+256 130	Pierre LAUWERS			Appoline DICX					
+256 131	Appoline DICX			Pierre LAUWERS					
+256 160++	Léonard dit "Hugues" de GRIBOVAL			Martine LAURIN					
+256 161++	Martine LAURIN			Léonard dit "Hugues" de GRIBOVAL					
+256 162++	Hector de BERQUIN	~ 1400		Jacquemine de WALLONCAPPEL DITE "de SAINT-OMER"			< 1456		< 56
+256 163++	Jacquemine de WALLONCAPPEL DITE "de SAINT-OMER"	~ 1410		Hector de BERQUIN			> 1456	Ieper	>= 46
+256 164++	Montfrand ALLAERT			Marie van BAMPOELE					
+256 165++	Marie van BAMPOELE			Montfrand ALLAERT					
+256 166++	Olivier van DER BANCK			Jacqueline VAN VARSSENAERE			3.5.1469		
+256 167++	Jacqueline VAN VARSSENAERE			Olivier van DER BANCK			3.1.1489		
+256 168	Jean de HAUDION			Marie DU BOIS de FIENNES					
+256 169	Marie DU BOIS de FIENNES			Jean de HAUDION					
+256 184	Jean IMMELOOT			Marie KNUTS					
+256 185	Marie KNUTS			Jean IMMELOOT					
+256 186	Jean de GRAVE ALIAS LE COMTE			Catherine LAUWERINS					
+256 187	Catherine LAUWERINS			Jean de GRAVE ALIAS LE COMTE					
+256 188	Pierre de SCHILDERE								
+256 190	Guillaume van BORLEKE						> 1486		
+256 200	Lodewyck DONCHE	~ 1425		Maria HEYNDRICKX	1480		1491	Alveringem	~ 66
+256 201	Maria HEYNDRICKX	~ 1425		Lodewyck DONCHE	1480		~ 1500		~ 75
+256 202	Jacob GHYSELIN			Nicaise de DOYS					
+256 203	Nicaise de DOYS			Jacob GHYSELIN					
+256 216	Jacques PEUSSIN			Jacqueline, Jossine van STAVELE					
+256 217	Jacqueline, Jossine van STAVELE			Jacques PEUSSIN					
+256 218	Josse van DEN BERGHE			Jacqueline van DEN BUSSCHE					
+256 219	Jacqueline van DEN BUSSCHE			Josse van DEN BERGHE					
+256 220	Gauthier (Wautier) van ZUUTPEENE (DE ST-OMER)			Marguerite VAN HONDEGHEM DITE de QUIENVILLE					
+256 221	Marguerite VAN HONDEGHEM DITE de QUIENVILLE			Gauthier (Wautier) van ZUUTPEENE (DE ST-OMER)					
+256 222	Bouchard de WERVERE			Pétronille van OYE					
+256 223	Pétronille van OYE			Bouchard de WERVERE					
+260 352	Jean LEURIDAN	~ 1450	Quesnoy-sur-Deûle	Péronne PICAVET DIT CUVELIER				Lomme	
+260 353	Péronne PICAVET DIT CUVELIER	~ 1450	Wasquehal	Jean LEURIDAN				Lomme	
+270 752++	Jehan DELEBECQUE	<> 1435 & 1455	Roubaix	Pétronille DELESCLUSE			1491	Roubaix	>= 36
+270 753++	Pétronille DELESCLUSE	~ 1455		Jehan DELEBECQUE					
+270 756++	Pierre VAN REUST	1470		Jeanne MATHON			1560		90
+270 757++	Jeanne MATHON	1460		Pierre VAN REUST					
+270 760++	Willaume FREMAULT			Jehanne DE LA RUYELLE	1460		1494		
+270 761++	Jehanne DE LA RUYELLE			Willaume FREMAULT	1460		1517		
+270 762++	Jacques DE LANDAS	~ 1440	Tournai	Catherine GOMMER	1465	Lille	1520	Lille	~ 80
+270 763++	Catherine GOMMER	1445		Jacques DE LANDAS	1465	Lille			
+512 256	Pierre van MARIVOORDE		Gistel	Marie HACX					
+512 257	Marie HACX			Pierre van MARIVOORDE					
+512 258	Jean van HANDTSAEME								
+512 262	Jean DICX								
+512 320++	Collaert de GRIBOVAL								
+512 322++	Josse LAURIN								
+512 324++	Jean dit Théry de BERQUIN	~ 1360					> 1408		>= 48
+512 328++	Daniel ALLAERT			Jeanne van BEVEREN			26.9.1453	Gent	
+512 329++	Jeanne van BEVEREN			Daniel ALLAERT					
+512 330++	Jacques van BAMPOELE								
+512 332++	Simon "le Jeune" van DER BANCK			Hoste N			17.8.1435		
+512 333++	Hoste N			Simon "le Jeune" van DER BANCK					
+512 334++	Jean VAN VARSSENAERE			Catherine BARBESAEN					
+512 335++	Catherine BARBESAEN			Jean VAN VARSSENAERE					
+512 336	Jean de HAUDION			N... de LENS					
+512 337	N... de LENS			Jean de HAUDION					
+512 368	Nicolas IMMELOOT			Claire HAGEBART					
+512 369	Claire HAGEBART			Nicolas IMMELOOT					
+512 400	Jacob DONCHE	~ 1400	Alveringem	Christine ZOETOOMS	~ 1420		20.3.1446	Alveringem	~ 46
+512 401	Christine ZOETOOMS			Jacob DONCHE	~ 1420		3.7.1470	Alveringem	
+512 432	Jean PEUSSIN			Marie de NEVE			1453		
+512 433	Marie de NEVE			Jean PEUSSIN			1418	Killem	
+512 434	Jean van STAVELE			X X					
+512 435	X X			Jean van STAVELE					
+512 440	Gérard de ST-OMER			Germaine de QUAETSTRAETE-WARHEM					
+512 441	Germaine de QUAETSTRAETE-WARHEM			Gérard de ST-OMER					
+512 442	Charles DE QUIENVILLE			Marguerite d'YPRES DITES de BAMME					
+512 443	Marguerite d'YPRES DITES de BAMME			Charles DE QUIENVILLE					
+520 706	Jean PICAVET DIT CUVELIER	~ 1420	Wasquehal	Jeanne DES BARBIEURS					
+520 707	Jeanne DES BARBIEURS	~ 1420	Wasquehal	Jean PICAVET DIT CUVELIER					
+541 504++	Jehan DELEBECQUE			Isabeau PIAT			10.2.1439	Roubaix	
+541 505++	Isabeau PIAT	~ 1400		Jehan DELEBECQUE			10.10.1439		~ 39
+541 512++	Robert VAN REUST								
+1 024 512	Rogier van MARIVOORDE								
+1 024 514	Jean HACX			Catherine VAN DER STEENE					
+1 024 515	Catherine VAN DER STEENE			Jean HACX					
+1 024 648++	Gautier (Wautier) de BERQUIN	~ 1310		Marie de BACKELROOT			> 1395		>= 85
+1 024 649++	Marie de BACKELROOT	~ 1310		Gautier (Wautier) de BERQUIN					
+1 024 658++	Gérard van BEVEREN								
+1 024 664++	Simon dit "de Witte" van DER BANCK			N... de BAENST					
+1 024 665++	N... de BAENST			Simon dit "de Witte" van DER BANCK					
+1 024 666++	Jean N			Claire BAVE					
+1 024 667++	Claire BAVE			Jean N					
+1 024 672	Rasse de HAUDION			Marguerite de LA MOTTE					
+1 024 673	Marguerite de LA MOTTE			Rasse de HAUDION					
+1 024 738	Daniel HAGEBART								
+1 024 800	Willem DONCHE	~ 1370	Alveringem	Clara CRAENEN, de CRAENE					
+1 024 801	Clara CRAENEN, de CRAENE			Willem DONCHE					
+1 024 802	Roeland ZOETOOMS			Maria VERKINS					
+1 024 803	Maria VERKINS			Roeland ZOETOOMS					
+1 024 864	Guillaume PEUSSIN								
+1 024 868	Guillaume van STAVELE			Marguerite van HEULE			1385	Brugge	
+1 024 869	Marguerite van HEULE			Guillaume van STAVELE					
+1 024 880	Amand de ST-OMER			Odilie de LANNOY					
+1 024 881	Odilie de LANNOY			Amand de ST-OMER					
+1 083 008++	Pierre DE LE BIEQUE								
+1 083 010++	Willaume PIAT								
+2 049 296++	Aleaume de BERQUIN	<> 1260 & 1270					> 1340		>= 70
+2 049 298++	Baudouin de BACKELROOT								
+2 049 736	Jean Alias Josse de BRETAGNE			Marie Alias Jeanne de HALLEWYN	1331				
+2 049 737	Marie Alias Jeanne de HALLEWYN			Jean Alias Josse de BRETAGNE	1331				
+2 049 738	Roger van HEULE			Marie de GAVRE					
+2 049 739	Marie de GAVRE			Roger van HEULE					
+2 049 760	Augustin de ST-OMER			Agnès de MOTTENGHEM					
+2 049 761	Agnès de MOTTENGHEM			Augustin de ST-OMER					
+2 166 016++	Jacquemart LIFEURE								
+2 166 020++	Jacquemart PIAT								
+4 098 592++	N de BERQUIN	~ 1230							
+4 099 472	Arthur de BRETAGNE			Marie de BETHUNE					
+4 099 473	Marie de BETHUNE			Arthur de BRETAGNE					
+4 099 474	Gauthier (Wautier) de HALLEWYN			Alix van STAVELE					
+4 099 475	Alix van STAVELE			Gauthier (Wautier) de HALLEWYN					
+4 099 520	Gérard de ST-OMER			Marie van LANGHEMEERSCH					
+4 099 521	Marie van LANGHEMEERSCH			Gérard de ST-OMER					
+4 332 032++	Pierron LI FEVRE								
+8 197 184++	Baudouin (Boidin) de BERQUIN	~ 1200							
+8 198 944	Jean de BRETAGNE	1266					1334	Nantes	68
+8 198 946	Robert de BETHUNE			Isabeau van GHISTELLE					
+8 198 947	Isabeau van GHISTELLE			Robert de BETHUNE					
+8 199 040	Gérard de ST-OMER			Rainfroy MOTTENGHEM					
+8 199 041	Rainfroy MOTTENGHEM			Gérard de ST-OMER					
+8 664 064++	Jehan DE LE BECQUE	1272							
+16 394 368++	Baudouin (Boidin) de BERQUIN	~ 1180							
+16 397 888	Jean II de BRETAGNE			Béatrice D'ANGLETERRE					
+16 397 889	Béatrice D'ANGLETERRE			Jean II de BRETAGNE					
+16 397 892	Jean dit "de Locres" de BETHUNE			Jeanne de COUCY					
+16 397 893	Jeanne de COUCY			Jean dit "de Locres" de BETHUNE					
+16 397 894	Jean de GHISTELLES			Jeanne de CHASTILLON			25.10.1415	Azincourt	
+16 397 895	Jeanne de CHASTILLON			Jean de GHISTELLES					
+16 398 080	Gillebert de ST-OMER			Agnès de HAVERSKERKE					
+16 398 081	Agnès de HAVERSKERKE			Gillebert de ST-OMER					
+32 795 778	Henri III PLANTAGENÊT			Éléonore de PROVENCE					
+32 795 779	Éléonore de PROVENCE			Henri III PLANTAGENÊT					
+32 795 786	Enguerrand de COUCY								
+32 796 160	Guillaume de ST-OMER			Ermingarde de LA VIEFVILLE					
+32 796 161	Ermingarde de LA VIEFVILLE			Guillaume de ST-OMER					
+65 592 320	Guillaume de ST-OMER			Ismérie N					
+65 592 321	Ismérie N			Guillaume de ST-OMER					
