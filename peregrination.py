@@ -57,6 +57,30 @@ import csv
 from operator import itemgetter
 import collections
 import re
+import base64
+import webbrowser
+
+#################
+# NON NATIVE PACKAGE #
+#################
+
+def install_and_import(package):
+    """
+    install non-native package using pip
+    """
+    import importlib
+    try:
+        importlib.import_module(package)
+    except ImportError:
+        import pip
+        pip.main(['install', package])
+    finally:
+        globals()[package] = importlib.import_module(package)
+
+try:
+    import folium
+except ImportError:
+    install_and_import('folium')
 """
 import random
 from geopy.geocoders import Nominatim
@@ -879,34 +903,10 @@ def convert_to_trajectory_descdt(descdt,town_list):
                     list_coord += [coo]
     return list(set(list_traj)), list(set(list_coord))
 
-######
-# TEST #
-######
-"""
-Variable for Demo and caught the data for further analysis
-"""
-
-ascdt = None
-town_list = None
-dico_annotation =None
-list_traj = None
-list_coord = None
-y_min = None
-x_min = None
-y_max = None
-x_max = None
-g_max = None
-fig = None
-m = None
-ax = None
-points_with_annotation = None
-    
-
 def generate_map(typ,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation):
     """
     Generate Open Street Map HTML page
     """
-    import folium
     xmean = np.mean([x_min,x_max])
     ymean = np.mean([y_min,y_max])
     if typ == 1:
@@ -934,12 +934,34 @@ def generate_map(typ,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation)
             folium.Marker([y2, x2], popup=m2+"\n"+dico_annotation[m2.encode('iso8859_15')][0]).add_to(my_map)
             town_set.add(m2)
     for key in dico_annotation.keys():
-        if key.decode('iso885_15') not in town_set:
+        if key.decode('iso8859_15') not in town_set:
             pass
             #folium.Marker([dico_annotation[m2.encode('iso8859_15')][1], dico_annotation[m2.encode('iso8859_15')][2]], popup=key+"\n"+dico_annotation[m2.encode('iso8859_15')][0]; color="black").add_to(my_map)
-    my_map.save('map.html')
+    filename = 'map_'+str(typ)+'.html'
+    my_map.save(filename)
+    webbrowser.open(filename)
     
-    
+######
+# TEST #
+######
+"""
+Variable for Demo and caught the data for further analysis
+"""
+
+ascdt = None
+town_list = None
+dico_annotation =None
+list_traj = None
+list_coord = None
+y_min = None
+x_min = None
+y_max = None
+x_max = None
+g_max = None
+fig = None
+m = None
+ax = None
+points_with_annotation = None
 
 def Demo_ascdt():
     """
@@ -960,6 +982,8 @@ def Demo_ascdt():
     list_traj, list_coord = convert_to_trajectory_ascdt(ascdt,town_list)
     #find the min and max coordinate
     y_min, x_min, y_max, x_max, g_max = find_min_max_coordinate(list_coord)
+    #generate the OpenStreetMap
+    generate_map(typ,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation)
     #mapping the map
     print("mapping the map")
     fig, m, ax = carte(y_min, x_min, y_max, x_max)
@@ -1036,9 +1060,11 @@ def Demo_descdt():
     list_traj, list_coord = convert_to_trajectory_descdt(descdt,town_list)
     #find the min and max coordinate
     y_min, x_min, y_max, x_max, g_max = find_min_max_coordinate(list_coord)
+    #generate the OpenStreetMap
+    generate_map(typ,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation)
     #mapping the map
     print("mapping the map")
-    fig, m, ax = carte(y_min, x_min, y_max, x_max)
+    fig, m, ax = carte(x_min, y_min, x_max, y_max)
     #mapping the trajectories (no return variable)
     print("mapping the trajectories")
     points_with_annotation, list_text_point = mapping_trajectory(list_traj,m,ax, g_max,typ,dico_annotation)

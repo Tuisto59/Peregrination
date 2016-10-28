@@ -180,6 +180,8 @@ class Peregrination():
                 list_traj, list_coord = convert_to_trajectory_ascdt(ascdt,town_list)
                 #find the min and max coordinate
                 y_min, x_min, y_max, x_max, g_max = find_min_max_coordinate(list_coord)
+                #generate the OpenStreetMap
+                generate_map(self.type,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation)
                 #mapping the map
                 print("mapping the map")
                 fig, m, ax = carte(y_min, x_min, y_max, x_max)
@@ -198,10 +200,12 @@ class Peregrination():
                 #compute the trajectory *** !!! ***
                 list_traj, list_coord = convert_to_trajectory_descdt(descdt,town_list)
                 #find the min and max coordinate
-                x_min, y_min, x_max, y_max, g_max = find_min_max_coordinate(list_coord)
+                y_min, x_min, y_max, x_max, g_max = find_min_max_coordinate(list_coord)
+                #generate the OpenStreetMap
+                generate_map(self.type,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation)
                 #mapping the map
                 print("mapping the map")
-                fig, m, ax = carte(x_min, y_min, x_max, y_max)
+                fig, m, ax = carte(y_min, x_min, y_max, x_max)
                 #mapping the trajectories (no return variable)
                 print("Compute the trajectories")
                 points_with_annotation, list_text_point = mapping_trajectory(list_traj,m,ax, g_max, self.type,dico_annotation)
