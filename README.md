@@ -1,436 +1,344 @@
-# Peregrination
-%% LyX 2.2.1 created this file.  For more info, see http://www.lyx.org/.
 
-%% Do not edit unless you really know what you are doing.
 
-\documentclass[oneside,english,oldfontcommands]{memoir}
+[Source](http://peregrination.jimdo.com/manuel-d-utilisation/ "Permalink to Manuel d'utilisation - Pérégrination : Cartographie généalogique")
 
-\usepackage[T1]{fontenc}
+# Manuel d'utilisation - Pérégrination : Cartographie généalogique
 
-\usepackage[latin9]{inputenc}
+Pour les non-spécialistes de l'informatique, je vais à la fois parler de termes techniques que je vais agrémenter d'exemple simple pour vous expliquer à la fois la simplicité et la complexité de ce qui se cache parfois derrière l'informatique. :)
 
-\usepackage{geometry}
+Pérégrination ©, utilise pour fonctionné un [langage de programmation][1]. Ce langage de programmation s'appelle Python.  Comme les langues vivantes (Anglais, Français, Allemand, Chinois,...) un ordinateur parle aussi une langue, le binaire (0 et 1) or pour un être humain, c'est absolument impossible, et incompréhensible de parlé ce langage.
 
-\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+ 
 
-\setcounter{secnumdepth}{3}
+Les informaticiens ont donc inventés des langages, pour communiquer et donner des ordres aux ordinateurs. Ces langages ont été inventé d'abord par les américains, de ce fait, les mots utilisés dans le langage sont en anglais. Or, lorsque nous voyageons à l'étranger, il nous faut un interprète pour pouvoir souvent comprendre la langue du pays étranger.
 
-\setcounter{tocdepth}{3}
+ 
 
-\usepackage{color}
+Pour un ordinateur c'est exactement la même chose. L'ordinateur à besoin d'un programme qui convertit ces langages en langage "ordinateur", en binaire, et ce programme et appelé un [Interpréteur][2]. Ces langages sont communément appelés des langages de programmation, ils nous permettent d'interagir avec les composants physiques de l'ordinateur (disque dur, processeur...) et virtuel (fichiers, mémoire vive, ...), et permettent d'exécuter des taches très complexes et multiples, du fait de la capacité naturelle d'un ordinateur à réaliser des opérations en parallèle.
 
-\usepackage{babel}
+ 
 
-\usepackage{graphicx}
+Car mon programme à été écrit en Python nous devons installer l'interpréteur Python. En plus de l'interpréteur, il vous installera ce que l'ont appelle des [bibliothèque logicielle][3] ou librairies. Imaginer une vraie bibliothèque, ce bâtiment contient des livres, et ces livres des chapitres. Chaque livre parle d'un sujet particulier, Science, Math, Littérature, Psychologie, Jeux, etc... En programmation , c'est la même chose, on aime bien nommer les choses avec celles du quotidien.
 
-\PassOptionsToPackage{normalem}{ulem}
+ 
 
-\usepackage{ulem}
+Une librairie et un ensemble de fichiers (comparer le à une série de tome) qui contient un ensemble de fonctions (qui seront ici nos chapitres) et chaque fonction a son propre but bien défini. Ainsi en python nous avons la librairie "[_math_][4]" qui permet de calculer Pi, de réaliser des puissances, de la trigonométrie, etc... Bien sur, un programmeur aurait put avoir l'envie de créer lui même sa propre fonction, réalisant le même but, mais souvent il est conseillé d'utiliser les fonctions des librairies, bien plus efficaces et rapides.
 
-\usepackage[unicode=true]
+ 
 
- {hyperref}
+Comme ont dit en programmation, il ne sert à rien de réinventer la roue, si vous avez envie de faire quelque chose, quelqu'un l'aura déjà fait avant vous !
 
-\usepackage{breakurl}
+Vous aurez besoin de ces logiciels pour pouvoir convertir votre généalogie en plusieurs fichiers
 
-\begin{document}
+![][5]
 
-\title{{\Huge{}MODE D'EMPLOI}}
+ 
 
-\author{Yoan BOUZIN}
+ 
 
-\maketitle
+* Hérédis Bleu ou version supérieur
 
-\begin{center}
+Ce navigateur ainsi que son module SQLite Manager nous serons très utile par la suite afin d'extraire les données GPS du fichier de Hérédis.
 
-\includegraphics{\string"C:/Users/Yoan/Desktop/fichier heredis eeepc genealogie/mode d'emplois geolocalisation/Peregrination2\string".eps}
+![][6]
 
-\par\end{center}
+![][7]
 
-\begin{center}
+![][8]
 
-\includegraphics[scale=0.6]{figure_3}
+![][9]
 
-\par\end{center}
+  
 
-\chapter{Logiciels}
+Pour que le programme fonctionne, nous devons installer un interpréteur Python.
 
-\section{Logiciel de G�n�alogie:}
+ 
 
-\begin{itemize}
+Cet interpréteur et disponible sur le site officiel . Vous pouvez installer manuellement ces interpréteurs (actuellement la version 2.7.10 et 3.5.2). Vous aurez aussi besoin d'installer des librairies qui ne sont pas installées avec l'interpréteur, il s'agit des librairies NumPy, Matplotlib et Basemap. Enfin, si vous souhaitez visualiser ou modifier le code source, tester et exécuter vos scripts, vous devriez installer un Environnement de développement (IDE en Anglais). Vous pouvez faire manuellement tout ceci en prenant le temps de regardez la documentation associée sur le web, cela nécessite beaucoup de persévérance ! Heureusement pour vous, il existe un programme tout en un qui réalise tout ça pour vous ! Il s'agit de Python XY.
 
-\item H�r�dis (Bleu) (ou sup�rieur)
+1. Télécharger Python X,Y 
+2. Installez Python X,Y en suivant les paramètres qu'il vous indique
+3. Patientez, l'installation peut être longue, je vous suggère en attendant de regarder une vidéo ou de réaliser une recherche généalogique ou de mettre à jour le dictionnaire des lieux de votre logiciel de généalogie  ;)
 
-\end{itemize}
+ 
 
-\section{Navigateur \& Add-on :}
+Voici la vidéo sur YouTube de l'installation de Python X,Y (Anglais)
 
-\begin{itemize}
+Pour les non-anglais, vous pouvez générer les sous-titre et réaliser la traduction automatique des sous-titres:
 
-\item Firefox
+(Valable uniquement pour les vidéos en langue anglo-saxonne)
 
-\begin{itemize}
+1.  Avec votre souris cliquez sur le bouton "Sous-titre" (carré avec des petits trait à l'intérieur en bas à droite)
+2. Ensuite cliquez sur "Paramètres" (roue cranté)
+3. Sur la fenêtre qui s'affiche sur la vidéo cliquez sur "Sous-titres (1)         Anglais (généré automatiquement) >"
+4. Cliquez sur "Traduire automatiquement"
+5. Un nouveau volet s'affiche avec une liste de langue, à l'aide de l'ascenseur sur la gauche cliquez sur la langue "Français"
+6. Puis cliquez n'importe pour revenir a la vidéo avec les sous-titre en Français : Note vous pouvez cliquez sur les sous-titre et les mettre n'importe où.
 
-\item Add SQLite Manager
+1. Une fois l'installation terminée télécharger la librairie Basemap à cette adresse :  puis double-cliquez pour l'installé  
 
-\end{itemize}
+![][10]
 
-\end{itemize}
+ 
 
-\section{Utilisateur Windows:}
+ 
 
-Si vous utilisez Windows et que vous n'avez pas install� le language
+Mon ordinateur ayant à la fois installé sur son disque dur, deux systèmes d'exploitation (Windows et Linux), je peux à la fois tester mon programme dans un environnement Linux et Windows. Pour le moment le programme fonctionne sur Ubuntuu version 14.04.1. Je ne l'ai donc pas essayé sur Mac, Fédora, RedHat et Debian. Les interpréteurs Python étant déjà installés avec les librairies de base je vous recommande d'installer si cela n'est pas encore fait l'installateur de paquet PIP. Dans un terminal copier coller ses deux lignes de commandes. La première sert à installer  PIP,  et les composants de bases de python, la seconde permet de la mettre à jour.
 
-de programmation Python. Pour vous �viter une installation manuel
+    $ sudo apt-get install python-pip python-dev build-essential
+    $ sudo pip install --upgrade pip
 
-de Python et de toute ses librairie (matplotlib, numpy, ...) je vous
+Ensuite nous devons installer les librairies Matplotlib et NumPy et Basemap
 
-invite � suivre ces �tapes
+Pour installer Matplotlib, selon la documentation (Anglaise) de leur site internet suivant si vous êtes sur un système Linux/Debian ou Fedora/RedHat (http://matplotlib.org/1.5.1/users/installing.html)
 
-\subsection{Installation du langage de programmation Python : l'IDE Python X,Y}
+    $ sudo pip install matplotlib
+    $ sudo pip install --upgrade matplotlib
 
-Python
-
-Comme expliquer sur ce PDF : \href{http://prepas.org/2013/Info/DocumentsIG/install-python-windows.pdf}{http://prepas.org/2013/Info/DocumentsIG/install-python-windows.pdf},
-
-Python est un language de programmation et non un programme avec un
-
-``.exe'' que l'ont clique dessus. 
-
-Sur les syst�mes d'exploitations de type Linux, ce dernier et d�j�
-
-disponible (g�n�rallement la version 2.7) actuellement la derni�re
-
-version et la 3.5. Sur windows nous devons l'installer. 
-
-Pour pouvoir l'utilis� il faut installer un IDE (Environnement de
-
-d�velloppement) qui vous permettra d'ouvrir, cr�� et ex�cuter vos
-
-script. Nous allons installer un IDE appell� Python X,Y disponible
-
-ici en t�l�chargement : http://python-xy.github.io/downloads.html
-
-\begin{enumerate}
-
-\item T�l�charger Python X,Y \href{http://www.mirrorservice.org/sites/pythonxy.com/Python(x,y)-2.7.10.0.exe}{http://www.mirrorservice.org/sites/pythonxy.com/Python(x,y)-2.7.10.0.exe}
-
-\item Installez Python X,Y , l'installation et longue, je vous propose de
-
-regarder une video ou de faire une recherche g�n�alogique ;)
-
-\end{enumerate}
-
-\subsection{Installation de la librairie Basemap (librairie de carthographie)
-
-:}
-
-\begin{enumerate}
-
-\item Une fois l'installation termin� t�l�charger la librairie Basemap �
-
-cette adresse : \href{http://sourceforge.mirrorservice.org/p/py/python-xy/plugins/basemap-1.0.2_py27.exe}{http://sourceforge.mirrorservice.org/p/py/python-xy/plugins/basemap-1.0.2\_{}py27.exe}
-
-\end{enumerate}
-
-\section{Utilisateur Linux:}
-
-\subsection{Librairies utilis� :}
-
-Vous devez avoir installer Numpy et Matplotlib
-
-pour cela je vous conseil d'utiliser l'instalateur PIP
-
-\begin{verbatim}
-
-sudo pip install matplotlib --upgrade
-
-sudo pip install numpy
-
-\end{verbatim}
-
-\begin{flushleft}
-
-Installation des biblioth�que g�ospatial n�c�ssaire � Basemap: 
-
-\par\end{flushleft}
-
-\begin{flushleft}
+    $ sudo pip install numpy
+    $ sudo pip install --upgrade numpy
 
 https://docs.djangoproject.com/fr/1.10/ref/contrib/gis/install/geolibs/
 
-\par\end{flushleft}
-
-\begin{flushleft}
-
-Installation de Basemap
-
-\par\end{flushleft}
-
-\begin{flushleft}
-
 http://matplotlib.org/basemap/users/installing.html
 
-\par\end{flushleft}
+ 
 
-\chapter{Installez les cartes des pays:}
+![][11]
 
-Pour pouvoir afficher les fronti�res des pays, des d�partements, des
+Pour pouvoir afficher les frontières des pays, des départements, des communes nous avons besoin d'un fichier qui contient toute les informations pour permettre de les tracer avec les latitudes et les longitudes. Ce sont ce qu'on appelle des fichiers SHAPEFILE (traduisé "fichier de forme"). Ils sont disponibles librement et sont créés  par des développeurs indépendants. Vous pouvez les télécharger via ce site internet : [http://www.gadm.org/country][12]
 
-communes nous avons besoin d'un fichier qui contient toute les informations
+ 
 
-pour permettre de les tracer avec les latitudes et les longitudes.
+Choisissez votre Pays (Country) et choisissez "Shapefile" dans les formats de fichiers (File format), télécharger le fichier compressé et décompressé le contenue dans le dossier SHAPEFILE
 
-Ce sont se qu'on apelle des fichier SHAPEFILE (traduis� ``fichier
+1. Télécharger et dézipé la carte de France dans le dossier SHAPEFILE
 
-de formes''). Ils sont disponible librement et sont cr�� par des
+> 1. Télécharger et dézipé la carte de Belgique dans le dossier SHAPEFILE
 
-d�velloppeur ind�pendant. Vous pouvez les t�l�charger via se site
+> ![Capture d'écran sur le site de GADM avec le fichier Shapefile de la France.][13]Capture d'écran sur le site de GADM avec le fichier Shapefile de la France.
 
-internet : \href{http://www.gadm.org/country}{http://www.gadm.org/country}Choisissez
+Avec Hérédis faite : Fichier > Préparer pour ... > Heredis Mac
 
-votre Pays (Country) et choisissez ``Shapefile'' dans les format
+![][14]
 
-de fichier (File format), t�l�charger le fichier compr�ss� et d�compr�ss�
+![][15]
 
-le contenue dans le dossier SHAPEFILE. Pour faire fonctionn� 
+Si vous utilisez Firefox, installer SQLite Manager (SQLIte Manager)
 
-\begin{enumerate}
+![][16]
 
-\item T�l�charger et d�zip� la carte de France dans le dossier SHAPEFILE\\
+Après installation, démarrer le module, dans Outils > SQLite Manager
 
-http://biogeo.ucdavis.edu/data/gadm2.8/shp/FRA\_adm\_shp.zip
+![][17]
 
-\item T�l�charger et d�zip� la carte de Belgique dans le dossier SHAPEFILE\\
+Une nouvelle fenêtre apparaît, cliquez sur Ouvrir
 
-http://biogeo.ucdavis.edu/data/gadm2.8/shp/BEL\_adm\_shp.zip
+![][18]
 
-\end{enumerate}
+Avec la boite de dialogue parcourez vos dossiers, pour faire apparaître les fichiers, sélectionner "Tout les fichiers" dans la liste déroulante, sélectionner le fichier et cliquez sur Ouvrir
 
-\chapter{Export des donn�es GPS du dictionnaire des Lieux de Heredis:}
+![][19]
 
-\begin{enumerate}
+Les données contenue dans le fichier Hérédis pour Mac et convertit en une base de données SQL (Structured Query Language , en français Language de requête structuré, plus d'info ici :Wkipedia). Vous pouvez donc voir apparaître toutes les données de votre fichier sous la forme de Table, ces tables sont les éléments principaux de la base de données, ce sont elles qui contiennent les informations. Sur le volet de gauche vous verrez apparaître les différentes tables du fichier, je vous invite à découvrir la table "Lieux" en double-cliquant dessus.
 
-\item Avec H�r�dis faite : Fichier &gt; Pr�parer pour ... &gt; Heredis Mac\\
+![][20]
 
-\includegraphics[scale=0.4]{\string"../fichier heredis eeepc genealogie/mode d'emplois geolocalisation/1\string".eps}
+Vous verrez apparaitre le détail de la table "Lieux" ainsi qu'un tas d'informations utiles pour les développeurs confirmés en SQL, nous allons maintenant exporter de cette table les informations utiles.
 
-\item Acceptez et enregistrez\\
+![][21]
 
-\includegraphics[scale=0.4]{\string"C:/Users/Yoan/Desktop/fichier heredis eeepc genealogie/mode d'emplois geolocalisation/2\string".eps}
+Allez dans l'onglet "Executer le SQL" et dans la case "Entrez les commandes SQL" effacez l'exemple "SELECT * FROM tablename" et copier coller cette requête SQL :SELECT Ville, Latitude, longitude FROM Lieux
 
-\item Si vous utilisez Firefox, installer SQLite Manager (\textcolor{blue}{\uline{\href{https://addons.mozilla.org/fr/firefox/addon/sqlite-manager/}{SQLIte Manager}}})\\
+![][22]
 
-\includegraphics[scale=0.4]{\string"C:/Users/Yoan/Desktop/fichier heredis eeepc genealogie/mode d'emplois geolocalisation/3\string".eps}
+Cette requête signifie en gros : sélectionner les colonnes "Ville", "Latitude", "Longitude" de la table "Lieux"
 
-\item Apr�s installation, d�marer le module, dans Outils &gt; SQLite Manager\\
+  
+Maintenant cliquez sur le bouton "Action" et dans la liste déroulante "Save Result (CSV) to File" (Sauvegarder le résultat (CSV) dans un fichier). Un fichier au format CSV et un fichier où les informations sont séparées par un délimiteur, le plus souvent, des virgules (CSV = Comma Separated Values , Valeur Séparé par des virgules, CSV) ces dernier sont donc exploitable par Excel, OpenOffice, LibreOfice, et d'autre langages de programmation (exemple ici quand le fichier et ouvert avec LibreOffice).
 
-\includegraphics[scale=0.4]{\string"../fichier heredis eeepc genealogie/mode d'emplois geolocalisation/4\string".eps}
+![][23]
 
-\item Une nouvelle fen�tre apparait, cliquez sur Ouvrir\\
+![][24]
 
-\includegraphics[scale=0.4]{\string"../fichier heredis eeepc genealogie/mode d'emplois geolocalisation/5\string".eps}
+Enfin vous disposez d'un fichier CSV contenant la liste des latitudes et longitudes de votre fichier généalogique. Ce dernier nous servira pour placer les trajectoires pour les pérégrinations.
 
-\item Avec la boite de dialogue parcourez vos dossier, pour faire apparaitre
+Avec Hérédis, allez dans "Documents" > "Listes d'ascendances" > "Complète..."
 
-les fichiers, selectionner ``Tout les fichier'' dans la liste d�roulante,
+![][25]
 
-selectionner le fichier et cliquez sur Ouvrir\\
+Dans l'onglet "Présentation" dans la section "Styles des rubriques" dans la catégorie "Lieux : " sélectionnez "Commune"
 
-\includegraphics[scale=0.4]{\string"../fichier heredis eeepc genealogie/mode d'emplois geolocalisation/6\string".eps}
+![][26]
 
-\item Les donn�es contenue dans le fichier H�r�dis pour Mac et convertit
+Cliquez directement sur "Exporter"
 
-en une base de donn�es SQL (\textit{Structured Query Language} , en
+![][27]
 
-fran�ais Language de requ�te structur�, plus d'info ici :\href{https://fr.wikipedia.org/wiki/Structured_Query_Language}{Wkipedia}).
+Enregistrez le fichier dans le dossier et dans le nom de votre choix
 
-Vous pouvez donc voir apparaitre toutes les donn�es de votre fichier
+![][28]
 
-sous la forme de Table, ces tables sont les �l�ments principaux de
+![GUI sous Linux][29]GUI sous Linux
 
-la base de donn�es, se sont elles qui contiennent les informations.
+![GUI sous Windows 8][30]GUI sous Windows 8
 
-Sur le volet de gauche vous verrez appara�tre les diff�rentes tables
+  
 
-du fichier, je vous invite � d�couvrir la table ``Lieux'' en double-cliquant
+1. Télécharger le fichier ZIP
+2. Extraire les fichiers du ZIP dans le dossier de votre choix
+3. Double-clic sur "Launcher.py"
 
-dessus.\\
+La première fois que vous l'utiliserai, une console vas s'ouvrir, ceci est tout à fait normal. Sur cette console des lignes défileront. Explication, le programme vas détecter si vous posséder sur votre ordinateur tout les éléments nécessaire pour son fonctionnement.
 
-\includegraphics[scale=0.4]{\string"../fichier heredis eeepc genealogie/mode d'emplois geolocalisation/7\string".eps}\\
+ 
 
-\item Vous verrez apparaitre le d�tail de la table ``Lieux'' ainsi qu'un
+La librairie 'folium' n'est pas une librairie native de Python, elle n'est pas non plus apporter avec l'installation de Python X,Y. A l'intérieur du programme, dans le code source, le programme vas détecter la présence ou non de ces librairies, et les installer.
 
-tas d'informations utile pour les d�velloppeurs confirm�s en SQL,
+ 
 
-nous allons maintenant exporter de cette table les informations utiles\\
+Pour les installer, Python possède un programme spécial qui s'appelle PIP. C'est ce programme que mon outils va utilisé pour installer les librairies manquantes.
 
-\includegraphics[scale=0.4]{\string"C:/Users/Yoan/Desktop/fichier heredis eeepc genealogie/mode d'emplois geolocalisation/8\string".eps}
+ 
 
-\item Allez dans l'onglet ``Executer le SQL'' et dans la case ``Entrez
+Ainsi PIP vas vous installer la librairie Folium. A la façon des poupée russes, si une librairie à besoin d'une autre librairie pour fonctionné, c'est ce que l'on appelle des dépendances. Ainsi , PIP vas installez automatiquement tout ce qui vous manque (voir ci dessus l'illustartion).
 
-les commandes SQL'' effacez l'exemple ``SELECT {*} FROM tablename''
+![Installation de la librairie folium et de sa dépendance Jinja2 avec PIP lors du lancement du programme "Launcher.py"][31]Installation de la librairie folium et de sa dépendance Jinja2 avec PIP lors du lancement du programme "Launcher.py"
 
-et copier coller cette requ�te SQL :SELECT Ville, Latitude, longitude
+Windows va compiler les fichiers et créer des fichiers _peregrination.pyc_  et _Launcher.pyc _, pour que windows puisse utilisé mon programme.  
+EN effet, windows et obligé de traduire mes fichier, écrit en langage "python" en fichier binaire (langage 0 et 1). Si vous cliquez sur ses fichiers, la même chose se produira. Ne cliquez pas sur le fichier peregrination. Ce dernier ne contient que les données.
 
-FROM Lieux\\
+![][32]
 
-\texttt{\textcolor{blue}{\emph{\includegraphics[scale=0.4]{\string"../fichier heredis eeepc genealogie/mode d'emplois geolocalisation/9\string".eps}}}}\\
+En raison d'un BUG que je dois encore déterminer la seule manière de faire fonctionner mon programme et la suivante :
 
-Cette requ�te signifie en gros : s�lectionn� les colonne ``Ville'',
+![BUG ciblé][33]BUG ciblé
 
-``Latitude'', ``Longitude'' de la table ``Lieux''
+En raison d'un BUG que je dois encore déterminer la seule manière de faire fonctionner mon programme et la suivante :
 
-\item Maintenant cliquez sur le bouton ``Action'' et dans la liste d�roulante
+1) clic-droit sur Launcher.py
 
-``\textit{Save Result (CSV) to File}'' (Sauvegarder le r�sultat
+ 
 
-(CSV) dans un fichier). Un fichier au format CSV et un fichier o�
+2) cliquez sur "Edit with IDLE"
 
-les informations sont s�par� par un d�limitateur, le plus souvent,
+3) une fenêtre s'affiche, appuyer sur "F5" (ou "Run" > "Python Shell")
 
-des virgules (CSV = Comma Separated Values , Valeur S�par� par des
+4) la console de IDLE ainsi que l'interfaçe graphique s'affiche, vous pouvez du coup utilisez mon programme
 
-virgules, \href{https://fr.wikipedia.org/wiki/Comma-separated_values}{CSV})
+1. Télécharger le fichier ZIP
+2. Extraire les fichiers du ZIP dans les dossiers de votre choix
+3. Ouvrer une console (CTRL+ALT+T) et taper :
 
-ces dernier sont donc exploitable par Excel, OpenOffice, LibreOfice,
+Vous pouvez aussi utilisé n'importe quelle environnement de développement (IDE) tel que IDLE, qui et naturellement fournis avec l'installation de Python, Spider, et tout autre programme supportant le langage python, en ouvrant le script Launcher.py et en exécutant le programme.
 
-et d'autre languages de programmation (exemple ici quand le fichier
+ 
 
-et ouvert avec LibreOffice).\\
+Note : Si vous avez installez la dernière version de Matplotlib (1.5.1) vous verrez apparaitre se message d'erreur, ceci n'est en rien un bug du programme mais une information indiquant pourquoi le programme sera long à charger:
 
-\includegraphics[scale=0.4]{\string"../fichier heredis eeepc genealogie/mode d'emplois geolocalisation/10\string".eps}\\
+    Warning (from warnings module):  
+      File "/usr/local/lib/python2.7/dist-packages/matplotlib/font_manager.py", line 273  
+        warnings.warn('Matplotlib is building the font cache using fc-list. This may take a moment.')  
+    UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
 
-\includegraphics[scale=0.4]{\string"../fichier heredis eeepc genealogie/mode d'emplois geolocalisation/11\string".eps}
+Cliquer sur le bouton "Charger le fichier d'ascendance"
 
-\end{enumerate}
+Sélectionner votre fichier puis valider
 
-Enfin vous disposez d'un fichier CSV contenant la liste des latitudes
+![][34]
 
-et longitudes de votre fichier g�n�alogique. Ce dernier nous servira
+Cliquez sur le bouton "Charger le fichier de lieux"
 
-pour placer les trajectoires pour les p�rigrinations.
+Sélectionner votre fichier puis valider
 
-\chapter{Export des donn�es de la liste ascendante sous la forme TXT (ASCII):}
+![][35]
 
-\begin{enumerate}
+Cliquer sur le bouton "Options d'affichage" et coché les cases pour afficher les informations que vous souhaiter voir apparaitre sur les info-bulle de la carte
 
-\item Avec H�r�dis, allez dans ``Documents'' &gt; ``Listes d'ascendances''
+![][36]
 
-&gt; ``Compl�te...''\\
+Enfin généré votre carte  en appuyant sur le bouton "Créé la carte"
 
-\includegraphics[scale=0.3]{\string"../fichier heredis eeepc genealogie/mode d'emplois geolocalisation/ascii1\string".eps}
+![][37]
 
-\item Dans l'onglet ``Pr�sentation'' dans la section ``Styles des rubriques''
+  
 
-dans la cat�gorie ``Lieux : '' s�lectionn� ``Commune''\\
+![][38]
 
-\includegraphics[scale=0.4]{\string"../fichier heredis eeepc genealogie/mode d'emplois geolocalisation/ascii2\string".eps}
+![][39]
 
-\item Cliquez directement sur ``Exporter''\\
+  
 
-\includegraphics[scale=0.4]{\string"../fichier heredis eeepc genealogie/mode d'emplois geolocalisation/ascii3\string".eps}
+Cliquer sur le bouton "Charger le fichier d'ascendance"
 
-\item Enregistrer le fichier dans le dossier et dans le nom de votre choix\\
+Sélectionner votre fichier puis valider
 
-\includegraphics[scale=0.4]{\string"../fichier heredis eeepc genealogie/mode d'emplois geolocalisation/ascii4\string".eps}
+![][40]
 
-\end{enumerate}
+Cliquez sur le bouton "Charger le fichier de lieux"
 
-\chapter{Utilisation :}
+Sélectionner votre fichier puis valider
 
-\begin{enumerate}
+![][41]
 
-\item Doucle-clic sur le fichier Demo.py, la console IPython s'ouvre et
+Cliquer sur le bouton "Options d'affichage" et coché les cases pour afficher les informations que vous souhaiter voir apparaitre sur les info-bulle de la carte
 
-execute le script et une f�netre s'affiche. Ceci peux prendre un certain
+![][42]
 
-temps.\\
+Enfin généré votre carte  en appuyant sur le bouton "Créé la carte"
 
-\includegraphics[scale=0.6]{\string"C:/Users/Yoan/Desktop/fichier heredis eeepc genealogie/mode d'emplois geolocalisation/Peregrination\string".eps}
+![][43]
 
-\item Cliquez sur le bouton ``Charger le fichier d'ascendance'', parcourer
+  
 
-dans vos dossier et cliquez sur le fichier d'ascendance que vous avez
+![][44]
 
-g�n�r� {[}voir Chapitre 3{]}
+![][45]
 
-\item Cliquez ensuite sur le bouton ``Charger le fichier de lieux'', parcourez
+  
 
-dans vos dossier et cliquez sur le fichier de lieux g�n�r� que vous
-
-avez cr�� {[}voir Chapitre 2{]}
-
-\item Cliquez ensuite sur ``Cr�� la carte'', la console d�file, les sosa
-
-sont analys�e un par un et quand le p�re ou la m�re d'un sosa et n�
-
-dans une commune diff�rente que l'enfant, la trajectoire et calcul�
-
-et puis affich� dans la console. A la fin de l'analyse, une fen�tre
-
-s'affiche avec la carte des commune de France et de Belgique, r�gl�
-
-en fonction des communes.
-
-\end{enumerate}
-
-\begin{center}
-
-\includegraphics[scale=0.5]{\string"C:/Users/Yoan/Desktop/fichier heredis eeepc genealogie/mode d'emplois geolocalisation/console-python-after\string".eps}
-
-\par\end{center}
-
-\begin{center}
-
-\includegraphics[scale=0.9]{\string"C:/Users/Yoan/Desktop/fichier heredis eeepc genealogie/mode d'emplois geolocalisation/map-result\string".eps}
-
-\par\end{center}
-
-\begin{enumerate}
-
-\item Pour pouvoir naviguer dans la carte, il suffit d'utiliser les outils
-
-suivant mis � votre disposition \includegraphics{\string"C:/Users/Yoan/Desktop/fichier heredis eeepc genealogie/mode d'emplois geolocalisation/matplotlib-tool\string".eps}
-
-\begin{enumerate}
-
-\item La fl�che gauche permet de revenir � l'action pr�c�dente
-
-\item la fl�che droite permet de revenir � l'action suivante
-
-\item La croix multidirectionelle permet de d�placer le graphique dans le
-
-cadre
-
-\item La loupe permet de d�finir un cadre
-
-\end{enumerate}
-
-\end{enumerate}
-
-\begin{center}
-
-\includegraphics[scale=0.5]{figure_1}
-
-\par\end{center}
-
-\legend{Premier Zoom au niveau de la r�gion du Nord-Pas-de-Calais / Belgique}
-
-\begin{center}
-
-\includegraphics[scale=0.5]{figure_2}
-
-\par\end{center}
-
-\legend{Deuxi�me zoom au niveau de la r�gion Lille , Flandres Belges}
-
-\begin{center}
-
-\includegraphics[scale=0.85]{figure_3}
-
-\par\end{center}
-
-\legend{Troisi�me zoom au niveau de la r�gion Roubaix}
-
-\end{document}
+[1]: https://fr.wikipedia.org/wiki/Langage_de_programmation "https://fr.wikipedia.org/wiki/Langage_de_programmation"
+[2]: https://fr.wikipedia.org/wiki/Interpr%C3%A8te_(informatique) "https://fr.wikipedia.org/wiki/Interpr%C3%A8te_(informatique)"
+[3]: https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_logicielle "https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_logicielle"
+[4]: https://docs.python.org/2/library/math.html "https://docs.python.org/2/library/math.html"
+[5]: https://image.jimcdn.com/app/cms/image/transf/dimension=144x1024:format=jpg/path/s55280dc9b2bd5ac9/image/i540f2c8eb88001d4/version/1477258230/image.jpg
+[6]: https://image.jimcdn.com/app/cms/image/transf/dimension=30x1024:format=png/path/s55280dc9b2bd5ac9/image/idff13891c64ded6b/version/1477258967/image.png
+[7]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i96f3a32c20990e38/version/1477258970/image.png
+[8]: https://image.jimcdn.com/app/cms/image/transf/dimension=393x10000:format=png/path/s55280dc9b2bd5ac9/image/iebbf077e62d4a75e/version/1477231947/image.png
+[9]: https://image.jimcdn.com/app/cms/image/transf/dimension=389x10000:format=png/path/s55280dc9b2bd5ac9/image/ib9fe9f3b6af8f028/version/1477231944/image.png
+[10]: https://image.jimcdn.com/app/cms/image/transf/dimension=309x1024:format=png/path/s55280dc9b2bd5ac9/image/ieb4cb16b89d1dd78/version/1477266753/image.png
+[11]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ib03049230090baa6/version/1477268816/image.png
+[12]: http://http/www.gadm.org/country "http:/www.gadm.org/country"
+[13]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i218bbb29cb72fcda/version/1477304927/image.png
+[14]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i87d2fb7aae60e7a0/version/1477335496/image.png
+[15]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i2867d9878915eddb/version/1477335756/image.png
+[16]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/id7513bd4e9f949e8/version/1477335782/image.png
+[17]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i649281062ed8d379/version/1477335846/image.png
+[18]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i4f1285be88e3b8ef/version/1477336295/image.png
+[19]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i55be025b83c29b08/version/1477336350/image.png
+[20]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i936e7e4125a2ff44/version/1477337779/image.png
+[21]: https://image.jimcdn.com/app/cms/image/transf/dimension=655x10000:format=png/path/s55280dc9b2bd5ac9/image/i0e6252aa2e25000e/version/1477337809/image.png
+[22]: https://image.jimcdn.com/app/cms/image/transf/dimension=655x10000:format=png/path/s55280dc9b2bd5ac9/image/i4e495490970ce894/version/1477337806/image.png
+[23]: https://image.jimcdn.com/app/cms/image/transf/dimension=655x10000:format=png/path/s55280dc9b2bd5ac9/image/i36529650bdcb9a5f/version/1477337801/image.png
+[24]: https://image.jimcdn.com/app/cms/image/transf/dimension=655x10000:format=png/path/s55280dc9b2bd5ac9/image/i0b8021dcd8808dfc/version/1477338048/image.png
+[25]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i8f02d4dd557fbec1/version/1477344849/image.png
+[26]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/if112262ae28df539/version/1477344949/image.png
+[27]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/ibc245296f66540cf/version/1477344994/image.png
+[28]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i43db517208aeda2e/version/1477345052/image.png
+[29]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i41fca5dc7facc13f/version/1477671594/image.png
+[30]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i977751a5e3b2c001/version/1477671621/image.png
+[31]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i2f8e71564a4f5128/version/1477762646/image.png
+[32]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ic86fb501f8906bee/version/1477763221/image.png
+[33]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i500513555b96027d/version/1477764395/image.png
+[34]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i3fec8d231f1481d7/version/1477571073/image.png
+[35]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ibfcd08bd2a8649b0/version/1477571114/image.png
+[36]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ia0f571d1b0ce1e62/version/1477571192/image.png
+[37]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ie3375937f6e3d8e2/version/1477571223/image.png
+[38]: https://image.jimcdn.com/app/cms/image/transf/dimension=519x10000:format=png/path/s55280dc9b2bd5ac9/image/i176c1ea0365bb4b3/version/1477679780/image.png
+[39]: https://image.jimcdn.com/app/cms/image/transf/dimension=519x10000:format=png/path/s55280dc9b2bd5ac9/image/i0672e4c23a8f9ad3/version/1477680894/image.png
+[40]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i474da8c8e06f734b/version/1477576163/image.png
+[41]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i5f001c3be11aa990/version/1477575992/image.png
+[42]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ie3492d5810e37c41/version/1477575993/image.png
+[43]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i3ab2838f184c5c29/version/1477575993/image.png
+[44]: https://image.jimcdn.com/app/cms/image/transf/dimension=519x10000:format=png/path/s55280dc9b2bd5ac9/image/i524832663aae7cce/version/1477680522/image.png
+[45]: https://image.jimcdn.com/app/cms/image/transf/dimension=519x10000:format=png/path/s55280dc9b2bd5ac9/image/i28e602494db37d92/version/1477680520/image.png
