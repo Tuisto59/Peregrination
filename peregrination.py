@@ -209,8 +209,8 @@ def convert_to_trajectory_ascdt(ascdt,town_list):
                 if cityA != ''  :
                     if cityB != '' :
                         if cityA != cityB:
-                            print("sosa n° ".decode(print_encoding)+str(i))
-                            print(str(i)+" "+cityA.decode('iso8859_15').encode(print_encoding)+" "+cityB.decode('iso8859_15').encode(print_encoding))
+                            print("sosa numero "+str(i))
+                            #print(str(i)+" "+cityA.decode('iso8859_15').encode(print_encoding)+" "+cityB.decode('iso8859_15').encode(print_encoding))
                             traj = (town_list[cityA][0],town_list[cityA][1],
                                     town_list[cityB][0],town_list[cityB][1],
                                     cityA.decode('utf8'), cityB.decode('utf8'),g)
@@ -897,8 +897,8 @@ def convert_to_trajectory_descdt(descdt,town_list):
             cityB = descdt[i][3].decode('iso8859_15').encode('utf8').replace('?','')
             if cityA != ''  :
                 if cityB != '' :
-                    print("sosa n° ".decode('utf8')+i)
-                    print(i+" "+cityA.decode('iso8859_15')+" "+cityB.decode('iso8859_15'))
+                    print("individue numero "+i)
+                    #print(i+" "+cityA.decode('iso8859_15')+" "+cityB.decode('iso8859_15'))
                     traj = (town_list[cityA][0],town_list[cityA][1],
                             town_list[cityB][0],town_list[cityB][1],
                             cityA.decode('utf8'), cityB.decode('utf8'),g)
