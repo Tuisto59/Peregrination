@@ -1,0 +1,61 @@
+1	Yoan Georges Robert BOUZIN	4.2.1990	Roncq						
+2	Georges Patrick BOUZIN	16.1.1961	Roubaix	Isabelle MAHUT	13.10.1984	Roncq			
+3	Isabelle MAHUT	21.11.1961	Roubaix	Georges Patrick BOUZIN	13.10.1984	Roncq			
+4	Georges Emile BOUZIN	28.1.1921	Roubaix	Suzanne Simonne KOENIG	21.12.1940	Roubaix	15.12.2000	Boulogne-sur-Mer	79
+5	Suzanne Simonne KOENIG	17.7.1920	Tourcoing	Georges Emile BOUZIN	21.12.1940	Roubaix	6.12.2011	Audresselles	91
+6	Robert MAHUT	20.11.1930	Roubaix	Pierrette Marie Suzanne ESPIASSE	26.11.1955	Roubaix			
+7	Pierrette Marie Suzanne ESPIASSE	23.9.1935	Leers	Robert MAHUT	26.11.1955	Roubaix			
+8	Georges BOUZIN	9.12.1900	Roubaix	Suzanne NYS	26.1.1920	Roubaix	7.8.1951	Roubaix	50
+9	Suzanne NYS	31.5.1902	Roubaix	Georges BOUZIN	26.1.1920	Roubaix	29.5.1981	Roubaix	78
+10	Alphrède-Léon KOENIG	5.9.1885	Rinxent	Alida Maria GOTELAERE	9.12.1905	Rinxent	11.10.1956	Tourcoing	71
+11	Alida Maria GOTELAERE	25.2.1888	Zwevezele	Alphrède-Léon KOENIG	9.12.1905	Rinxent	27.10.1957	Tourcoing	69
+12	Emile Désiré Joseph MAHUT	3.11.1878	Herlin-le-Sec	Gabrielle Angèle COUSSEMENT	9.12.1922	Roubaix	15.7.1943	Roubaix	64
+13	Gabrielle Angèle COUSSEMENT	7.12.1897	Roubaix	Emile Désiré Joseph MAHUT	9.12.1922	Roubaix	9.10.1966	Roubaix	68
+14	Pierre Dominique ESPIASSE-CABAU	26.4.1902	Lasseube	Andréa Julie Mathilde BAILLION	9.4.1928	Bois-Grenier	10.4.1956	Roubaix	53
+15	Andréa Julie Mathilde BAILLION	13.2.1911	Bois-Grenier	Pierre Dominique ESPIASSE-CABAU	9.4.1928	Bois-Grenier	5.8.1993	Tourcoing	82
+16	Emile BOUZIN	13.2.1876	Tourcoing	Marceline LECLERCQ	11.11.1896	Roubaix	1.3.1912	Paris	36
+17	Marceline LECLERCQ	2.2.1874	Roubaix	Emile BOUZIN	11.11.1896	Roubaix	6.1.1961	Roubaix	86
+18	Jules Joseph NYS	18.7.1865	Roubaix	Blanche Cécile PERRIÉ	15.11.1890	Roubaix	9.10.1932	Roubaix	67
+19	Blanche Cécile PERRIÉ	6.7.1870	Roubaix	Jules Joseph NYS	15.11.1890	Roubaix	25.9.1910	Roubaix	40
+20	Pierre KOENIG	17.8.1851	Gundershoffen	Marie Louise HEUX	16.12.1874	Rinxent	29.3.1920	Tourcoing	68
+21	Marie Louise HEUX	19.12.1857	Campagne-lès-Guines	Pierre KOENIG	16.12.1874	Rinxent	25.12.1921	Tourcoing	64
+22	Charles Louis GOTELAERE	23.10.1842	Zwevezele	Octavia VERMOORTELE	5.5.1887	Ruddervoorde	16.11.1931	Lille	89
+23	Octavia VERMOORTELE	26.2.1866	Ruddervoorde	Charles Louis GOTELAERE	5.5.1887	Ruddervoorde	15.10.1933	Lille - Fives	67
+24	Jean Baptiste Gabriel MAHUT	4.8.1842	Bar-sur-Seine	Puplicie Joseph THERET	28.12.1874	Herlin-le-Sec	31.7.1886	Bar-sur-Seine	43
+25	Puplicie Joseph THERET	20.6.1848	Conteville-en-Ternois	Jean Baptiste Gabriel MAHUT	28.12.1874	Herlin-le-Sec	<> 1911 & 1922	Saint-Pol-sur-Ternoise	>= 62
+26	X X			Eudoxie COUSSEMENT					
+27	Eudoxie COUSSEMENT	28.9.1856	Kortrijk	X X			29.4.1915	Roubaix	58
+28	Bernard ESPIASSE-CABAU	14.12.1874	Monein	Marie LACOSTE	16.4.1900	Monein	9.9.1958	Monein	83
+29	Marie LACOSTE	15.1.1875	Monein	Bernard ESPIASSE-CABAU	16.4.1900	Monein	4.3.1963	Monein	88
+30	Edgard Arnould BAILLION	12.2.1874	Cléty	Blanche Julie MALBRANQUE	4.6.1900	Houplines	8.11.1933	Houplines	59
+31	Blanche Julie MALBRANQUE	12.9.1880	Houplines	Edgard Arnould BAILLION	4.6.1900	Houplines	9.2.1942	Roubaix	61
+32	Gustave BOUZIN	26.2.1851	Rumes	• Irma Philomène MARISSAL • Marie Alphonsine MONTAGNE	• 19.10.1872 • 9.10.1889	• Roubaix • Roubaix	27.2.1916	Roubaix	64
+33	Irma Philomène MARISSAL	2.4.1852	Roubaix	Gustave BOUZIN	19.10.1872	Roubaix	5.4.1879	Roubaix	27
+34	Clovis Joseph LECLERCQ	10.11.1844	Roubaix	Leocadie FLORIN	16.2.1874	Roubaix	9.4.1897	Roubaix	52
+35	Leocadie FLORIN	11.11.1848	Roubaix	Clovis Joseph LECLERCQ	16.2.1874	Roubaix	26.4.1907	Roubaix	58
+36	Jules Joseph NYS	28.1.1841	Roubaix	Ludivine Adélaïde CABY	18.1.1864	Roubaix	21.10.1880	Roubaix	39
+37	Ludivine Adélaïde CABY	14.5.1841	Lannoy	Jules Joseph NYS	18.1.1864	Roubaix	7.8.1908	Roubaix	67
+38	Jean Denis PERRIÉ	30.12.1834	Paris	Marie Léontine Frasie TIREL	18.7.1857	Paris	3.8.1890	Paris	55
+39	Marie Léontine Frasie TIREL	26.5.1837	Bretteville-sur-Ay	Jean Denis PERRIÉ	18.7.1857	Paris	11.1.1914	Roubaix	76
+40	Pierre KOENIG	21.3.1816	Gundershoffen	Marguerite FLECKINGER	17.11.1850	Gundershoffen	20.3.1868	Gundershoffen	51
+41	Marguerite FLECKINGER	7.7.1825	Gundershoffen	Pierre KOENIG	17.11.1850	Gundershoffen	19.1.1891	Gundershoffen	65
+42	Pierre Joseph HEUX	26.5.1822	Campagne-lès-Guines	"Louise Françoise Henriette" Charlotte GRATIEN	7.2.1844	Guînes	18.3.1894	Tourcoing	71
+43	"Louise Françoise Henriette" Charlotte GRATIEN	28.3.1825	Guînes	Pierre Joseph HEUX	7.2.1844	Guînes	15.9.1897	Tourcoing	72
+44	Charles GOTELAERE	31.5.1805	Ardooie	Natalia PICAVET	13.10.1840	Izegem	28.1.1895	Zwevezele	89
+45	Natalia PICAVET	24.1.1797	Izegem	Charles GOTELAERE	13.10.1840	Izegem	16.5.1880	Zwevezele	83
+46	Félix VERMOORTELE	23.10.1830	Zwevezele	Monica REYNAERT	29.4.1865	Ruddervoorde	26.10.1915	Ruddervoorde	85
+47	Monica REYNAERT	28.7.1830	Ruddervoorde	Félix VERMOORTELE	29.4.1865	Ruddervoorde	12.11.1887	Ruddervoorde	57
+48	Jean Baptiste MAHUT	11.12.1815	Bar-sur-Seine	Marguerite BAILLY	15.4.1839	Bar-sur-Seine	21.4.1890	Bar-sur-Seine	74
+49	Marguerite BAILLY	24.10.1813	Polisy	Jean Baptiste MAHUT	15.4.1839	Bar-sur-Seine	22.3.1881	Bar-sur-Seine	67
+50	Jean Baptiste THERET	18.4.1810	Huclier	Elizabeth Désirée Joseph BERROYER	28.7.1846	Conteville-en-Ternois	22.3.1875	Herlin-le-Sec	64
+51	Elizabeth Désirée Joseph BERROYER	2.7.1818	Conteville-en-Ternois	Jean Baptiste THERET	28.7.1846	Conteville-en-Ternois	30.10.1887	Saint-Pol-sur-Ternoise	69
+54	Pierre Jacques COUSSEMENT	23.7.1825	Kuurne	Barbe Thérèse LEFEVERE	27.7.1853	Kortrijk	20.11.1882	Kortrijk	57
+55	Barbe Thérèse LEFEVERE	3.7.1823	Kortrijk	Pierre Jacques COUSSEMENT	27.7.1853	Kortrijk	29.1.1878	Kortrijk	54
+56	Louis ESPIASSE-CABAU	11.8.1833	Monein	Françoise GIRARD	1.2.1864	Monein	> 1900		>= 66
+57	Françoise GIRARD	24.10.1841	Précilhon	Louis ESPIASSE-CABAU	1.2.1864	Monein	> 1900		>= 58
+58	Jean LACOSTE	26.4.1843	Lasseube	Marie LAMICQ	19.1.1874	Monein	9.4.1922	Monein	78
+59	Marie LAMICQ	17.3.1848	Monein	Jean LACOSTE	19.1.1874	Monein	29.1.1901	Monein	52
+60	Henri François BAILLION (NÉ BERNARD)	26.6.1845	Cléty	Marie Sidonie Coralie MAGINOT	28.4.1869	Heuringhem	> 1906		>= 60
+61	Marie Sidonie Coralie MAGINOT	15.5.1849	Bilques (Helfaut)	Henri François BAILLION (NÉ BERNARD)	28.4.1869	Heuringhem	> 1906		>= 56
+62	Henri Désiré MALBRANQUE	18.4.1843	Nieuwkerke	Mathilde Sidonie Joseph DESPRINGRE	21.2.1870	Nieppe	22.5.1915	Houplines	72
+63	Mathilde Sidonie Joseph DESPRINGRE	28.6.1845	Nieppe	Henri Désiré MALBRANQUE	21.2.1870	Nieppe	10.3.1915	Houplines	69
