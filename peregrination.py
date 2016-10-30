@@ -60,6 +60,11 @@ import re
 import base64
 import webbrowser
 
+# get the correct encoding
+import locale
+print_encoding =  locale.getdefaultlocale()[1]
+
+
 #################
 # NON NATIVE PACKAGE #
 #################
@@ -204,8 +209,8 @@ def convert_to_trajectory_ascdt(ascdt,town_list):
                 if cityA != ''  :
                     if cityB != '' :
                         if cityA != cityB:
-                            print("sosa n° ".decode('utf8')+str(i))
-                            print(str(i)+" "+cityA.decode('iso8859_15')+" "+cityB.decode('iso8859_15'))
+                            print("sosa n° ".decode(print_encoding)+str(i))
+                            print(str(i)+" "+cityA.decode('iso8859_15').encode(print_encoding)+" "+cityB.decode('iso8859_15').encode(print_encoding))
                             traj = (town_list[cityA][0],town_list[cityA][1],
                                     town_list[cityB][0],town_list[cityB][1],
                                     cityA.decode('utf8'), cityB.decode('utf8'),g)

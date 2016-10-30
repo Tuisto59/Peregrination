@@ -48,7 +48,7 @@ class Peregrination():
         elif platform == "win32":
             font = "Segoe Script"
         self.main = Tkinter.Tk()
-        self.main.title("Pérégrination v1.0")
+        self.main.title("Pérégrination v1.5")
         #self.main.geometry("176x145")
         #self.main.resizable(width=False, height=False)
         self.main.configure(bg="#a0522d")
