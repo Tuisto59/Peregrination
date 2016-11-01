@@ -89,9 +89,9 @@ except ImportError:
 
 
 try:
-    import folium
+    import gedcom
 except ImportError:
-    install_and_import('gedcom')
+    install_and_import('gedcompy')
 """
 import random
 from geopy.geocoders import Nominatim
@@ -156,14 +156,8 @@ def import_town_gps_coord(town_file):
             - key (string) : town_name
             - value (2-element tuple)  : (latitude,longitude)
     """
-    try:
-        lol = csv.reader(open(town_file, 'r'),delimiter=",")
-        dico_town = {rows[0]:[float(rows[1]),float(rows[2])] for rows in lol}
-    except:
-        #for new version of Heredis after version 15.0.1
-        lol = csv.reader(open(town_file, 'r'),delimiter=",")
-        dico_town = {rows[0]:[float(rows[1]),float(rows[2])] for rows in lol}
-    print dico_town
+    lol = csv.reader(open(town_file, 'r'),delimiter=",")
+    dico_town = {rows[0]:[float(rows[1]),float(rows[2])] for rows in lol}
     return dico_town
 
 def check_generation(sosa):
@@ -984,8 +978,8 @@ def Demo_ascdt():
     """
     Create the map with all the options, the example ascendance file and the town file
     """
-    fa = "asctest" #"Fichier ascendance.txt"
-    t = "CSVperi-2" #"Fichier lieux total.csv"
+    fa = "Fichier ascendance.txt"
+    t = "Fichier lieux total.csv"
     options =  ['Nombre de °,x,+',"Nombre total d'événement",'Départ(s)','Arrivée(s)','Nom(s)', 'Dates extrêmes']
     typ = 1
     #import ascendance
