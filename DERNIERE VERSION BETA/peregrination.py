@@ -6,7 +6,7 @@
 
   This file is part of Pérégrination v1.0.
 
-    Pérégrination v1.0 is free software: you can redistribute it and/or modify
+    Pérégrination v2.0 is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
@@ -17,7 +17,7 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Pérégrination v1.0.  If not, see <http://www.gnu.org/licenses/>. 2
+    along with Pérégrination v2.0.  If not, see <http://www.gnu.org/licenses/>. 2
 
 For Linux User
 Installation des bibliothèque géospatial nécéssaire à Basemap:
@@ -85,21 +85,42 @@ def install_and_import(package):
             globals()[package] = importlib.import_module("gedcom")
         else:
             globals()[package] = importlib.import_module(package)
+            
+from sys import platform
+if platform == "linux" or platform == "linux2":
+    
+    try:
+        import folium
+    except ImportError:
+        install_and_import('folium')
 
-try:
-    import folium
-except ImportError:
-    install_and_import('folium')
+    try:
+        import geopy
+    except ImportError:
+        install_and_import('geopy')
 
-try:
-    import geopy
-except ImportError:
-    install_and_import('geopy')
+    try:
+        import gedcom
+    except ImportError:
+        install_and_import('gedcompy')
+        
+elif platform == "darwin":
+    sep = "/"
+elif platform == "win32":
+    try:
+        import folium
+    except ImportError:
+        install_and_import('folium')
 
-try:
-    import gedcom
-except ImportError:
-    install_and_import('gedcompy')
+    try:
+        import geopy
+    except ImportError:
+        install_and_import('geopy')
+
+    try:
+        import gedcom
+    except ImportError:
+        install_and_import('gedcompy')
 """
 import random
 from geopy.geocoders import Nominatim
