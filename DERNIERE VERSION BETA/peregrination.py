@@ -488,7 +488,7 @@ def multiple_wedding(line):
             continue
         else:
             #list_of_result += [(names_result.encode('utf8'),date_result.decode('iso8859_15').encode('utf8'),town_result.encode('utf8'))] #avant       
-            list_of_result += [(names_result.encode('utf8'),date_result.decode('iso8859_15').encode('utf8'),town_result)] #test town_result with no encode
+            list_of_result += [(names_result,date_result,town_result)] #test town_result with no encode
     return list_of_result
 
 def codec(strA,strB):
@@ -554,9 +554,9 @@ def create_annotation_text_gedcom(dico_file,dico_town,options,typ):
             else:
                 liste.append(item)
         f_lol+= [liste]
-        #transfert des modif dans u nouveau dict
+        #transfert des modif dans un nouveau dict
         dico_file2[key]=liste
-    #ecrase la variable d el'ancien par le nouveau dict
+    #ecrase la variable de l'ancien par le nouveau dict
     dico_file = dico_file2
     f_array = np.asarray(f_lol)
     f_transpose = np.transpose(f_array)
@@ -612,22 +612,25 @@ def create_annotation_text_gedcom(dico_file,dico_town,options,typ):
                         number_of_wedding_by_town += wedding_counter
                         number_total += wedding_counter
                     if d:
-                        if d not in dico_date_extreme.keys():
-                            dico_date_extreme[t] = d+' - '+d
-                        else:
-                            #verify extrem date
-                            d_int = int(d)
-                            a = int(dico_date_extreme[t][:4])
-                            b = int(dico_date_extreme[t][7:])
-                            hyphen_begin = dico_date_extreme[t][:7]
-                            hyphen_end = dico_date_extreme[t][4:]
-                            if d_int < a:
-                                dico_date_extreme[t] = d+hyphen_end
-                            if d_int > b:
-                                dico_date_extreme[t] = hyphen_begin + d
+                        if t:
+                            if t not in dico_date_extreme.keys():
+                                dico_date_extreme[t] = d+' - '+d
+                            else:
+                                #verify extrem date
+                                d_int = int(d)
+                                a = int(dico_date_extreme[t][:4])
+                                b = int(dico_date_extreme[t][7:])
+                                hyphen_begin = dico_date_extreme[t][:7]
+                                hyphen_end = dico_date_extreme[t][4:]
+                                if d_int < a:
+                                    dico_date_extreme[t] = d+hyphen_end
+                                if d_int > b:
+                                    dico_date_extreme[t] = hyphen_begin + d
 
             #get familly name
-            result = re.findall(r"[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-\(\)/]+$",dico_file[sosa][1])
+            #result = re.findall(ur"[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-\(\)/]+$",unicode(dico_file[sosa][1].decode('iso8859-15')),re.UNICODE)
+            result = re.findall(ur"((?:(?: d'| de| des| la| DE| VAN| LE) )?[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð,.'-\(\)/]+\b)",unicode(dico_file[sosa][1].decode('iso8859-15')),re.UNICODE)
+            
             if result:
                 familly_name = result[0]
             #iterate over (3) birth, (6) wedding and (8) death town and store into a set
@@ -801,7 +804,7 @@ def create_annotation_text_gedcom(dico_file,dico_town,options,typ):
                 text = codec(text, dico_arrivals[town]+"\n")
         if 'Nom(s)' in options:
             if town in dico_familly_name.keys():
-                n = ", ".join(dico_familly_name[town])
+                n = ", ".join([i if isinstance(i, unicode) else unicode(i.decode('iso8859_15')) for i in dico_familly_name[town]])
                 for i in range(4,n.count(', '),3):
                     idx = find_nth_character(n, ', ', i)
                     if idx:
@@ -811,11 +814,12 @@ def create_annotation_text_gedcom(dico_file,dico_town,options,typ):
                 text = codec(text, n2)
                 #text += n2
         if 'Dates extrêmes' in options:
-            if dico_date_extreme[town]:
-                #date = '\nDate : '.encode('iso8859_15')+dico_date_extreme[town]
-                date = codec('\nDate : ',dico_date_extreme[town])
-                #text += date
-                text = codec(text, date)
+            if town in dico_date_extreme.keys():
+                if dico_date_extreme[town]:
+                    #date = '\nDate : '.encode('iso8859_15')+dico_date_extreme[town]
+                    date = codec('\nDate : ',dico_date_extreme[town])
+                    #text += date
+                    text = codec(text, date)
         try:
             lat = dico_town[town][0]
             lon = dico_town[town][1]
@@ -1163,7 +1167,7 @@ def create_annotation_text(dico_file,dico_town,options,typ):
                 n2 ="Noms :\n".decode('utf8')+n.decode('iso8859_15')
                 text += n2
         if 'Dates extrêmes' in options:
-            if dico_date_extreme[town]:
+            if town in dico_date_extreme.keys():
                 date = '\nDate : '.decode('utf8')+dico_date_extreme[town]
                 text += date
         try:
@@ -1408,6 +1412,13 @@ def generate_map_gedcom(typ,y_min, x_min, y_max, x_max,g_max,list_traj,dico_anno
         #colormap = folium.colormap.linear.Paired.scale(1, g_max).to_step(g_max)
         colormap = folium.colormap.StepColormap(hexa_colors, index=None, vmin=1.0, vmax=float(g_max), caption= u"Générations")
         my_map.add_child(colormap)
+        nb_polyline = dict()
+        for data in list_traj:
+            y1,x1,y2,x2,m1,m2,g= data
+            if ((y1,x1),(y2,x2)) not in nb_polyline.keys():
+                nb_polyline[(y1,x1),(y2,x2)] = 1
+            else:
+                nb_polyline[(y1,x1),(y2,x2)] += 1
         for data in list_traj:
             #data
             y1,x1,y2,x2,m1,m2,g= data
@@ -1416,8 +1427,8 @@ def generate_map_gedcom(typ,y_min, x_min, y_max, x_max,g_max,list_traj,dico_anno
             rgb = cm_object[:3]
             hexa = colors.rgb2hex(rgb)
             #trajectory
-            folium.PolyLine([(y1,x1),(y2,x2)], color=hexa, weight=g, opacity=1).add_to(my_map)
-            
+            folium.PolyLine([(y1,x1),(y2,x2)], color=hexa, weight=nb_polyline[(y1,x1),(y2,x2)]*5, opacity=1).add_to(my_map)
+            nb_polyline[(y1,x1),(y2,x2)] -= 1
             #marker
             if m1 not in town_set:
                 try:

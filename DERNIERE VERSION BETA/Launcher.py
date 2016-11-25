@@ -37,6 +37,7 @@ import time
 import re
 import requests
 import urllib2
+from difflib import SequenceMatcher
 
 ### NON NATIVE PACKAGE ###
 
@@ -142,6 +143,45 @@ class Peregrination():
         self.label_town_pb = Tkinter.Label(self.frame_pb)
         self.label_town_pb.grid(row=1,column=0,columnspan=2)
 
+        #====== FRAME CONSOLE ======
+            #first frame
+        self.frameConsole = Tkinter.Frame(self.pb_gui)
+        self.frameConsole.grid(row=9, columnspan=10,rowspan=10,sticky='W')
+        
+            #first canvas
+        self.canvasConsole = Tkinter.Canvas(self.frameConsole, height=130, width=500, bg="black")
+        self.canvasConsole.grid(row=0)
+            #second frame
+        self.console = Tkinter.Frame(self.canvasConsole)
+        self.console.config(relief='sunken', bg="black", height=130, width=500)
+        self.console.grid(row=0)
+        
+            #scrollbar
+        self.vsbc = Tkinter.Scrollbar(self.frameConsole,command=self.canvasConsole.yview)
+        self.hsbc = Tkinter.Scrollbar(self.frameConsole, orient='horizontal', command=self.canvasConsole.xview)
+            #configure scrollbar
+        self.canvasConsole.configure(yscrollcommand=self.vsbc.set, xscrollcommand=self.hsbc.set)
+        self.canvasConsole.create_window((0,0),window=self.console,anchor='nw')
+            #positions
+        self.vsbc.grid(row=0,column=3, sticky="NS")
+        self.hsbc.grid(row=1,column=0, sticky="WE")
+        
+        #label position in console
+        self.row = 0
+
+    def update_virtual_console(self, text,fg='white'):
+        """ display the message in the progress bar console """
+        #create the second label in the console
+        label = Tkinter.Label(self.console,text=text,bg='black',fg=fg, justify='left')
+        label.grid(row=self.row,sticky="W")
+        # update the row increment
+        self.row = self.row+1
+        # adapt and update the canvas content to the scroll bar
+        self.canvasConsole.config(scrollregion=self.canvasConsole.bbox("all"))
+        self.canvasConsole.yview_moveto(1.)
+        self.pb_gui.update() ##update the GUI
+        
+
     def gedcom_step(self):
         """
         TopLevel Windows for gedcom step
@@ -183,26 +223,86 @@ class Peregrination():
         town_sub = None
         with open(self.fichier_gedcom, 'r') as ged:
             for line in ged:
-                if line.startswith('1 PLAC'):
-                    town_sub = 1
-                if line.startswith('2 FORM ') and town_sub == 1:
-                    town_org = line.replace('2 FORM ','').replace('\n','').replace(' ','').split(',')
-                    town_sub = None
+                #if line.startswith('1 PLAC'):
+                    #town_sub = 1
+                #if line.startswith('2 FORM ') and town_sub == 1:
+                    #town_org = line.replace('2 FORM ','').replace('\n','').replace(' ','').split(',')
+                    #town_sub = None
                 if line.startswith('2 PLAC '):
                     town_set.add(line.replace('2 PLAC ',''))
+        #In case it's not heredis file
+        if not town_org:
+            town_org = ['Subdivision','Commune','Code Postal','Departement','Region','Pays','Ignorer']
         return town_set, town_org
+
+    def verify_location(self, lat, lon, ad, town_list, n):
+        """
+        Check if the given coordinate match the correct town
+        Note : Nominatim looking for the nearest address from the given GPS coordinate
+        The verification can be false depending how the adress it's construct and the location
+        of the returning adress by nominatim
+
+        comparaison de string
+
+        >>> from difflib import SequenceMatcher
+        >>> SequenceMatcher(None,a,b)
+        """
+        # convert to unicode the different
+        city = unicode(self.city.decode('iso8859_15')).lower()
+        if city == '':
+            city = None
+        postcode = unicode(self.code.decode('iso8859_15')).lower()
+        if postcode == '':
+            postcode = None
+        sub = unicode(self.sub.decode('iso8859_15')).lower()
+        if sub == '':
+            sub = None
+        country = unicode(self.country.decode('iso8859_15')).lower()
+        if country == '':
+            country = None
+        adresse = ad.lower()
+        split_google_address = adresse.split(', ')
+        
+        if n == 1 or n ==2 or n == 0:
+            if city and postcode and country:
+                if sub:
+                    #check if the street is the same but with the corresponding town
+                    if sub in adresse and city in adresse:
+                        return True
+                #check if the corresponding town is the same with the associated postcode and country
+                elif city in adresse and postcode in adresse and country in adresse:
+                    return True
+                #because google return english country name we make the same as above
+                elif city in adresse or postcode in adresse:
+                    return True
+                else:
+                    return False
+        if n == 3:
+            if city and country:
+                if city in adresse and country in adresse:
+                    return True
+                else:
+                    return False
+        if n == 4 or n ==5:
+            if city:
+                if city in adresse:
+                    return True
+                else:
+                    return False
 
     def get_gps_GoogleMapHTMLRequest(self, adress):
         adress = adress.decode('iso8859_15')
         adress = adress.encode('utf8')
         adress = urllib2.quote(adress)
-        r = requests.get(u'https://www.google.fr/maps/place/'+adress)
+        r = requests.get(u'http://maps.google.com/?q='+adress+'&hl=fr')
         text = r.text
         try:
             lat, lon = eval(re.findall(ur'\[[-+]?\d+\.\d+,[-+]?\d+\.\d+\]',r.text)[0])
-            return lat,lon
+            # I remove the "u" for the regex to avoid unequal comparaison by difflib.SequenceMatcher
+            addresse = re.findall(ur'\[\[".*?","(.*?)",\[',r.text)[0]
+            return lat,lon, addresse
         except:
-            return None, None
+            return None, None, None
         
         
     def nominatim(self, adress):
@@ -211,7 +311,7 @@ class Peregrination():
         lon = None
         for i in adress:
             if i != '':
-                print("Essaie avec : "+i)
+                #print("Essaie avec : "+i)
                 result = geolocator.geocode(i.decode('iso8859_15'))
                 if result:
                     lat, lon = (result.latitude, result.longitude)
@@ -242,95 +342,88 @@ class Peregrination():
         for town in towns:
             cpt+=1
             #Set variable to lat and lon
-            lat, lon = None, None
             town_string = town.replace('\n','')
-            
+            self.label_town_pb['text'] = str(cpt)+"/"+str(len(towns))+' : '+town_string
             self.pb['value'] = int(cpt/len(towns)*100)
             self.pb.update_idletasks()
             self.label_pb['text'] = str(round(cpt/len(towns)*100,2))+" %"
             self.label_pb.update_idletasks()
-            self.label_pb.update()       
-            self.label_town_pb['text'] += "\nRecherche : "+town_string
-            self.label_town_pb.update_idletasks()
-            self.label_town_pb.update()
-            self.pb_gui.update()
+            self.label_pb.update()
+            self.update_virtual_console(str(cpt)+"/"+str(len(towns))+' : '+town_string)
             
             town_list = town_string.split(',')
             if town_string not in town_set:
-                #print("not in town set")
                 town_set.add(town_string)
-                city = town_list[self.dico_index_subdivisions['Town']]
-                code = town_list[self.dico_index_subdivisions['Areacode']]
-                sub = town_list[self.dico_index_subdivisions['Subdivision']]
-                country = town_list[self.dico_index_subdivisions['Country']]
-                adresse1 = sub+" "+city+" "+code+" "+country
-                adresse2 = city+" "+code+" "+country
-                adresse3 = city
-                #loop the adress
-                for adre in adresse1,adresse2,adresse3:
-                    #print(adre)
-                    #check if the address already done
-                    #if not
-                    if adre not in town_set:
-                        #print("adress not in town set")
-                        #get gps coordinate through the google map html request for the given adress
+                self.sub = ''
+                self.city = ''
+                self.code = ''
+                self.country = ''
+                if 'Commune' in self.dico_index_subdivisions:
+                    self.city = town_list[self.dico_index_subdivisions['Commune']]
+                if 'Code Postal' in self.dico_index_subdivisions:
+                    self.code = town_list[self.dico_index_subdivisions['Code Postal']]
+                if 'Subdivision' in self.dico_index_subdivisions:
+                    self.sub = town_list[self.dico_index_subdivisions['Subdivision']]
+                if 'Pays' in self.dico_index_subdivisions:
+                    self.country = town_list[self.dico_index_subdivisions['Pays']]
+                adresse0 = town_string.replace(',',' ')
+                adresse1 = self.sub+' '+self.code+' '+self.city+' '+self.country
+                adresse2 = self.code+' '+self.city+' '+self.country
+                adresse3 = self.city+' '+self.country
+                adresse4 = 'Mairie '+self.city
+                adresse5 = self.city
+                for adre, n in (adresse0,0),(adresse1, 1), (adresse2,2), (adresse3,3), (adresse4,4), (adresse5,5) :
+                    if adre not in town_set or adre == town_string:
+                        #get gps coordinate from Google Map
+                        lat, lon = None, None
+                        self.update_virtual_console('Combinaison #-'+str(n+1)+' : '+adre)
                         result = self.get_gps_GoogleMapHTMLRequest(adre)
-                        #print("gps result google map",result)
-                        lat, lon = result
-                        #we have the gps coordinate for the i-th adress
+                        lat, lon, ad = result
                         if lat:
-                            #print("we have gps from gmap")
-                            self.label_town_pb['text'] = town_string+' : '+str(lat)+','+str(lon)
-                            self.label_town_pb.update_idletasks()
-                            self.label_town_pb.update()
-                            self.pb_gui.update()
-                            
-                            dico_gps_adre[adre] = (lat,lon)
-                            dico_gps[town_string] = result
-                            #we add the working adress to the set (because we have the corresponding key in dict)
-                            town_set.add(adre)
-                            #we have the result, break the loop and continue to next  iterationert-for loop
-                            #print("break loop")
-                            break
-                        #if not, continue the loop
-                    #else, the address already done
+                            self.update_virtual_console('resultat :\n\t- '+str(lat)+', '+str(lon)+'\n\t- '+ad)
+                        
+                        if lat != None:
+                            #verification
+                            self.update_virtual_console('Controle de la geolocalisation')
+                            ratio = SequenceMatcher(None,ad.lower().replace(', ',' '),adre.lower()).ratio()
+                            if ratio > 0.6:
+                                verif = True
+                                self.update_virtual_console('ratio : '+str(ratio), fg = 'green')
+                            else:
+                                self.update_virtual_console('ratio : '+str(ratio), fg = 'red')
+                                verif = self.verify_location(lat, lon, ad, town_list, n)
+                            if verif:
+                                self.update_virtual_console(str(cpt)+"/"+str(len(towns))+' - '+town_string+' : '+str(lat)+','+str(lon))
+                                
+                                dico_gps_adre[adre] = (lat,lon)
+                                dico_gps[town_string] = result
+                                town_set.add(adre)
+                                break
+                            else:
+                                self.update_virtual_console('Echec controle', fg='red')
+                                #the control fail, but gps coordinate have been found
+                                if n ==4:
+                                    dico_gps[town_string] = (lat,lon)
+                        else:
+                            self.update_virtual_console('Echec geolocalisation', fg='red')
+                            if verif == False and n == 4:
+                                self.update_virtual_console('### Echec lors de la recuperation des donnees GPS\n### Essai de recuperation avec Nominatim (OpenStreetMap) :')
+                                #last chance to retrieve None result with nominatin
+                                lat, lon = self.nominatim(town_list)
+                                self.update_virtual_console("OpenStreetMap GPS : "+str(lat)+", "+str(lon))
+                                
+                                if lat:
+                                    dico_gps[town_string] = (lat,lon)
+                                else:
+                                    self.update_virtual_console("### La commune n as pas ete retrouve", fg='red')
+                                    dico_gps[town_string] = (lat,lon)
+                                    fail += 1
                     else:
-                        #print("adre already in town set")
-                        #print("town_string",town_string)
-                        #print("adre",adre)
-                        #get the GPS coordinate of the i-th adress
+                        self.update_virtual_console('Lieux deja localise',fg='green')
                         lat, lon = dico_gps_adre[adre]
                         dico_gps[town_string] = dico_gps_adre[adre]
-                        #exit the loop (because we have the gps coordinate)
-                        #print("break")
                         break
-                    #END if/else
-                #END nested adress loop
-                #if lat (or lon) are ever None after the adress loop try to get the gps with other technique
-                #print("current lat,lon after loop adress",lat,lon)
-                if lat == None:
-                    self.label_town_pb['text'] += "\n### Echec lors de la recuperation des donnees GPS\n### Essai de recuperation avec Nominatim (OpenStreetMap) :"
-                    self.label_town_pb.update_idletasks()
-                    self.label_town_pb.update()
-                    self.pb_gui.update()
-                    #last chance to retrieve None result with nominatin
-                    lat, lon = self.nominatim(town_list)
-                    self.label_town_pb['text'] += "\nOpenStreetMap GPS : "+str(lat)+", "+str(lon)
-                    self.label_town_pb.update_idletasks()
-                    self.label_town_pb.update()
-                    self.pb_gui.update()
-                    
-                    if lat:
-                        dico_gps[town_string] = (lat,lon)
-                    else:
-                        self.label_town_pb['text'] += "\n### La commune n as pas ete retrouve"
-                        self.label_town_pb.update_idletasks()
-                        self.label_town_pb.update()
-                        self.pb_gui.update()
-                        fail += 1
-                #END If lat == none
-            #END if town_string not in town_set
-        #End towns loop
+                
         writer = csv.writer(output, delimiter=',', lineterminator='\n')
         for i in dico_gps.keys():
             row = [i,dico_gps[i][0],dico_gps[i][1]]
@@ -340,7 +433,7 @@ class Peregrination():
         m, s = divmod(seconds, 60)
         h, m = divmod(m, 60)
         self.pb_gui.destroy()
-        tkMessageBox.showinfo(title="Terminé",message=str(len(town_set)-fail)+" ont été retrouvé(s)\n"+str(fail)+" n'ont pas été retrouvé(s)\nRéalise en %d:%02d:%02d secondes" % (h, m, s))
+        tkMessageBox.showinfo(title="Terminé",message=str(len(towns)-fail)+" ont été analysé(s)\n"+str(fail)+" n'ont pas été retrouvé(s)\nRéalise en %d:%02d:%02d secondes" % (h, m, s))
         return output.name
     
     def town_custom(self):
@@ -359,7 +452,7 @@ class Peregrination():
         fonction that get the modification in the organisation of the town in the toplevel window Subdivision
         """
         self.town_custom()
-        self.question = tkMessageBox.askquestion('Ordre des subdivisions des lieux', "Valider l'ordre ?\n"+",".join(self.town_org))
+        self.question = tkMessageBox.askquestion('Ordre des subdivisions des lieux', "Valider l'ordre ?\n"+self.town_org_now['text'])
         if self.question == 'yes':
             self.dico_index_subdivisions = dict()
             for i in range(len(self.var_value)):
@@ -379,13 +472,12 @@ class Peregrination():
         self.subdivision.title('Organisation des subdivisions')
         self.subdivision.config(bg="#f5deb3")
         self.label_titre = Tkinter.Label(self.subdivision, text="Liste des 10 premiers lieux du GEDCOM", bg="#f5deb3")
-        nb_col = len(town_org)
         self.label_titre.grid(row=0,columnspan = 10)
         
         #create a frame/canvas/frame to see the first 10th city
         #====== FRAME CONSOLE ======
             #first frame
-        
+        nb_col = len(list(self.town_set)[0].replace('\n','').split(','))
         self.frameConsole = Tkinter.Frame(self.subdivision, bg="#f5deb3")
         self.frameConsole.grid(row=1, columnspan = nb_col)
         
@@ -410,6 +502,7 @@ class Peregrination():
         for i in range(10):
             text = list(self.town_set)[i].replace('\n','')
             text_split = text.split(',')
+            
             for j in range(nb_col):
                 stringLabel = Tkinter.Label(self.console,text=text_split[j],bg='white', fg='black').grid(row=i, column= j, sticky='W')
                 #update the view of the console
@@ -429,7 +522,7 @@ class Peregrination():
             self.label_field.grid(row=4, column=i)
             self.field = Tkinter.StringVar()
             self.var += [self.field]
-            self.fields = ttk.Combobox(self.subdivision, textvariable = self.field, values = town_org, width=len(max(self.town_org, key=len)))
+            self.fields = ttk.Combobox(self.subdivision, textvariable = self.field, values = town_org, state = 'readonly', width=len(max(self.town_org, key=len)))
             self.fields.current(i)
             self.fields.grid(row=5, column=i)
         #dynamic label
@@ -600,6 +693,8 @@ class Peregrination():
         """function search"""
         self.listeBox.delete(0, 'end')
         name = self.var_name.get()
+        if not name:
+            tkMessageBox.showerror(title = "Erreur", message="Vous n'avez rien insrit")
         surname = None
         if name:
             if surname:
@@ -670,19 +765,23 @@ class Peregrination():
                     self.listeBox.insert('end', item)
         self.search_engine.update()
         
-    def ascendance(self, ID, sosa=1, generation=10, liste = dict()):
+    def ascendance(self, ID, sosa=1, generation=10, liste = dict(), set_id = set()):
         """
         return the ascendance of the given ID
         """
-        liste_data = self.dico_data_list[ID]
-        liste[sosa]=liste_data
-        id_father = liste_data[-2]
-        if id_father != '':
-            liste = self.ascendance(id_father, sosa=sosa*2, liste=liste)
-        id_mother = liste_data[-1]
-        if id_mother != '':
-            liste = self.ascendance(id_mother, sosa=sosa*2+1, liste=liste)
-        return liste
+        if ID not in set_id:
+            liste_data = self.dico_data_list[ID]
+            liste[sosa]=liste_data
+            id_father = liste_data[-2]
+            if id_father != '':
+                liste, set_id = self.ascendance(id_father, sosa=sosa*2, liste=liste, set_id=set_id)
+            id_mother = liste_data[-1]
+            if id_mother != '':
+                liste, set_id = self.ascendance(id_mother, sosa=sosa*2+1, liste=liste, set_id=set_id)
+            set_id.add(ID)
+            return liste, set_id
+        else:
+            return liste, set_id
     
     def gedcom_step1(self):
         """
@@ -771,7 +870,7 @@ class Peregrination():
         self.varchoice = Tkinter.IntVar()
         label = Tkinter.Label(self.regroup, text= 'Regrouper les communes par :', bg="#f5deb3").grid()
         for item in range(len(self.town_org)):
-            if self.town_org[item] == 'Areacode':
+            if self.town_org[item] == 'Code Postal':
                 continue
             if self.town_org[item] == 'Subdivision':
                 continue
@@ -844,7 +943,7 @@ class Peregrination():
         seconds = b-a
         m, s = divmod(seconds, 60)
         h, m = divmod(m, 60)
-        self.pb_gui.destroy()
+        #self.pb_gui.destroy()
         tkMessageBox.showinfo(title="Terminé",message=str(len(town_set)-fail)+" ont été retrouvé(s)\n"+str(fail)+" n'ont pas été retrouvé(s)\nRéalise en %d:%02d:%02d secondes" % (h, m, s))
         return dico_gps
     
@@ -887,7 +986,7 @@ class Peregrination():
         self.regroup.destroy()
         if self.direction == 1:
             #make ascdt type object
-            self.ascdt = self.ascendance(self.ID)
+            self.ascdt, set_id = self.ascendance(self.ID)
             self.gedcom_map()
                 
     def gedcom_map_validate(self):
@@ -895,7 +994,7 @@ class Peregrination():
         self.criteria = self.varchoice.get()
         if self.direction == 1:
             #make ascdt type object
-            ascdt = self.ascendance(self.ID)
+            ascdt, set_id = self.ascendance(self.ID)
             self.ascdt , self.gedcom_town_list = self.get_gps_of_group(ascdt, self.criteria, self.dico_ID)
             self.gedcom_map()
         
