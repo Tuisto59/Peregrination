@@ -38,15 +38,13 @@ import re
 import requests
 import urllib2
 from difflib import SequenceMatcher
+import glob
 
 ### NON NATIVE PACKAGE ###
 
+import shapefile
 import gedcom
 from geopy.geocoders import Nominatim
-
-### variable for testing ###
-
-gedcom_parsed = None
 
 ######
 # GUI #
@@ -168,14 +166,24 @@ class Peregrination():
         
         #label position in console
         self.row = 0
+        self.label_console = Tkinter.Label(self.console, bg='black', justify='left')
 
-    def update_virtual_console(self, text,fg='white'):
+    def update_virtual_console(self, text,fg='white',same=False):
         """ display the message in the progress bar console """
-        #create the second label in the console
-        label = Tkinter.Label(self.console,text=text,bg='black',fg=fg, justify='left')
-        label.grid(row=self.row,sticky="W")
+        if self.row == 1000:
+            self.row = 0
+            for widget in self.console.winfo_children():
+                widget.destroy()
         # update the row increment
-        self.row = self.row+1
+        if not same:
+        #create the label in the console
+            label = Tkinter.Label(self.console,text=text,bg='black',fg=fg, justify='left')
+            label.grid(row=self.row,sticky="W")
+            self.row = self.row+1
+        else:
+            self.label_console['text'] = text
+            self.label_console['fg'] = fg
+            self.label_console.grid(row=self.row,sticky="W")
         # adapt and update the canvas content to the scroll bar
         self.canvasConsole.config(scrollregion=self.canvasConsole.bbox("all"))
         self.canvasConsole.yview_moveto(1.)
@@ -223,16 +231,12 @@ class Peregrination():
         town_sub = None
         with open(self.fichier_gedcom, 'r') as ged:
             for line in ged:
-                #if line.startswith('1 PLAC'):
-                    #town_sub = 1
-                #if line.startswith('2 FORM ') and town_sub == 1:
-                    #town_org = line.replace('2 FORM ','').replace('\n','').replace(' ','').split(',')
-                    #town_sub = None
                 if line.startswith('2 PLAC '):
+                    self.update_virtual_console(line.replace('2 PLAC ','').replace('\n',''), same=True)
                     town_set.add(line.replace('2 PLAC ',''))
         #In case it's not heredis file
         if not town_org:
-            town_org = ['Subdivision','Commune','Code Postal','Departement','Region','Pays','Ignorer']
+            town_org = ['Commune','Code Postal','Departement','Region','Pays','Subdivision','Ignorer']
         return town_set, town_org
 
     def verify_location(self, lat, lon, ad, town_list, n):
@@ -542,7 +546,11 @@ class Peregrination():
         """Gedt data from GEDCOM"""
         self.dico_data_list = dict()
         self.dico_ID = dict()
+        cpt = 1
+        total = str(len(list(self.parsed_gedcom.individuals)))
         for ind in self.parsed_gedcom.individuals:
+            self.update_virtual_console('Individu : '+str(cpt)+'/'+total, same=True)
+            cpt+=1
             data_liste = list()
             ID = ind.id
             name = " ".join(ind.name)
@@ -577,8 +585,11 @@ class Peregrination():
 
         self.dico_descendant = dict()
         self.dico_husb_wife = dict()
-
+        cpt = 1
+        total = str(len(list(self.parsed_gedcom.families)))
         for fam in self.parsed_gedcom.families:
+            self.update_virtual_console('Famille : '+str(cpt)+'/'+total,same=True)
+            cpt+=1
             husb_id = None
             wife_id = None
             date = ''
@@ -789,6 +800,11 @@ class Peregrination():
         """
         self.fichier_gedcom = tkFileDialog.askopenfilename(title="Ouvrir le fichier GEDCOM:", initialdir=os.getcwd(), \
                                                                initialfile="", filetypes = [("Fichiers GEDCOM","*.ged"),("Tous", "*")])
+
+        if "/" in self.fichier_gedcom:
+            self.filename = self.fichier_gedcom.split('/')[-1]
+        else:
+            self.filename = self.fichier_gedcom.split('\\')[-1]
         if not self.fichier_gedcom:
             return
         else:
@@ -797,15 +813,18 @@ class Peregrination():
             self.progress_bar()
             self.pb['value'] = int(1./3*100)
             self.pb.update_idletasks()
-            self.label_town_pb['text'] = "Lecture du GEDCOM..."
+            self.label_town_pb['text'] = "Lecture de "+self.filename+"..."
             self.label_town_pb.update_idletasks()
             self.label_town_pb.update()
             self.pb_gui.update()
-
+            self.update_virtual_console('Lecture du GEDCOM...')
+            a = time.time()
             self.parsed_gedcom = gedcom.parse(self.fichier_gedcom)
-
+            b = time.time()
+            self.update_virtual_console(str(b-a)+' secondes')
             self.pb['value'] = int(2./3*100)
             self.label_town_pb['text'] = "Extraction des données..."
+            self.update_virtual_console('Extraction des données...')
             self.label_town_pb.update_idletasks()
             self.label_town_pb.update()
             self.pb_gui.update()
@@ -874,84 +893,199 @@ class Peregrination():
                 continue
             if self.town_org[item] == 'Subdivision':
                 continue
+            if self.town_org[item] == 'Ignorer':
+                continue
             self.rb = Tkinter.Radiobutton(self.regroup, text=self.town_org[item],value=item,variable=self.varchoice, bg="#f5deb3")
             self.rb.grid()
         self.valider = Tkinter.Button(self.regroup, text= 'Valider',command=self.gedcom_map_validate, bg="#f5deb3").grid(sticky="EW")
         self.valider = Tkinter.Button(self.regroup, text= 'Passer',command=self.gedcom_map_pass, bg="#f5deb3").grid(sticky='EW')
         
-    def get_gps_group(self, towns):
-        """
-        Use google geocoder from geocoder libray to found the corresponding gps coordinate
-        input (set) : set of town
-        output (csv file) : file with the data
-        """
-        a= time.time()
-        town_set = set()
-        dico_gps = dict()
-        fail = 0
-        cpt = 0
-        lat, lon = None, None
-        self.progress_bar()
-        for town in towns:
-            cpt+=1
-            self.pb['value'] = int(cpt/len(towns)*100)
-            self.pb.update_idletasks()
-            self.label_pb['text'] = str(round(cpt/len(towns)*100,2))+" %"
-            self.label_pb.update_idletasks()
-            self.label_pb.update()       
-            self.label_town_pb['text'] += "\nRecherche : "+town
-            self.label_town_pb.update_idletasks()
-            self.label_town_pb.update()
-            self.pb_gui.update()
-
-            result = self.get_gps_GoogleMapHTMLRequest(town)
-            lat, lon = result
-
-            if lat:
-
-                self.label_town_pb['text'] = town+' : '+str(lat)+','+str(lon)
-                self.label_town_pb.update_idletasks()
-                self.label_town_pb.update()
-                self.pb_gui.update()
-                dico_gps[town] = result
-                continue
-
-            if lat == None:
-                self.label_town_pb['text'] += "\n### Echec lors de la recuperation des donnees GPS\n### Essai de recuperation avec Nominatim (OpenStreetMap) :"
-                self.label_town_pb.update_idletasks()
-                self.label_town_pb.update()
-                self.pb_gui.update()
-
-                lat, lon = self.nominatim(town)
-                self.label_town_pb['text'] += "\nOpenStreetMap GPS : "+str(lat)+", "+str(lon)
-                self.label_town_pb.update_idletasks()
-                self.label_town_pb.update()
-                self.pb_gui.update()
-                
-                if lat:
-                    dico_gps[town] = (lat,lon)
+    def return_dico_shapefile(self):
+    
+        from sys import platform
+        if platform == "linux" or platform == "linux2":
+            sep = "/"
+        elif platform == "darwin":
+            sep = "/"
+        elif platform == "win32":
+            sep = "\\"
+            
+        set_racine = set()
+        filelist = list()
+        
+        for root, dirs, files in os.walk(os.getcwd()+sep+'SHAPEFILE'):
+            for f in glob.glob(root+sep+'*adm*.shp'):
+                filelist += [f]
+                set_racine.add(os.path.splitext(os.path.basename(f))[0][:-1])
+        list_racine = list(set_racine)
+        dico_shapefile = dict()
+        
+        for level in range(6):
+            dico_shapefile[level] = []
+            for racine in list_racine:
+                #contruire le "fichier"
+                shapefile = os.getcwd()+sep+'SHAPEFILE'+sep+racine+'_shp'+sep+racine+str(level)+'.shp'
+                if shapefile in filelist:
+                    dico_shapefile[level] += [shapefile]
                 else:
-                    print(town)
-                    self.label_town_pb['text'] += "\n### La subdivision n as pas ete retrouve"
-                    self.label_town_pb.update_idletasks()
-                    self.label_town_pb.update()
-                    self.pb_gui.update()
-                    fail += 1
-                    dico_gps[town] = (lat,lon)
+                    control = None
+                    cpt = 0
+                    while control == None:
+                        shapefile = os.getcwd()+sep+'SHAPEFILE'+sep+racine+'_shp'+sep+racine+str(level-cpt)+'.shp'
+                        if level - cpt == 0:
+                            dico_shapefile[level] += [shapefile]
+                            control = True
+                        elif shapefile in filelist:
+                            dico_shapefile[level] += [shapefile]
+                            control = True
+                        else:
+                            cpt+=1
+        return dico_shapefile
 
-        b = time.time()
-        seconds = b-a
-        m, s = divmod(seconds, 60)
-        h, m = divmod(m, 60)
-        #self.pb_gui.destroy()
-        tkMessageBox.showinfo(title="Terminé",message=str(len(town_set)-fail)+" ont été retrouvé(s)\n"+str(fail)+" n'ont pas été retrouvé(s)\nRéalise en %d:%02d:%02d secondes" % (h, m, s))
-        return dico_gps
+    def point_inside_polygon(self,x,y,poly):
+        """
+        Return True if a coordinate (x, y) is inside a polygon defined by
+        a list of verticies [(x1, y1), (x2, x2), ... , (xN, yN)].
+        Reference: http://www.ariel.com.au/a/python-point-int-poly.html
+        Principle
+        http://alienryderflex.com/polygon/
+        """
+        n = len(poly)
+        inside =False
+        p1x,p1y = poly[0]
+        for i in range(n+1):
+            p2x,p2y = poly[i % n]
+            if y > min(p1y,p2y):
+                if y <= max(p1y,p2y):
+                    if x <= max(p1x,p2x):
+                        if p1y != p2y:
+                            xinters = (y-p1y)*(p2x-p1x)/(p2y-p1y)+p1x
+                        if p1x == p2x or x <= xinters:
+                            inside = not inside
+            p1x,p1y = p2x,p2y
+        return inside
+    def found_polygon_list(self,x,y, geometry):
+        """
+        recursive function iterate over all the level of the shapefile geometry to found the coordinate
+        especially when you have different subset at different level of shape (grouping)
+        """
+        if isinstance(geometry[0][0],float):
+            inside = self.point_inside_polygon(x, y, geometry)
+            if inside:
+                return True
+            else:
+                return False
+        else:
+            for sub in geometry:
+                inside = self.found_polygon_list(x,y, sub)
+                if inside:
+                    return True
+            return inside
+    def get_gps_group(self, dico_town, criteria):
+        """
+        En fonction du critère choisis, convertis ce critère pour choisir les bon shapefile
+        Récupère les fichier shapefile dans le dossier shapefile correspondant a une écriture bien précise
+        et les organise en fonction de leur niveau hierarchique:
+        Les fichier Shapefile de www.site.com sont organisé comme suit :
+            NNN_adm#.shp avec NNN les trois lettre du pays et # le niveau du shapefile.
+            Il existe plusieur niveaux :
+            0 : Pays
+            1 : Régions
+            2 : Département
+            3 : Arrondissement
+            4 : Canton
+            5 : Commune
+        Le critère et basé sur la valeur de l'index d'une des subdivison imposé pour le regroupement
+        qui sont actuellement:
+            0 : Commune
+            2 : Département
+            3 : Régions
+            4 : Pays
+        La correspondance entre l'index de la subdivion et le niveau du fichier shapefile correspondant
+        et la suivante:
+            0 => 'Commune' => 5
+            2 => 'Departement' => 2
+            3 => 'Region' => 1
+            4 => 'Pays' =>0
+        Les fichier Shapefile sont tous rechercher en fonction de si ils ont la graphie correspondant à:
+        NNN_adm#.shp et classé dans un dictionnaire avec la fonction self.return_dico_shapefile()
+        En fonction du critère choisis, on analyse le fichier et vérifie pour chaque entité si l'un de nos lieu
+        et contenue dans ce polygone via la fonction self.point_inside_polygon(lon,lat,polygon)
+        Si la localité se retrouve dans la forme, la moyenne des latitude et longitude formant le carré de la
+        forme (bbox)
+        et utilisé comme coordonnée pour la localité.
+        Dans le cas contraire, si il y a aucun fichier shapefile présent capable de contenir la localité en
+        fonction du critère de regrouepemnt choisis,
+        aucune modification n'est ne sont réalisé sur les latitude et longitude et les localité restante sont
+        ajouté au nouveau dictionnaire créé
+        Dans le même instant, un fichier geojson et créé avec toute les formes retrouvé pour pouvoir etre
+        utilisé avec le module chlopleth de folium
+        """
+        dict_conv = {0:5,2:2,3:1,4:0}
+        criteria = dict_conv[criteria]
+        dico_shapefile = self.return_dico_shapefile()
+        #variable
+        buffer = []
+        new_dico_town = dict()
+        for f in dico_shapefile[criteria]:
+            # read the shapefile
+            reader = shapefile.Reader(f)
+            fields = reader.fields[1:]
+            shapes = reader.shapes()
+            field_names = [field[0] for field in fields]
+
+            cpt = 0
+            size_dico_town = len(dico_town)
+            print('Began iteration...')
+            set_coordinate = set()
+            for sr in reader.shapeRecords():
+                #to avoid the end of the loop if all town are found
+                if len(dico_town) == 0:
+                    break
+                #to show the advancement
+                if size_dico_town != len(dico_town):
+                    print(len(dico_town))
+                    size_dico_town = len(dico_town)
+                #car les localité ont tous des nom différents ont se basera sur les coordonnées
+                lon1, lat1, lon2, lat2 = shapes[cpt].bbox
+                #store the coordinate of polygon
+                #polygon = shapes[cpt].points
+                cpt+=1
+                lon_mean = np.mean([lon1,lon2])
+                lat_mean = np.mean([lat1,lat2])
+                #make the dict for geojson
+                atr = dict(zip(field_names, sr.record))
+                geom = sr.shape.__geo_interface__
+                dico_feature = dict(type="Feature", geometry=geom, properties=atr)
+                for key, (lat, lon) in dico_town.items():
+                    #I can put the polygon shape with shapes[cpt].points but if I have Islands it's not work
+                    #So I take the first element of the tuple of tuple
+                    inside = self.found_polygon_list(lon,lat, dico_feature['geometry']['coordinates'])
+                    #inside = self.point_inside_polygon(lon,lat,dico_feature['geometry']['coordinates'][0])
+                    if inside:
+                        #associate the list of attribute with their data if its not already do
+                        if (lon1, lat1, lon2, lat2) not in set_coordinate:
+                            set_coordinate.add((lon1, lat1, lon2, lat2))
+                            buffer.append(dico_feature)
+                        new_dico_town[key] = (lat_mean, lon_mean)
+                        del dico_town[key]
+        print('Finish to iterate over shapefile')
+        print(dico_town)
+        new_dico_town = dict(new_dico_town.items() + dico_town.items())
+        # write the GeoJSON file
+        from json import dumps
+        with open('data_tmp.json', "w") as geojson:
+            geojson.write(dumps({"type": "FeatureCollection","features": buffer}, indent=2, encoding ='iso8859_15') + "\n")
+        return new_dico_town
     
     def get_gps_of_group(self,ascdt,criteria,dico_ID):
         """
         foobar
         [ID,name,birth_date,birth_place,[],[],[],death_date,death_place,ID_father,ID_mother]
         """
+        #get the correct index of the value
+        criteria_town_org = criteria
+        criteria = self.dico_index_subdivisions[self.town_org[criteria]]
         town_set = set()
         ID_set = set()
         for key in ascdt:
@@ -966,24 +1100,34 @@ class Peregrination():
                         if liste2:
                             for idx in range(len(liste2)):
                                 if liste2[idx] != '' :
-                                    c = liste2[idx].split(',')[criteria].replace(' ','')
+                                    c = liste2[idx].split(',')[criteria]
                                     town_set.add(c)
                                     liste2[idx] = c
                             liste[index]= liste2
                         else:
                             continue
-                        
                     else:
                         if liste[index] != '':
-                            c = liste[index].split(',')[criteria].replace(' ','')
+                            c = liste[index].split(',')[criteria]
                             town_set.add(c)
                             liste[index] = c
                         else:
                             continue
-        dico_town = self.get_gps_group(town_set)
+
+        dico_grouped = dict()
+        for key, (x,y) in self.gedcom_town_list.items():
+            town = key.split(',')[criteria]
+            if town in town_set:
+                dico_grouped[town] = (x,y)
+            
+            
+                        
+        dico_town = self.get_gps_group(dico_grouped, criteria_town_org)
         return ascdt, dico_town
+    
     def gedcom_map_pass(self):
         self.regroup.destroy()
+        self.shapefile = False
         if self.direction == 1:
             #make ascdt type object
             self.ascdt, set_id = self.ascendance(self.ID)
@@ -991,6 +1135,7 @@ class Peregrination():
                 
     def gedcom_map_validate(self):
         self.regroup.destroy()
+        self.shapefile = True
         self.criteria = self.varchoice.get()
         if self.direction == 1:
             #make ascdt type object
@@ -1004,9 +1149,9 @@ class Peregrination():
            #find the min and max coordinate 
             y_min, x_min, y_max, x_max, g_max = find_min_max_coordinate(list_coord)
             #create annotation text
-            dico_annotation = create_annotation_text_gedcom(self.ascdt,self.gedcom_town_list,self.choosen_options,self.direction)
+            dico_annotation, popup_trajectory = create_annotation_text_gedcom(self.ascdt,self.gedcom_town_list,self.choosen_options,self.direction)
             #generate the OpenStreetMap
-            generate_map_gedcom(self.direction,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation)
+            generate_map_gedcom(self.direction,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation, popup_trajectory, self.filename, self.shapefile)
             
     def load_ascdt_txt(self):
         """

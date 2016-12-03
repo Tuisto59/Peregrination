@@ -121,13 +121,6 @@ elif platform == "win32":
         import gedcom
     except ImportError:
         install_and_import('gedcompy')
-"""
-import random
-from geopy.geocoders import Nominatim
-geolocator = Nominatim()
-from geopy import geocoders
-gl = geocoders.GoogleV3(api_key='AIzaSyANZgWdIaN4IhFVPVAmi74SO1LD8RtYMPk')
-"""
 
 #############
 # FONCTIONS #
@@ -298,6 +291,37 @@ def convert_to_trajectory_ascdt_GEDCOM(ascdt,town_list,dico_ID):
                             coo = (town_list[cityA][0], town_list[cityA][1],town_list[cityB][0],town_list[cityB][1],g)
                             list_traj += [traj]
                             list_coord += [coo]
+                if cityA == '' and  cityB != '':
+                    city = False
+                    p_i = prts * 2
+                    m_i = prts * 2 + 1 #for the range we add extra 1
+                    max_i = max(ascdt.keys())
+                    while city == False:
+                        #break point to avoid infinite loop
+                        liste_prts_ascdt = list()
+                        for idx_i in range(p_i,m_i):
+                            if idx_i in ascdt.keys():
+                                liste_prts_ascdt+=[idx_i]
+                        #check point
+                        if len(liste_prts_ascdt) == 0:
+                            break
+                        #analyse
+                        else:
+                            for prts_i in range(p_i,m_i):
+                                if prts_i in ascdt.keys():
+                                    g = check_generation(prts_i)
+                                    cityA = ascdt[prts_i][3]
+                                    if cityA != ''  :
+                                        if cityB != '' :
+                                            if cityA != cityB:
+                                                city = True
+                                                print("sosa numero "+str(i)+" "+dico_ID[ascdt[i][0]].decode("iso8859_15"))
+                                                traj = (town_list[cityA][0],town_list[cityA][1], town_list[cityB][0],town_list[cityB][1], cityA, cityB,g)
+                                                coo = (town_list[cityA][0], town_list[cityA][1], town_list[cityB][0],town_list[cityB][1],g)
+                                                list_traj += [traj]
+                                                list_coord += [coo]
+                            p_i = p_i*2
+                            m_i = m_i*2+1
     return list(set(list_traj)), list(set(list_coord))
            
 def find_min_max_coordinate(list_coord):
@@ -586,6 +610,7 @@ def create_annotation_text_gedcom(dico_file,dico_town,options,typ):
     dico_departure = dict()
     dico_arrivals = dict()
     dico_familly_name = dict()
+    popup_trajectory = dict()
 
     ####### BEGIN #######
     ##### ASCENDANCE #####
@@ -614,6 +639,8 @@ def create_annotation_text_gedcom(dico_file,dico_town,options,typ):
                     if d:
                         if t:
                             if t not in dico_date_extreme.keys():
+                                dico_date_extreme[t] = d+' - '+d
+                            elif not dico_date_extreme[t]:
                                 dico_date_extreme[t] = d+' - '+d
                             else:
                                 #verify extrem date
@@ -660,18 +687,55 @@ def create_annotation_text_gedcom(dico_file,dico_town,options,typ):
                         if cityB != '' :
                             if cityA != cityB:
                                 if cityA not in dico_departure.keys():
-                                    a = "Depart :\nSosa n "+str(prts)+" "+dico_file[prts][1]+"\n"
+                                    a = "Depart :\nSosa "+str(prts)+" "+dico_file[prts][1]+"\n"
                                     dico_departure[cityA] = a
                                 else:
-                                    a = "Sosa n "+str(prts)+" "+dico_file[prts][1]+"\n"
+                                    a = "Sosa "+str(prts)+" "+dico_file[prts][1]+"\n"
                                     dico_departure[cityA] = dico_departure[cityA] + a
                                 if cityB not in dico_arrivals.keys():
-                                    a = "Arrive :\nSosa n "+str(prts)+" "+dico_file[prts][1]+"\n"
+                                    a = "Arrive :\nSosa "+str(prts)+" "+dico_file[prts][1]+"\n"
                                     dico_arrivals[cityB] = a
                                 else:
-                                    a = "Sosa n "+str(prts)+" "+dico_file[prts][1]+"\n"
+                                    a = "Sosa "+str(prts)+" "+dico_file[prts][1]+"\n"
                                     dico_arrivals[cityB] = dico_arrivals[cityB] + a
-
+                                popup_traj = "Sosa "+str(prts)+" "+dico_file[prts][1]
+                                #create a popup for the trajectory
+                                if (cityA,cityB) in popup_trajectory.keys():
+                                    popup_trajectory[(cityA,cityB)] += " "+popup_traj
+                                else:
+                                    popup_trajectory[(cityA,cityB)] = popup_traj
+                if cityA == '' and  cityB != '':
+                    city = False
+                    p_i = prts * 2
+                    m_i = prts * 2 + 1 #for the range we add extra 1
+                    max_i = max(dico_file.keys())
+                    while city == False:
+                        #break point to avoid infinite loop
+                        liste_prts_ascdt = list()
+                        for idx_i in range(p_i,m_i):
+                            if idx_i in dico_file.keys():
+                                liste_prts_ascdt+=[idx_i]
+                        #check point
+                        if len(liste_prts_ascdt) == 0:
+                            break
+                        #analyse
+                        else:
+                            for prts_i in range(p_i,m_i):
+                                if prts_i in dico_file.keys():
+                                    g = check_generation(prts_i)
+                                    cityA = dico_file[prts_i][3]
+                                    if cityA != ''  :
+                                        if cityB != '' :
+                                            if cityA != cityB:
+                                                city = True
+                                                popup_traj = "Sosa "+str(prts)+" "+dico_file[prts_i][1]
+                                                #create a popup for the trajectory
+                                                if (cityA,cityB) in popup_trajectory.keys():
+                                                    popup_trajectory[(cityA,cityB)] += " "+popup_traj
+                                                else:
+                                                    popup_trajectory[(cityA,cityB)] = popup_traj
+                            p_i = p_i*2
+                            m_i = m_i*2+1
     ##### DESCENDANCE #####
     
     if typ ==2:
@@ -775,6 +839,7 @@ def create_annotation_text_gedcom(dico_file,dico_town,options,typ):
     for town in number_total.keys():
         if town != '' and "\x95" not in town:
             dico_annotation[town] = ''
+    print('dico annotation keys')
     for town in dico_annotation.keys():
         text = str()
         ### CHECK THE OPTIONS ###
@@ -828,7 +893,7 @@ def create_annotation_text_gedcom(dico_file,dico_town,options,typ):
             lat = dico_town[town][0]
             lon = dico_town[town][1]
             dico_annotation[town] = (text,lat,lon)
-    return dico_annotation
+    return dico_annotation, popup_trajectory
 
 def multiple_wedding_gedcom(line):
     """
@@ -1386,7 +1451,7 @@ def convert_to_trajectory_descdt(descdt,town_list):
                     list_coord += [coo]
     return list(set(list_traj)), list(set(list_coord))
 
-def generate_map_gedcom(typ,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation):
+def generate_map_gedcom(typ,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation, popup_trajectory, filename, shapefile):
     """
     Generate Open Street Map HTML page
     """
@@ -1412,44 +1477,82 @@ def generate_map_gedcom(typ,y_min, x_min, y_max, x_max,g_max,list_traj,dico_anno
         #colormap = folium.colormap.linear.Paired.scale(1, g_max).to_step(g_max)
         colormap = folium.colormap.StepColormap(hexa_colors, index=None, vmin=1.0, vmax=float(g_max), caption= u"Générations")
         my_map.add_child(colormap)
+        #make shapefile (only if its in group mode)
+        if shapefile:
+            my_map.choropleth(geo_path='data_tmp.json',fill_color='red')
         nb_polyline = dict()
+        #dico to store the town description and avoid overlap of marker when
+        dico_pop = dict()
+        dico_size = dict()
         for data in list_traj:
             y1,x1,y2,x2,m1,m2,g= data
+            
+            #polyline
             if ((y1,x1),(y2,x2)) not in nb_polyline.keys():
                 nb_polyline[(y1,x1),(y2,x2)] = 1
             else:
                 nb_polyline[(y1,x1),(y2,x2)] += 1
+                
+            for y, x, m, g in (y1,x1,m1,g),(y2,x2,m2,g):
+                try:
+                    pop = m.decode('iso8859_15')+"\n"+dico_annotation[m][0].decode('iso8859_15')
+                except UnicodeEncodeError:
+                    pop = m.decode('iso8859_15')+"\n"+dico_annotation[m][0]
+                if (y,x) not in dico_pop.keys():
+                    pop_ad = set()
+                    pop_ad.add(pop)
+                    dico_pop[(y,x)] = pop_ad
+                else:
+                    pop_ad = dico_pop[(y,x)]
+                    pop_ad.add(pop)
+                    dico_pop[(y,x)] = pop_ad
+                #generation polyline marker size
+                if (y,x) not in dico_size.keys():
+                    dico_size[(y,x)]=[g]
+                else:
+                    if g not in dico_size[(y,x)]:
+                        dico_size[(y,x)] += [g]
         for data in list_traj:
             #data
-            y1,x1,y2,x2,m1,m2,g= data
+            y1,x1,y2,x2,m1,m2,g= data           
             #get color
             cm_object = cm.Paired(1.*g/g_max)
             rgb = cm_object[:3]
             hexa = colors.rgb2hex(rgb)
             #trajectory
-            folium.PolyLine([(y1,x1),(y2,x2)], color=hexa, weight=nb_polyline[(y1,x1),(y2,x2)]*5, opacity=1).add_to(my_map)
-            nb_polyline[(y1,x1),(y2,x2)] -= 1
+            #avoid when trajectory have the same start/end location
+            #it's happened when subdivision are not found and the level is "town" location level
+            if (y1,x1) != (y2,x2):
+                for key in (y1,x1), (y2,x2):
+                    sorted_g = sorted(dico_size[(key)])
+                    size = (sorted_g.index(g) + 1) * 10
+                    folium.PolyLine([key,key], color=hexa, weight=size, opacity=0.9).add_to(my_map)
+                folium.PolyLine([(y1,x1),(y2,x2)], popup=popup_trajectory[(m1,m2)].decode('iso8859_15') , color=hexa, weight=nb_polyline[(y1,x1),(y2,x2)]*5, opacity=0.9).add_to(my_map)
+                nb_polyline[(y1,x1),(y2,x2)] -= 1
+            else:
+                sorted_g = sorted(dico_size[(y1,x1)])
+                size = (sorted_g.index(g) + 1) * 10
+                folium.PolyLine([(y1,x1),(y1,x1)], color=hexa, weight=size, opacity=0.9).add_to(my_map)
             #marker
-            if m1 not in town_set:
+            if (y1,x1) not in town_set:
+                folium.Marker([y1, x1], popup=' '.join(list(dico_pop[(y1,x1)]))).add_to(my_map)
+                town_set.add((y1,x1))
+            if (y2,x2) not in town_set:
+                folium.Marker([y2, x2], popup=' '.join(list(dico_pop[(y2,x2)]))).add_to(my_map)
+                town_set.add((y2, x2))
+        for key, (text, y, x) in dico_annotation.items():
+            if (y,x) not in town_set:
+                icon = folium.Icon(color=u'black')
+                town_set.add(key)
                 try:
-                    pop = m1.decode('iso8859_15')+"\n"+dico_annotation[m1][0].decode('iso8859_15')
+                    folium.Marker([y,x], popup=key.decode('iso8859_15')+"\n"+text.decode('iso8859_15'), icon=icon).add_to(my_map)
                 except UnicodeEncodeError:
-                    pop = m1.decode('iso8859_15')+"\n"+dico_annotation[m1][0]
-                folium.Marker([y1, x1], popup=pop).add_to(my_map)
-                town_set.add(m1)
-            if m2 not in town_set:
-                try:
-                    pop = m2.decode('iso8859_15')+"\n"+dico_annotation[m2][0].decode('iso8859_15')
-                except UnicodeEncodeError:
-                    pop = m2.decode('iso8859_15')+"\n"+dico_annotation[m2][0]
-                folium.Marker([y2, x2], popup=pop).add_to(my_map)
-                town_set.add(m2)
-        for key in dico_annotation.keys():
-            if key not in town_set:
-                pass
-                #folium.Marker([dico_annotation[m2.encode('iso8859_15')][1], dico_annotation[m2.encode('iso8859_15')][2]], popup=key+"\n"+dico_annotation[m2.encode('iso8859_15')][0]; color="black").add_to(my_map)
-    filename1 = 'map_'+str(typ)+'_1.html'
-    filename2 = 'map_'+str(typ)+'_2.html'
+                    folium.Marker([y,x], popup=key+"\n"+text, icon=icon).add_to(my_map)
+                
+                
+                
+    filename1 = filename.replace(' ','_').replace('.ged','')+'_map_'+str(typ)+'_1.html'
+    filename2 = filename.replace(' ','_').replace('.ged','')+'_map_'+str(typ)+'_2.html'
     my_map1.save(filename1)
     my_map2.save(filename2)
     webbrowser.open(filename1)
