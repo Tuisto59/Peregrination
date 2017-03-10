@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 """
 (c) Copyright Yoan BOUZIN
 
@@ -17,10 +18,6 @@
 
     You should have received a copy of the GNU General Public License
     along with Pérégrination v2.0.  If not, see <http://www.gnu.org/licenses/>. 2
-
-pour mettre enter à un bouton
-bouton.bind("<key>",parent)
-bouton.focus() #pré-selctionne
 """
 
 ###########
@@ -39,17 +36,68 @@ import requests
 import urllib2
 from difflib import SequenceMatcher
 import glob
+import random
+
+import csv
+import os
+import shutil
+import webbrowser
+import tkFont
 
 ### NON NATIVE PACKAGE ###
 
 import shapefile
 import gedcom
-from geopy.geocoders import Nominatim
+#from geopy.geocoders import Nominatim #because with py2exe not work
+from staticmap import StaticMap, CircleMarker
 
 ######
 # GUI #
 ######
 
+cert = 'cacert.pem'
+os.environ['REQUESTS_CA_BUNDLE'] = os.path.join(os.getcwd(), cert)
+
+GOOGLE_API = ['AIzaSyA-iLp9YRpKkKuklH5yjt4JiGMF2S6ICM8',
+              'AIzaSyDlO_pTWUgOf893w0wWGebuMwDpKM2Q_po',
+              'AIzaSyBGTOZoGeg6olb1DbNfjyD4tjMvmyrtp0s',
+              'AIzaSyAGz3mFCLxUpMU0H7RThU9kRTezHOTiDSg',
+              'AIzaSyCpgLxA975ucBXTHDFuIuMdf1LT1I5t8lg',
+              'AIzaSyDanzzhEl670T6wrbwP5zcWRsHn7mVHdc0',
+              'AIzaSyCw-bgt_STPwGu1DXQVm0u9yDvMtMhBvJE',
+              'AIzaSyApyZWo25UBuVMvYW9ki9HcA86RAGTzSIY',
+              'AIzaSyDM5vIdz_7_NO1Hjj1CyPeJ8gmW_9yIn14',
+              'AIzaSyDW14wZOXVfI7wie88CqniTFIFQb1T2Xm8',
+              'AIzaSyBde8tCh457dv98yJFjggHbCL-qtC_IYxo',
+              'AIzaSyALa1xygv918KwbynAOTjuK5frJrugF9aY',
+              'AIzaSyD-i5IiLLEN6Ix2j4-xl9oD46gE-NitE0o',
+              'AIzaSyCD03OEqs-0VnwemstRDq2kiqFbSTTqXPs',
+              'AIzaSyCj9i9Y-ZUzC_IOBjHaGr-X25uwhyAHlog',
+              'AIzaSyAMTcNhxP9UVi8IdvNj9EWhiL66lk1Op30',
+              'AIzaSyAp9g_PgTjKRoEyjICU_uHkfQ0XRKJY-RE',
+              'AIzaSyCdZ0pswPMiG47MIdmo48-B2EFhi3HUNjc',
+              'AIzaSyCJS0HYiQj0YzQmSHUjX7hkMoi32-2HG4w',
+              'AIzaSyBh-FB2jV7mFuxRYym3LncoQiuX-tmSjfg',
+              'AIzaSyC8Pry5RghSnvCAkKPVu_ZclYP95aIwzjk',
+              'AIzaSyCZnhBwnehcuMaoxuOXQG2grQw1fDhh1JE',
+              'AIzaSyCsw_p3M72MsgiaaZbpGX0PPFDprHkSYzs',
+              'AIzaSyC2Nj1nax6GUDGhxjgkyt9XIfKJ8KDgykA',
+              'AIzaSyAOKo8sBLD8ZKZzmVz9xufqHIMprbfsoUY',
+              'AIzaSyCy7ynvlwK0FxSHR6vmEYIFYN4t9kbCVOg',
+              'AIzaSyCvD-cmuDZG4XnTIifV4Goi7QinXdRbLqw',
+              'AIzaSyDGOJxRP6iBhD-m3W7wUBJD8_RagR9cBLI',
+              'AIzaSyDWwx-s1DcbBA4wmBwsX6K-kxyvBOEJxXY',
+              'AIzaSyCWyrhIXGXaD3g5-p-kEmSfRZx5U4TbgfM',
+              'AIzaSyD_NC-vkcNiquURaxN0eowYQmqp_r0pAkk',
+              'AIzaSyDn9LuMa6U0_D2qxdKug6aZOfIxutjV0h8',
+              'AIzaSyDGgtpYwbPs4fUKIjrTA_uPfHqoFYzoy_M',
+              'AIzaSyBD5InC0C8V23mmdWO-wwyKZXVyIEpYusY',
+              'AIzaSyA0vxUqIm3rJgciJN6D10FxB2HdPnCzG3U',
+              'AIzaSyAHQnm8hXLnWRkSahi3K4KFnjBFSOCvXWo',
+              'AIzaSyBjGa5F28aM3d7l7DmSh-u-LOYTK-MGZRc',
+              'AIzaSyB5yq6AkJgWYbJUXtAuSXm-dviQx6ytpxc',
+              'AIzaSyALKlUwqg4YwkWrPU6JyxFO2JJXKGZJNjo',
+              'AIzaSyCrEM_z7ZFOL_okADEuh67m914dPkhUFU0']
 
 class Peregrination():
     #principal application
@@ -67,31 +115,48 @@ class Peregrination():
             font = "Segoe Script"
         self.main = Tkinter.Tk()
         self.main.title("Pérégrination v2.0")
-        #self.main.geometry("176x145")
-        #self.main.resizable(width=False, height=False)
+        self.main.resizable(width=False, height=False)
         self.main.configure(bg="#a0522d")
+        self.main.grab_set()
+        self.main.focus_set()
         iconImage=Tkinter.PhotoImage(master=self.main, data=icon)
         self.label1 = Tkinter.Label(self.main,image=iconImage)
         self.label1.image = iconImage # keep a reference!
-        #self.label1 = Tkinter.Label(self.main,text="Pérégrination v 1.0", font=(font, 12), bg="#f5deb3")
         self.label1.grid(sticky='EW', padx=10, pady=5)
-        #self.label1.grid()
-        self.bouton0 = Tkinter.Button(master=self.main,text="Charger le fichier GEDCOM",command=self.gedcom_step,bg="#f5deb3")
-        self.bouton0.grid(sticky='EW')
-        #self.bouton1 = Tkinter.Button(master=self.main,text="Selectionner une personne dans le GEDCOM",command=self.search_engine_gui,bg="#f5deb3")
-        #self.bouton1.grid(sticky='EW')
-        self.bouton2 = Tkinter.Button(master=self.main,text="Charger la liste d'ascendance", command=self.load_ascdt_txt,bg="#f5deb3")
-        self.bouton2.grid(sticky='EW')
-        self.bouton3 = Tkinter.Button(master=self.main,text="Charger la liste de descendance", command=self.load_descdt_txt,bg="#f5deb3")
-        self.bouton3.grid(sticky='EW')
-        self.bouton4 = Tkinter.Button(master=self.main,text="Charger le fichier de lieux", command=self.load_csv,bg="#f5deb3")
-        self.bouton4.grid(sticky='NSEW')
-        self.bouton5 = Tkinter.Button(master=self.main,text="Options d'affichage", command=self.options,bg="#f5deb3")
-        self.bouton5.grid(sticky='NSEW')
-        self.bouton6 = Tkinter.Button(master=self.main,text="Créé la carte", command=self.mapping,bg="#f5deb3")
-        self.bouton6.grid(sticky='NSEW')
-        self.bouton7 = Tkinter.Button(master=self.main,text="Quitter",command=self.main.destroy,bg="#f5deb3")
-        self.bouton7.grid(sticky='NSEW')
+        
+        self.step1 = Tkinter.Button(self.main, text="Etape 1: Import du fichier GEDCOM",command=self.gedcom_step1, bg="#f5deb3")
+        self.step1.grid(sticky="NSEW")
+        self.step1.bind('<Return>', self.gedcom_step1)
+        self.step1.focus_set()
+        
+        self.step2 = Tkinter.Button(self.main, text="Etape 2: Correspondance des lieux",command=self.gedcom_step2, bg="#f5deb3", activebackground="#f5deb3")
+        self.step2.grid(sticky="NSEW")
+        self.step2.bind('<Return>', self.gedcom_step2)
+        self.step2.config(state='disabled')
+        
+        self.step3 = Tkinter.Button(self.main, text="Etape 3: Recherche des coordonées GPS",command=self.gedcom_step3, bg="#f5deb3", activebackground="#f5deb3")
+        self.step3.grid(sticky="NSEW")
+        self.step3.bind('<Return>', self.gedcom_step3)
+        self.step3.config(state='disabled')
+        
+        self.step4 = Tkinter.Button(self.main, text="Etape 4: Sélection de la personne",command=self.gedcom_step4, bg="#f5deb3", activebackground="#f5deb3")
+        self.step4.grid(sticky="NSEW")
+        self.step4.bind('<Return>', self.gedcom_step4)
+        self.step4.config(state='disabled')
+        
+        self.step5= Tkinter.Button(self.main, text="Etape 5: Options d'affichage",command=self.gedcom_step5, bg="#f5deb3", activebackground="#f5deb3")
+        self.step5.grid(sticky="NSEW")
+        self.step5.bind('<Return>', self.gedcom_step5)
+        self.step5.config(state='disabled')
+        
+        self.step6= Tkinter.Button(self.main, text="Etape 6: Créer la carte des périgrinations",command=self.gedcom_step6, bg="#f5deb3",activebackground="#f5deb3")
+        self.step6.grid(sticky="NSEW")
+        self.step6.bind('<Return>', self.gedcom_step6)
+        self.step6.config(state='disabled')
+        
+        self.step7= Tkinter.Button(self.main, text="Quitter",command=self.main.destroy, bg="#f5deb3")
+        self.step7.grid(sticky="NSEW")
+        
         self.label1 = Tkinter.Label(self.main,text="© Yoan BOUZIN - Licence GNU", font=(font, 12), bg="#f5deb3")
         self.label1.grid(sticky='EW', padx=10, pady=5)
 
@@ -105,10 +170,11 @@ class Peregrination():
         self.choosen_options = list()
         self.fichier_gedcom = None
         self.parsed_gedcom = None
+        self.GoogleAPI_index = 1
         
     def run(self):
         """
-        function to keep the GUI in live
+        Keep the GUI in live
         """
         self.center(self.main)
         self.main.mainloop()
@@ -125,11 +191,15 @@ class Peregrination():
         toplevel.geometry("%dx%d+%d+%d" % (size + (x, y)))
 
     def progress_bar(self):
+        """
+        Progress bar with virtual console
+        Display the progression of an event
+        """
         self.pb_gui = Tkinter.Toplevel()
-        
+        self.pb_gui.grab_set()
+        self.pb_gui.focus_set()
         self.frame_pb = ttk.Frame(self.pb_gui)
         self.frame_pb.grid()
-        
         self.pb = ttk.Progressbar(self.frame_pb, orien='horizontal', mode='determinate', length=500)
         self.pb.grid(row=0, column=0, sticky="EW")
         self.pb["value"] = 0
@@ -144,15 +214,15 @@ class Peregrination():
         #====== FRAME CONSOLE ======
             #first frame
         self.frameConsole = Tkinter.Frame(self.pb_gui)
-        self.frameConsole.grid(row=9, columnspan=10,rowspan=10,sticky='W')
+        self.frameConsole.grid(row=9, columnspan=10,rowspan=10,sticky='EW')
         
             #first canvas
         self.canvasConsole = Tkinter.Canvas(self.frameConsole, height=130, width=500, bg="black")
-        self.canvasConsole.grid(row=0)
+        self.canvasConsole.grid(row=0, sticky="EW")
             #second frame
         self.console = Tkinter.Frame(self.canvasConsole)
         self.console.config(relief='sunken', bg="black", height=130, width=500)
-        self.console.grid(row=0)
+        self.console.grid(row=0,sticky="EW")
         
             #scrollbar
         self.vsbc = Tkinter.Scrollbar(self.frameConsole,command=self.canvasConsole.yview)
@@ -168,88 +238,345 @@ class Peregrination():
         self.row = 0
         self.label_console = Tkinter.Label(self.console, bg='black', justify='left')
 
-    def update_virtual_console(self, text,fg='white',same=False):
-        """ display the message in the progress bar console """
+    def update_virtual_console(self, text=False,fg='white',same=False,label_prog=False,label_title=False,value=False):
+        """
+        Display the message in the progress bar console
+        input :
+            text :(string) : text to display in the 'virtual console', default set to FALSE
+            same (bool) : if TRUE, we us the last label to replace his text, default set to FALSE
+            label_prog (bool/float) : if TRUE, we change the text of the progression in the label '[number] %'
+            label_title (bool/string) : if TRUE, change the text by the given text
+            value (bool/float or integer) : if TRUE, change the value of the tkk.Progressbar for the visualisation
+        """
+        if label_prog:
+            self.label_pb['text'] = str(label_prog)+' %'
+        if label_title:
+            self.label_town_pb['text'] = label_title
+        if value:
+            self.pb['value'] = value
+            
         if self.row == 1000:
             self.row = 0
             for widget in self.console.winfo_children():
                 widget.destroy()
         # update the row increment
-        if not same:
-        #create the label in the console
-            label = Tkinter.Label(self.console,text=text,bg='black',fg=fg, justify='left')
-            label.grid(row=self.row,sticky="W")
-            self.row = self.row+1
-        else:
-            self.label_console['text'] = text
-            self.label_console['fg'] = fg
-            self.label_console.grid(row=self.row,sticky="W")
-        # adapt and update the canvas content to the scroll bar
-        self.canvasConsole.config(scrollregion=self.canvasConsole.bbox("all"))
-        self.canvasConsole.yview_moveto(1.)
-        self.pb_gui.update() ##update the GUI
+        if text:
+            if not same:
+            #create the label in the console
+                label = Tkinter.Label(self.console,text=text,bg='black',fg=fg, justify='left')
+                label.grid(row=self.row,sticky="W")
+                self.row = self.row+1
+            else:
+                self.label_console['text'] = text
+                self.label_console['fg'] = fg
+                self.label_console.grid(row=self.row,sticky="EW")
+            # adapt and update the canvas content to the scroll bar
+            self.canvasConsole.config(scrollregion=self.canvasConsole.bbox("all"))
+            self.canvasConsole.yview_moveto(1.)
+        ##update the Progress Bar GUI
+        self.pb_gui.update_idletasks()
+        self.pb_gui.update()
         
+    def control_map_places(self, filename):
+        """
+        Control the geolocalisation by showing the geocoded Places on a Map
+        All the Map come from OpenStreetMap data
+        All  for all the town are downloaded (places with identical coordinate are grouping)
+        By button and some command, the User check if the automated localisation have been work well
+        """
+        
+        #run the function to get the images
+        self.load_image_from_file(filename)
 
-    def gedcom_step(self):
-        """
-        TopLevel Windows for gedcom step
-        """
-        self.gs = Tkinter.Toplevel()
-        self.gs.grab_set()
-        self.gs.focus_set()
-        self.gs.title("GEDCOM Manager")
-        self.gs.config(bg="#f5deb3")
-        self.step1 = Tkinter.Button(self.gs, text="Etape 1:\nImport du fichier\nGEDCOM",command=self.gedcom_step1, bg="#f5deb3")
-        self.step1.grid(row=0,column=0, sticky="NS")
-        self.step2 = Tkinter.Button(self.gs, text="Etape 2:\nCorrespondance\ndes lieux",command=self.gedcom_step2, bg="#f5deb3")
-        self.step2.grid(row=0,column=1, sticky="NS")
-        self.step2.config(state='disabled')
-        self.step3 = Tkinter.Button(self.gs, text="Etape 3:\nRecherche des\ncoordonées GPS",command=self.gedcom_step3, bg="#f5deb3")
-        self.step3.grid(row=0,column=2, sticky="NS")
-        self.step3.config(state='disabled')
-        self.step4 = Tkinter.Button(self.gs, text="Etape 4:\nSélection de la\npersonne",command=self.gedcom_step4, bg="#f5deb3")
-        self.step4.grid(row=0,column=3, sticky="NS")
-        self.step4.config(state='disabled')
-        self.step5= Tkinter.Button(self.gs, text="Etape 5:\nOptions\nd'affichage",command=self.gedcom_step5, bg="#f5deb3")
-        self.step5.grid(row=0,column=4, sticky="NS")
-        self.step5.config(state='disabled')
-        self.step6= Tkinter.Button(self.gs, text="Etape 6:\nCréer la carte des\npérigrinations",command=self.gedcom_step6, bg="#f5deb3")
-        self.step6.grid(row=0,column=5, sticky="NS")
-        self.step6.config(state='disabled')
-        self.step7= Tkinter.Button(self.gs, text="Quitter",command=self.gs.destroy, bg="#f5deb3")
-        self.step7.grid(row=0,column=6, sticky="NS")
+        #make the gui
+        self.control = Tkinter.Toplevel()
+        self.control.config( bg="#a0522d")
+        self.control.grab_set()
+        self.control.focus_set()
+        self.control.title("Pérégrination v2.0 - Controlleur visuel des lieux géolocalisés")
+        #self.control.configure(bg="#a0522d")
+        self.label_titre = Tkinter.Label(self.control, text="Vérification des lieux",bg="#a0522d",fg='#f5deb3',font=(None,10,'bold'))
+        self.label_titre.grid(column=0,row=0, columnspan = 4)
+        self.number = 1
+        self.label_lieux = Tkinter.Label(self.control,text="\n".join(self.dico_coordinate[self.index_dico_coordinate[self.number]]),bg="#a0522d",fg='#f5deb3',relief= 'ridge')
+        self.label_lieux.grid(column=0,columnspan = 4, row = 1)
+        self.info = Tkinter.Label(self.control, text="(Pour visionner la carte dans son ensemble, cliquer sur l'image, ou sur le bouton \" + \" )",bg="#a0522d",fg='#f5deb3', font=(None, 10, 'italic'))
+        self.info.grid(column=0,row=2,columnspan=4)
+        #image
+        iconImage=Tkinter.PhotoImage(file=self.dico_pictures[self.number])
+        self.label1 = Tkinter.Label(self.control,image=iconImage, relief='sunken',cursor="hand2")
+        self.label1.image = iconImage # keep a reference!
+        self.label1.grid(column=0, row=3, rowspan= 11, sticky='EW', padx=10, pady=5)
+        self.label1.bind("<Button-1>", self.plus)
         
+        #commande
+        self.number_town = Tkinter.Label(self.control, text=' '+str(self.number)+'/'+str(len(self.index_dico_coordinate))+' ',bg="#a0522d",fg='#f5deb3',relief= 'ridge')
+        self.number_town.grid(column=1, columnspan=3, row=3)
+        self.left_button =Tkinter.Button(self.control, text= " < ",command=self.left,fg="#a0522d",bg='#f5deb3',font=(None, 12, 'bold'))
+        self.left_button.grid(column=1,row=4)
+        self.left_button.bind('<Return>', self.left)
+        self.left_button.bind('<Left>', self.left)
+        self.plus_button =Tkinter.Button(self.control, text= " + ",command=self.plus,fg="#a0522d",bg='#f5deb3',font=(None, 12, 'bold'))
+        self.plus_button.grid(column=2, row=4)
+        self.plus_button.bind('<Return>', self.plus)
+        self.right_button =Tkinter.Button(self.control, text= " > ",command=self.right,fg="#a0522d",bg='#f5deb3',font=(None, 12, 'bold'))
+        self.right_button.grid(column=3, row=4)
+        self.right_button.bind('<Return>', self.right)
+        self.right_button.bind('<Right>', self.right)
+        self.right_button.focus_set()
+        self.current_lon = Tkinter.Label(self.control, text='Longitude : '+str(self.index_dico_coordinate[self.number][0]),bg="#a0522d",fg='#f5deb3')
+        self.current_lon.grid(column = 1 , row = 5 , columnspan = 3)
+        self.current_lat = Tkinter.Label(self.control, text='Latitude : '+str(self.index_dico_coordinate[self.number][1]),bg="#a0522d",fg='#f5deb3')
+        self.current_lat.grid(column = 1 , row = 6 , columnspan = 3)
+
+        #to control value of Entry
+        vcmd = (self.control.register(self.validate),
+                '%d', '%i', '%P', '%s', '%S', '%v', '%V', '%W')
+        
+        self.label_modifier = Tkinter.Label(self.control, text='Modifier : ',bg="#a0522d",fg='#f5deb3')
+        self.label_modifier.grid(column = 1 , row = 7 , columnspan = 3)
+        underline_font = tkFont.Font(self.label_modifier, self.label_modifier.cget("font"))
+        underline_font.configure(underline = True)
+        self.label_modifier.configure(font=underline_font)
+        
+        self.new_lon = Tkinter.Label(self.control, text='Longitude : ',bg="#a0522d",fg='#f5deb3')
+        self.new_lon.grid(column = 1 , row = 8 , columnspan = 3)
+        self.entry_lon = Tkinter.Entry(self.control, validate = 'key', validatecommand = vcmd)
+        self.entry_lon.grid(column = 1 , row = 9 , columnspan = 3, padx=5)
+        self.new_lat = Tkinter.Label(self.control, text='Latitude : ',bg="#a0522d",fg='#f5deb3')
+        self.new_lat.grid(column = 1 , row = 10 , columnspan = 3)
+        self.entry_lat = Tkinter.Entry(self.control, validate = 'key', validatecommand = vcmd)
+        self.entry_lat.grid(column = 1 , row = 11 , columnspan = 3, padx=5)
+        self.button_validate = Tkinter.Button(self.control, text="Mettre à jour les\ncoordonées GPS\npour ce lieu", command=self.change_coordinate,fg="#a0522d",bg='#f5deb3')
+        self.button_validate.grid(column = 1 , row = 12 , columnspan = 3)
+        self.button_validate.bind('<Return>', self.change_coordinate)
+        self.button_validate = Tkinter.Button(self.control, text="Quitter", command=self.control_map_quit,fg="#a0522d",bg='#f5deb3')
+        self.button_validate.grid(column = 1 , row = 13 , columnspan = 3)
+        self.button_validate.bind('<Return>', self.control_map_quit)
+        
+    def control_map_quit(self, *args):
+        """
+        Destroy the control_map_gui
+        """
+        self.control.destroy()
+        self.main.grab_set()
+        self.main.focus_set()
+        self.step4.config(state="active")
+        self.step4.focus_set()
+        
+    def load_image_from_file(self,f):
+        """
+        create image from OSM for all Places
+        """
+        #check folder
+        if not os.path.exists('Tmp'):
+            os.makedirs('Tmp')
+        else:
+            #delete the folder with his content and create a new one
+            shutil.rmtree('Tmp')
+            os.makedirs('Tmp')
+        #counter
+        cpt = 0
+        #loop through data and get picture from tile OSM
+        a = time.time()
+        self.dico_coordinate = dict()
+        
+        for town, (y, x) in f.items():
+            if (x,y) not in self.dico_coordinate.keys():
+                self.dico_coordinate[(x,y)] = [town]
+            else:
+                self.dico_coordinate[(x,y)] += [town]
+
+        self.dico_pictures = dict()
+        self.index_dico_coordinate = dict()
+        self.progress_bar()
+        cpt = 1
+        for (x,y) in self.dico_coordinate.keys():
+            town_string = '\n'.join(self.dico_coordinate[(x,y)])
+            self.update_virtual_console(text=str(cpt)+"/"+str(len(self.dico_coordinate))+' : '+town_string+'\n'+str(y)+', '+str(x),
+                                        label_title= str(cpt)+"/"+str(len(self.dico_coordinate))+' : '+town_string,
+                                        label_prog= round(cpt/len(self.dico_coordinate)*100,2),
+                                        value=int(cpt/len(self.dico_coordinate)*100))
+            #largeur, hauteur
+            m = StaticMap(600, 300, url_template='http://a.tile.osm.org/{z}/{x}/{y}.png')
+            #longitude = x, latitude=y , create marker (because its not work without) , 
+            marker = CircleMarker((x, y),'#0036FF', 5)
+            m.add_marker(marker)
+            #set zoom : 13 = village area
+            image = m.render(zoom=13)
+            #save
+            picture_file = os.getcwd()+'/Tmp/control'+str(cpt)+'.gif'
+            image.save(picture_file)
+            self.dico_pictures[cpt]=picture_file
+            self.index_dico_coordinate[cpt] = (x,y)
+            cpt+=1
+        b = time.time()
+        seconds = b-a
+        m, s = divmod(seconds, 60)
+        h, m = divmod(m, 60)
+        self.pb_gui.destroy()
+        tkMessageBox.showinfo(title='Terminé' , message= 'Terminé en %d:%02d:%02d secondes' % (h, m, s))
+        
+    def left(self, *args):
+        """
+        Go to the next town
+        """
+        #control
+        if self.number != 1:
+            self.number -= 1
+            self.label_lieux['text'] ="\n".join(self.dico_coordinate[self.index_dico_coordinate[self.number]])
+            self.number_town['text'] = ' '+str(self.number)+'/'+str(len(self.index_dico_coordinate))+' '
+            self.current_lon['text'] = 'Longitude : '+str(self.index_dico_coordinate[self.number][0])
+            self.current_lat['text'] = 'Latitude : '+str(self.index_dico_coordinate[self.number][1])
+            iconImage=Tkinter.PhotoImage(file=self.dico_pictures[self.number])
+            self.label1['image'] = iconImage
+            self.label1.image = iconImage # keep a reference!
+            self.entry_lat.delete(0, 'end')
+            self.entry_lon.delete(0, 'end')
+            self.control.update_idletasks()
+            
+            
+    def right(self, *args):
+        """
+        Go to the next town
+        """
+        #control
+        len_idx = len(self.index_dico_coordinate)
+        if self.number != len_idx:
+            self.number += 1
+            self.label_lieux['text'] ="\n".join(self.dico_coordinate[self.index_dico_coordinate[self.number]])
+            self.number_town['text'] = ' '+str(self.number)+'/'+str(len(self.index_dico_coordinate))+' '
+            self.current_lon['text'] = 'Longitude : '+str(self.index_dico_coordinate[self.number][0])
+            self.current_lat['text'] = 'Latitude : '+str(self.index_dico_coordinate[self.number][1])
+            iconImage=Tkinter.PhotoImage(file=self.dico_pictures[self.number])
+            self.label1['image'] = iconImage
+            self.label1.image = iconImage # keep a reference!
+            self.entry_lat.delete(0, 'end')
+            self.entry_lon.delete(0, 'end')
+            self.control.update_idletasks()
+            
+    def plus(self, *args):
+        """
+        Open default browser with GogleMap to the actual latitude and longitude coordinate
+        """
+        x, y = self.index_dico_coordinate[self.number]
+        #webbrowser.open('https://www.google.com/maps/preview/@'+str(y)+','+str(x)+',20z')
+        webbrowser.open('http://maps.google.com/maps?q='+str(y)+','+str(x)+'&z=15')
+        
+    def validate(self, action, index, value_if_allowed,
+                       prior_value, text, validation_type, trigger_type, widget_name):
+        #for copy-paste from clipboard
+        if len(text) > 1:
+            for c in text:
+                if c not in '0123456789.-':
+                    tkMessageBox.showerror(title='Caractère non autorisé',message='Le caractère "'+c+'" n\'est pas autorisé')
+                    return False
+            return True
+        elif text in '0123456789.-':
+            return True
+        else:
+            return False
+        
+    def change_coordinate(self, *args):
+        """
+        change the coordinate in the CSV File
+        """
+        #Get the entry value
+        latitude = float(self.entry_lat.get())
+        longitude = float(self.entry_lon.get())
+        #get old value and key for dict
+        lon_lat = self.index_dico_coordinate[self.number]
+        towns_list = self.dico_coordinate[lon_lat]
+        towns_string = "\n".join(towns_list)
+        if latitude == '' or longitude == '':
+            tkMessageBox.showerror(title="Erreur de saisie",message="Vous n'avez pas correctement remplit les coordonnées GPS")
+            return
+        else:
+            response = tkMessageBox.askyesno(message="Êtes-vous sur de modifier les coordonnées ?")
+            if response:
+                
+                #modification of the current coordinate for all the town with these coordinate
+                towns_list = self.dico_coordinate[self.index_dico_coordinate[self.number]]
+                for town in towns_list:
+                    self.gedcom_town_list[town] = (latitude, longitude)
+                with open(self.fichier_lieux, 'w') as f:
+                    writer = csv.writer(f, delimiter=',', lineterminator='\n')
+                    for key, (i, j) in self.gedcom_town_list.items():
+                        row = [key, i, j]
+                        writer.writerow(row)
+                    
+                picture_file = self.dico_pictures[self.number]
+                #largeur, hauteur
+                m = StaticMap(600, 300, url_template='http://a.tile.osm.org/{z}/{x}/{y}.png')
+                #longitude = x, latitude=y , create marker (because its not work without) , 
+                marker = CircleMarker((longitude, latitude),'#0036FF', 5)
+                m.add_marker(marker)
+                #set zoom : 13 = village area
+                image = m.render(zoom=13)
+                #save
+                image.save(picture_file)
+                # UPDATE ALL GUI
+                self.current_lon['text'] = 'Longitude : '+str(longitude)
+                self.current_lat['text'] = 'Latitude : '+str(latitude)
+                iconImage=Tkinter.PhotoImage(file=picture_file)
+                self.label1['image'] = iconImage
+                self.label1.image = iconImage # keep a reference!
+                self.entry_lat.delete(0, 'end')
+                self.entry_lon.delete(0, 'end')
+                self.control.update_idletasks()
+                tkMessageBox.showinfo(title="Modification des coordonnées GPS",message="Les nouvelles coordonnées GPS pour le/les lieu(x) suivant(s) :"+towns_string+"\nsont :\n"+str(longitude)+", "+str(latitude))
+            else:
+                return
+
     def get_place(self,ged_file):
         """
-        input : GEDCOM File
-        Output : Set of town, org
+        Read the file and retrieve all the place
+        Store it in a set object and return it and these corresponding subdivisons
+        
+        input :
+            ged_file (string) : Path to the GEDCOM File
+            
+        output :
+            town_set (set) : list of unique Places
+            town_org (list) : list of all the subdivison
         """
         #variable
-        town_set = set()
         town_org = None
+        town_set = set()
         #variable for if statement
         town_sub = None
+        total = len(re.findall(r'(?<=2 PLAC )(.*)(?=\n)',''.join(open(self.fichier_gedcom,'r').readlines())))
+        self.update_virtual_console(text=self.label_console['text'])
+        self.update_virtual_console(text=str(len(town_set))+" Lieux trouvés",same=True, value=0)
+        cpt = 0
         with open(self.fichier_gedcom, 'r') as ged:
             for line in ged:
                 if line.startswith('2 PLAC '):
-                    self.update_virtual_console(line.replace('2 PLAC ','').replace('\n',''), same=True)
+                    cpt+=1
+                    self.update_virtual_console(text='Lieux : '+str(cpt)+'/'+str(total), same=True,value=cpt/total*100)
                     town_set.add(line.replace('2 PLAC ',''))
         #In case it's not heredis file
         if not town_org:
             town_org = ['Commune','Code Postal','Departement','Region','Pays','Subdivision','Ignorer']
         return town_set, town_org
 
-    def verify_location(self, lat, lon, ad, town_list, n):
+    def verify_location(self, ad, n):
         """
-        Check if the given coordinate match the correct town
-        Note : Nominatim looking for the nearest address from the given GPS coordinate
-        The verification can be false depending how the adress it's construct and the location
-        of the returning adress by nominatim
-
-        comparaison de string
-
-        >>> from difflib import SequenceMatcher
-        >>> SequenceMatcher(None,a,b)
+        Check if the address have all the elements of the combination
+        They are today 6 combinations given by these value :
+            0 : The place as it is written in the file without comma
+            1 : Subdivision - Postal Code - Town - State
+            3 : Postal Code - Town -State
+            4 : Town - Pays
+            5 : 'Mairie' (String) - Town
+            6 : Town
+            
+        input :
+            ad (string) : the address
+            n (integer) : value of the address combination
+            
+        output:
+            Boolean (True/False) : True if the adress correspond of the criteria
         """
         # convert to unicode the different
         city = unicode(self.city.decode('iso8859_15')).lower()
@@ -294,11 +621,26 @@ class Peregrination():
                 else:
                     return False
 
-    def get_gps_GoogleMapHTMLRequest(self, adress):
-        adress = adress.decode('iso8859_15')
-        adress = adress.encode('utf8')
-        adress = urllib2.quote(adress)
-        r = requests.get(u'http://maps.google.com/?q='+adress+'&hl=fr')
+    def get_gps_GoogleMapHTMLRequest(self, address):
+        """
+        Make a request in google map with the address combination and
+        caught the latitude and longitude and the address with regex in the response
+        
+        input:
+            address (string) : The address combination
+            
+        output:
+            lat (float) : latitude of the Place
+            lon (float) : longitude of the Place
+            addresse (string) : the address given by GoogleMap for the given address combination
+        """
+        time.sleep(2)
+        address = address.decode('iso8859_15')
+        address = address.encode('utf8')
+        address = urllib2.quote(address)
+        #add these two line especially for EXE compilation
+        #http://stackoverflow.com/questions/21201238/twilio-python-module-errors-after-compiling/21206079#21206079
+        r = requests.get(u'http://maps.google.com/?q='+address+'&hl=fr')
         text = r.text
         try:
             lat, lon = eval(re.findall(ur'\[[-+]?\d+\.\d+,[-+]?\d+\.\d+\]',r.text)[0])
@@ -309,51 +651,128 @@ class Peregrination():
             return None, None, None
         
         
-    def nominatim(self, adress):
-        geolocator = Nominatim()
+    def nominatim(self, address):
+        """
+        Nominatim geocoder (from geopy)
+        return the latitude and longitude for a given place
+
+        input :
+            address (list) : the list of the different component of the adress
+            
+        output:
+            lat (float) : latitude
+            lon (float) : longitude
+        """
         lat = None
         lon = None
-        for i in adress:
+        address.insert(0, " ".join(address))
+        URL = 'http://nominatim.openstreetmap.org/search?'
+        params = {'format':'json', 'q':''}
+        for i in address:
             if i != '':
-                #print("Essaie avec : "+i)
-                result = geolocator.geocode(i.decode('iso8859_15'))
-                if result:
-                    lat, lon = (result.latitude, result.longitude)
+                self.update_virtual_console(text='Nominatim (OpenStreetMap) : '+i)
+                params['q'] = i
+                r = requests.get(URL, params=params)
+                try:
+                    lat = r.json()[0]['lat']
+                    lon = r.json()[0]['lon']
                     return lat,lon
-                else:
-                    #continue to the next i-th iteration
-                    continue
-        return lat,lon
+                except:
+                    self.update_virtual_console(text='Echec geolocalisation', fg='red')
+                    continue        
         
-    
-    def get_gps_town_2(self, towns):
+    def  geocoderGoogleV3(self, key, address):
         """
-        Use google geocoder from geocoder libray to found the corresponding gps coordinate
-        input (set) : set of town
-        output (csv file) : file with the data
+        for EXE only
+        """
+        url = 'https://maps.googleapis.com/maps/api/geocode/json'
+        params = {'address': address, 'key':key}
+        r = requests.get(url, params=params)
+        if r.json()['status'] == u'ZERO_RESULTS':
+            self.update_virtual_console(text='ZERO_RESULTS: aucun résultat')
+            return None, None, None
+        if r.json()['status'] == u'OVER_QUERY_LIMIT':
+            self.update_virtual_console(text='OVER_QUERY_LIMIT: Vous avez depasse la limite des 2500 requetes')
+            #query limit reached, take one of our API
+            for api in GOOGLE_API:
+                self.update_virtual_console(text='Checking Google API : '+api)
+                params = {'address': address, 'key':api}
+                r = requests.get(url, params=params)
+                #because this software are distributed to everyone,
+                #the probability that the query limit of the other API have been reached is high
+                if r.json()['status'] == u'OVER_QUERY_LIMIT':
+                    self.update_virtual_console(text='limit Reached')
+                    continue
+                else:
+                    self.GoogleAPI = api
+                    if r.json()['status'] == u'OK':
+                       results = r.json()['results']
+                       location = results[0]['geometry']['location']
+                       ad = results[0]['formatted_address']
+                       lat = location['lat']
+                       lon = location['lng']
+                       return lat, lon, ad
+            self.GoogleAPI = False
+            return None, None, None
+        
+        if r.json()['status'] ==u'REQUEST_DENIED':
+            self.update_virtual_console(text='REQUEST_DENIED: la requete a ete refusee')
+            return None, None, None
+        if r.json()['status'] == u'INVALID_REQUEST':
+            self.update_virtual_console(text='INVALID_REQUEST : Il manque un element de la requete (address, components ou latlng) ou un parametre result_type ou location_type invalide a ete fourni.')
+            return None, None, None
+        if r.json()['status'] == u'UNKNOWN_ERROR':
+            self.update_virtual_console(text="UNKNOWN_ERROR: la requete n'a pas pu etre traitee en raison d'une erreur de serveur")
+            return None, None, None
+        if r.json()['status'] == u'OK':
+           results = r.json()['results']
+           location = results[0]['geometry']['location']
+           ad = results[0]['formatted_address']
+           lat = location['lat']
+           lon = location['lng']
+           return lat, lon, ad
+    
+    def get_gps_town(self, towns):
+        """
+        Open a CSV tabulated file with Places, Latitudes, Longitudes
+        or create the file and looking for the coordinates for all the places:
+            - Get the latitude, longitude and address by the get_gps_GoogleMapHTMLRequest function
+              and control them with the verify_location function.
+            - If its not possible we use the Nominatim geocoder by the nominatim function
+        All the town are writing in the csv file nammed by the User
+        By a progress bar, we show all the elements
+        
+        input :
+            towns (set) : set of town
+        output :
+            output.name (string) : path to the created or opened csv file
         """
         try:
             output = tkFileDialog.asksaveasfile(title="Sauvegarder le fichier de lieux", mode='w', defaultextension=".csv")
         except IOError:
-            tkMessageBox.showerror(title="Document déjà ouvert", message="Le document gps-coordinate.csv et ouvert\nVeuillez le fermer et recommencé")
+            tkMessageBox.showerror(title="Document déjà ouvert", message="Le document "+os.path.split(output.name)[1]+" est ouvert\nVeuillez le fermer et recommencer")
+        if not output:
+            return
         a= time.time()
         town_set = set()
-        dico_gps = dict()
-        dico_gps_adre = dict()
+        self.dico_gps = dict()
+        self.dico_gps_adre = dict()
         fail = 0
         cpt = 0
-        self.progress_bar()
+        if self.GoogleAPI:
+            #checking GoogleMap API
+            self.progress_bar()
+            self.update_virtual_console(text='Geolocalisation en utilisant le servive Google Map API v3')
+        else:
+            self.progress_bar()
         for town in towns:
             cpt+=1
             #Set variable to lat and lon
             town_string = town.replace('\n','')
-            self.label_town_pb['text'] = str(cpt)+"/"+str(len(towns))+' : '+town_string
-            self.pb['value'] = int(cpt/len(towns)*100)
-            self.pb.update_idletasks()
-            self.label_pb['text'] = str(round(cpt/len(towns)*100,2))+" %"
-            self.label_pb.update_idletasks()
-            self.label_pb.update()
-            self.update_virtual_console(str(cpt)+"/"+str(len(towns))+' : '+town_string)
+            self.update_virtual_console(text=str(cpt)+"/"+str(len(towns))+' : '+town_string,
+                                        label_title=str(cpt)+"/"+str(len(towns))+' : '+town_string,
+                                        label_prog=round(cpt/len(towns)*100,2),
+                                        value=int(cpt/len(towns)*100))
             
             town_list = town_string.split(',')
             if town_string not in town_set:
@@ -372,88 +791,101 @@ class Peregrination():
                     self.country = town_list[self.dico_index_subdivisions['Pays']]
                 adresse0 = town_string.replace(',',' ')
                 adresse1 = self.sub+' '+self.code+' '+self.city+' '+self.country
-                adresse2 = self.code+' '+self.city+' '+self.country
+                adresse2 = self.code+' '+self.city+' '+self.country #google map query
                 adresse3 = self.city+' '+self.country
                 adresse4 = 'Mairie '+self.city
                 adresse5 = self.city
+                verif = False
                 for adre, n in (adresse0,0),(adresse1, 1), (adresse2,2), (adresse3,3), (adresse4,4), (adresse5,5) :
                     if adre not in town_set or adre == town_string:
                         #get gps coordinate from Google Map
                         lat, lon = None, None
-                        self.update_virtual_console('Combinaison #-'+str(n+1)+' : '+adre)
-                        result = self.get_gps_GoogleMapHTMLRequest(adre)
-                        lat, lon, ad = result
+                        self.update_virtual_console(text='Combinaison #-'+str(n+1)+' : '+adre)
+                        if self.GoogleAPI:
+                            result = self.geocoderGoogleV3(self.GoogleAPI, adre.decode('iso8859_15').encode('utf8'))
+                            lat, lon, ad = result
+                        if not self.GoogleAPI:
+                            result = self.get_gps_GoogleMapHTMLRequest(adre)
+                            lat, lon, ad = result
                         if lat:
-                            self.update_virtual_console('resultat :\n\t- '+str(lat)+', '+str(lon)+'\n\t- '+ad)
+                            self.update_virtual_console(text='Résultat :\n\t- '.decode('iso8859_15')+str(lat)+', '+str(lon)+'\n\t- '+ad)
                         
                         if lat != None:
                             #verification
-                            self.update_virtual_console('Controle de la geolocalisation')
+                            self.update_virtual_console(text='Controle de la geolocalisation')
                             ratio = SequenceMatcher(None,ad.lower().replace(', ',' '),adre.lower()).ratio()
                             if ratio > 0.6:
                                 verif = True
-                                self.update_virtual_console('ratio : '+str(ratio), fg = 'green')
+                                self.update_virtual_console(text='ratio : '+str(ratio), fg = 'green')
                             else:
-                                self.update_virtual_console('ratio : '+str(ratio), fg = 'red')
-                                verif = self.verify_location(lat, lon, ad, town_list, n)
+                                self.update_virtual_console(text='ratio : '+str(ratio), fg = 'red')
+                                self.update_virtual_console(text="Vérification des éléments de l'adresse retrouvé")
+                                verif = self.verify_location(ad, n)
                             if verif:
-                                self.update_virtual_console(str(cpt)+"/"+str(len(towns))+' - '+town_string+' : '+str(lat)+','+str(lon))
+                                self.update_virtual_console(text="==> OK",fg="green")
+                                self.update_virtual_console(text='\t'+town_string+' : '+str(lat)+','+str(lon))
                                 
-                                dico_gps_adre[adre] = (lat,lon)
-                                dico_gps[town_string] = result
+                                self.dico_gps_adre[adre] = (lat,lon)
+                                self.dico_gps[town_string] = result
                                 town_set.add(adre)
                                 break
                             else:
-                                self.update_virtual_console('Echec controle', fg='red')
+                                self.update_virtual_console(text='Echec controle', fg='red')
                                 #the control fail, but gps coordinate have been found
                                 if n ==4:
-                                    dico_gps[town_string] = (lat,lon)
+                                    self.dico_gps[town_string] = (lat,lon)
                         else:
-                            self.update_virtual_console('Echec geolocalisation', fg='red')
+                            self.update_virtual_console(text='Echec geolocalisation', fg='red')
                             if verif == False and n == 4:
-                                self.update_virtual_console('### Echec lors de la recuperation des donnees GPS\n### Essai de recuperation avec Nominatim (OpenStreetMap) :')
+                                self.update_virtual_console(text='### Echec lors de la recuperation des donnees GPS\n### Essai de recuperation avec Nominatim (OpenStreetMap) :')
                                 #last chance to retrieve None result with nominatin
                                 lat, lon = self.nominatim(town_list)
-                                self.update_virtual_console("OpenStreetMap GPS : "+str(lat)+", "+str(lon))
+                                self.update_virtual_console(text="OpenStreetMap GPS : "+str(lat)+", "+str(lon))
                                 
                                 if lat:
-                                    dico_gps[town_string] = (lat,lon)
+                                    self.dico_gps[town_string] = (lat,lon)
                                 else:
-                                    self.update_virtual_console("### La commune n as pas ete retrouve", fg='red')
-                                    dico_gps[town_string] = (lat,lon)
+                                    self.update_virtual_console(text="### La commune n as pas ete retrouve", fg='red')
+                                    self.dico_gps[town_string] = (lat,lon)
                                     fail += 1
                     else:
-                        self.update_virtual_console('Lieux deja localise',fg='green')
-                        lat, lon = dico_gps_adre[adre]
-                        dico_gps[town_string] = dico_gps_adre[adre]
+                        self.update_virtual_console(text='Lieux deja localise',fg='green')
+                        lat, lon = self.dico_gps_adre[adre]
+                        self.dico_gps[town_string] = self.dico_gps_adre[adre]
                         break
                 
         writer = csv.writer(output, delimiter=',', lineterminator='\n')
-        for i in dico_gps.keys():
-            row = [i,dico_gps[i][0],dico_gps[i][1]]
+        for i in self.dico_gps.keys():
+            row = [i,self.dico_gps[i][0],self.dico_gps[i][1]]
             writer.writerow(row)
         b = time.time()
         seconds = b-a
         m, s = divmod(seconds, 60)
         h, m = divmod(m, 60)
         self.pb_gui.destroy()
-        tkMessageBox.showinfo(title="Terminé",message=str(len(towns)-fail)+" ont été analysé(s)\n"+str(fail)+" n'ont pas été retrouvé(s)\nRéalise en %d:%02d:%02d secondes" % (h, m, s))
+        tkMessageBox.showinfo(title="Terminer",message=str(len(towns)-fail)+" ont été analysé(s)\n"+str(fail)+" n'ont pas été retrouvé(s)\nRéalise en %d:%02d:%02d secondes" % (h, m, s))
         return output.name
     
-    def town_custom(self):
+    def town_custom(self, *args):
         """
-        Get the choosen order of subdivision
+        Retrieves the subdivision order chosen by the user
+        in the TopLevel GUI window Subdivision
         """
         self.var_value = list()
         for i in self.var:
             self.var_value += [i.get()]
         self.text = ",".join(self.var_value)
-        self.town_org_now['text'] = "Séléction choisis :"+self.text
+        self.town_org_now['text'] = "Séléction choisis : "+self.text
+        self.town_org_now.grid()
         self.Button_validate.config(state="active")
+        self.Button_validate.focus_set()
+        
 
-    def town_validate(self):
+    def town_validate(self, *args):
         """
-        fonction that get the modification in the organisation of the town in the toplevel window Subdivision
+        Validates the choice of the user in the subdivision order by displaying a tkMessageBox :
+            - if yes, the order is saved
+            - otherwise, the user returns to the subdivision window
         """
         self.town_custom()
         self.question = tkMessageBox.askquestion('Ordre des subdivisions des lieux', "Valider l'ordre ?\n"+self.town_org_now['text'])
@@ -462,7 +894,10 @@ class Peregrination():
             for i in range(len(self.var_value)):
                 self.dico_index_subdivisions[self.var_value[i]]=i
             self.subdivision.destroy()
+            self.main.grab_set()
+            self.main.focus_set()
             self.step3.config(state="active")
+            self.step3.focus_set()
         else:
             return            
     
@@ -474,9 +909,9 @@ class Peregrination():
         self.subdivision.grab_set()
         self.subdivision.focus_set()
         self.subdivision.title('Organisation des subdivisions')
-        self.subdivision.config(bg="#f5deb3")
-        self.label_titre = Tkinter.Label(self.subdivision, text="Liste des 10 premiers lieux du GEDCOM", bg="#f5deb3")
-        self.label_titre.grid(row=0,columnspan = 10)
+        self.subdivision.config(bg="#a0522d")
+        self.label_titre = Tkinter.Label(self.subdivision, text="Liste des 10 premiers lieux du GEDCOM", fg="#f5deb3", bg='#a0522d', relief='groove')
+        self.label_titre.grid(row=0,columnspan = 10, sticky='EW')
         
         #create a frame/canvas/frame to see the first 10th city
         #====== FRAME CONSOLE ======
@@ -515,47 +950,85 @@ class Peregrination():
                 self.canvasConsole.config(scrollregion=self.canvasConsole.bbox("all"))
                 self.canvasConsole.yview_moveto(1.)
         #frame separator
-        self.space = Tkinter.Frame(self.subdivision, height=25, bg="#f5deb3")
+        self.space = Tkinter.Frame(self.subdivision, height=25, bg="#a0522d")
         self.space.grid(row=2, columnspan = nb_col)
-        self.label_field = Tkinter.Label(self.subdivision, text = "Ordre des lieux actuel : "+",".join(town_org), bg="#f5deb3").grid(row=3,columnspan =nb_col)
+        self.label_field = Tkinter.Label(self.subdivision, text = "Ordre des lieux actuel : "+",".join(town_org), fg="#f5deb3", bg="#a0522d", relief="ridge").grid(row=3,columnspan =nb_col)
 
         #combobox loop
         self.var = list()
         for i in range(nb_col):
-            self.label_field = Tkinter.Label(self.subdivision, text = "Champ "+str(i+1), bg="#f5deb3")
-            self.label_field.grid(row=4, column=i)
+            self.label_field = Tkinter.Label(self.subdivision, text = "Champ "+str(i+1), fg="#f5deb3", bg="#a0522d", relief='groove')
+            self.label_field.grid(row=4, column=i, sticky='WE',pady=10, padx=5)
             self.field = Tkinter.StringVar()
             self.var += [self.field]
             self.fields = ttk.Combobox(self.subdivision, textvariable = self.field, values = town_org, state = 'readonly', width=len(max(self.town_org, key=len)))
             self.fields.current(i)
             self.fields.grid(row=5, column=i)
         #dynamic label
-        self.town_org_now = Tkinter.Label(self.subdivision, bg="#f5deb3")
-        self.town_org_now.grid(row=6,columnspan = nb_col)
+        self.town_org_now = Tkinter.Label(self.subdivision, bg="#f5deb3", fg="#a0522d", relief="ridge", font=(None,'10','bold'))
+        self.town_org_now.grid(row=6,columnspan = nb_col, pady=5)
+        self.town_org_now.grid_remove()
         #button
-        self.Button_validate = Tkinter.Button(self.subdivision, text="Enregistrer vos choix", command=self.town_custom, bg="#f5deb3")
-        self.Button_validate.grid(row=7, column=0, columnspan=int(nb_col/2))
-        self.Button_validate = Tkinter.Button(self.subdivision, text="Quitter", command=self.subdivision.destroy, bg="#f5deb3")
-        self.Button_validate.grid(row=7, column=int(nb_col/2), columnspan=int(nb_col/2), rowspan=2, sticky = "NS")
-        self.Button_validate = Tkinter.Button(self.subdivision, text="Valider", command=self.town_validate, bg="#f5deb3")
+        self.Button_save = Tkinter.Button(self.subdivision, text="Enregistrer vos choix", command=self.town_custom, bg="#f5deb3")
+        self.Button_save.grid(row=7, column=0, columnspan=int(nb_col/2))
+        self.Button_save.focus_set()
+        self.Button_save.bind('<Return>', self.town_custom)
+        self.Button_quit = Tkinter.Button(self.subdivision, text="Quitter", command=self.subdivision.destroy, bg="#f5deb3")
+        self.Button_quit.grid(row=7, column=int(nb_col/2), columnspan=int(nb_col/2), rowspan=2, sticky = "NS")
+        self.Button_validate = Tkinter.Button(self.subdivision, text="Valider", command=self.town_validate, bg="#f5deb3", activebackground="#f5deb3")
         self.Button_validate.grid(row=8, column=0, columnspan=int(nb_col/2))
         self.Button_validate.config(state="disabled")
+        self.Button_validate.bind('<Return>', self.town_validate)
         self.subdivision.update()
         
     def get_data_gedcom(self):
-        """Gedt data from GEDCOM"""
+        """
+        By using the Gedcompy methods, extract the information from the GEDCOM file to create a list like an pedigree table:
+        the retrieved data are :
+            ID (String)
+            Name and Surname (String)
+            birth_date (String)
+            birth_place (String)
+            - list of spouse name and surname (List of String) :
+                *!!!* in the case they are nothing the list is empty
+            - list of spouse date of wedding (List of String) :
+                *!!!* in the case they are nothing the list is empty
+            - list of spouse wedding town (List of String) :
+                *!!!* in the case they are nothing the list is empty
+            death_date (String)
+            death_place(String)
+            ID_father (String)
+            ID_mother (String)
+            *!!!* In the case they are nothing we had an empty string ''
+        the data are stored in the memory in the self.dico_data_list dictionnary
+        with:
+            key = ID, value = data_list
+            data_list = [ID,name,birth_date,birth_place,[1],[2],[3],death_date,death_place,ID_father,ID_mother,[4]]
+                [1] = [husband_wife1, ... , husband_wifeN]
+                [2] = [wedding_place1, ... , wedding_placeN]
+                [3] = [wedding_date1, ... , wedding_dateN]
+                [4] = [husband_wife_id1, ... , husband_wife_idN]
+        The second step is to get all the children of each familly for the descendance
+        the data are stored in a dictionnary in the memory with:
+            key : tuple of the husband and the wife ID:
+                (husb_id,wife_id)
+            value : childs (List) : List of the ID of all children
+        create an object self.dico_descendant, self.dico_data_list , self.dico_ID
+        """
         self.dico_data_list = dict()
         self.dico_ID = dict()
         cpt = 1
-        total = str(len(list(self.parsed_gedcom.individuals)))
+        total = len(list(self.parsed_gedcom.individuals))
         for ind in self.parsed_gedcom.individuals:
-            self.update_virtual_console('Individu : '+str(cpt)+'/'+total, same=True)
+            self.update_virtual_console(text='Individu : '+str(cpt)+'/'+str(total), same=True,value=cpt/total*100)
             cpt+=1
             data_liste = list()
             ID = ind.id
             name = " ".join(ind.name)
             try:
                 birth_date = ind.birth.date
+                if not birth_date:
+                    birth_date = ''
             except IndexError:
                 birth_date = ''
             try:
@@ -564,6 +1037,8 @@ class Peregrination():
                 birth_place = ''
             try:
                 death_date = ind.death.date
+                if not death_date:
+                    death_date = ''
             except IndexError:
                 death_date = ''
             try:
@@ -579,19 +1054,20 @@ class Peregrination():
             except AttributeError:
                 ID_mother = ''
             #4 ,5,6 wife, wedding, place
-            data_list = [ID,name,birth_date,birth_place,[],[],[],death_date,death_place,ID_father,ID_mother]
+            data_list = [ID,name,birth_date,birth_place,[],[],[],death_date,death_place,ID_father,ID_mother,[]]
             self.dico_data_list[ID] = data_list
             self.dico_ID[ID] = name
+            self.dico_ID[name] = ID
 
         self.dico_descendant = dict()
-        self.dico_husb_wife = dict()
         cpt = 1
-        total = str(len(list(self.parsed_gedcom.families)))
+        total = len(list(self.parsed_gedcom.families))
+        self.update_virtual_console(text=self.label_console['text'])
         for fam in self.parsed_gedcom.families:
-            self.update_virtual_console('Famille : '+str(cpt)+'/'+total,same=True)
+            self.update_virtual_console(text='Famille : '+str(cpt)+'/'+str(total),same=True,value=cpt/total*100)
             cpt+=1
-            husb_id = None
-            wife_id = None
+            husb_id = ''
+            wife_id = ''
             date = ''
             place = ''
             childs = list()
@@ -599,6 +1075,8 @@ class Peregrination():
                 if e.tag == 'MARR':
                     try:
                         date = e.date
+                        if not date:
+                            date = ''
                     except IndexError:
                         date = ''
                     try:
@@ -616,17 +1094,24 @@ class Peregrination():
                 liste_husb[4].append(self.dico_ID[wife_id])
                 liste_husb[5].append(date)
                 liste_husb[6].append(place)
+                liste_husb[11].append(wife_id)
                 self.dico_data_list[husb_id] = liste_husb
                 
                 liste_wife = self.dico_data_list[wife_id]
                 liste_wife[4].append(self.dico_ID[husb_id])
                 liste_wife[5].append(date)
                 liste_wife[6].append(place)
+                liste_wife[11].append(husb_id)
                 self.dico_data_list[wife_id] = liste_wife
                 
-            self.dico_descendant[(husb_id,wife_id)]=childs
+            self.dico_descendant[(husb_id,wife_id)]= childs
+            self.dico_descendant[(wife_id,husb_id)]= childs
 
     def search_engine_gui(self):
+        """
+        Top Level GUI
+        Search Engine to found an individu and make the ascendance or descendance
+        """
         #Control of Gedcom File
         if not self.fichier_gedcom:
             tkMessageBox.showwarning(message="Vous n'avez pas charger de fichier GEDCOM")
@@ -642,16 +1127,13 @@ class Peregrination():
         self.var_name = Tkinter.StringVar()
         self.entry_name = Tkinter.Entry(self.search_engine, textvariable= self.var_name)
         self.entry_name.grid(column=1, row=0)
+        self.entry_name.focus_set()
+        self.entry_name.bind('<Return>', self.search_engine_function)
         
-        #self.label_surname = Tkinter.Label(self.search_engine, text="Prénoms :", bg="#f5deb3")
-        #self.label_surname.grid(column=2, row=0)
-        #self.var_surname = Tkinter.StringVar()
-        #self.entry_surname = Tkinter.Entry(self.search_engine, textvariable= self.var_surname)
-        #self.entry_surname.grid(column=3, row=0)
         self.button_search = Tkinter.Button(self.search_engine, text='Rechercher',command = self.search_engine_function, bg="#f5deb3")
         self.button_search.grid(column = 4 , row=0)
         #label listbox
-        self.labelbox = Tkinter.Label(self.search_engine, text="resultats :",  bg="#f5deb3")
+        self.labelbox = Tkinter.Label(self.search_engine, text="Résultats :",  bg="#f5deb3")
         self.labelbox.grid(row=1, columnspan = 5)
         #frame listbox
         self.frame = Tkinter.Frame(self.search_engine, bd=2, relief='sunken')
@@ -676,7 +1158,7 @@ class Peregrination():
                 self.rb = Tkinter.Radiobutton(self.search_engine, text='Ascendance',value=item,variable=self.arbre, bg="#f5deb3")
                 self.rb.grid(row=3, column=0)
             if item == 2:
-                self.rb = Tkinter.Radiobutton(self.search_engine, text='Descendance',value=item,variable=self.arbre, state='disabled', bg="#f5deb3")
+                self.rb = Tkinter.Radiobutton(self.search_engine, text='Descendance',value=item,variable=self.arbre, bg="#f5deb3")
                 self.rb.grid(row=3, column=1)
         #button
         self.button_validate = Tkinter.Button(self.search_engine, text="Validez",command=self.search_engine_validate, bg="#f5deb3")
@@ -686,6 +1168,10 @@ class Peregrination():
         self.button_validate.grid(row=4, column=1)
 
     def search_engine_validate(self):
+        """
+        This function is a part of the Search Engine TopLevel GUI
+        Validate the choice of the person you choose in the GEDCOM file
+        """
         self.ID = re.findall(ur'[@]\w+[@]',self.listeBox.get(self.listeBox.curselection()))[0]
         self.direction = self.arbre.get()
         if not self.ID or  self.direction == 0:
@@ -696,107 +1182,169 @@ class Peregrination():
             return
         else:
             if self.ID:
-                tkMessageBox.showinfo(title = "Personne", message="Personne choisis:\n"+self.dico_data_list[self.ID][1])
+                tkMessageBox.showinfo(title = "Personne", message="Personne choisis :\n"+self.dico_data_list[self.ID][1])
             self.search_engine.destroy()
+            self.main.grab_set()
+            self.main.focus_set()
             self.step5.config(state="active")
+            self.step5.focus_set()
 
-    def search_engine_function(self):
-        """function search"""
+    def search_engine_function(self, *args):
+        """
+        This function is a part of the Search Engine TopLevel GUI
+        Look for the person in the gedcom file
+        """
         self.listeBox.delete(0, 'end')
-        name = self.var_name.get()
-        if not name:
+        try:
+            name1 = self.var_name.get().decode('iso8859_15')
+        except:
+            name1 = self.var_name.get()
+        if not name1:
             tkMessageBox.showerror(title = "Erreur", message="Vous n'avez rien insrit")
-        surname = None
-        if name:
-            if surname:
-                for key in self.dico_ID.keys():
-                    if name in self.dico_ID[key] and surname in self.dico_ID[key]:
-                        a = self.dico_data_list[key]
-                        item = str()
-                        for i in range(len(a)):
-                            if i == 2:
-                                item = item + " ° "+a[i]
-                            elif i == 4:
-                                if a[i] != [] :
-                                    item = item + " x "+" x ".join(a[i])
-                            elif i == 5:
-                                if a[i] != [] :
-                                    item = item + " x "+" x ".join(a[i])
-                            elif i == 6:
-                                if a[i] != [] :
-                                    item = item + " ".join(a[i])
-                            elif i == 7:
-                                item = item + " + "+a[i]
-                            else:
-                                item = item + " " + a[i]
-                        self.listeBox.insert('end', item)
-            else:
-                for key in self.dico_ID.keys():
-                    if name in self.dico_ID[key]:
-                        a = self.dico_data_list[key]
-                        item = str()
-                        for i in range(len(a)):
-                            if i == 2:
-                                item = item + " ° "+a[i]
-                            elif i == 4:
-                                if a[i] != [] :
-                                    item = item + " x "+" x ".join(a[i])
-                            elif i == 5:
-                                if a[i] != [] :
-                                    item = item + " x "+" x ".join(a[i])
-                            elif i == 6:
-                                if a[i] != [] :
-                                    item = item + " ".join(a[i])
-                            elif i == 7:
-                                item = item + " + "+a[i]
-                            else:
-                                item = item + " " + a[i]
-                        self.listeBox.insert('end', item)
         else:
-            for key in self.dico_ID.keys():
-                if surname in self.dico_ID[key]:
-                    a = self.dico_data_list[key]
-                    item = str()
-                    for i in range(len(a)):
-                        if i == 2:
-                            item = item + " ° "+a[i]
-                        elif i == 4:
-                            if a[i] != [] :
-                                item = item + " x "+" x ".join(a[i])
-                        elif i == 5:
-                            if a[i] != [] :
-                                item = item + " x "+" x ".join(a[i])
-                        elif i == 6:
-                            if a[i] != [] :
-                                item = item + " ".join(a[i])
-                        elif i == 7:
-                            item = item + " + "+a[i]
-                        else:
-                            item = item + " " + a[i]
-                    self.listeBox.insert('end', item)
+            insert_list = set()
+            name2 = name1.upper()
+            name3 = name1.lower()
+            for name in name1, name2, name3:
+                for key in self.dico_ID.keys():
+                    value = self.dico_ID[key].decode('iso8859_15')
+                    if name in value.lower() or name in value.lower():
+                        a = self.dico_data_list[key]
+                        item = str()
+                        for i in range(len(a)):
+                            if i == 2:
+                                item = item + " ° "+a[i]
+                            elif i == 4:
+                                if a[i] != [] :
+                                    item = item + " x "+" x ".join(a[i])
+                            elif i == 5:
+                                if a[i] != [] :
+                                    item = item + " x "+" x ".join(a[i])
+                            elif i == 6:
+                                if a[i] != [] :
+                                    item = item + " ".join(a[i])
+                            elif i == 7:
+                                item = item + " + "+a[i]
+                            elif i == 11:
+                                continue
+                            else:
+                                item = item + " " + a[i]
+                        insert_list.add(item)
+            if len(insert_list) == 0:
+                self.labelbox['text'] = 'Résultats : 0'
+            else:
+                self.labelbox['text'] = 'Résultats : '+str(len(insert_list))
+            for item in insert_list:
+                self.listeBox.insert('end', item)
+                self.search_engine.update_idletasks()
         self.search_engine.update()
         
-    def ascendance(self, ID, sosa=1, generation=10, liste = dict(), set_id = set()):
+    def ascendance(self, ID, g=1, g_limit=10, liste = dict(), set_id = set()):
         """
-        return the ascendance of the given ID
+        *!!!* RECURSIVE FUNCTION *!!!*
+        Returns pedigree table with a recursive mode to go as far as possible in the pedigree
+        
+        input :
+            - ID (String) : its a string with "@#@" with # is a sequence of number and letter
+        default value :
+            - sosa (integer) : set to 1 (de-cujus)
+            - generation (integer) : set to 10
+            - liste (dict) : dictionnary to store the data from dico_data_list (created by the get_data_gedcom)
+            - set_id (set) : set to store the ID to avoid duplication
+            
+        output:
+            liste (dictionnary) :
+                key : ID (String) : Sosa stradonitz number of the individual in the ascendance
+                value (List) : liste_data List of string and sub_list corresponding to these value :
+                    [ID,name,birth_date,birth_place,[],[],[],death_date,death_place,ID_father,ID_mother]
+                    (see the doc for get_data_gedcom for more detail)
         """
         if ID not in set_id:
             liste_data = self.dico_data_list[ID]
-            liste[sosa]=liste_data
-            id_father = liste_data[-2]
+            liste_data.append(g)
+            liste[ID]=liste_data
+            id_father = liste_data[9]
             if id_father != '':
-                liste, set_id = self.ascendance(id_father, sosa=sosa*2, liste=liste, set_id=set_id)
-            id_mother = liste_data[-1]
+                gp = g+1
+                liste, set_id = self.ascendance(id_father, g=gp, liste=liste, set_id=set_id)
+            id_mother = liste_data[10]
             if id_mother != '':
-                liste, set_id = self.ascendance(id_mother, sosa=sosa*2+1, liste=liste, set_id=set_id)
+                gm = g+1
+                liste, set_id = self.ascendance(id_mother, g=gm, liste=liste, set_id=set_id)
             set_id.add(ID)
             return liste, set_id
         else:
             return liste, set_id
-    
-    def gedcom_step1(self):
+
+    def descendance(self, ID, g=1, g_limit=10, liste = dict(), set_id = set()):
         """
-        Open and parse Gedcom File
+        *!!!* RECURSIVE FUNCTION *!!!*
+        Returns pedigree table with a recursive mode to go as far as possible in the pedigree
+        
+        input :
+            - ID (String) : its a string with "@#@" with # is a sequence of number and letter
+        default value :
+            - sosa (integer) : set to 1 (de-cujus)
+            - generation (integer) : set to 10
+            - liste (dict) : dictionnary to store the data from dico_data_list (created by the get_data_gedcom)
+            - set_id (set) : set to store the ID to avoid duplication
+            
+        output:
+            liste (dictionnary) :
+                key : ID (String) : Sosa stradonitz number of the individual in the ascendance
+                value (List) : liste_data List of string and sub_list corresponding to these value :
+                    [ID,name,birth_date,birth_place,[],[],[],death_date,death_place,ID_father,ID_mother]
+                    (see the doc for get_data_gedcom for more detail)
+        """
+        if ID not in set_id:
+            set_id.add(ID)
+            liste_data = self.dico_data_list[ID]
+            liste_data.append(g)
+            liste[ID]=liste_data
+            spouses = liste_data[11]
+            #they are wifes (the lenght of the list is different to 0)
+            if spouses:
+                for spouse_id in spouses:
+                    childs_id_list = self.dico_descendant[(ID,spouse_id)]
+                    #they are childs (the lenght of the list is different to 0)
+                    if childs_id_list:
+                        for child_id in childs_id_list:
+                            g_child = g+1
+                            liste, set_id = self.descendance(child_id, g=g_child, liste=liste, set_id=set_id)
+                        return liste, set_id
+                    #no childs
+                    else:
+                        return liste, set_id
+            #Unmarried men or girl, or unknown spouse, but they can also have childs
+            else:
+                #no know wife
+                if self.dico_descendant.get((ID,'')):
+                    # il/elle a fondé une famille
+                    childs_id_list = self.dico_descendant[(ID,'')]
+                    #they are childs (the lenght of the list is different to 0)
+                    if childs_id_list:
+                        for child_id in childs_id_list:
+                            g_child = g+1
+                            liste, set_id = self.descendance(child_id, g=g_child, liste=liste, set_id=set_id)
+                        return liste, set_id
+                    #no childs
+                    else:
+                        return liste, set_id
+                else:
+                    # pas de famille
+                    return liste, set_id
+        else:
+            #l'id et deja dans le set, return
+            return liste, set_id
+    
+    def gedcom_step1(self, *args):
+        """
+        First step of the analysis with the GEDCOM pipeline :
+            1- Open and parse the GEDCOM File with the Gedcompy method
+                and store the data in memory into the self.parsed_gedcom object
+            2- Extract the data with self.get_data_gedcom function
+            3- Extract the Places with the self.get_place function
+            4- Active the next step
         """
         self.fichier_gedcom = tkFileDialog.askopenfilename(title="Ouvrir le fichier GEDCOM:", initialdir=os.getcwd(), \
                                                                initialfile="", filetypes = [("Fichiers GEDCOM","*.ged"),("Tous", "*")])
@@ -811,78 +1359,182 @@ class Peregrination():
             a = time.time()
             #parsing gedcom
             self.progress_bar()
-            self.pb['value'] = int(1./3*100)
-            self.pb.update_idletasks()
-            self.label_town_pb['text'] = "Lecture de "+self.filename+"..."
-            self.label_town_pb.update_idletasks()
-            self.label_town_pb.update()
-            self.pb_gui.update()
-            self.update_virtual_console('Lecture du GEDCOM...')
+            self.update_virtual_console(text='Lecture du GEDCOM...',label_title="Lecture de "+self.filename+"...")
+            
             a = time.time()
             self.parsed_gedcom = gedcom.parse(self.fichier_gedcom)
             b = time.time()
-            self.update_virtual_console(str(b-a)+' secondes')
-            self.pb['value'] = int(2./3*100)
-            self.label_town_pb['text'] = "Extraction des données..."
-            self.update_virtual_console('Extraction des données...')
-            self.label_town_pb.update_idletasks()
-            self.label_town_pb.update()
-            self.pb_gui.update()
+            
+            self.update_virtual_console(text=str(b-a)+' secondes',value=int(1./3*100))
+            self.update_virtual_console(text='Extraction des données...',label_title="Extraction des données...")
             
             self.get_data_gedcom()
-            #iteration
-
-            self.pb['value'] = int(3./3*100)
-            self.label_town_pb['text'] = "Extraction des lieux..."
-            self.label_town_pb.update_idletasks()
-            self.label_town_pb.update()
-            self.pb_gui.update()
+            
+            self.update_virtual_console(value=0,label_title="Extraction des lieux...")
             
             self.town_set, self.town_org = self.get_place(self.fichier_gedcom)
-
-            self.pb_gui.destroy()
+            
+            self.update_virtual_console(value=100)
+            
+            
         b = time.time()
         seconds = b-a
         m, s = divmod(seconds, 60)
         h, m = divmod(m, 60)
-        tkMessageBox.showinfo("Terminé !", message="Traitement du GEDCOM terminé\nRéalise en %d:%02d:%02d secondes" % (h, m, s))
+        tkMessageBox.showinfo("Terminé !", message="Traitement du GEDCOM terminé\nRéalisé en %d:%02d:%02d secondes" % (h, m, s))
+        self.pb_gui.destroy()
+        self.main.grab_set()
+        self.main.focus_set()
         self.step2.config(state="active")
+        self.step2.focus_set()
 
-    def gedcom_step2(self):
-            #Toplevel window
-            self.choose_correct_subdivision(self.town_set, self.town_org)
+    def gedcom_step2(self, *args):
+        """
+        Second step of the analysis with the GEDCOM pipeline :
+            1- Stores correct organization of subdivision and active the next step
+        """
+        #Toplevel window
+        self.choose_correct_subdivision(self.town_set, self.town_org)
 
-    def gedcom_step3(self):
+    def google_map_api_get(self, *args):
+        """
+        make the variable self.GoogleAPI
+        """
+        self.GoogleAPI = self.entry_api.get()
+        if self.GoogleAPI:
+            output = tkMessageBox.askyesno(title="Clé API Google Map", message="Clé API Google MAP:\n"+self.GoogleAPI)
+            if output:
+                self.api.destroy()
+                self.gedcom_step3_bis()
+            else:
+                return
+        else:
+            tkMessageBox.showerror(title="Clé API Google Map", message="Erreur, champ vide, veuillez recommencer")
+            return
+            
+
+    def google_map_api_destroy(self, *args):
+        """
+        """
+        self.api.destroy()
+        #self.gedcom_step3_bis()
+
+    def google_map_api_toplevel(self):
+        """
+        Toplevel to get Google Map API
+        """
+        self.api = Tkinter.Toplevel()
+        self.api.grab_set()
+        self.api.focus_set()
+        self.api.config(bg="#f5deb3")
+        self.label_api = Tkinter.Label(self.api, text="Clé API : ", bg="#f5deb3", activebackground="#f5deb3")
+        self.label_api.grid(row=0, column = 0)
+        self.entry_api = Tkinter.Entry(self.api)
+        self.entry_api.grid(row=0, column=1)
+        self.bouton_annuler_api = Tkinter.Button(self.api, text="Annuler",command=self.google_map_api_destroy,bg="#f5deb3", activebackground="#f5deb3")
+        self.bouton_annuler_api.grid(row=1,column=0)
+        self.bouton_annuler_api.bind('<Return>',self.google_map_api_destroy)
+        self.bouton_valider_api = Tkinter.Button(self.api, text="Valider", command=self.google_map_api_get,bg="#f5deb3", activebackground="#f5deb3")
+        self.bouton_valider_api.grid(row=1,column=1)
+        self.bouton_valider_api.focus_set()
+        self.bouton_valider_api.bind('<Return>',self.google_map_api_get)
+        self.center(self.api)
+            
+            
+        
+    def gedcom_step3(self, *args):
             """
-            Next step after the top level town
+            Third step of the analysis with the GEDCOM pipeline :
+                1 : Ask if the CSV Places file exist:
+                    -YES : Load the file in memory
+                    - NO :
+                        1 - Looking for GPS coordinate and create the CSV with self.get_gps_town
+                        2 - Load the data in memory
+                2 : Active the next step
             """
             file_exist = tkMessageBox.askyesno("Fichier de Lieux GPS", message="Le fichier de lieux du GEDCOM existe il déjà ?")
             if file_exist:
-                fichier_lieux = tkFileDialog.askopenfilename(title="Ouvrir le fichier CSV des Lieux (GEDCOM) :", initialdir=os.getcwd(), \
+                self.fichier_lieux = tkFileDialog.askopenfilename(title="Ouvrir le fichier CSV des Lieux (GEDCOM) :", initialdir=os.getcwd(), \
                                 initialfile="", filetypes = [("Fichiers CSV","*.csv"),("Tous", "*")])
-                if fichier_lieux:
-                    self.gedcom_town_list = import_town_gps_coord(fichier_lieux)
+                if self.fichier_lieux:
+                    self.gedcom_town_list = import_town_gps_coord(self.fichier_lieux)
                     tkMessageBox.showinfo(title = "Terminé !", message="Lieux chargés")
-                    self.step4.config(state="active")
+                    yesno = tkMessageBox.askyesno(title="Controle visuel",message="Afin de pallier à d'éventuelle erreur de géolocalisation,\voulez-vous vérifier les lieux sur les cartes maintenant ?\n(vous pouvez néanmoins modifier les coordonnées dans le fichier)")
+                    if yesno:
+                        self.control_map_places(self.gedcom_town_list)
+                        self.step4.config(state="active")
+                        self.step4.focus_set()
+                    else:
+                        self.step4.config(state="active")
+                        self.step4.focus_set()
                 else:
                     return
             else:
-                fichier_lieux = self.get_gps_town_2(self.town_set)
-                if fichier_lieux:
-                    self.gedcom_town_list = import_town_gps_coord(fichier_lieux)
-                    tkMessageBox.showinfo(title = "Terminé !", message="Lieux chargés")
-                    self.step4.config(state="active")
+                #check for GoogleMap API
+                self.GoogleAPI = False
+                output1 = tkMessageBox.askyesno(title="Clé API Google Map", message="Avez-vous une clef API Google Map ? (Une clef API Google Map permet d'utiliser leur service de géolocalisation avec 2500 requêtes maximum par jour)")
+                if output1:
+                    self.google_map_api_toplevel()
                 else:
-                    return
-    def gedcom_step4(self):
+                    output2 = tkMessageBox.askyesno(title="Clé API Google Map", message="Voulez-vous créer une clé API Google Map ? (Un compte Gmail et nécessaire pour créer une clé API Google Map)")
+                    if output2:
+                        webbrowser.open('https://accounts.google.com/SignUp?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ltmpl=default')
+                        webbrowser.open('https://developers.google.com/maps/documentation/geocoding/get-api-key?hl=fr')
+                        webbrowser.open('https://console.developers.google.com/?hl=FR')
+                        self.google_map_api_toplevel()
+                    else:
+                        tkMessageBox.showinfo(title="Création du fichier CSV", message="Vous allez maintenant être redirigé pour créer votre fichier CSV")
+                        self.gedcom_step3_bis()
+
+    def gedcom_step3_bis(self):
+        """
+        Third step (bis) of the analysis with the GEDCOM pipeline :
+            1 - Looking for GPS coordinate and create the CSV with self.get_gps_town
+            2 - Load the data in memory
+            3 : Active the next step
+        """
+        #take one of the API Key
+        self.GoogleAPI = random.choice(GOOGLE_API)
+        self.fichier_lieux = self.get_gps_town(self.town_set)
+        if self.fichier_lieux:
+            self.gedcom_town_list = import_town_gps_coord(self.fichier_lieux)
+            tkMessageBox.showinfo(title = "Terminé !", message="Lieux chargés")
+            yesno = tkMessageBox.askyesno(title="Controle visuel",message="Afin de pallier à d'éventuelle erreur de géolocalisation,\voulez-vous vérifier les lieux sur les cartes maintenant ?\n(vous pouvez néanmoins modifier les coordonnées dans le fichier)")
+            if yesno:
+                self.control_map_places(self.gedcom_town_list)
+                self.step4.config(state="active")
+                self.step4.focus_set()
+            else:
+                self.step4.config(state="active")
+                self.step4.focus_set()
+        else:
+            return
+                
+    def gedcom_step4(self, *args):
+        """
+        Fourth step of the analysis with the GEDCOM pipeline :
+            - 1 : Open the Search Engine TopLevel GUI
+            - 2 : Active the next step
+        """
         self.search_engine_gui()
         self.step5.config(state="active")
+        self.step5.focus_set()
 
-    def gedcom_step5(self):
+    def gedcom_step5(self, *args):
+        """
+        Fifth step of the analysis with the GEDCOM pipeline :
+            - 1 : Show the Options in the Top Level GUI and store it into memory
+            - 2 : Active the next step
+        """
         self.options()
         self.step6.config(state="active")
+        self.step6.focus_set()
         
-    def gedcom_step6(self):
+    def gedcom_step6(self, *args):
+        """
+        Sixth step of the analysis with the GEDCOM pipeline :
+            - 1 : Create a Top Level GUI to show the Options to regroup the Places
+        """
         self.regroup = Tkinter.Toplevel()
         self.regroup.config(bg="#f5deb3")
         #radio button type
@@ -897,11 +1549,26 @@ class Peregrination():
                 continue
             self.rb = Tkinter.Radiobutton(self.regroup, text=self.town_org[item],value=item,variable=self.varchoice, bg="#f5deb3")
             self.rb.grid()
-        self.valider = Tkinter.Button(self.regroup, text= 'Valider',command=self.gedcom_map_validate, bg="#f5deb3").grid(sticky="EW")
-        self.valider = Tkinter.Button(self.regroup, text= 'Passer',command=self.gedcom_map_pass, bg="#f5deb3").grid(sticky='EW')
+        self.valider1 = Tkinter.Button(self.regroup, text= 'Valider',command=self.gedcom_map_validate, bg="#f5deb3")
+        self.valider1.grid(sticky="EW")
+        self.valider1.bind('<Return>', self.gedcom_map_validate)
+        self.valider2 = Tkinter.Button(self.regroup, text= 'Passer',command=self.gedcom_map_pass, bg="#f5deb3")
+        self.valider2.grid(sticky='EW')
+        self.valider2.focus_set()
+        self.valider2.bind('<Return>', self.gedcom_map_pass)
         
     def return_dico_shapefile(self):
-    
+        """
+        Looking through the SHAPEFILE folder of all the SHAPEFILE
+        determined by a '*adm*.shp' terminaison typically from the GADM website
+        and return a dictionnary with the key are le administration boundary level and the value the path of the SHAPEFILE
+        If there is no SHAPEFILE corresponding to the level, the upper level SHAPEFILE will be used for that level
+
+        output:
+            dico_shapefile :
+                key (integer) : administration boudary level (generally 0 to 5)
+                value (list) : list of SHAPEFILE path
+        """
         from sys import platform
         if platform == "linux" or platform == "linux2":
             sep = "/"
@@ -949,6 +1616,16 @@ class Peregrination():
         Reference: http://www.ariel.com.au/a/python-point-int-poly.html
         Principle
         http://alienryderflex.com/polygon/
+
+        input :
+            x (float) : latitude
+            y (float) : longitude
+            poly (list) : list of tuple with latitude (float) and longitude (float) coordinate
+
+        output:
+            inside (Boolean) :
+                - if the point are inside the given polygon :True
+                - if the point are not inside the polygon : False (default value)
         """
         n = len(poly)
         inside =False
@@ -964,10 +1641,21 @@ class Peregrination():
                             inside = not inside
             p1x,p1y = p2x,p2y
         return inside
+    
     def found_polygon_list(self,x,y, geometry):
         """
-        recursive function iterate over all the level of the shapefile geometry to found the coordinate
-        especially when you have different subset at different level of shape (grouping)
+        *!!!* RECURSIVE FUNCTION *!!!*
+        In some situations, the geometry object of a shape file can be composed of sublists of coordinates
+        to distinguish different independent elements belonging to a single set:
+            Example: the coastal islands and the mainland.
+        We must therefore analyze each of these elements to determine if the curent point (x,y) is contained in one of them.
+        The function analyzes in the list if the first element is a tuple of coordinates (float) otherwise the
+        function will go to a higher depth level.
+
+        input :
+            x (float) : x coordinate of the point
+            y (float) : y coordinate of the point
+            geometry (list) : list of tuple coordinate (or list of n-list depth of tuple coordinate)
         """
         if isinstance(geometry[0][0],float):
             inside = self.point_inside_polygon(x, y, geometry)
@@ -981,45 +1669,54 @@ class Peregrination():
                 if inside:
                     return True
             return inside
+        
     def get_gps_group(self, dico_town, criteria):
         """
-        En fonction du critère choisis, convertis ce critère pour choisir les bon shapefile
-        Récupère les fichier shapefile dans le dossier shapefile correspondant a une écriture bien précise
-        et les organise en fonction de leur niveau hierarchique:
-        Les fichier Shapefile de www.site.com sont organisé comme suit :
-            NNN_adm#.shp avec NNN les trois lettre du pays et # le niveau du shapefile.
-            Il existe plusieur niveaux :
-            0 : Pays
-            1 : Régions
-            2 : Département
-            3 : Arrondissement
-            4 : Canton
-            5 : Commune
-        Le critère et basé sur la valeur de l'index d'une des subdivison imposé pour le regroupement
-        qui sont actuellement:
-            0 : Commune
-            2 : Département
-            3 : Régions
-            4 : Pays
-        La correspondance entre l'index de la subdivion et le niveau du fichier shapefile correspondant
-        et la suivante:
-            0 => 'Commune' => 5
-            2 => 'Departement' => 2
-            3 => 'Region' => 1
-            4 => 'Pays' =>0
-        Les fichier Shapefile sont tous rechercher en fonction de si ils ont la graphie correspondant à:
-        NNN_adm#.shp et classé dans un dictionnaire avec la fonction self.return_dico_shapefile()
-        En fonction du critère choisis, on analyse le fichier et vérifie pour chaque entité si l'un de nos lieu
-        et contenue dans ce polygone via la fonction self.point_inside_polygon(lon,lat,polygon)
-        Si la localité se retrouve dans la forme, la moyenne des latitude et longitude formant le carré de la
-        forme (bbox)
-        et utilisé comme coordonnée pour la localité.
-        Dans le cas contraire, si il y a aucun fichier shapefile présent capable de contenir la localité en
-        fonction du critère de regrouepemnt choisis,
-        aucune modification n'est ne sont réalisé sur les latitude et longitude et les localité restante sont
-        ajouté au nouveau dictionnaire créé
-        Dans le même instant, un fichier geojson et créé avec toute les formes retrouvé pour pouvoir etre
-        utilisé avec le module chlopleth de folium
+        According to the criterion chosen, converted, this criterion to choose the good shapefile
+        Retrieves the shapefile files in the shapefile folder corresponding to a specific write
+        And organizes them according to their hierarchical level:
+
+        Shapefile files from www.gadm.com are organized as follows:
+            NNN_adm # .shp with NNN the three letters of the country and # the level of the shapefile.
+
+        There are several levels:
+
+            0: Country
+            1: Regions
+            2: Department
+            3: Rounding
+            4: Township
+            5: Town
+
+        (These level can have different name according to their country)
+        The criterion is based on the value of the index of one of the subdivisions imposed for the grouping
+        Which are currently:
+
+            0: Town
+            2: Department
+            3: Regions
+            4: Country
+
+        The correspondence between the index of the subdivision and the level of the corresponding shapefile file
+        And the following:
+
+            0 => 'Town' => 5
+            2 => 'Department' => 2
+            3 => 'Region' => 1
+            4 => 'Country' => 0
+
+        Shapefile files are all searched based on whether they have the corresponding spelling for:
+        NNN_adm # .shp and filed in a dictionary with the self.return_dico_shapefile () function
+        Depending on the criterion chosen, the file is analyzed and checks for each entity if one of our locations
+        And contained in this polygon via the function self.point_inside_polygon (lon, lat, polygon)
+        If the locality is in the polygon, the mean of the latitude and longitude forming the square of the
+        polygon (bbox) are computed and used as a coordinate for the locality.
+        Otherwise, if there is no shapefile file present that can contain the locality in
+        Function of the selected grouping criterion,
+        No changes are made to the latitude and longitude and the remaining locations are
+        Added to the newly created dictionary
+        At the same time, a geojson file and created with all the forms found to be able to be
+        Used with the chloropleth module of folium
         """
         dict_conv = {0:5,2:2,3:1,4:0}
         criteria = dict_conv[criteria]
@@ -1028,29 +1725,44 @@ class Peregrination():
         buffer = []
         new_dico_town = dict()
         for f in dico_shapefile[criteria]:
+            self.update_virtual_console(text="lecture du fichier : "+f)
+            a = time.time()
             # read the shapefile
             reader = shapefile.Reader(f)
             fields = reader.fields[1:]
             shapes = reader.shapes()
             field_names = [field[0] for field in fields]
-
             cpt = 0
+            cpt2 = 1
             size_dico_town = len(dico_town)
-            print('Began iteration...')
             set_coordinate = set()
+            nb_rec = len(reader.shapeRecords())
+            b = time.time()
+            seconds = b-a
+            m, s = divmod(seconds, 60)
+            h, m = divmod(m, 60)
+            self.update_virtual_console(text='Terminé en %d:%02d:%02d secondes' % (h, m, s))
             for sr in reader.shapeRecords():
+                if cpt == 0:
+                    self.update_virtual_console(label_title='Fichier : '+os.path.split(f)[-1]+" "+str(nb_rec-cpt)+" Communes restantes",label_prog=0, value=0)
+                    
+                if  float(cpt)/nb_rec*100 >= cpt2:
+                    cpt2 += 1
+                    self.update_virtual_console(label_title='Fichier : '+os.path.split(f)[-1]+" "+str(nb_rec-cpt)+" Communes restantes",label_prog=cpt2, value=cpt2)
+                    
                 #to avoid the end of the loop if all town are found
                 if len(dico_town) == 0:
+                    self.update_virtual_console(label_title='Fichier : '+os.path.split(f)[-1]+" "+str(nb_rec-cpt)+" Communes restantes",label_prog=cpt2, value=100)
                     break
                 #to show the advancement
                 if size_dico_town != len(dico_town):
-                    print(len(dico_town))
+                    self.update_virtual_console(text="Lieux restants : "+str(len(dico_town)))
                     size_dico_town = len(dico_town)
                 #car les localité ont tous des nom différents ont se basera sur les coordonnées
                 lon1, lat1, lon2, lat2 = shapes[cpt].bbox
+                #upgrade counter for index
+                cpt +=1
                 #store the coordinate of polygon
-                #polygon = shapes[cpt].points
-                cpt+=1
                 lon_mean = np.mean([lon1,lon2])
                 lat_mean = np.mean([lat1,lat2])
                 #make the dict for geojson
@@ -1061,28 +1773,42 @@ class Peregrination():
                     #I can put the polygon shape with shapes[cpt].points but if I have Islands it's not work
                     #So I take the first element of the tuple of tuple
                     inside = self.found_polygon_list(lon,lat, dico_feature['geometry']['coordinates'])
-                    #inside = self.point_inside_polygon(lon,lat,dico_feature['geometry']['coordinates'][0])
                     if inside:
                         #associate the list of attribute with their data if its not already do
                         if (lon1, lat1, lon2, lat2) not in set_coordinate:
                             set_coordinate.add((lon1, lat1, lon2, lat2))
                             buffer.append(dico_feature)
+                        self.update_virtual_console(text="Nouvelles coordonées pour : "+key+' '+str(lat_mean)+', '+str(lon_mean))
                         new_dico_town[key] = (lat_mean, lon_mean)
                         del dico_town[key]
-        print('Finish to iterate over shapefile')
-        print(dico_town)
+        self.update_virtual_console(text='Lecture des fichiers shapefiles terminé')
+        self.update_virtual_console(text="Il n'y as pas de fichier Shapefile correspondant pour :")
+        for i in dico_town.keys():
+            self.update_virtual_console(text=i)
         new_dico_town = dict(new_dico_town.items() + dico_town.items())
         # write the GeoJSON file
+        self.update_virtual_console(text="Ecriture du fichier 'data_tmp.json'")
         from json import dumps
         with open('data_tmp.json', "w") as geojson:
             geojson.write(dumps({"type": "FeatureCollection","features": buffer}, indent=2, encoding ='iso8859_15') + "\n")
         return new_dico_town
     
-    def get_gps_of_group(self,ascdt,criteria,dico_ID):
+    def get_gps_of_group(self,ascdt,criteria):
         """
-        foobar
-        [ID,name,birth_date,birth_place,[],[],[],death_date,death_place,ID_father,ID_mother]
+        Loop through the pedigree, take all the Places.
+        Split them and get the subdivision at the given criterion
+        Iterate over them to get the GPS coordinate for each with the get_gps_group function
+        return the modified ascdt and the dico_town from get_gps_group function
+        input :
+            ascdt (dictionary) :
+                key : ID
+                value : [ID,name,birth_date,birth_place,[],[],[],death_date,death_place,ID_father,ID_mother]
+            criteria (integer) : Index of subdivision selected for grouping
+
+        output :
+            ascdt, dico_town (get_gps_group function)
         """
+        self.update_virtual_console(text="Recherche et regroupement des villes", label_title='Recherche et regroupement des villes')
         #get the correct index of the value
         criteria_town_org = criteria
         criteria = self.dico_index_subdivisions[self.town_org[criteria]]
@@ -1094,7 +1820,6 @@ class Peregrination():
                 ID_set.add(ID)
                 liste = ascdt[key]
                 for index in [3,6,8]:
-                    
                     if index == 6:
                         liste2 = liste[index]
                         if liste2:
@@ -1113,72 +1838,407 @@ class Peregrination():
                             liste[index] = c
                         else:
                             continue
-
         dico_grouped = dict()
         for key, (x,y) in self.gedcom_town_list.items():
             town = key.split(',')[criteria]
             if town in town_set:
                 dico_grouped[town] = (x,y)
-            
-            
-                        
+        #get the gps coordinate by the shapefile
+        self.update_virtual_console(text="Recherche des coordonnées GPS via les Shapefile", label_title="Recherche des coordonnées GPS via les Shapefile")
         dico_town = self.get_gps_group(dico_grouped, criteria_town_org)
         return ascdt, dico_town
     
-    def gedcom_map_pass(self):
+    def gedcom_map_pass(self, *args):
+        """
+        Bridge to pass the self.shapefile to False
+        Make the pedigree table and set_id
+        And pass to the gedcom_map() function to draw the map
+        """
         self.regroup.destroy()
+        #start the progress bar
+        self.progress_bar()
+        self.update_virtual_console(text="Création de l'ascendance",label_title="Création de l'ascendance")
+        
         self.shapefile = False
+        #1 for ascendance
         if self.direction == 1:
             #make ascdt type object
             self.ascdt, set_id = self.ascendance(self.ID)
             self.gedcom_map()
+        if self.direction == 2:
+            #make ascdt type object
+            self.ascdt, set_id = self.descendance(self.ID)
+            self.gedcom_map()
                 
-    def gedcom_map_validate(self):
+    def gedcom_map_validate(self, *args):
+        """
+        Bridge to pass the self.shapefile to True and regroupe the Places
+        Make the pedigree table and set_id with the modified GPS coordinate
+        And pass to the gedcom_map() function to draw the map
+        """
         self.regroup.destroy()
+        
+        #start the progress bar
+        self.progress_bar()
+        self.update_virtual_console(text="Création de l'ascendance", label_title="Création de l'ascendance")
         self.shapefile = True
         self.criteria = self.varchoice.get()
+        #1 for ascendance
         if self.direction == 1:
             #make ascdt type object
+            a = time.time()
             ascdt, set_id = self.ascendance(self.ID)
-            self.ascdt , self.gedcom_town_list = self.get_gps_of_group(ascdt, self.criteria, self.dico_ID)
+            #group
+            self.ascdt , self.gedcom_town_list = self.get_gps_of_group(ascdt, self.criteria)
+            b = time.time()
+            seconds = b-a
+            m, s = divmod(seconds, 60)
+            h, m = divmod(m, 60)
+            self.update_virtual_console(text='Terminé en %d:%02d:%02d secondes' % (h, m, s))
+            #go to the function
             self.gedcom_map()
+        if self.direction == 2:
+            #make ascdt type object
+            a = time.time()
+            ascdt, set_id = self.descendance(self.ID)
+            #group
+            self.ascdt , self.gedcom_town_list = self.get_gps_of_group(ascdt, self.criteria)
+            b = time.time()
+            seconds = b-a
+            m, s = divmod(seconds, 60)
+            h, m = divmod(m, 60)
+            self.update_virtual_console(text='Terminé en %d:%02d:%02d secondes' % (h, m, s))
+            #go to the function
+            self.gedcom_map()
+
+    def create_annotation_text_gedcom(self, dico_file,dico_town,options):
+        """
+        extract information of interest to display in the annotate text box
+        
+        input :
+            dico_file : the return of the import_ascendance() or import_descendance() function
+            dico_town : the return of the import_town_gps_coord() function
+            option : list of option, the keyword are :
+                - Nombre de °,x,+' : to show the repartition of Birth (°) Wedding (x) and Death (+) for a town
+                - Nombre total d'événement : sum of the precedent event (Birth, Wedding, Death)
+                - Départ(s) :
+                - Arrivée(s) :
+                - Nom(s) : The familly name in the town
+                - Dates extrèmes : The oldest and newest date in the town
+            typ : integer equal to 1 or 2 :
+                - 1 : ascendance
+                - 2 : descendance
+                
+        output :
+            dico_annotation (dictionnary) :
+                key (string) : city name
+                value (3th-element tuple) : text to add for the specified annotation, latitude and longitude
+        """
+        #Note : "texte en string"+string_du_fichier
+        #dict to store the annotation
+        dico_annotation = dict()
+        #pre-traitment
+        f_lol = list()
+        dico_file2 = dict()
+        for key, value in dico_file.iteritems():
+            liste = list()
+            for item in value:
+                if isinstance(item,list):
+                    liste.append("\x95 "+" \x95 ".join(item))
+                else:
+                    liste.append(item)
+            f_lol+= [liste]
+            #transfert des modif dans un nouveau dict
+            dico_file2[key]=liste
+        #ecrase la variable de l'ancien par le nouveau dict
+        dico_file = dico_file2
+        f_array = np.asarray(f_lol)
+        f_transpose = np.transpose(f_array)
+
+        #search the extreme date
+        dico_date_extreme = dict()
+        for i in range(len(f_transpose[0])):
+            for j in 2,5,7:
+                if "\x95" in f_transpose[j+1][i]:
+                    continue
+                else:
+                    if f_transpose[j+1][i] not in dico_date_extreme.keys():
+                        date = re.findall(r'[0-9]{4}',f_transpose[j][i])
+                        if date:
+                            dico_date_extreme[f_transpose[j+1][i]] = date
+                    else:
+                        date = re.findall(r'[0-9]{4}',f_transpose[j][i])
+                        if date:
+                            dico_date_extreme[f_transpose[j+1][i]] += date
+        for key in dico_date_extreme.keys():
+            if dico_date_extreme[key]:
+                a,b = sorted(dico_date_extreme[key])[0], sorted(dico_date_extreme[key])[-1]
+                dico_date_extreme[key] = a+' - '+b
+            
+        #count the number of event
+        number_of_birth_by_town = collections.Counter(f_transpose[3])
+        number_of_wedding_by_town = collections.Counter(f_transpose[6])
+        number_of_death_by_town = collections.Counter(f_transpose[8])
+        number_total = number_of_birth_by_town+number_of_wedding_by_town+number_of_death_by_town
+        #get the departures and arrivals
+        dico_departure = dict()
+        dico_arrivals = dict()
+        dico_familly_name = dict()
+        popup_trajectory = dict()
+
+        for sosa in dico_file.keys():
+            if "\x95" in dico_file[sosa][4]:
+                weddings = multiple_wedding_gedcom(dico_file[sosa])
+                for wed in weddings:
+                    n,d,t = wed
+                    #for the name list
+                    if n != '' and t != '':
+                        if t not in dico_familly_name.keys():
+                            name = set()
+                            name.add(n)
+                            dico_familly_name[t] = name
+                        else:
+                            name = dico_familly_name[t]
+                            name.add(n)
+                            dico_familly_name[t] = name
+                    if t:
+                        #add to the wedding and total event
+                        wedding_counter = collections.Counter([t])
+                        number_of_wedding_by_town += wedding_counter
+                        number_total += wedding_counter
+                    if d:
+                        if t:
+                            if t not in dico_date_extreme.keys():
+                                dico_date_extreme[t] = d+' - '+d
+                            elif not dico_date_extreme[t]:
+                                dico_date_extreme[t] = d+' - '+d
+                            else:
+                                #verify extrem date
+                                d_int = int(d)
+                                a = int(dico_date_extreme[t][:4])
+                                b = int(dico_date_extreme[t][7:])
+                                hyphen_begin = dico_date_extreme[t][:7]
+                                hyphen_end = dico_date_extreme[t][4:]
+                                if d_int < a:
+                                    dico_date_extreme[t] = d+hyphen_end
+                                if d_int > b:
+                                    dico_date_extreme[t] = hyphen_begin + d
+
+            #get familly name
+            #result = re.findall(ur"[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-\(\)/]+$",unicode(dico_file[sosa][1].decode('iso8859-15')),re.UNICODE)
+            self.update_virtual_console(text=dico_file[sosa][1])
+            result = re.findall(ur"((?:(?: d'| de| des| la| DE| VAN| LE) )?[A-ZÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð,.'\-\(\)\?/]+\b)",unicode(dico_file[sosa][1].decode('iso8859-15')),re.UNICODE)
+            
+            if result:
+                familly_name = result[0]
+            else:
+                familly_name = dico_file[sosa][1]
+            #iterate over (3) birth, (6) wedding and (8) death town and store into a set
+            for index in 3,6,8:
+                if "\x95" in dico_file[sosa][index]:
+                    continue
+                if dico_file[sosa][index] not in dico_familly_name.keys():
+                        
+                    name = set()
+                    name.add(familly_name)
+                    dico_familly_name[dico_file[sosa][index]] = name
+                else:
+                    name = dico_familly_name[dico_file[sosa][index]]
+                    name.add(familly_name)
+                    dico_familly_name[dico_file[sosa][index]] = name
+                    
+                    
+            #compute parents sosa
+            cityB = dico_file[sosa][3] #ville de l'individue étudié (point d'arrivé)
+            p = dico_file[sosa][9] #@id@ du père
+            m = dico_file[sosa][10] #@id@ de la mère
+            for prts in p,m:
+                if dico_file.get(prts):
+                    g = dico_file[prts][-1]
+                    cityA = dico_file[prts][3]
+                    if cityA != ''  and cityB != '':
+                        if cityA != cityB:
+                            if cityA not in dico_departure.keys():
+                                a = "Depart :\nG"+str(g)+" "+dico_file[prts][1]+"\n"
+                                dico_departure[cityA] = a
+                            else:
+                                a = "G"+str(g)+" "+dico_file[prts][1]+"\n"
+                                dico_departure[cityA] = dico_departure[cityA] + a
+                            if cityB not in dico_arrivals.keys():
+                                a = "Arrive :\nG"+str(g)+" "+dico_file[prts][1]+"\n"
+                                dico_arrivals[cityB] = a
+                            else:
+                                a = "G"+str(g)+" "+dico_file[prts][1]+"\n"
+                                dico_arrivals[cityB] = dico_arrivals[cityB] + a
+                            popup_traj = "G"+str(g)+" "+dico_file[prts][1]
+                            #create a popup for the trajectory
+                            if (cityA,cityB) in popup_trajectory.keys():
+                                popup_trajectory[(cityA,cityB)] += " "+popup_traj
+                            else:
+                                popup_trajectory[(cityA,cityB)] = popup_traj
+                    if cityA == '' and  cityB != '':
+                        # get @id@ of the grand parents of 'i' (the parents 'ID' of 'i' must exist to this point)
+                        liste_ID_before = list()
+                        if dico_file[prts][9] != '':
+                            liste_ID_before += [dico_file[prts][9]]
+                        if dico_file[prts][10] != '':
+                            liste_ID_before += [dico_file[prts][10]]
+                        # if the liste_ID_before is empty, they are no grand parents, continue
+                        # this control are in the case they are no parents in the generation g+1
+                        if len(liste_ID_before) == 0:
+                            continue
+                        else:
+                            #we have grand parents, go control their birth places
+                            city = False
+                            liste_ID_after = list()
+                            while city == False:
+                                #iterate through the liste_ID_before and get the parents-@id@ for each
+                                for id_i in liste_ID_before:
+                                    if dico_file[id_i][9] != '':
+                                        #Store only if the father don't have any Place
+                                        if dico_file[id_i][3] == '' and dico_file[dico_file[id_i][9]][3] == '':
+                                            #store g_N-father ID
+                                            liste_ID_after+=[dico_file[id_i][9]]
+                                    if dico_file[id_i][10] != '':
+                                        #Store only if the mother don't have any Place
+                                        if dico_file[id_i][3] == '' and dico_file[dico_file[id_i][10]][3] == '':
+                                            #store g_N-mother ID
+                                            liste_ID_after+=[dico_file[id_i][10]]
+                                #check point, for the first turn it's not blocked
+                                if len(liste_ID_before) == 0:
+                                    break
+                                #analyse each Places for each founded ID
+                                else:
+                                    for prts_i in liste_ID_before:
+                                        if prts_i != '':
+                                            g=dico_file[prts_i][-1]
+                                            cityA = dico_file[prts_i][3]
+                                            if cityA != ''  :
+                                                if cityA != cityB:
+                                                    popup_traj = "G"+str(g)+" "+dico_file[prts_i][1]
+                                                    #create a popup for the trajectory
+                                                    if (cityA,cityB) in popup_trajectory.keys():
+                                                        popup_trajectory[(cityA,cityB)] += " "+popup_traj
+                                                    else:
+                                                        popup_trajectory[(cityA,cityB)] = popup_traj
+                                    #second check point, if they are no parents-@id@ in the generation g+1, break the loop
+                                    if len(liste_ID_after) == 0:
+                                        break
+                                    else:
+                                        #replace the liste_ID_before by the liste_ID_after and replace liste_ID_after by an empty list
+                                        liste_ID_before = liste_ID_after
+                                        liste_ID_after = []
+        ##### END #####
+                                        
+        #transfert all town key (from multiple wedding (utf8) and ascdt / descdt (iso8859_15) file)
+        for town in number_total.keys():
+            if town != '' and "\x95" not in town:
+                dico_annotation[town] = ''
+        for town in dico_annotation.keys():
+            text = str()
+            ### CHECK THE OPTIONS ###
+            if "Nombre de °,x,+" in options:
+                b = number_of_birth_by_town[town]
+                #descendance : don't divide by 2
+                w = number_of_wedding_by_town[town]/2
+                d = number_of_death_by_town[town]
+                a = "Naissance(s) : "+str(b)+"\nMariage(s) : "+str(w)+"\nDeces : "+str(d)+"\n"
+                text = codec(text,a)
+                #text += a
+            if "Nombre total d'événement" in options:
+                a = "Nombre total d'evenement : "+str(number_total[town])+"\n"
+                #text += a
+                text = codec(text,a)
+            
+            if 'Départ(s)' in options:
+                if town in dico_departure.keys():
+                    #text += dico_departure[town]+"\n"
+                    text = codec(text,dico_departure[town]+"\n")
+            if 'Arrivée(s)' in options:
+                if town in dico_arrivals.keys():
+                    #text += dico_arrivals[town]+"\n"
+                    text = codec(text, dico_arrivals[town]+"\n")
+            if 'Nom(s)' in options:
+                if town in dico_familly_name.keys():
+                    n = ", ".join([i if isinstance(i, unicode) else unicode(i.decode('iso8859_15')) for i in dico_familly_name[town]])
+                    for i in range(4,n.count(', '),3):
+                        idx = find_nth_character(n, ', ', i)
+                        if idx:
+                            n = n[:find_nth_character(n, ', ', i)] + "\n" + n[2+find_nth_character(n, ', ', i):]
+                    #n2 ="Noms :\n".encode('iso8859_15')+n
+                    n2 = codec("Noms :\n", n)
+                    text = codec(text, n2)
+                    #text += n2
+            if 'Dates extrêmes' in options:
+                if town in dico_date_extreme.keys():
+                    if dico_date_extreme[town]:
+                        #date = '\nDate : '.encode('iso8859_15')+dico_date_extreme[town]
+                        date = codec('\nDate : ',dico_date_extreme[town])
+                        #text += date
+                        text = codec(text, date)
+            try:
+                lat = dico_town[town][0]
+                lon = dico_town[town][1]
+                dico_annotation[town] = (text,lat,lon)
+            except KeyError:
+                lat = dico_town[town][0]
+                lon = dico_town[town][1]
+                dico_annotation[town] = (text,lat,lon)
+        return dico_annotation, popup_trajectory
         
     def gedcom_map(self):
-            #compute the trajectory
-            list_traj, list_coord = convert_to_trajectory_ascdt_GEDCOM(self.ascdt,self.gedcom_town_list,self.dico_ID)
-           #find the min and max coordinate 
-            y_min, x_min, y_max, x_max, g_max = find_min_max_coordinate(list_coord)
-            #create annotation text
-            dico_annotation, popup_trajectory = create_annotation_text_gedcom(self.ascdt,self.gedcom_town_list,self.choosen_options,self.direction)
-            #generate the OpenStreetMap
-            generate_map_gedcom(self.direction,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation, popup_trajectory, self.filename, self.shapefile)
-            
-    def load_ascdt_txt(self):
         """
-        Saving the ascendance file generated by Heredis (see the User Manual) in the variable self.fichier_ascendance variable
+        Wrapper function
+        Create the trajectory list and the coordinate list
+        Compute the x and y min and max
+        Create the text for the town and trajectory
+        And generate the OSM map
         """
-        self.bouton2.config(state="disabled")
-        self.fichier_ascendance = tkFileDialog.askopenfilename(title="Ouvrir le fichier d'ascendance:", initialdir=os.getcwd(), \
-                                initialfile="", filetypes = [("Fichiers txt","*.txt"),("Tous", "*")])
-        if not self.fichier_ascendance:
-            self.bouton2.config(state="active")
-        self.type = 1
-    def load_descdt_txt(self):
-        """
-        Saving the descendance file generated by Heredis (see the UserManuel) in the variable self.fichier_descendance
-        """
-        self.bouton1.config(state="disabled")
-        self.fichier_descendance = tkFileDialog.askopenfilename(title="Ouvrir le fichier de descendance:", initialdir=os.getcwd(), \
-                                initialfile="", filetypes = [("Fichiers txt","*.txt"),("Tous", "*")])
-        if not self.fichier_descendance:
-            self.bouton1.config(state="active")
-        self.type = 2
-    def load_csv(self):
-        """
-        Saving the town file generated by SQLite Manager (Firefox, see the UserManual) in the variable self.fichier_descendance
-        """
-        self.fichier_lieux = tkFileDialog.askopenfilename(title="Ouvrir le fichier CSV des Lieux:", initialdir=os.getcwd(), \
-                                initialfile="", filetypes = [("Fichiers CSV","*.csv"),("Tous", "*")])
+        #compute the trajectory
+        self.update_virtual_console(text="Calcul des trajectoires...", label_title="Calcul des coordonnée du cadre de la carte...")
+        a = time.time()
+        list_traj, list_coord = convert_to_trajectory_GEDCOM(self.ascdt,self.gedcom_town_list,self.dico_ID,self.update_virtual_console)
+        b = time.time()
+        seconds = b-a
+        m, s = divmod(seconds, 60)
+        h, m = divmod(m, 60)
+        self.update_virtual_console(text='Terminé en %d:%02d:%02d secondes' % (h, m, s))
+       #find the min and max coordinate
+        self.update_virtual_console(text="Calcul des coordonnée du cadre de la carte...", label_title="Calcul des coordonnée du cadre de la carte...")
+        a = time.time()
+
+        y_min, x_min, y_max, x_max, g_max = find_min_max_coordinate(list_coord)
+        
+        b = time.time()
+        seconds = b-a
+        m, s = divmod(seconds, 60)
+        h, m = divmod(m, 60)
+        self.update_virtual_console(text='Terminé en %d:%02d:%02d secondes' % (h, m, s))
+        #create annotation text
+        self.update_virtual_console(text="Création des annotations de la carte...",label_title="Création des annotations de la carte...")
+        a = time.time()
+        
+        dico_annotation, popup_trajectory = self.create_annotation_text_gedcom(self.ascdt,self.gedcom_town_list,self.choosen_options)
+        
+        b = time.time()
+        seconds = b-a
+        m, s = divmod(seconds, 60)
+        h, m = divmod(m, 60)
+        self.update_virtual_console(text='Terminé en %d:%02d:%02d secondes' % (h, m, s))
+        #generate the OpenStreetMap
+        self.update_virtual_console(text="Création des cartes...",label_title="Création des cartes (patience, ceci peu prendre plusieurs minutes)")
+        a = time.time()
+        
+        generate_map_gedcom(self.direction,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation, popup_trajectory, self.filename, self.shapefile)
+        
+        b = time.time()
+        seconds = b-a
+        m, s = divmod(seconds, 60)
+        h, m = divmod(m, 60)
+        self.update_virtual_console(text='Terminé en %d:%02d:%02d secondes' % (h, m, s))
+        self.pb_gui.destroy()
+        tkMessageBox.showinfo(title = "Terminé !", message='Terminé en %d:%02d:%02d secondes' % (h, m, s))
+
     def options(self):
         """
         Create Tkinter TopLevel() windows to show the option can be checked by the user
@@ -1207,8 +2267,11 @@ class Peregrination():
             c.grid()
         self.validate_button = Tkinter.Button(self.option,text="Valider",command=self.option_command,bg="#a0522d", fg="#f5deb3", font=('Sans','10','bold'))
         self.validate_button.grid()
+        self.validate_button.focus_set()
+        self.validate_button.bind('<Return>',self.option_command)
+        
 
-    def option_command(self):
+    def option_command(self,*args):
         """
         Saving the option choosen by the user in the List self.choosen_options
         """
@@ -1217,117 +2280,6 @@ class Peregrination():
             if option:
                 self.choosen_options += [self.option_list[i]]
         self.option.destroy()
-
-
-    def mapping(self):
-        """
-        Generate the map
-        """
-        if not self.fichier_lieux or self.type == None:
-            tkMessageBox.showwarning(message="Vous n'avez pas charger de fichier d'ascendance / descendance ou de fichier de lieux")
-            return
-        else:
-            if len(self.choosen_options) == 0:
-                self.choosen_options = ['Départ(s)','Arrivée(s)']
-            if self.type == 1:
-                print("import the ascendance file")
-                #import ascendance
-                ascdt = import_ascendance(self.fichier_ascendance)
-                #import the town file
-                town_list = import_town_gps_coord(self.fichier_lieux)
-                #create annotation text
-                dico_annotation = create_annotation_text(ascdt,town_list,self.choosen_options,self.type)
-                #compute the trajectory
-                list_traj, list_coord = convert_to_trajectory_ascdt(ascdt,town_list)
-                #find the min and max coordinate
-                y_min, x_min, y_max, x_max, g_max = find_min_max_coordinate(list_coord)
-                #generate the OpenStreetMap
-                generate_map(self.type,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation)
-                #mapping the map
-                print("mapping the map")
-                fig, m, ax = carte(y_min, x_min, y_max, x_max)
-                #mapping the trajectories (no return variable)
-                print("mapping the trajectories")
-                points_with_annotation, list_text_point = mapping_trajectory(list_traj,m,ax, g_max,self.type,dico_annotation)
-                
-            if self.type == 2:
-                print("import the descendance file")
-                #import descendance
-                descdt = import_descendance(self.fichier_descendance)
-                #import the town file
-                town_list = import_town_gps_coord(self.fichier_lieux)
-                #create annotation text
-                dico_annotation = create_annotation_text(descdt,town_list,self.choosen_options,self.type)
-                #compute the trajectory *** !!! ***
-                list_traj, list_coord = convert_to_trajectory_descdt(descdt,town_list)
-                #find the min and max coordinate
-                y_min, x_min, y_max, x_max, g_max = find_min_max_coordinate(list_coord)
-                #generate the OpenStreetMap
-                generate_map(self.type,y_min, x_min, y_max, x_max,g_max,list_traj,dico_annotation)
-                #mapping the map
-                print("mapping the map")
-                fig, m, ax = carte(y_min, x_min, y_max, x_max)
-                #mapping the trajectories (no return variable)
-                print("Compute the trajectories")
-                points_with_annotation, list_text_point = mapping_trajectory(list_traj,m,ax, g_max, self.type,dico_annotation)
-
-        print('showing')
-
-        def on_move(event):
-            """
-            show dynamical annotation when the mouse pass over the point
-                1- get the current axis extremity coordinate and divide them by 20
-                2- get the looked point position and the position of his annotation
-                3- add the 1/20e of the scale lenght of the curent figure to the xytext coordinate annotation
-                4- check all the points if they are outer of the figure and set the text not visible
-            """
-            #get tuple of limit axis during the time
-            x_lim = ax.get_xlim()
-            y_lim = ax.get_ylim()
-            x = x_lim[0]
-            y = y_lim[0]
-            x2 = x_lim[1]
-            y2 = y_lim[1]
-            x10 = (x2-x)/20.
-            y10 = (y2-y)/20.
-            
-            for text in list_text_point:
-                x_txt, y_txt = text.get_position()
-                
-                if x <= x_txt <= x2 and y <= y_txt <= y2:
-                    text.set_visible(True)
-                else:
-                    text.set_visible(False)
-                plt.draw()
-
-            visibility_changed = False
-            
-            for point, annotation in points_with_annotation:
-                #get position of the point
-                p_xy = point.get_xydata()
-                p_x = p_xy[0][0]
-                p_y = p_xy[0][1]
-                #and set the anotation with add 1/10 of y and x spaces
-                annotation.set_position((p_x+x10,p_y+y10))
-                
-                should_be_visible = (point.contains(event)[0] == True)
-
-                if should_be_visible != annotation.get_visible():
-                    visibility_changed = True
-                    
-                    annotation.set_visible(should_be_visible)
-
-            if visibility_changed:        
-                plt.draw()
-            
-        on_move_id = fig.canvas.mpl_connect('motion_notify_event', on_move)
-        plt.show()
-            
-        self.bouton1.config(state="active")
-        self.bouton2.config(state="active")
-        self.fichier_descendance = None
-        self.fichier_lieux = None
-        self.type = None
 
 ############
 # AUTORUN #
