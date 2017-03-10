@@ -1,13 +1,13 @@
 	Judocus POPPE			Marie DEBRUYNE				
 A	Petrus POPPE	26.8.1651	Poeke	Anna HUYS				
 AA	Judocus POPPE	16.5.1676	Poeke	Ursula DEMEYERE	28.4.1703	Poeke	19.10.1748	Kanegem
-AAA	Pierre Joseph POPPE	6.4.1707	Kanegem	• Marie Catherine DEFRANCE • Marie Jeanne Catherine BONTE	• 17.4.1742 • 20.8.1743	• Roubaix • Roubaix	23.9.1773	Roubaix
+AAA	Pierre Joseph POPPE	6.4.1707	Kanegem	â€¢ Marie Catherine DEFRANCE â€¢ Marie Jeanne Catherine BONTE	â€¢ 17.4.1742 â€¢ 20.8.1743	â€¢ Roubaix â€¢ Roubaix	23.9.1773	Roubaix
 AAA1A	Charlemagne POPPE	12.2.1743	Roubaix				20.11.1754	Roubaix
-AAA2b	Marie Agnès POPPE	17.5.1744	Roubaix	Jean Baptiste Joseph DELESCLUSE	24.7.1770	Roubaix	7.4.1781	Roubaix
-AAA2c	Ursule Séraphine POPPE	15.11.1746	Roubaix	Jean Baptiste LEBLANC	17.11.1778	Roubaix	9.1.1803	Roubaix
+AAA2b	Marie AgnÃ¨s POPPE	17.5.1744	Roubaix	Jean Baptiste Joseph DELESCLUSE	24.7.1770	Roubaix	7.4.1781	Roubaix
+AAA2c	Ursule SÃ©raphine POPPE	15.11.1746	Roubaix	Jean Baptiste LEBLANC	17.11.1778	Roubaix	9.1.1803	Roubaix
 AAA2d	Anne Marie POPPE	21.11.1748	Roubaix	Jean Isidore CALWART	26.10.1773	Roubaix	28.6.1812	Roubaix
 AAA2E	Louis Francois POPPE	22.8.1750	Roubaix	Henriette BEUSCART	26.10.1773	Roubaix	9.9.1809	Cadzand
 AAA2F	Boniface Pierre Joseph POPPE	27.10.1752	Roubaix	Marie Anne DUBAR	12.4.1774	Roubaix	4.2.1812	Roubaix
-AAA2G	Jean Dominique POPPE	27.3.1755	Roubaix	• Amélie MONTAIGNE • Marie Angélique Joseph SOREZ	• 4.8.1778 • 5.7.1795	• Roubaix • Lille	27.2.1816	Lille
+AAA2G	Jean Dominique POPPE	27.3.1755	Roubaix	â€¢ AmÃ©lie MONTAIGNE â€¢ Marie AngÃ©lique Joseph SOREZ	â€¢ 4.8.1778 â€¢ 5.7.1795	â€¢ Roubaix â€¢ Lille	27.2.1816	Lille
 AAA2H	Charlemagne (= Charles) POPPE	19.6.1757	Roubaix	Rosalie (Marie Rose) DESSAUVAGES	8.7.1777	Roubaix	10.fruc .an IX	Roubaix
 AAA2I	Modeste POPPE	9.5.1760	Roubaix				22.10.1767	Roubaix
