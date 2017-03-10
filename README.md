@@ -1,344 +1,367 @@
 
+[Source](https://peregrination.jimdo.com/utilisation/ "Permalink to Utilisation - Pérégrination : Cartographie généalogique")
 
-[Source](http://peregrination.jimdo.com/manuel-d-utilisation/ "Permalink to Manuel d'utilisation - Pérégrination : Cartographie généalogique")
+# Utilisation - Pérégrination : Cartographie généalogique
 
-# Manuel d'utilisation - Pérégrination : Cartographie généalogique
+![][1]
 
-Pour les non-spécialistes de l'informatique, je vais à la fois parler de termes techniques que je vais agrémenter d'exemple simple pour vous expliquer à la fois la simplicité et la complexité de ce qui se cache parfois derrière l'informatique. :)
+&nbsp; 
 
-Pérégrination ©, utilise pour fonctionné un [langage de programmation][1]. Ce langage de programmation s'appelle Python.  Comme les langues vivantes (Anglais, Français, Allemand, Chinois,...) un ordinateur parle aussi une langue, le binaire (0 et 1) or pour un être humain, c'est absolument impossible, et incompréhensible de parlé ce langage.
+Pérégrination a été testé pour le moment avec des fichiers GEDCOM issus de Hérédis. Toutefois, rien n'exclut le fait que des GEDCOMs d'autre logiciel peuvent fonctionner. Aussi, il est important que les lieux soient correctement formatés de manière à reconnaître chacune des parties administratives. Sans quoi, il sera impossible pour mon logiciel de géolocalisé les lieux. 
 
- 
+Le format du fichier doit être au format ANSI et non UTF8 de manière à ce que les caractères accentués puissent être encodés correctement. 
 
-Les informaticiens ont donc inventés des langages, pour communiquer et donner des ordres aux ordinateurs. Ces langages ont été inventé d'abord par les américains, de ce fait, les mots utilisés dans le langage sont en anglais. Or, lorsque nous voyageons à l'étranger, il nous faut un interprète pour pouvoir souvent comprendre la langue du pays étranger.
+&nbsp; 
 
- 
+![][2]
 
-Pour un ordinateur c'est exactement la même chose. L'ordinateur à besoin d'un programme qui convertit ces langages en langage "ordinateur", en binaire, et ce programme et appelé un [Interpréteur][2]. Ces langages sont communément appelés des langages de programmation, ils nous permettent d'interagir avec les composants physiques de l'ordinateur (disque dur, processeur...) et virtuel (fichiers, mémoire vive, ...), et permettent d'exécuter des taches très complexes et multiples, du fait de la capacité naturelle d'un ordinateur à réaliser des opérations en parallèle.
+![][3]
 
- 
+Pérégrination procède en 4 étapes : 
 
-Car mon programme à été écrit en Python nous devons installer l'interpréteur Python. En plus de l'interpréteur, il vous installera ce que l'ont appelle des [bibliothèque logicielle][3] ou librairies. Imaginer une vraie bibliothèque, ce bâtiment contient des livres, et ces livres des chapitres. Chaque livre parle d'un sujet particulier, Science, Math, Littérature, Psychologie, Jeux, etc... En programmation , c'est la même chose, on aime bien nommer les choses avec celles du quotidien.
+1. Lecture du fichier GEDCOM avec gedcompy 
+2. Extraction de tout les individus 
+3. Extraction de toute les familles 
+4. Extraction de tout les lieux 
 
- 
+Une fois terminé, un message apparat avec le temps calculé 
 
-Une librairie et un ensemble de fichiers (comparer le à une série de tome) qui contient un ensemble de fonctions (qui seront ici nos chapitres) et chaque fonction a son propre but bien défini. Ainsi en python nous avons la librairie "[_math_][4]" qui permet de calculer Pi, de réaliser des puissances, de la trigonométrie, etc... Bien sur, un programmeur aurait put avoir l'envie de créer lui même sa propre fonction, réalisant le même but, mais souvent il est conseillé d'utiliser les fonctions des librairies, bien plus efficaces et rapides.
+  
 
- 
+![][4]
 
-Comme ont dit en programmation, il ne sert à rien de réinventer la roue, si vous avez envie de faire quelque chose, quelqu'un l'aura déjà fait avant vous !
+&nbsp; 
 
-Vous aurez besoin de ces logiciels pour pouvoir convertir votre généalogie en plusieurs fichiers
+La seconde étape consiste à renseigner le type administratif de chaque localité. 
+
+Une fenêtre affiche les 10 premières localités où les différents champs apparaissent dans les différentes colonnes. 
+
+Pérégrination s'adapte à n'importe quelle situation, il affichera autant de colonnes qu'il y a de subdivisions. 
+
+Une étiquette affiche alors l'ordre par défaut. Si ce dernier n'est pas bon, vous pouvez les modifier via les panneaux déroulants. 
+
+&nbsp; 
 
 ![][5]
 
- 
+Vous avez le choix avec : 
 
- 
+* &nbsp;"Commune" 
+* "Code Postal" 
+* "Departement" 
+* "Region" 
+* "Pays" 
+* "Subdivision" 
+* "Ignorer" 
 
-* Hérédis Bleu ou version supérieur
+(Pour des raisons de compatibilité d'encodage des caractères j'ai omis les accents) 
 
-Ce navigateur ainsi que son module SQLite Manager nous serons très utile par la suite afin d'extraire les données GPS du fichier de Hérédis.
+  
 
 ![][6]
 
+&nbsp; 
+
+Une fois vos choix enregistrer, une étiquette s'affiche sous les menus déroulant avec la sélection que vous avez validé. Vous pouvez à tout moment changer vos choix. Une fois que tout est vérifié, vous pouvez cliquez sur "Valider" 
+
+Si vous cliquez sur le bouton "Quitter" , vous quitterais la fenêtre du gestionnaire. L'étape n° 3 restera inactive. 
+
+&nbsp; 
+
 ![][7]
+
+Ce message s'affiche ensuite pour valider définitivement vos choix. &nbsp;Ceci active le bouton pour l'étape n° 3. Si vous cliquez sur "Non" vous reviendrez sur le gestionnaire des subdivision. 
+
+&nbsp; 
+
+C'est le **cœur**&nbsp;du programme, c'est lui qui va déterminé automatiquement les coordonnées GPS de chacun de vos lieux. Plusieurs options sont disponible comme l'utilisation de clé API GoogleMap disponible dans le programme ou via votre propre clé API GoogleMap Geocoding 
+
+&nbsp; 
+
+Pour gagner un temps précieux, Pérégrination permet de charger un fichier de Lieux qu'il à lui même déjà créé auparavant, et éviter de recommencer la recherche des lieux. Après avoir cliquez sur "Etape 3: Recherche des coordonnées GPS", ce message apparaît : 
+
+&nbsp; 
+
+&nbsp; 
 
 ![][8]
 
+&nbsp; 
+
+Si vous avez cliqué sur "Oui", une boite de dialogue apparaît et vous aide à parcourir dans vos dossiers pour retrouver le fichier CSV. Par défaut , le dossier et celui ou le programme se trouve. Néanmoins il garde en mémoire l'emplacement du dernier fichier ouvert (même après fermeture du programme).
+
+&nbsp; 
+
 ![][9]
-
-  
-
-Pour que le programme fonctionne, nous devons installer un interpréteur Python.
-
- 
-
-Cet interpréteur et disponible sur le site officiel . Vous pouvez installer manuellement ces interpréteurs (actuellement la version 2.7.10 et 3.5.2). Vous aurez aussi besoin d'installer des librairies qui ne sont pas installées avec l'interpréteur, il s'agit des librairies NumPy, Matplotlib et Basemap. Enfin, si vous souhaitez visualiser ou modifier le code source, tester et exécuter vos scripts, vous devriez installer un Environnement de développement (IDE en Anglais). Vous pouvez faire manuellement tout ceci en prenant le temps de regardez la documentation associée sur le web, cela nécessite beaucoup de persévérance ! Heureusement pour vous, il existe un programme tout en un qui réalise tout ça pour vous ! Il s'agit de Python XY.
-
-1. Télécharger Python X,Y 
-2. Installez Python X,Y en suivant les paramètres qu'il vous indique
-3. Patientez, l'installation peut être longue, je vous suggère en attendant de regarder une vidéo ou de réaliser une recherche généalogique ou de mettre à jour le dictionnaire des lieux de votre logiciel de généalogie  ;)
-
- 
-
-Voici la vidéo sur YouTube de l'installation de Python X,Y (Anglais)
-
-Pour les non-anglais, vous pouvez générer les sous-titre et réaliser la traduction automatique des sous-titres:
-
-(Valable uniquement pour les vidéos en langue anglo-saxonne)
-
-1.  Avec votre souris cliquez sur le bouton "Sous-titre" (carré avec des petits trait à l'intérieur en bas à droite)
-2. Ensuite cliquez sur "Paramètres" (roue cranté)
-3. Sur la fenêtre qui s'affiche sur la vidéo cliquez sur "Sous-titres (1)         Anglais (généré automatiquement) >"
-4. Cliquez sur "Traduire automatiquement"
-5. Un nouveau volet s'affiche avec une liste de langue, à l'aide de l'ascenseur sur la gauche cliquez sur la langue "Français"
-6. Puis cliquez n'importe pour revenir a la vidéo avec les sous-titre en Français : Note vous pouvez cliquez sur les sous-titre et les mettre n'importe où.
-
-1. Une fois l'installation terminée télécharger la librairie Basemap à cette adresse :  puis double-cliquez pour l'installé  
 
 ![][10]
 
- 
+  
 
- 
+&nbsp; 
 
-Mon ordinateur ayant à la fois installé sur son disque dur, deux systèmes d'exploitation (Windows et Linux), je peux à la fois tester mon programme dans un environnement Linux et Windows. Pour le moment le programme fonctionne sur Ubuntuu version 14.04.1. Je ne l'ai donc pas essayé sur Mac, Fédora, RedHat et Debian. Les interpréteurs Python étant déjà installés avec les librairies de base je vous recommande d'installer si cela n'est pas encore fait l'installateur de paquet PIP. Dans un terminal copier coller ses deux lignes de commandes. La première sert à installer  PIP,  et les composants de bases de python, la seconde permet de la mettre à jour.
+Un fichier de Lieux et un fichier CSV (séparateur virgule) contenant : 
 
-    $ sudo apt-get install python-pip python-dev build-essential
-    $ sudo pip install --upgrade pip
+&nbsp; 
 
-Ensuite nous devons installer les librairies Matplotlib et NumPy et Basemap
+1. La première colonne pour les noms des lieux du GEDCOM 
+2. Les Latitudes 
+3. Les Longitudes 
 
-Pour installer Matplotlib, selon la documentation (Anglaise) de leur site internet suivant si vous êtes sur un système Linux/Debian ou Fedora/RedHat (http://matplotlib.org/1.5.1/users/installing.html)
+[ ![Aperçues avec Notepad ++ , les CSV sont des fichiers séparés par des virgules \("comma" en anglais\), les guillemets anglais \("\) permettent d'éviter de prendre les virgules qui séparent les subdivisions des lieux de la première colonne][11]][12]
 
-    $ sudo pip install matplotlib
-    $ sudo pip install --upgrade matplotlib
+[ ![Aperçue avec OpenOfficeCalc][13]][12]
 
-    $ sudo pip install numpy
-    $ sudo pip install --upgrade numpy
+&nbsp; 
 
-https://docs.djangoproject.com/fr/1.10/ref/contrib/gis/install/geolibs/
+Une fois que les lieux sont chargé, le bouton pour l'étape n° 4 s'active. 
 
-http://matplotlib.org/basemap/users/installing.html
+&nbsp; 
 
- 
+&nbsp; 
 
-![][11]
+Vous avez cliquez sur "Non" car c'est la première fois que vous allez géolocalisé les lieux de votre fichier GEDCOM. Pérégrination est compatible avec la technologie de Google Map, et vous propose d'utilisé ce que l'ont appelle les clefs API. 
 
-Pour pouvoir afficher les frontières des pays, des départements, des communes nous avons besoin d'un fichier qui contient toute les informations pour permettre de les tracer avec les latitudes et les longitudes. Ce sont ce qu'on appelle des fichiers SHAPEFILE (traduisé "fichier de forme"). Ils sont disponibles librement et sont créés  par des développeurs indépendants. Vous pouvez les télécharger via ce site internet : [http://www.gadm.org/country][12]
-
- 
-
-Choisissez votre Pays (Country) et choisissez "Shapefile" dans les formats de fichiers (File format), télécharger le fichier compressé et décompressé le contenue dans le dossier SHAPEFILE
-
-1. Télécharger et dézipé la carte de France dans le dossier SHAPEFILE
-
-> 1. Télécharger et dézipé la carte de Belgique dans le dossier SHAPEFILE
-
-> ![Capture d'écran sur le site de GADM avec le fichier Shapefile de la France.][13]Capture d'écran sur le site de GADM avec le fichier Shapefile de la France.
-
-Avec Hérédis faite : Fichier > Préparer pour ... > Heredis Mac
+&nbsp; 
 
 ![][14]
 
+&nbsp; 
+
+Une clef API et une chaîne de caractère, comme un mot de passe, permettant de vous identifier pour accéder au serveur de Google (ici Google Map) de manière à ce que vous puissiez profiter de toute la puissance de calcul de leur serveur. 
+
+&nbsp; 
+
+&nbsp; 
+
 ![][15]
 
-Si vous utilisez Firefox, installer SQLite Manager (SQLIte Manager)
+&nbsp; 
 
-![][16]
+&nbsp; 
 
-Après installation, démarrer le module, dans Outils > SQLite Manager
+Depuis le 26 Octobre 2011, à cause du besoin grandissant des utilisateurs de Google à utilisé ses&nbsp;services,&nbsp;le&nbsp;service de géocodage Google Map et devenus limité (2500 reqêtes par jour). 
+
+&nbsp; 
+
+![Liste des différents services pour les APIs de Google Maps][16]Liste des différents services pour les APIs de Google Maps
+
+&nbsp; 
+
+&nbsp; 
+
+Pérégrination utilise les lieux tel qu'ils sont définis dans le GEDCOM. Si dans votre arbre généalogique vous ajouté les subdivision du lieux pour un événement donné (hameau, lieux-dit, rue, localité, emplacement...) ceci sera inscrit dans le GEDCOM comme un lieu à part entière. 
+
+&nbsp; 
+
+Ainsi &nbsp;: 
+
+_Roubaix, 59100, Nord, France_&nbsp; ET&nbsp;_Roubaix, 59100, Nord, France, Rue de l'Epeule_
+
+seront considéré comme 2&nbsp;lieux différents, même si dans votre logiciel de généalogie, il les considérera comme 1 
+
+&nbsp;seul et unique lieu. 
+
+&nbsp; 
+
+Or si vous avez 2500 Lieux différents, il faut savoir que Pérégrination utilise 6 combinaison d'orthographe différente des subdivision du lieux en cas d'échec de géolocalisation. Il se peut donc qu'il 
+
+&nbsp; 
+
+Pour géolocalisé un grand nombre de lieux (supérieur à 2000) Vous avez deux solution : 
+
+&nbsp; 
+
+1. Souscrire à une clef API payante, il existe des clef API pour 5000 a mais pas de panique, Pérégrination peut réussir à récupéré les coordonnées sans API, mais si cela dépasse plusieurs centaine de requête, cela peut signaler votre adresse IP aux serveur de google et bloqué l'accès au info sur GoogleMap (détection de Robots) 
+
+&nbsp; 
+
+Vous avez cliquez sur "Oui", dans ce cas Pérégrination affiche une fenêtre pour vous permettre de mettre votre propre clef API Google Map 
 
 ![][17]
 
-Une nouvelle fenêtre apparaît, cliquez sur Ouvrir
+Copier votre clef API (CTRL+C) puis cliquez dans la case blanche pour placer votre curseur et coller la clef (CTRL+V) ensuite appuyeZ sur le bouton "Valider". 
+
+* Si la case et vide ce message d'erreur apparaîtra, vous retournerais directement sur CETTE FENËTRE. 
+* Si le champ et bien rempli, un message apparaîtra pour valider votre choix. 
+*     * Cliquez sur "Oui" pour valider pour enregistré votre clef. 
+    * En cas d'erreur, vous pouvez cliquez sur "Non", vous reviendrais sur la fenêtre pour corrigé votre erreur. 
+
+_Note : Cas particulier, si vous validé une clef API qui n'est pas bonne ou mal orthographié, la clef API ne fonctionnera pas lors du géocodage, et sera remplacer par l'une des 40 APIs disponibles dans le code source du programme._
 
 ![][18]
 
-Avec la boite de dialogue parcourez vos dossiers, pour faire apparaître les fichiers, sélectionner "Tout les fichiers" dans la liste déroulante, sélectionner le fichier et cliquez sur Ouvrir
-
 ![][19]
 
-Les données contenue dans le fichier Hérédis pour Mac et convertit en une base de données SQL (Structured Query Language , en français Language de requête structuré, plus d'info ici :Wkipedia). Vous pouvez donc voir apparaître toutes les données de votre fichier sous la forme de Table, ces tables sont les éléments principaux de la base de données, ce sont elles qui contiennent les informations. Sur le volet de gauche vous verrez apparaître les différentes tables du fichier, je vous invite à découvrir la table "Lieux" en double-cliquant dessus.
+  
+
+Si vous avez cliquez sur "Non" un autre message apparaît : 
 
 ![][20]
 
-Vous verrez apparaitre le détail de la table "Lieux" ainsi qu'un tas d'informations utiles pour les développeurs confirmés en SQL, nous allons maintenant exporter de cette table les informations utiles.
+Lorsque vous cliquez sur "Oui", Pérégrination vous ouvre automatiquement 3 fenêtres via votre navigateur par défault, pour vous permettre de créé : 
 
-![][21]
+1. [Un compte Gmail][21]
+2. [De lire la documentation concernant les clé API de Google Map][22]
+3. [ De créé un projet et une clef API Google Map via la "Console des API Google"][23]
 
-Allez dans l'onglet "Executer le SQL" et dans la case "Entrez les commandes SQL" effacez l'exemple "SELECT * FROM tablename" et copier coller cette requête SQL :SELECT Ville, Latitude, longitude FROM Lieux
+Une fois que vous avez votre clef API, vous pouvez la copier coller dans la fenêtre [(voir Clef API Google Map - OUI :)][24]
 
-![][22]
+&nbsp; 
 
-Cette requête signifie en gros : sélectionner les colonnes "Ville", "Latitude", "Longitude" de la table "Lieux"
+&nbsp; 
 
-  
-Maintenant cliquez sur le bouton "Action" et dans la liste déroulante "Save Result (CSV) to File" (Sauvegarder le résultat (CSV) dans un fichier). Un fichier au format CSV et un fichier où les informations sont séparées par un délimiteur, le plus souvent, des virgules (CSV = Comma Separated Values , Valeur Séparé par des virgules, CSV) ces dernier sont donc exploitable par Excel, OpenOffice, LibreOfice, et d'autre langages de programmation (exemple ici quand le fichier et ouvert avec LibreOffice).
+Vous avez cliquez sur "Non", un nouveau message apparaît vous informant que vous allais être redirigé pour enregistré le fichier CSV. 
 
-![][23]
-
-![][24]
-
-Enfin vous disposez d'un fichier CSV contenant la liste des latitudes et longitudes de votre fichier généalogique. Ce dernier nous servira pour placer les trajectoires pour les pérégrinations.
-
-Avec Hérédis, allez dans "Documents" > "Listes d'ascendances" > "Complète..."
+&nbsp; 
 
 ![][25]
 
-Dans l'onglet "Présentation" dans la section "Styles des rubriques" dans la catégorie "Lieux : " sélectionnez "Commune"
+&nbsp; 
+
+Dans la boite de dialogue écrivez le nom du fichier que vous souhaiter donner au fichier de Lieux, les résultat du géocodage seront automatiquement sauvegarder dans ce fichier, que vous pourrais utilisé lors de prochaine réalisations. Si vous cliquez sur annuler vous reviendrez sur la fenêtre de Pérégrination, sinon le géocodage se met en marche. 
+
+. 
 
 ![][26]
 
-Cliquez directement sur "Exporter"
+Tout ce fait de manière automatisé, vous n'avez plus qu'as patienté... 
 
 ![][27]
 
-Enregistrez le fichier dans le dossier et dans le nom de votre choix
+&nbsp; 
 
-![][28]
+Voici comment procède pérégrination dans son analyse des lieux : 
 
-![GUI sous Linux][29]GUI sous Linux
+&nbsp; 
 
-![GUI sous Windows 8][30]GUI sous Windows 8
+&nbsp; 
 
-  
+![Diagramme des différentes composition d'adresse effectué par Pérégrination][28]Diagramme des différentes composition d'adresse effectué par Pérégrination
 
-1. Télécharger le fichier ZIP
-2. Extraire les fichiers du ZIP dans le dossier de votre choix
-3. Double-clic sur "Launcher.py"
+&nbsp; 
 
-La première fois que vous l'utiliserai, une console vas s'ouvrir, ceci est tout à fait normal. Sur cette console des lignes défileront. Explication, le programme vas détecter si vous posséder sur votre ordinateur tout les éléments nécessaire pour son fonctionnement.
+Pour évité toute mauvaise surprise, car la géolocalisation n'est pas une science exacte, Pérégrination est doté d'un visualiseur. Chaque couple de coordonnées (Latitudes et Longitudes) vont être groupé avec leur lieux correspondants. Ainsi si un lieu A et un lieu B ont les même coordonnées, ils seront regroupé ensemble. 
 
- 
+&nbsp; 
 
-La librairie 'folium' n'est pas une librairie native de Python, elle n'est pas non plus apporter avec l'installation de Python X,Y. A l'intérieur du programme, dans le code source, le programme vas détecter la présence ou non de ces librairies, et les installer.
+![][29]
 
- 
+&nbsp; 
 
-Pour les installer, Python possède un programme spécial qui s'appelle PIP. C'est ce programme que mon outils va utilisé pour installer les librairies manquantes.
+Ensuite ont télécharges les images de OpenStreetMap pour chacune des coordonnées retrouvé, de manière à se que l'ont puisse visualisé sur une carte vers quoi les coordonnées pointes. 
 
- 
+&nbsp; 
 
-Ainsi PIP vas vous installer la librairie Folium. A la façon des poupée russes, si une librairie à besoin d'une autre librairie pour fonctionné, c'est ce que l'on appelle des dépendances. Ainsi , PIP vas installez automatiquement tout ce qui vous manque (voir ci dessus l'illustartion).
+&nbsp; 
 
-![Installation de la librairie folium et de sa dépendance Jinja2 avec PIP lors du lancement du programme "Launcher.py"][31]Installation de la librairie folium et de sa dépendance Jinja2 avec PIP lors du lancement du programme "Launcher.py"
+![Téléchargement des images correspondant à chaque couple de coordonnées GPS : Ici La Bassée, avec un regroupement de trois subdivision différentes][30]Téléchargement des images correspondant à chaque couple de coordonnées GPS : Ici La Bassée, avec un regroupement de trois subdivision différentes
 
-Windows va compiler les fichiers et créer des fichiers _peregrination.pyc_  et _Launcher.pyc _, pour que windows puisse utilisé mon programme.  
-EN effet, windows et obligé de traduire mes fichier, écrit en langage "python" en fichier binaire (langage 0 et 1). Si vous cliquez sur ses fichiers, la même chose se produira. Ne cliquez pas sur le fichier peregrination. Ce dernier ne contient que les données.
+&nbsp; 
+
+Enfin, &nbsp;effet, malgré toutes les méthodes mises en œuvre pour vérifier chaque résultat durant la recherche des coordonnées, nous sommes jamais à l'abri d'une erreur, surtout si les lieux rechercher sont orthographié selon leurs anciennes orthographes ou parce que ces derniers ont changé de nom, fusionné, divisé ou disparu. 
+
+&nbsp; 
+
+![][31]
+
+&nbsp; 
+
+Une fois les lieux géolocalisé, le visualiseur s'ouvre. 
+
+* Les différents lieux correspondants aux mêmes coordonnée retrouvé sont situé dans un cadre après le titre 
+* L'image de la carte avec un point coloré central qui situe l'emplacement exact des coordonnées 
+* La carte permet d'accéder directement à la position GPS sur Google Map via votre navigateur par défaut 
+* Le panneau de Control sur la droite: 
+*     * Avec le numéro du lieux 
+    * Les touches directionnelles: 
+    *         * "&gt;" pour aller à l'image suivante 
+        * "&lt;" pour revenir à l'image précédente 
+        * "+" pour accéder a la position GPS sur une carte Google Map &nbsp;via votre navigateur par défaut 
+        * suivis par les étiquette indiquant les coordonnées Latitude et Longitude du lieu 
+* Les champs pour modifier les coordonnées: 
+*     * Champs "Latitude" et "Longitude" : 
+    *         * Il y à un contrôle des caractère, si il y a la présence d'un autre caractère que : "+-1234567890.", la chaîne de caractère sera automatiquement refusé 
+    * Bouton "Mettre à jour les coordonnées GPS pour ce lieux": 
+    *         * Les coordonnées sont automatiquement changé dans le fichier CSV ainsi que dans les donnée en mémoire 
+        * La carte est télécharger de nouveau et réactualisé dans la fenêtre 
+* Bouton "Quitter" qui ferme automatiquement la fenêtre et active le bouton pour l'étape n°4 
 
 ![][32]
 
-En raison d'un BUG que je dois encore déterminer la seule manière de faire fonctionner mon programme et la suivante :
+&nbsp; 
 
-![BUG ciblé][33]BUG ciblé
+* Il s'agit d'un simple moteur de recherche, inscrive n'importe quelle chaîne de caractère (avec ou sans accent avec ou sans majuscules, mixte,...) il vous trouvera tout les individu qui possèdent cette chaîne de caractère dans leur Nom et Prénoms, choisissez soit l'ascendance, ou la descendance et validez. 
+* Si vous cliquez sur "Quitter" vous reviendrais au départ, cliquez sur "Validez" et le bouton de l'étape 5 s'activera. 
+* Si vous ne sélectionné pas de personnes ni de sens de direction (Ascendance/Descendance vous aurai un message d'erreur 
 
-En raison d'un BUG que je dois encore déterminer la seule manière de faire fonctionner mon programme et la suivante :
+![][33]
 
-1) clic-droit sur Launcher.py
+&nbsp; 
 
- 
+Suivent les options d'affichage, ils s'agit des données que vous souhaiterais voir apparaître dans les fenêtres Pop-up de la carte lorsque vous cliquez sur une trajectoire, ou sur le repère d'une ville. 
 
-2) cliquez sur "Edit with IDLE"
-
-3) une fenêtre s'affiche, appuyer sur "F5" (ou "Run" > "Python Shell")
-
-4) la console de IDLE ainsi que l'interfaçe graphique s'affiche, vous pouvez du coup utilisez mon programme
-
-1. Télécharger le fichier ZIP
-2. Extraire les fichiers du ZIP dans les dossiers de votre choix
-3. Ouvrer une console (CTRL+ALT+T) et taper :
-
-Vous pouvez aussi utilisé n'importe quelle environnement de développement (IDE) tel que IDLE, qui et naturellement fournis avec l'installation de Python, Spider, et tout autre programme supportant le langage python, en ouvrant le script Launcher.py et en exécutant le programme.
-
- 
-
-Note : Si vous avez installez la dernière version de Matplotlib (1.5.1) vous verrez apparaitre se message d'erreur, ceci n'est en rien un bug du programme mais une information indiquant pourquoi le programme sera long à charger:
-
-    Warning (from warnings module):  
-      File "/usr/local/lib/python2.7/dist-packages/matplotlib/font_manager.py", line 273  
-        warnings.warn('Matplotlib is building the font cache using fc-list. This may take a moment.')  
-    UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
-
-Cliquer sur le bouton "Charger le fichier d'ascendance"
-
-Sélectionner votre fichier puis valider
+* "Nombre de °,x,+" affiche le nombre de Naissance de Décès et de Mariage qui s'est produit dans le lieu 
+* "Nombre total d'événement" : Affiche la somme de tout les événement de la ville (Naissance, mariage, décès ...) 
+* "Départ(s)" : Indique les individus qui sont partie, ayant eu une descendance dans un lieu différent que leur lieu de naissance 
+* "Arrivée(s)" : Indique les individus qui sont arrivé, ayant une ville de naissance différente de celle de leur enfant 
+* "Nom(s)" : Liste des patronyme ayant eu un événement avec ce lieu 
+* "Date extrêmes" : Comme écrit, il d'agit d'afficher la date du plus ancien et du plus récent événement produit dans cette localité 
+* "Valider" : Valide la sélection 
 
 ![][34]
 
-Cliquez sur le bouton "Charger le fichier de lieux"
+Pour utilisé ces option vous devez préalablement télécharger les fichier SHAPEFILE correspondant au différents pays des villes géolocalisé 
 
-Sélectionner votre fichier puis valider
+&nbsp; 
+
+Attention ! Plus la généalogie contiendra d'individu, en fonction du nombre d'options que vous avez choisis de faire afficher, les bulles seront proportionnellement rempli en fonction du niveau géographique du regroupement, ^référer un regroupement par commune si les adresse sont nombreuse, et les individu peu nombreux, un regroupement par département, si les individu ne sont pas concentré etc... Toutes les combinaison sont possible. 
+
+&nbsp; 
 
 ![][35]
 
-Cliquer sur le bouton "Options d'affichage" et coché les cases pour afficher les informations que vous souhaiter voir apparaitre sur les info-bulle de la carte
+&nbsp; 
+
+Si vous cliquez sur "Passer" L'ascendance (ou la descendance) du personnage choisis et créé et la carte et réalisé sous la forme d'un fichier HTML dans vos dossier. Deux modèle de carte sont créé, un modèle type "Relief" et un modèle type "Routier", ses deux dernier se complémentent l'une étant plus détaillé que l'autre. 
 
 ![][36]
 
-Enfin généré votre carte  en appuyant sur le bouton "Créé la carte"
-
-![][37]
+[1]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i2bdb5331006c5827/version/1489019269/image.png
+[2]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i40efa48d2602ff5e/version/1489056300/image.png
+[3]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i335618a063835e79/version/1489087734/image.png
+[4]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i4059ae8a011edfe3/version/1489056473/image.png
+[5]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i303b5294bc6f0f27/version/1489057089/image.png
+[6]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ibf93e8f609ba898d/version/1489078184/image.png
+[7]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ib97c72f0acf9ed27/version/1489027405/image.png
+[8]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/if013fd33ba1a65ca/version/1489025303/image.png
+[9]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ia3f20bf3ef2dc224/version/1489027435/image.png
+[10]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i8557bf37bacaac5d/version/1489025790/image.png
+[11]: https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=png/path/s55280dc9b2bd5ac9/image/i900948ebbd98f107/version/1489058809/image.png
+[12]: javascript:
+[13]: https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=png/path/s55280dc9b2bd5ac9/image/i4d95afcfcb3cf684/version/1489058636/image.png
+[14]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i4ae3731c84898cef/version/1489093642/image.png
+[15]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ia8eafd7dbf53ef7d/version/1489077881/image.png
+[16]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i1a9d3fd98b1e50b9/version/1489078970/image.png
+[17]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i6262964d489342f2/version/1489066507/image.png
+[18]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ib544d99f6b1fa684/version/1489067137/image.png
+[19]: https://image.jimcdn.com/app/cms/image/transf/dimension=334x10000:format=png/path/s55280dc9b2bd5ac9/image/ic262dd88c959b9c4/version/1489094918/image.png
+[20]: https://image.jimcdn.com/app/cms/image/transf/dimension=461x10000:format=png/path/s55280dc9b2bd5ac9/image/i1ce4deb04cfc3aa4/version/1489094895/image.png
+[21]: https://accounts.google.com/SignUp?service=mail&amp;continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&lt;mpl=default "https://accounts.google.com/SignUp?service=mail&amp;continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&lt;mpl=default"
+[22]: https://developers.google.com/maps/documentation/geocoding/get-api-key?hl=fr "https://developers.google.com/maps/documentation/geocoding/get-api-key?hl=fr"
+[23]: https://www.google.fr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwj-kf6G0MnSAhWE0RoKHQ9UDyMQFggaMAA&amp;url=https%3A%2F%2Fconsole.developers.google.com%2F%3Fhl%3DFR&amp;usg=AFQjCNF-vbOpRiGCi4cKnLe84p-p_faf3w&amp;sig2=-0S533HZJ9TfcEQz-Lwq2Q&amp;bvm=bv.149093890,d.d2s "https://www.google.fr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwj-kf6G0MnSAhWE0RoKHQ9UDyMQFggaMAA&amp;url=https%3A%2F%2Fconsole.developers.google.com%2F%3Fhl%3DFR&amp;usg=AFQjCNF-vbOpRiGCi4cKnLe84p-p_faf3w&amp;sig2=-0S533HZJ9TfcEQz-Lwq2Q&amp;bvm=bv.149093890,d.d2s"
+[24]: https://peregrination.jimdo.com/utilisation/#api_yes "https://peregrination.jimdo.com/utilisation/#api_yes"
+[25]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ib73de96f20a441c1/version/1489098180/image.png
+[26]: https://image.jimcdn.com/app/cms/image/transf/dimension=570x10000:format=png/path/s55280dc9b2bd5ac9/image/i112cfaea40500542/version/1489098520/image.png
+[27]: https://image.jimcdn.com/app/cms/image/transf/dimension=704x10000:format=png/path/s55280dc9b2bd5ac9/image/i743d15b79631aba2/version/1489117304/image.png
+[28]: https://image.jimcdn.com/app/cms/image/transf/dimension=573x10000:format=png/path/s55280dc9b2bd5ac9/image/i1c08c3697796871a/version/1489115573/image.png
+[29]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i8d57ce202124a2b0/version/1489117367/image.png
+[30]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i3a744a0318705b1f/version/1489118149/image.png
+[31]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ifc690f974dcdae4f/version/1489118340/image.png
+[32]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i75b26c3c9dee287e/version/1489120157/image.png
+[33]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/if0b342b59b70babc/version/1489119205/image.png
+[34]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/if1282a653a786810/version/1489121115/image.png
+[35]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/id7b83a03c8ef6c5b/version/1489121811/image.png
+[36]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/idbd3050a94865f88/version/1489122111/image.png
 
   
-
-![][38]
-
-![][39]
-
-  
-
-Cliquer sur le bouton "Charger le fichier d'ascendance"
-
-Sélectionner votre fichier puis valider
-
-![][40]
-
-Cliquez sur le bouton "Charger le fichier de lieux"
-
-Sélectionner votre fichier puis valider
-
-![][41]
-
-Cliquer sur le bouton "Options d'affichage" et coché les cases pour afficher les informations que vous souhaiter voir apparaitre sur les info-bulle de la carte
-
-![][42]
-
-Enfin généré votre carte  en appuyant sur le bouton "Créé la carte"
-
-![][43]
-
-  
-
-![][44]
-
-![][45]
-
-  
-
-[1]: https://fr.wikipedia.org/wiki/Langage_de_programmation "https://fr.wikipedia.org/wiki/Langage_de_programmation"
-[2]: https://fr.wikipedia.org/wiki/Interpr%C3%A8te_(informatique) "https://fr.wikipedia.org/wiki/Interpr%C3%A8te_(informatique)"
-[3]: https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_logicielle "https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_logicielle"
-[4]: https://docs.python.org/2/library/math.html "https://docs.python.org/2/library/math.html"
-[5]: https://image.jimcdn.com/app/cms/image/transf/dimension=144x1024:format=jpg/path/s55280dc9b2bd5ac9/image/i540f2c8eb88001d4/version/1477258230/image.jpg
-[6]: https://image.jimcdn.com/app/cms/image/transf/dimension=30x1024:format=png/path/s55280dc9b2bd5ac9/image/idff13891c64ded6b/version/1477258967/image.png
-[7]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i96f3a32c20990e38/version/1477258970/image.png
-[8]: https://image.jimcdn.com/app/cms/image/transf/dimension=393x10000:format=png/path/s55280dc9b2bd5ac9/image/iebbf077e62d4a75e/version/1477231947/image.png
-[9]: https://image.jimcdn.com/app/cms/image/transf/dimension=389x10000:format=png/path/s55280dc9b2bd5ac9/image/ib9fe9f3b6af8f028/version/1477231944/image.png
-[10]: https://image.jimcdn.com/app/cms/image/transf/dimension=309x1024:format=png/path/s55280dc9b2bd5ac9/image/ieb4cb16b89d1dd78/version/1477266753/image.png
-[11]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ib03049230090baa6/version/1477268816/image.png
-[12]: http://http/www.gadm.org/country "http:/www.gadm.org/country"
-[13]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i218bbb29cb72fcda/version/1477304927/image.png
-[14]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i87d2fb7aae60e7a0/version/1477335496/image.png
-[15]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i2867d9878915eddb/version/1477335756/image.png
-[16]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/id7513bd4e9f949e8/version/1477335782/image.png
-[17]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i649281062ed8d379/version/1477335846/image.png
-[18]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i4f1285be88e3b8ef/version/1477336295/image.png
-[19]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i55be025b83c29b08/version/1477336350/image.png
-[20]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i936e7e4125a2ff44/version/1477337779/image.png
-[21]: https://image.jimcdn.com/app/cms/image/transf/dimension=655x10000:format=png/path/s55280dc9b2bd5ac9/image/i0e6252aa2e25000e/version/1477337809/image.png
-[22]: https://image.jimcdn.com/app/cms/image/transf/dimension=655x10000:format=png/path/s55280dc9b2bd5ac9/image/i4e495490970ce894/version/1477337806/image.png
-[23]: https://image.jimcdn.com/app/cms/image/transf/dimension=655x10000:format=png/path/s55280dc9b2bd5ac9/image/i36529650bdcb9a5f/version/1477337801/image.png
-[24]: https://image.jimcdn.com/app/cms/image/transf/dimension=655x10000:format=png/path/s55280dc9b2bd5ac9/image/i0b8021dcd8808dfc/version/1477338048/image.png
-[25]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i8f02d4dd557fbec1/version/1477344849/image.png
-[26]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/if112262ae28df539/version/1477344949/image.png
-[27]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/ibc245296f66540cf/version/1477344994/image.png
-[28]: https://image.jimcdn.com/app/cms/image/transf/dimension=1070x10000:format=png/path/s55280dc9b2bd5ac9/image/i43db517208aeda2e/version/1477345052/image.png
-[29]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i41fca5dc7facc13f/version/1477671594/image.png
-[30]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i977751a5e3b2c001/version/1477671621/image.png
-[31]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i2f8e71564a4f5128/version/1477762646/image.png
-[32]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ic86fb501f8906bee/version/1477763221/image.png
-[33]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i500513555b96027d/version/1477764395/image.png
-[34]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i3fec8d231f1481d7/version/1477571073/image.png
-[35]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ibfcd08bd2a8649b0/version/1477571114/image.png
-[36]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ia0f571d1b0ce1e62/version/1477571192/image.png
-[37]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ie3375937f6e3d8e2/version/1477571223/image.png
-[38]: https://image.jimcdn.com/app/cms/image/transf/dimension=519x10000:format=png/path/s55280dc9b2bd5ac9/image/i176c1ea0365bb4b3/version/1477679780/image.png
-[39]: https://image.jimcdn.com/app/cms/image/transf/dimension=519x10000:format=png/path/s55280dc9b2bd5ac9/image/i0672e4c23a8f9ad3/version/1477680894/image.png
-[40]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i474da8c8e06f734b/version/1477576163/image.png
-[41]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i5f001c3be11aa990/version/1477575992/image.png
-[42]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/ie3492d5810e37c41/version/1477575993/image.png
-[43]: https://image.jimcdn.com/app/cms/image/transf/none/path/s55280dc9b2bd5ac9/image/i3ab2838f184c5c29/version/1477575993/image.png
-[44]: https://image.jimcdn.com/app/cms/image/transf/dimension=519x10000:format=png/path/s55280dc9b2bd5ac9/image/i524832663aae7cce/version/1477680522/image.png
-[45]: https://image.jimcdn.com/app/cms/image/transf/dimension=519x10000:format=png/path/s55280dc9b2bd5ac9/image/i28e602494db37d92/version/1477680520/image.png
