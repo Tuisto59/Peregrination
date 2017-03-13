@@ -58,46 +58,7 @@ from staticmap import StaticMap, CircleMarker
 cert = 'cacert.pem'
 os.environ['REQUESTS_CA_BUNDLE'] = os.path.join(os.getcwd(), cert)
 
-GOOGLE_API = ['AIzaSyA-iLp9YRpKkKuklH5yjt4JiGMF2S6ICM8',
-              'AIzaSyDlO_pTWUgOf893w0wWGebuMwDpKM2Q_po',
-              'AIzaSyBGTOZoGeg6olb1DbNfjyD4tjMvmyrtp0s',
-              'AIzaSyAGz3mFCLxUpMU0H7RThU9kRTezHOTiDSg',
-              'AIzaSyCpgLxA975ucBXTHDFuIuMdf1LT1I5t8lg',
-              'AIzaSyDanzzhEl670T6wrbwP5zcWRsHn7mVHdc0',
-              'AIzaSyCw-bgt_STPwGu1DXQVm0u9yDvMtMhBvJE',
-              'AIzaSyApyZWo25UBuVMvYW9ki9HcA86RAGTzSIY',
-              'AIzaSyDM5vIdz_7_NO1Hjj1CyPeJ8gmW_9yIn14',
-              'AIzaSyDW14wZOXVfI7wie88CqniTFIFQb1T2Xm8',
-              'AIzaSyBde8tCh457dv98yJFjggHbCL-qtC_IYxo',
-              'AIzaSyALa1xygv918KwbynAOTjuK5frJrugF9aY',
-              'AIzaSyD-i5IiLLEN6Ix2j4-xl9oD46gE-NitE0o',
-              'AIzaSyCD03OEqs-0VnwemstRDq2kiqFbSTTqXPs',
-              'AIzaSyCj9i9Y-ZUzC_IOBjHaGr-X25uwhyAHlog',
-              'AIzaSyAMTcNhxP9UVi8IdvNj9EWhiL66lk1Op30',
-              'AIzaSyAp9g_PgTjKRoEyjICU_uHkfQ0XRKJY-RE',
-              'AIzaSyCdZ0pswPMiG47MIdmo48-B2EFhi3HUNjc',
-              'AIzaSyCJS0HYiQj0YzQmSHUjX7hkMoi32-2HG4w',
-              'AIzaSyBh-FB2jV7mFuxRYym3LncoQiuX-tmSjfg',
-              'AIzaSyC8Pry5RghSnvCAkKPVu_ZclYP95aIwzjk',
-              'AIzaSyCZnhBwnehcuMaoxuOXQG2grQw1fDhh1JE',
-              'AIzaSyCsw_p3M72MsgiaaZbpGX0PPFDprHkSYzs',
-              'AIzaSyC2Nj1nax6GUDGhxjgkyt9XIfKJ8KDgykA',
-              'AIzaSyAOKo8sBLD8ZKZzmVz9xufqHIMprbfsoUY',
-              'AIzaSyCy7ynvlwK0FxSHR6vmEYIFYN4t9kbCVOg',
-              'AIzaSyCvD-cmuDZG4XnTIifV4Goi7QinXdRbLqw',
-              'AIzaSyDGOJxRP6iBhD-m3W7wUBJD8_RagR9cBLI',
-              'AIzaSyDWwx-s1DcbBA4wmBwsX6K-kxyvBOEJxXY',
-              'AIzaSyCWyrhIXGXaD3g5-p-kEmSfRZx5U4TbgfM',
-              'AIzaSyD_NC-vkcNiquURaxN0eowYQmqp_r0pAkk',
-              'AIzaSyDn9LuMa6U0_D2qxdKug6aZOfIxutjV0h8',
-              'AIzaSyDGgtpYwbPs4fUKIjrTA_uPfHqoFYzoy_M',
-              'AIzaSyBD5InC0C8V23mmdWO-wwyKZXVyIEpYusY',
-              'AIzaSyA0vxUqIm3rJgciJN6D10FxB2HdPnCzG3U',
-              'AIzaSyAHQnm8hXLnWRkSahi3K4KFnjBFSOCvXWo',
-              'AIzaSyBjGa5F28aM3d7l7DmSh-u-LOYTK-MGZRc',
-              'AIzaSyB5yq6AkJgWYbJUXtAuSXm-dviQx6ytpxc',
-              'AIzaSyALKlUwqg4YwkWrPU6JyxFO2JJXKGZJNjo',
-              'AIzaSyCrEM_z7ZFOL_okADEuh67m914dPkhUFU0']
+GOOGLE_API = []
 
 class Peregrination():
     #principal application
